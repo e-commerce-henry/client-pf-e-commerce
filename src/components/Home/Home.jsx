@@ -7,7 +7,6 @@ import Menu from "../menuCat/menu"
 export default function Home(){
     return(
         <>
-        <p> del home</p>
         <Head />
         <NavBar />
         <Menu />

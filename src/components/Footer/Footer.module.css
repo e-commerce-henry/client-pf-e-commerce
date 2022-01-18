@@ -1,17 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 .container {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10%;
-  background-color: #00adb5;
+  height: 12%;
+  background-color: #303841;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   color: #eeeeee;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.container div a{
+    text-decoration: none;
+    color: white;
+}
+
+.container div a:hover{
+    color: #FF5722;
+}
+
+.copy{
+    background-color: #303841;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    height: 40px;
+    width: 100%;
 }

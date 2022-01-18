@@ -1,4 +1,22 @@
+.container {
+  padding: 10px;
+  background-color: #00adb5;
+}
 input {
   border: none;
   outline: none;
+  padding: 5px;
+  width: 40%;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 5px;
 }
