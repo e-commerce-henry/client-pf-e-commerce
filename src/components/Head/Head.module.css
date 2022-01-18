@@ -13,7 +13,7 @@
   font-size: 15px;
 }
 
-button {
+.btnhead {
   cursor: pointer;
   outline: none;
   border: none;
@@ -28,7 +28,15 @@ button {
   font-weight: 600;
 }
 
-a {
+.ahead {
   text-decoration: none;
   color: #eeeeee;
+}
+
+.btnhead:hover {
+  color: #303841;
+}
+
+.ahead:hover {
+  color: #303841;
 }
