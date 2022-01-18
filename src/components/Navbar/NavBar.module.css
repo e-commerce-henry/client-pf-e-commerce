@@ -1,3 +1,7 @@
+.container {
+  padding: 10px;
+  background-color: #00adb5;
+}
 input {
   border: none;
   outline: none;
