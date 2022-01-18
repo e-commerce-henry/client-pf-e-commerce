@@ -7,8 +7,8 @@ function Footer(){
             
                 <div><a href='#'>Sobre nosotros</a></div>
                 <div><a href="#">Contacto</a></div>
-                <div><a href="#">terminos y condiciones</a></div>
-                <div><a href="#">Politica de privacidad</a></div>
+                <div><a href="#">Términos y condiciones</a></div>
+                <div><a href="#">Política de privacidad</a></div>
             
             </div>
             <div className={Style.copy}>
