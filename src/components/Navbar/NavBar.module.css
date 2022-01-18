@@ -6,7 +6,11 @@ input {
   border: none;
   outline: none;
   padding: 5px;
-  width: 50%;
+  width: 40%;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 input::placeholder {
