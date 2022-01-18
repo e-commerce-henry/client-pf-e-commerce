@@ -1,4 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .container {
   background-color: #00adb5;
   width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  color: #eeeeee;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
 }
