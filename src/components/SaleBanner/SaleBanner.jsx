@@ -1,6 +1,6 @@
-import Style from './Carrusel.module.css'
+import Style from './SaleBanner.module.css'
 
-function Carrusel(){
+function SaleBanner(){
     return(
         <>
             <div className={Style.container} >Carrusel</div>
@@ -8,4 +8,4 @@ function Carrusel(){
     )
 };
 
-export default Carrusel;
+export default SaleBanner;
