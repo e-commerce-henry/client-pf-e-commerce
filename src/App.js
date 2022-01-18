@@ -8,8 +8,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={ Home }/>
-          {/* <Route path="/" element={} />
-          <Route path="/" element={} /> */}
         </Routes>
       </div>  
   );
