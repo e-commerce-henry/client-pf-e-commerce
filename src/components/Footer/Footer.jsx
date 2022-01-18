@@ -2,13 +2,11 @@ import Style from './Footer.module.css'
 
 function Footer(){
     return(
-        <>
-            <div className={Style.container} >
-                <div>Redes sociales</div>
-                <div>Contacto</div>
-                <div>etcétera</div>
-            </div>
-        </>
+        <div className={Style.container} >
+            <ul>
+                <a href='#'>Sobre nosotros</a>
+            </ul>
+        </div>
     )
 };
 
