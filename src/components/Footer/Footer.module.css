@@ -6,7 +6,7 @@
   background-color: #303841;
   width: 100%;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   color: #eeeeee;
   font-family: "Lexend Deca", sans-serif;
@@ -15,23 +15,23 @@
   margin-bottom: 15px;
 }
 
-.container div a{
-    text-decoration: none;
-    color: white;
+.container div a {
+  text-decoration: none;
+  color: white;
 }
 
-.container div a:hover{
-    color: #FF5722;
+.container div a:hover {
+  color: #ff5722;
 }
 
-.copy{
-    background-color: #303841;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    color: white;
-    height: 40px;
-    width: 100%;
+.copy {
+  background-color: #303841;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 40px;
+  width: 100%;
 }

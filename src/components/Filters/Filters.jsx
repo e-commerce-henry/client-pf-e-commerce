@@ -1,9 +1,9 @@
 import React,  { useState } from 'react';
-import Style from './menu.module.css'
+import Style from './Filters.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DropdownItem , Dropdown , DropdownMenu, DropdownToggle} from "reactstrap";
 
-export default function Menu(){
+function Filters(){
     const [dropdown , setDropdown] = useState(false); 
     const openCloseMenu = ()=>{
         setDropdown(!dropdown)
@@ -13,15 +13,15 @@ export default function Menu(){
             <Dropdown isOpen = {dropdown} toggle={openCloseMenu}> 
             {/* direction='right' */}
                 <DropdownToggle caret className={Style.fle}>
-                    Menu
+                    Filtrar por
                 </DropdownToggle>
                 <DropdownMenu className={Style.dropdownmenu}>
-                    <DropdownItem header>Categorias</DropdownItem>
-                    <DropdownItem>Categoria 1 </DropdownItem>
-                    <DropdownItem>Cateegoria 2 </DropdownItem>
-                    <DropdownItem>Categoria 3</DropdownItem>
-                    <DropdownItem>Categoria 4</DropdownItem>
-                    <DropdownItem>Categoria 5 </DropdownItem>
+                    <DropdownItem header> Filtros</DropdownItem>
+                    <DropdownItem>Precio</DropdownItem>
+                    <DropdownItem>Marca</DropdownItem>
+                    <DropdownItem>Filtro 3</DropdownItem>
+                    <DropdownItem>Filtro 4</DropdownItem>
+                    <DropdownItem>Filtro 5 </DropdownItem>
                 </DropdownMenu>
 
             </Dropdown>
@@ -30,3 +30,4 @@ export default function Menu(){
     )
 }
 
+export default Filters;
