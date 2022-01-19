@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.container {
+  background-color: #00adb5;
+
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.btnprofile {
+  border: none;
+  outline: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #eeeeee;
+  background-color: transparent;
+}
+
+.btnprofile:hover {
+  color: #ff5722;
+}
+
+.btnprofileselected {
+  color: #ff5722;
+  border: none;
+  outline: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: transparent;
+}

@@ -15,7 +15,6 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route path="/favs" element={<Favs />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/profile-details" element={<ProfileDetails />} />
           <Route path="/history" element={<History />} />
         </Routes>

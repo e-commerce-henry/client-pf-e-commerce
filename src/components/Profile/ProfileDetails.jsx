@@ -1,11 +1,23 @@
 import Style from './ProfileDetails.module.css'
-import Profile from './Profile';
+import {useNavigate} from 'react-router-dom'
+import Head from '../Head/Head';
+import Footer from '../Footer/Footer';
 
 export default function ProfileDetails(){
 
+    const navigate = useNavigate();
+    function HandleClick(e){
+        navigate(`/${e.target.value}`);
+    };
+
     return(
         <div >
-            <Profile />
+            <Head />
+            <div className={Style.container}>
+                <button className={Style.btnprofileselected} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
+                <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
+            </div>
+            <Footer />
             <div className={Style.details}>
                 <ul>
                     <li>Nombre: (nombre del cliente) <button className={Style.modificar}>Modificar</button></li>

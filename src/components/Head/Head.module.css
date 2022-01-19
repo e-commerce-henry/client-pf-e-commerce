@@ -28,11 +28,6 @@
   font-weight: 600;
 }
 
-.ahead {
-  text-decoration: none;
-  color: #eeeeee;
-}
-
 .btnhead:hover {
   color: #ff5722;
 }
