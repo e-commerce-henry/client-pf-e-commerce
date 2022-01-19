@@ -1,5 +1,5 @@
 import React,  { useState } from 'react';
-import './menu.css'
+import Style from './menu.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DropdownItem , Dropdown , DropdownMenu, DropdownToggle} from "reactstrap";
 
@@ -9,13 +9,13 @@ export default function Menu(){
         setDropdown(!dropdown)
     }
     return(
-        <div className="main">
+        <div className={Style.main}>
             <Dropdown isOpen = {dropdown} toggle={openCloseMenu}> 
             {/* direction='right' */}
-                <DropdownToggle caret className='fle'>
+                <DropdownToggle caret className={Style.fle}>
                     Menu
                 </DropdownToggle>
-                <DropdownMenu>
+                <DropdownMenu className={Style.dropdownmenu}>
                     <DropdownItem header> categorias</DropdownItem>
                     <DropdownItem>Catgoria 1 </DropdownItem>
                     <DropdownItem>Categoria 2 </DropdownItem>
