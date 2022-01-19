@@ -16,11 +16,11 @@ export default function Menu(){
                     Menu
                 </DropdownToggle>
                 <DropdownMenu className={Style.dropdownmenu}>
-                    <DropdownItem header> categorias</DropdownItem>
-                    <DropdownItem>Catgoria 1 </DropdownItem>
-                    <DropdownItem>Categoria 2 </DropdownItem>
+                    <DropdownItem header>Categorias</DropdownItem>
+                    <DropdownItem>Categoria 1 </DropdownItem>
+                    <DropdownItem>Cateegoria 2 </DropdownItem>
                     <DropdownItem>Categoria 3</DropdownItem>
-                    <DropdownItem>Catgoria 4</DropdownItem>
+                    <DropdownItem>Categoria 4</DropdownItem>
                     <DropdownItem>Categoria 5 </DropdownItem>
                 </DropdownMenu>
 

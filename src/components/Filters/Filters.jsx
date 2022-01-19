@@ -17,11 +17,11 @@ function Filters(){
                 </DropdownToggle>
                 <DropdownMenu className={Style.dropdownmenu}>
                     <DropdownItem header> Filtros</DropdownItem>
-                    <DropdownItem>Catgoria 1 </DropdownItem>
-                    <DropdownItem>Categoria 2 </DropdownItem>
-                    <DropdownItem>Categoria 3</DropdownItem>
-                    <DropdownItem>Catgoria 4</DropdownItem>
-                    <DropdownItem>Categoria 5 </DropdownItem>
+                    <DropdownItem>Precio</DropdownItem>
+                    <DropdownItem>Marca</DropdownItem>
+                    <DropdownItem>Filtro 3</DropdownItem>
+                    <DropdownItem>Filtro 4</DropdownItem>
+                    <DropdownItem>Filtro 5 </DropdownItem>
                 </DropdownMenu>
 
             </Dropdown>
