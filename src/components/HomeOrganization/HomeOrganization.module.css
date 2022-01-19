@@ -1,0 +1,21 @@
+.thebar {
+  background-color: transparent;
+  position: absolute;
+  top: 113px;
+  bottom: 0%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.lateral {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: #303841;
+}
+
+.central {
+  grid-area: 1 / 2 / 2 / 7;
+}

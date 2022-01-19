@@ -9,7 +9,6 @@ function Cards(){
                 <div className={Style.container} >
                     <div className={Style.productname}>Nombre del producto</div>
                     <div ><img className={Style.productimg} src='http://starcomputacion.com.ar/library/timthumb/timthumb.php?src=/imagenes/productos/206050190461cddf30b005f_4.jpg&w=1180&h=546&zc=2' alt='not found' /></div>
-                    {/* <div className={Style.abajo}> */}
                         <div className={Style.productprice}>$25.000</div>
                         <div className={Style.producticons}>
                             <button className={Style.productbtns}>
@@ -25,7 +24,6 @@ function Cards(){
                             </button>
                             </div>
                     </div>
-                {/* </div> */}
             {/* </Link> */}
         </>
     )

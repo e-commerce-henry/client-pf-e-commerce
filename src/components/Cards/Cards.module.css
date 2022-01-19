@@ -3,8 +3,9 @@
 .container {
   width: 250px;
   height: 230px;
-  border: solid 1px #ff5722;
+
   background-color: eeeeee;
+  border: solid 1px #ff5722;
   border-radius: 5%;
   margin: 15px;
 }
