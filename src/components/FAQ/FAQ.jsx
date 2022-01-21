@@ -1,11 +1,13 @@
 import React from 'react';
 import './FAQ.module.css';
 import {Link} from 'react-router-dom';
+import Head from '../Head/Head';
 
 
 const FAQ = () => {
   return (
   <div>
+         <Head />
       <div className="title">PREGUNTAS MÁS FRECUENTES</div>
       <div className="accordion" id="accordionPanelsStayOpenExample">
   <div className="accordion-item">
@@ -45,7 +47,6 @@ const FAQ = () => {
     </div>
   </div>
 </div>
-
 <Link to='/'><button type="button" class="btn btn-info">Volver</button></Link>   
 </div>
     );
