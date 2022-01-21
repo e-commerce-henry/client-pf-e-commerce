@@ -43,7 +43,7 @@ export default function Home(){
         <Pagination productsPerPage = {productsPerPage}
                     allProducts = {allProducts.length}
                     pagination = {pagination} />
-        {/* <Footer /> */}
+        <Footer />
         </>
     )
 };
