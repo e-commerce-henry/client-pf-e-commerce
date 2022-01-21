@@ -1,18 +1,19 @@
 .container {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
   height: 12%;
   background-color: #303841;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  padding: 10px;
+  /* align-items: flex-end; */
   color: #eeeeee;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   font-size: 15px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .container div a {
@@ -26,12 +27,17 @@
 
 .copy {
   background-color: #303841;
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   height: 40px;
   width: 100%;
+}
+
+.allfooter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
 }
