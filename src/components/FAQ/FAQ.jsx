@@ -8,7 +8,7 @@ const FAQ = () => {
   return (
   <div>
          <Head />
-      <div className="title">PREGUNTAS MÁS FRECUENTES</div>
+      <div className="title">PREGUNTAS FRECUENTES</div>
       <div className="accordion" id="accordionPanelsStayOpenExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
