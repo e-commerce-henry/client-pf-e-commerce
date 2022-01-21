@@ -8,6 +8,7 @@ import Style from './Cards.module.css';
 function valProduct(e){
     if(e.id){
         return(
+            <div className={Style.eachcard}>
             <Card 
             key = {e.id}
             id = {e.id}
@@ -15,7 +16,7 @@ function valProduct(e){
             price= {e.price}
             img ={e.img}
             brand={e.brand}
-            />
+            /></div>
         )
     }
 }
@@ -30,13 +31,13 @@ function Cards(){
     },[])
 
     return(
-        <>
+        <div className={Style.allcards}>
         {
             products.map(e =>(
                 valProduct(e)
             ))
         }
-        </>
+        </div>
     )
 };
 

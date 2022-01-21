@@ -5,8 +5,8 @@ function Card({key, id, name, price, img, brand}){
         <>
             <div className={Style.container} >
                 <div className={Style.productname}>{name}</div>
-                <div><img className={Style.productimg} src={img} alt='not found' /></div>
-                <div className={Style.productprice}>{price}</div>
+                <div className={Style.boximg}><img className={Style.productimg} src={img} alt='not found' /></div>
+                <div className={Style.productprice}>${price}</div>
                 <div className={Style.producticons}>
                     <button className={Style.productbtns}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-suit-heart-fill" viewBox="0 0 16 16">
