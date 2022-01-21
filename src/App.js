@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart';
 import Profile from './components/Profile/Profile';
 import ProfileDetails from './components/Profile/ProfileDetails';
 import History from './components/Profile/History';
+import FAQ from './components/FAQ/FAQ';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile-details" element={<ProfileDetails />} />
           <Route path="/history" element={<History />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </>  
   );

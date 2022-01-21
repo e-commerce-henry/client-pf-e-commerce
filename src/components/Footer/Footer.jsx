@@ -1,4 +1,5 @@
 import Style from './Footer.module.css'
+import {Link }from 'react-router-dom';
 
 function Footer(){
     return(
@@ -9,6 +10,7 @@ function Footer(){
                 <div><a href="#">Contacto</a></div>
                 <div><a href="#">Términos y condiciones</a></div>
                 <div><a href="#">Política de privacidad</a></div>
+                <div><Link to="/faq">Preguntas Frecuentes</Link></div>
                 <div>
                     <a href="#">
 {/*                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
