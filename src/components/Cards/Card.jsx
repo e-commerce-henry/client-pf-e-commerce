@@ -1,3 +1,4 @@
+import React from 'react';
 import Style from './Card.module.css';
 import { Link } from "react-router-dom";
 
@@ -9,7 +10,7 @@ function Card({key, id, name, price, img, brand}){
                 <div className={Style.productname}>{name}</div> </Link>
                 <div className={Style.boximg}><img className={Style.productimg} src={img} alt='not found' /></div>
 
-                <div className={Style.productprice}>${Number(Math.ceil(price)).toLocaleString()}</div>
+                <div className={Style.productprice}>$ {Number(Math.ceil(price)).toLocaleString()}</div>
 
                 <div className={Style.producticons}>
                     <button className={Style.productbtns}>
