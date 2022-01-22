@@ -36,22 +36,32 @@ export function getCategory(){
 };
 
 export function filterProductsByCategory(payload){
-    return{
-        type: 'FILTER_BY_CATEGORY',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'FILTER_BY_CATEGORY',
+                payload 
+        }))
+       
     };
 };
 
 export function orderByName(payload) {
-    return {
-        type: 'ORDER_BY_NAME',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'ORDER_BY_NAME',
+                payload
+        }))
     };
 };
 
 export function orderByPrice(payload) {
-    return {
-        type: 'ORDER_BY_PRICE',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'ORDER_BY_PRICE',
+                payload
+        }))
     };
 };

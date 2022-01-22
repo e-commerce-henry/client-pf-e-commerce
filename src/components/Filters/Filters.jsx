@@ -10,7 +10,7 @@ function Filters(){
 
     useEffect (() => {
         dispatch(getProducts());
-    }, []); 
+    }, [dispatch]); 
 
     const [currentPage,setCurrentPage] = useState(1);
 
