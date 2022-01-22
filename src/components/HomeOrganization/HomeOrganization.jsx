@@ -8,8 +8,8 @@ function HomeOrganization(){
     return(
         <>
         <div className={Style.thebar}>
-            <div className={Style.lateral}><Menu /> <Filters /> </div>
-            <div className={Style.central}><SaleBanner /><Cards />  </div>
+            <div className={Style.lateral}> <Menu /> <Filters /> </div>
+            <div className={Style.central}> <SaleBanner /><Cards />  </div>
 
         </div>
             
