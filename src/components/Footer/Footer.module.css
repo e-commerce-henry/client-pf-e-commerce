@@ -1,17 +1,21 @@
 .container {
   /* position: absolute;
   bottom: 0; */
-  height: 12%;
-  background-color: #303841;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #eeeeee;
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  /* margin-bottom: 15px; */
+  position: fixed;
+    bottom: 0;
+    gap: 20px;
+    padding: 22px;
+    height: 12%;
+    background-color: #303841;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #eeeeee;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    /* margin-bottom: 15px; */
 }
 
 .container div a {
@@ -24,6 +28,11 @@
 }
 
 .copy {
+  position: fixed;
+	bottom: 0;
+  gap: 20px;
+	padding: 2px;
+
   background-color: #303841;
   display: flex;
   justify-content: center;
