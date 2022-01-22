@@ -6,8 +6,6 @@ function Footer(){
         <>
             <div className={Style.allfooter}>
             <div className={Style.container} >
-            
-
                 <div><a href='#'>Sobre nosotros</a></div>
                 <div><a href="#">Términos y condiciones</a></div>
                 <div><a href="#">Política de privacidad</a></div>
