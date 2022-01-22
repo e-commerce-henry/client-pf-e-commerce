@@ -1,6 +1,7 @@
 import {
     PRODUCT_DETAIL,
-    GET_PRODUCTS
+    GET_PRODUCTS,
+    GET_PRODUCT_NAME
 } from './actions';
 
 const inicialState = {
@@ -22,6 +23,14 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 products: action.payload
             }
+
+        case GET_PRODUCT_NAME:
+            return {
+                ...state, 
+                products: action.payload
+            }
+    default: return state 
+
 
         case "GET_CATEGORY":
             return {
@@ -78,6 +87,7 @@ const reducer = (state = inicialState, action) => {
                     };
         
                 default: return state 
+
 }
 
 }
