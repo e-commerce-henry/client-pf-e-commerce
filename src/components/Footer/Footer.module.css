@@ -6,7 +6,6 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 10px;
   align-items: center;
   color: #eeeeee;
   font-family: "Lexend Deca", sans-serif;
@@ -38,5 +37,4 @@
   width: 100%;
   position: absolute;
   bottom: -750px;
-  padding: 10px;
 }
