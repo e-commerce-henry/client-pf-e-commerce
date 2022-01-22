@@ -1,6 +1,9 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 
 export function productDetail(id){
@@ -53,23 +56,33 @@ export function getCategory(){
 };
 
 export function filterProductsByCategory(payload){
-    return{
-        type: 'FILTER_BY_CATEGORY',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'FILTER_BY_CATEGORY',
+                payload 
+        }))
+       
     };
 };
 
 export function orderByName(payload) {
-    return {
-        type: 'ORDER_BY_NAME',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'ORDER_BY_NAME',
+                payload
+        }))
     };
 };
 
 export function orderByPrice(payload) {
-    return {
-        type: 'ORDER_BY_PRICE',
-        payload
+    return function (dispatch){
+        return(
+            dispatch({
+                type: 'ORDER_BY_PRICE',
+                payload
+        }))
     };
 };
 

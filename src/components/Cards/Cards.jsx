@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../redux/actions";
+import { orderByName, orderByPrice, getProducts } from "../../redux/actions";
 import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
@@ -26,7 +26,7 @@ function valProduct(e){
 function Cards(){
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
-
+    const [orden, setOrden] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const [productsPerPage, setProductsPerPage] = useState(20);
     const indexOfLastProduct = currentPage * productsPerPage 
@@ -41,6 +41,18 @@ function Cards(){
         setCurrentPage(pageNumber);
     };
 
+    function handleSortN (e) {
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setOrden(`Order ${e.target.value}`);
+    }
+    
+    function handleSortP (e) {
+        e.preventDefault();
+        dispatch(orderByPrice(e.target.value));
+        setOrden(`Order ${e.target.value}`);
+    };
+
     return(
         <div className={Style.allcards}>
         {
@@ -48,9 +60,24 @@ function Cards(){
                 valProduct(e)
             ))
         }
+        
+        <div className={Style.flef}>
+            <select className={Style.dropdownmenuf} onChange={(e) => handleSortP(e)}>
+                <option value="price_asc">Precio ascendente</option>
+                <option value="price_desc">Precio descendente</option>
+            </select>
+            <select className={Style.dropdownmenuf} onChange={(e) => handleSortN(e)}>
+                <option value="name_asc">Nombre ascendente</option>
+                <option value="name_desc">Nombre descendente</option>
+            </select>
+        </div>
+        
         <Pagination productsPerPage = {productsPerPage}
             allProducts = {products.length}
             pagination = {pagination} />
+
+        
+
         </div>
     )
 };

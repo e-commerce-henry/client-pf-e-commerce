@@ -1,6 +1,9 @@
 import {
     PRODUCT_DETAIL,
     GET_PRODUCTS,
+    ORDER_BY_PRICE,
+    ORDER_BY_NAME,
+    FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME
 } from './actions';
 
@@ -8,7 +11,8 @@ const inicialState = {
     products : [],
     allProducts : [],
     details: [],
-    category: []
+    category: [],
+    order: []
 }; 
 const reducer = (state = inicialState, action) => {
     switch (action.type) {
@@ -38,13 +42,13 @@ const reducer = (state = inicialState, action) => {
                 category: action.payload
             }
 
-        case 'FILTER_BY_CATEGORY':
+        case FILTER_BY_CATEGORY:
             return {
                 ...state,
                 products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.category === action.payload)}
                 // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
         
-        case 'ORDER_BY_PRICE':
+        case ORDER_BY_PRICE:
             let sortedAr = action.payload === 'price_asc' ? state.products.sort(function (a, b){
                 if (a.price > b.price) {
                     return 1;
@@ -62,11 +66,11 @@ const reducer = (state = inicialState, action) => {
                 });
                 return {
                     ...state,
-                    products: sortedAr
+                    order: sortedAr
                 };
         
-            case 'ORDER_BY_NAME':
-                let sortedArr = action.payload === 'name' ? state.products.sort(function (a, b){
+            case ORDER_BY_NAME:
+                let sortedArr = action.payload === 'name_asc' ? state.products.sort(function (a, b){
                     if (a.name > b.name) {
                         return 1;
                     };
@@ -83,7 +87,7 @@ const reducer = (state = inicialState, action) => {
                     });
                     return {
                         ...state,
-                        products: sortedArr
+                        order: sortedArr
                     };
         
                 default: return state 
