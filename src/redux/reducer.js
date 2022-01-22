@@ -1,5 +1,6 @@
 import {
-    PRODUCT_DETAIL
+    PRODUCT_DETAIL,
+    GET_PRODUCTS
 } from './actions';
 
 const inicialState = {
@@ -13,10 +14,9 @@ const reducer = (state = inicialState, action) => {
         case PRODUCT_DETAIL:
             return {
                 ...state,
-                products: action.payload,
                 details: action.payload
             }
-        case "GET_PRODUCTS":
+        case GET_PRODUCTS:
             return{
                 ...state,
                 products: action.payload
@@ -36,3 +36,4 @@ const reducer = (state = inicialState, action) => {
 
 }
 export default reducer; 
+
