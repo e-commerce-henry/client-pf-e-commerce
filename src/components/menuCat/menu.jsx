@@ -1,17 +1,10 @@
 import React,  { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Style from './menu.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { DropdownItem , Dropdown , DropdownMenu, DropdownToggle} from "reactstrap";
 import { filterProductsByCategory, getCategory } from '../../redux/actions';
 
 
 export default function Menu(){
-    const [dropdown , setDropdown] = useState(false); 
-    const openCloseMenu = ()=>{
-        setDropdown(!dropdown)
-    }
-
     const dispatch = useDispatch()
     const category = useSelector(state => state.category)
 
@@ -24,10 +17,9 @@ export default function Menu(){
     };
 
     return(
-        <div className={Style.main}>            
+        <div className={Style.fle}>            
                 <select className={Style.dropdownmenu} onChange={e => handleFilterCategory(e)}>
-                <option value='none'>Ver todo</option> 
-
+                    <option value='none'>Ver todo</option> 
                     {
                             category.map( cat => {
                                 const {name, id} = cat
