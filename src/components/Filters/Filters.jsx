@@ -1,31 +1,44 @@
-import React,  { useState } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { orderByName, orderByPrice, getProducts } from '../../redux/actions';
 import Style from './Filters.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { DropdownItem , Dropdown , DropdownMenu, DropdownToggle} from "reactstrap";
 
 function Filters(){
-    const [dropdown , setDropdown] = useState(false); 
-    const openCloseMenu = ()=>{
-        setDropdown(!dropdown)
+    const dispatch = useDispatch();
+    const [orden, setOrden] = useState('');
+
+    useEffect (() => {
+        dispatch(getProducts());
+    }, []); 
+
+    const [currentPage,setCurrentPage] = useState(1);
+
+
+    function handleSortN (e) {
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1);
+        setOrden(`Order ${e.target.value}`);
     }
+    
+    function handleSortP (e) {
+        e.preventDefault();
+        dispatch(orderByPrice(e.target.value));
+        setCurrentPage(1);
+        setOrden(`Order ${e.target.value}`);
+    };
+
     return(
-        <div className={Style.main}>
-            <Dropdown isOpen = {dropdown} toggle={openCloseMenu}> 
-            {/* direction='right' */}
-                <DropdownToggle caret className={Style.fle}>
-                    Filtrar por
-                </DropdownToggle>
-                <DropdownMenu className={Style.dropdownmenu}>
-                    <DropdownItem header> Filtros</DropdownItem>
-                    <DropdownItem>Precio</DropdownItem>
-                    <DropdownItem>Marca</DropdownItem>
-                    <DropdownItem>Filtro 3</DropdownItem>
-                    <DropdownItem>Filtro 4</DropdownItem>
-                    <DropdownItem>Filtro 5 </DropdownItem>
-                </DropdownMenu>
-
-            </Dropdown>
-
+        <div className={Style.flef}>
+            <select className={Style.dropdownmenuf} onChange={e => handleSortP(e)}>
+                <option value="price_asc">Precio ascendente</option>
+                <option value="price_desc">Precio descendente</option>
+            </select>
+            <select className={Style.dropdownmenuf} onChange={e => handleSortN(e)}>
+                <option value="name_asc">Nombre ascendente</option>
+                <option value="name_desc">Nombre descendente</option>
+            </select>
         </div>
     )
 }
