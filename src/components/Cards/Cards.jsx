@@ -63,12 +63,14 @@ function Cards(){
         
         <div className={Style.flef}>
             <select className={Style.dropdownmenuf1} onChange={(e) => handleSortP(e)}>
+                <option hidden>Precio</option>
                 <option value="price_asc">Precio 🡩</option>
                 <option value="price_desc">Precio 🡫</option>
             </select>
             <select className={Style.dropdownmenuf2} onChange={(e) => handleSortN(e)}>
-                <option value="name_asc">Nombre 🡩</option>
-                <option value="name_desc">Nombre 🡫</option>
+                <option hidden>Nombre</option>
+                <option value="name_asc"> A 🡪 Z</option>
+                <option value="name_desc">Z 🡪 A</option>
             </select>
         </div>
         

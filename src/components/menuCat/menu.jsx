@@ -19,6 +19,7 @@ export default function Menu(){
     return(
         <div className={Style.fle}>            
                 <select className={Style.dropdownmenu} onChange={e => handleFilterCategory(e)}>
+                    <option hidden>Categorías</option>
                     <option value='none'>Ver todo</option> 
                     {
                             category.map( cat => {
