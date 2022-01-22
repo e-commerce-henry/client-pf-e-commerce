@@ -17,7 +17,7 @@ function handleOnClick(e){
 }
     return(
         <>
-            <div className={Style.container} >
+            <div className={Style.containernav} >
             <div>
                 <input type='text' placeholder='Search...' onChange={(e) => handleInputChange(e) }/>
                 <button onClick ={(e) => handleOnClick(e)} className={Style.butt}>Buscar</button>
