@@ -17,17 +17,14 @@ export default function Brand(){
     };
 
     return(
-        <div className={Style.brandcontainer}>            
+        <div className={Style.brandcontainer}>           
                 <select className={Style.dropdownbrand} onChange={e => handleFilterBrand(e)}>
                     <option hidden>Marcas</option>
                     <option value='none'>Ver todo</option> 
                     <option value='none'>Acer</option> 
                     <option value='none'>Amazon</option> 
                     <option value='none'>Apple</option> 
-                    <option value='none'>Asus</option> 
-                    
-                    
-       
+                    <option value='none'>Asus</option>
                 </select>
         </div>
     )
