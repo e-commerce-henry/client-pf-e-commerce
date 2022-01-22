@@ -1,15 +1,30 @@
-import Style from './NavBar.module.css'
+import React from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {getProductName} from "../../redux/actions";
+import Style from './NavBar.module.css';
 
-function NavBar(){
+export default function SearchBar(){
+    const dispatch = useDispatch();
+    const [name , setName] = useState("")
+
+function handleInputChange(e){
+    setName(e.target.value)
+    console.log(name)
+}
+function handleOnClick(e){
+    dispatch(getProductName(name))
+}
     return(
         <>
             <div className={Style.container} >
             <div>
-                <input type='text' placeholder='Search...' />
+                <input type='text' placeholder='Search...' onChange={(e) => handleInputChange(e) }/>
+                <button onClick ={(e) => handleOnClick(e)} className={Style.butt}>Buscar</button>
+
             </div>
             </div>
         </>
     )
 };
 
-export default NavBar;

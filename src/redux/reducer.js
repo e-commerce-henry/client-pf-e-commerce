@@ -3,7 +3,8 @@ import {
     GET_PRODUCTS,
     ORDER_BY_PRICE,
     ORDER_BY_NAME,
-    FILTER_BY_CATEGORY
+    FILTER_BY_CATEGORY,
+    GET_PRODUCT_NAME
 } from './actions';
 
 const inicialState = {
@@ -27,19 +28,27 @@ const reducer = (state = inicialState, action) => {
                 products: action.payload
             }
 
+        case GET_PRODUCT_NAME:
+            return {
+                ...state, 
+                products: action.payload
+            }
+    default: return state 
+
+
         case "GET_CATEGORY":
             return {
                 ...state,
                 category: action.payload
             }
 
-        case 'FILTER_BY_CATEGORY':
+        case FILTER_BY_CATEGORY:
             return {
                 ...state,
                 products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.category === action.payload)}
                 // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
         
-        case 'ORDER_BY_PRICE':
+        case ORDER_BY_PRICE:
             let sortedAr = action.payload === 'price_asc' ? state.products.sort(function (a, b){
                 if (a.price > b.price) {
                     return 1;
@@ -60,7 +69,7 @@ const reducer = (state = inicialState, action) => {
                     order: sortedAr
                 };
         
-            case 'ORDER_BY_NAME':
+            case ORDER_BY_NAME:
                 let sortedArr = action.payload === 'name_asc' ? state.products.sort(function (a, b){
                     if (a.name > b.name) {
                         return 1;
@@ -82,6 +91,7 @@ const reducer = (state = inicialState, action) => {
                     };
         
                 default: return state 
+
 }
 
 }

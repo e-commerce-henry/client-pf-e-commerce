@@ -4,7 +4,7 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
-
+export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 
 export function productDetail(id){
     return async function (dispatch){
@@ -28,6 +28,23 @@ export function getProducts(){
         )
     }
 }
+
+
+export function getProductName(name){
+        return async function (dispatch){
+            try {
+            let json = await axios.get("http://localhost:3001/products?name=" + name)
+            dispatch ({
+                type: GET_PRODUCT_NAME, 
+                payload: json.data
+            })
+             
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }}
+    
 
 export function getCategory(){
     return async function (dispatch){
@@ -68,3 +85,4 @@ export function orderByPrice(payload) {
         }))
     };
 };
+
