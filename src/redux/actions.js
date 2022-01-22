@@ -1,10 +1,12 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+
 
 export function productDetail(id){
     return async function (dispatch){
         try {
-            let json = await axios.get(`http://localhost:3001/category/${id}`)
+            let json = await axios.get(`http://localhost:3001/products/${id}`)
             return dispatch({
                 type: PRODUCT_DETAIL,
                 payload: json.data
@@ -19,7 +21,7 @@ export function getProducts(){
     return async function(dispatch){
         const products = await axios('http://localhost:3001/products')
         return(
-            dispatch({type: "GET_PRODUCTS", payload: products.data})
+            dispatch({type: GET_PRODUCTS , payload: products.data})
         )
     }
 }

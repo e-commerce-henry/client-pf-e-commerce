@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import {productDetail} from '../../redux/actions'; 
-import Style from './ProductDetail.module.css'
+import Style from './ProductDetails.module.css'
 
 export default function ProductDetail(){
     const dispatch = useDispatch()
