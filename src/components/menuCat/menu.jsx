@@ -26,6 +26,8 @@ export default function Menu(){
     return(
         <div className={Style.main}>            
                 <select className={Style.dropdownmenu} onChange={e => handleFilterCategory(e)}>
+                <option value='none'>Ver todo</option> 
+
                     {
                             category.map( cat => {
                                 const {name, id} = cat
