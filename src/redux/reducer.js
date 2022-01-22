@@ -1,6 +1,7 @@
 import {
     PRODUCT_DETAIL,
-    GET_PRODUCTS
+    GET_PRODUCTS,
+    GET_PRODUCT_NAME
 } from './actions';
 
 const inicialState = {
@@ -18,6 +19,11 @@ const reducer = (state = inicialState, action) => {
         case GET_PRODUCTS:
             return{
                 ...state,
+                products: action.payload
+            }
+        case GET_PRODUCT_NAME:
+            return {
+                ...state, 
                 products: action.payload
             }
     default: return state 

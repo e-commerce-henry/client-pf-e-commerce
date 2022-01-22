@@ -20,3 +20,24 @@ input::placeholder {
   font-size: 15px;
   padding: 5px;
 }
+.butt{
+  font-size:15px;
+  font-family:Arial;
+  width:100px;
+  height:37px;
+  border-width:1px;
+  color:rgba(240, 240, 240, 1);
+  border-color:rgba(255, 109, 46, 0.96);
+  font-weight:bold;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  box-shadow:inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
+  text-shadow:inset 0px 1px 0px rgba(48, 56, 65, 1);
+  background:linear-gradient(rgba(160, 160, 160, 1), rgba(48, 56, 65, 1));
+}
+
+.butt:hover {
+    background: linear-gradient(rgba(48, 56, 65, 1), rgba(160, 160, 160, 1));
+}
