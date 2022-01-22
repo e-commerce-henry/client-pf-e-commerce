@@ -1,7 +1,11 @@
+import React from 'react';
 import Footer from "../Footer/Footer"
 import Head from "../Head/Head"
 import NavBar from "../Navbar/NavBar"
 import HomeOrganization from "../HomeOrganization/HomeOrganization"
+
+
+
 
 export default function Home(){
     return(

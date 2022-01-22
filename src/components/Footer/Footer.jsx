@@ -4,6 +4,7 @@ import {Link }from 'react-router-dom';
 function Footer(){
     return(
         <>
+            <div className={Style.allfooter}>
             <div className={Style.container} >
             
                 <div><a href='#'>Sobre nosotros</a></div>
@@ -23,6 +24,7 @@ function Footer(){
             </div>
             <div className={Style.copy}>
                 <p>&copy; E - commerce | 2022</p>
+            </div>
             </div>
         </>
 
