@@ -24,6 +24,11 @@
   font-size: 17px;
 }
 
-.dropdownmenuf option:hover {
-  background-color: red;
+.dropdownmenuf:hover {
+  color: #ff5722;
+  cursor: pointer;
+}
+
+.dropdownmenuf::selection {
+  background-color: #ff5722;
 }
