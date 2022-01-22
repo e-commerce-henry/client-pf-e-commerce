@@ -1,7 +1,7 @@
 .thebar {
   background-color: transparent;
   position: absolute;
-  top: 113px;
+  top: 111px;
   bottom: 0%;
   width: 100%;
   display: grid;
@@ -13,7 +13,7 @@
 
 .lateral {
   grid-area: 1 / 1 / 2 / 2;
-  background-color: #303841;
+  background-color: #00adb5;
 }
 
 .central {
