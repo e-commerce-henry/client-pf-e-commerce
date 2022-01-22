@@ -1,10 +1,12 @@
 import Style from './Card.module.css';
+import { Link } from "react-router-dom";
 
 function Card({key, id, name, price, img, brand}){
     return(
         <>
             <div className={Style.container} >
-                <div className={Style.productname}>{name}</div>
+            <Link to={`/products/${id}`}>
+                <div className={Style.productname}>{name}</div> </Link>
                 <div className={Style.boximg}><img className={Style.productimg} src={img} alt='not found' /></div>
                 <div className={Style.productprice}> $ {price}</div>
                 <div className={Style.producticons}>
