@@ -1,6 +1,9 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 
 
 export function productDetail(id){

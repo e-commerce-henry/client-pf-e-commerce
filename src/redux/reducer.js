@@ -1,13 +1,17 @@
 import {
     PRODUCT_DETAIL,
-    GET_PRODUCTS
+    GET_PRODUCTS,
+    ORDER_BY_PRICE,
+    ORDER_BY_NAME,
+    FILTER_BY_CATEGORY
 } from './actions';
 
 const inicialState = {
     products : [],
     allProducts : [],
     details: [],
-    category: []
+    category: [],
+    order: []
 }; 
 const reducer = (state = inicialState, action) => {
     switch (action.type) {
@@ -53,11 +57,11 @@ const reducer = (state = inicialState, action) => {
                 });
                 return {
                     ...state,
-                    products: sortedAr
+                    order: sortedAr
                 };
         
             case 'ORDER_BY_NAME':
-                let sortedArr = action.payload === 'name' ? state.products.sort(function (a, b){
+                let sortedArr = action.payload === 'name_asc' ? state.products.sort(function (a, b){
                     if (a.name > b.name) {
                         return 1;
                     };
@@ -74,7 +78,7 @@ const reducer = (state = inicialState, action) => {
                     });
                     return {
                         ...state,
-                        products: sortedArr
+                        order: sortedArr
                     };
         
                 default: return state 

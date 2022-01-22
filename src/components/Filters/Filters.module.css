@@ -25,10 +25,5 @@
 }
 
 .dropdownmenuf:hover {
-  color: #ff5722;
   cursor: pointer;
-}
-
-.dropdownmenuf::selection {
-  background-color: #ff5722;
 }
