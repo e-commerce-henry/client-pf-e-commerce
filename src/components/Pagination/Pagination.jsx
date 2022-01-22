@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pagination.module.css'
+import Style from './Pagination.module.css'
 
 
 export default function Pagination({productsPerPage, allProducts, pagination}){
@@ -10,12 +10,12 @@ export default function Pagination({productsPerPage, allProducts, pagination}){
     }
 
     return(
-        <nav>
-            <ul>
+        <nav className={Style.thepages}>
+            <ul className={Style.ul}>
                 {pageNumbers && pageNumbers.map((num) => (
-                    <div>
-                        <li className='number' key={num}>
-                            <button className='pag' onClick={() => pagination(num)}>
+                    <div className={Style.aver}>
+                        <li className={Style.number} key={num}>
+                            <button className={Style.pag} onClick={() => pagination(num)}>
                                 {num}
                             </button>
                         </li>
