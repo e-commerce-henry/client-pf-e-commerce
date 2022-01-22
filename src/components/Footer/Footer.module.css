@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  /* align-items: flex-end; */
+  align-items: center;
   color: #eeeeee;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;

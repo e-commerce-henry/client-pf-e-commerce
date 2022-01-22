@@ -5,6 +5,8 @@ export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
+export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+
 
 export function productDetail(id){
     return async function (dispatch){
@@ -59,7 +61,18 @@ export function filterProductsByCategory(payload){
     return function (dispatch){
         return(
             dispatch({
-                type: 'FILTER_BY_CATEGORY',
+                type: FILTER_BY_CATEGORY,
+                payload 
+        }))
+       
+    };
+};
+
+export function filterProductsByBrand(payload){
+    return function (dispatch){
+        return(
+            dispatch({
+                type: FILTER_BY_BRAND,
                 payload 
         }))
        
@@ -70,7 +83,7 @@ export function orderByName(payload) {
     return function (dispatch){
         return(
             dispatch({
-                type: 'ORDER_BY_NAME',
+                type: ORDER_BY_NAME,
                 payload
         }))
     };
@@ -80,7 +93,7 @@ export function orderByPrice(payload) {
     return function (dispatch){
         return(
             dispatch({
-                type: 'ORDER_BY_PRICE',
+                type: ORDER_BY_PRICE,
                 payload
         }))
     };
