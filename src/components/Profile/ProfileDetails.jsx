@@ -17,7 +17,7 @@ export default function ProfileDetails(){
                 <button className={Style.btnprofileselected} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
                 <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
             </div>
-            <Footer />
+            
             <div className={Style.details}>
                 <ul>
                     <li>Nombre: (nombre del cliente) <button className={Style.modificar}>Modificar</button></li>
@@ -25,7 +25,8 @@ export default function ProfileDetails(){
                     <li>Email: (email del cliente) <button className={Style.modificar}>Modificar</button></li>
                     <li>Dirección: (dirección del cliente) <button className={Style.modificar}>Modificar</button></li>
                 </ul>
-            </div>   
+            </div>
+            <div className={Style.detailsfooter}><Footer /></div>
         </div>
     )
 }

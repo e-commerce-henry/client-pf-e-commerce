@@ -33,3 +33,9 @@
   margin-right: 5%;
   background-color: transparent;
 }
+
+.historyfooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

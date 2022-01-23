@@ -2,7 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { orderByName, orderByPrice, getProducts } from "../../redux/actions";
+import { orderByName, orderByPrice, getProducts, filterProductsByCategory, getCategory, filterProductsByBrand } from "../../redux/actions";
 import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
@@ -27,6 +27,7 @@ function valProduct(e){
 function Cards(){
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
+    const category = useSelector(state => state.category)
     const [orden, setOrden] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const [productsPerPage, setProductsPerPage] = useState(20);
@@ -36,6 +37,7 @@ function Cards(){
 
     useEffect(() =>{
         dispatch(getProducts())
+        dispatch(getCategory())
     },[])
 
     const pagination = (pageNumber) => {
@@ -52,6 +54,14 @@ function Cards(){
         e.preventDefault();
         dispatch(orderByPrice(e.target.value));
         setOrden(`Order ${e.target.value}`);
+    };
+
+    function handleFilterCategory(e){
+        dispatch(filterProductsByCategory(e.target.value));
+    };
+
+    function handleFilterBrand(e){
+        dispatch(filterProductsByBrand(e.target.value));
     };
 
     return(
@@ -71,10 +81,29 @@ function Cards(){
                 <option value="price_asc">Precio 🡩</option>
                 <option value="price_desc">Precio 🡫</option>
             </select>
-            <select className={Style.dropdownmenuf2} onChange={(e) => handleSortN(e)}>
+            <select className={Style.dropdownmenuf1} onChange={(e) => handleSortN(e)}>
                 <option hidden>Nombre</option>
                 <option value="name_asc"> A 🡪 Z</option>
                 <option value="name_desc">Z 🡪 A</option>
+            </select>
+            <select className={Style.dropdownmenuf1} onChange={e => handleFilterBrand(e)}>
+                <option hidden>Marcas</option>
+                <option value='seeall'>Ver todo</option> 
+                {
+                    products.map( p =>  <option value={p.brand}>{p.brand}</option>)
+                }  
+            </select>
+            <select className={Style.dropdownmenuf1} onChange={e => handleFilterCategory(e)}>
+                <option hidden>Categorías</option>
+                <option value='none'>Ver todo</option> 
+                {
+                    category.map( cat => {
+                        const {name, id} = cat
+                        return (
+                        <option value={name} key={id}>{`${name}`}</option> 
+                        )
+                    })
+                }               
             </select>
         </div>
         

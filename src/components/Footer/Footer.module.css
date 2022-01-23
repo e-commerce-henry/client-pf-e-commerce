@@ -1,20 +1,19 @@
 .container {
   /* position: absolute;
   bottom: 0; */
-  position: fixed;
-    bottom: 0;
-    gap: 20px;
-    padding: 22px;
-    height: 12%;
-    background-color: #303841;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #eeeeee;
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 300;
-    font-size: 15px;
+  /* position: fixed;
+  bottom: 0; */
+  padding: 12px;
+  height: 9%;
+  background-color: #303841;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #eeeeee;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .container div a {
@@ -27,22 +26,20 @@
 }
 
 .copy {
-  position: fixed;
-	bottom: 0;
-  gap: 20px;
-	padding: 2px;
-
+  /* position: fixed;
+  bottom: 0; */
+  padding: 2px;
   background-color: #303841;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eeeeee;
-  height: 40px;
+  height: 30px;
   width: 100%;
 }
 
-.allfooter {
+/* .allfooter {
   width: 100%;
   position: absolute;
   bottom: -750px;
-}
+} */
