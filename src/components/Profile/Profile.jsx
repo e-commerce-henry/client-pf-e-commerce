@@ -16,7 +16,7 @@ export default function Profile(){
                 <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
                 <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
             </div>
-            <Footer />
+            <div className={Style.profilefooter}></div><Footer />
         </div>
     )
 }

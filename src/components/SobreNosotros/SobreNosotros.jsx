@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const SobreNosotros = () => {
   return <div>
     <Head />
-    <Footer />
+    <div className='nosfooter'><Footer /></div>
   </div>;
 };
 

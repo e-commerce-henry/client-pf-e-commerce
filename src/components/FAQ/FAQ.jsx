@@ -57,7 +57,7 @@ const FAQ = () => {
         </div>
       <br />
       <Link to='/'><button className="volver">Volver</button></Link>
-      <Footer />
+      <div className="faqfooter"><Footer /></div>
 </div>
     );
 };

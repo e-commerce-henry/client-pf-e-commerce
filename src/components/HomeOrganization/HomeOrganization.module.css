@@ -1,14 +1,13 @@
 .thebar {
   background-color: transparent;
   position: absolute;
+  height: 100px;
   top: 90px;
   bottom: 0%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-rows: 1fr 1fr;
 }
 
 .lateral {
@@ -20,6 +19,10 @@
   grid-area: 1 / 2 / 2 / 7;
 }
 
+.footer {
+  grid-area: 2 / 1 / 3 / 7;
+}
+
 @media only screen and (max-width: 768px) {
   .thebar {
     top: 110px;
@@ -27,7 +30,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     height: 1426px;
-
   }
 
   .lateral {
