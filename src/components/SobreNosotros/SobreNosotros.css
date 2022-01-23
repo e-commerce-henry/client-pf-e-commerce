@@ -1,3 +1,66 @@
+
+.title1 {
+    font-family: "Lexend Deca", sans-serif;
+    position: relative;
+    right: -486px;
+    bottom: 19px;
+    color: #00ADB5;
+    font-size: 30px;
+}
+
+.title2 {
+    font-family: "Lexend Deca", sans-serif;
+    position: relative;
+    right:  -550px;
+    bottom: 87px;
+    justify-content: center;
+    color: #00ADB5;
+    font-size: 30px;
+}
+.title3 {
+    font-family: "Lexend Deca", sans-serif;
+    position: relative;
+    right: -550px;
+    bottom: 132px;
+    justify-content: center;
+    color:#00ADB5;
+    font-size: 30px;
+}
+
+
+.styleP {
+    margin-left: 20px;
+    font-family: "Lexend Deca", sans-serif;
+    text-align:justify;
+    color:#303841;
+    margin-right: 20px;
+    position: relative;
+    right: 0px;
+    bottom: 49px;
+    font-size: 17px;
+}
+.styleP1 {
+    margin-left: 20px;
+    font-family: "Lexend Deca", sans-serif;
+    text-align:justify;
+    color:#303841;
+    margin-right: 20px;
+    position: relative;
+    right: 0px;
+    bottom: 112px;
+    font-size: 17px;
+}
+.styleP2 {
+    margin-left: 20px;
+    font-family: "Lexend Deca", sans-serif;
+    text-align:justify;
+    color:#303841;
+    margin-right: 20px;
+    position: relative;
+    right: 0px;
+    bottom: 157px;
+    font-size: 17px;
+}
 .nosfooter {
   position: absolute;
   bottom: 0;
