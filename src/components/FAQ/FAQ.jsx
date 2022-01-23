@@ -55,8 +55,6 @@ const FAQ = () => {
         arrowColor: "black",
         }} />
         </div>
-      <br />
-      <Link to='/'><button className="volver">Volver</button></Link>
       <div className="faqfooter"><Footer /></div>
 </div>
     );
