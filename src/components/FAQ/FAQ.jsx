@@ -55,7 +55,7 @@ const FAQ = () => {
         arrowColor: "black",
         }} />
         </div>
-      <Footer />
+      <div className="faqfooter"><Footer /></div>
 </div>
     );
 };

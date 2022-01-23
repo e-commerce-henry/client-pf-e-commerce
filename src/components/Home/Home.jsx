@@ -17,7 +17,6 @@ export default function Home(){
         <Head />
         <NavBar />
         <HomeOrganization />
-        <Footer />
         </>
     )
 };

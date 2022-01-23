@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const TerminosYCondiciones = () => {
   return <div>
     <Head />
-    <Footer />
+    <div className='termfooter'><Footer /></div>
   </div>;
 };
 

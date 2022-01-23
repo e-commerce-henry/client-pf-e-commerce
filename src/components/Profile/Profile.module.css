@@ -24,3 +24,9 @@
 .btnprofile:hover {
   color: #ff5722;
 }
+
+.profilefooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

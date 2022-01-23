@@ -14,6 +14,8 @@ const inicialState = {
     details: [],
     category: [],
     order: [],
+    bycategory: [],
+    bybrand: []
 }; 
 const reducer = (state = inicialState, action) => {
     switch (action.type) {
@@ -26,7 +28,8 @@ const reducer = (state = inicialState, action) => {
         case GET_PRODUCTS:
             return{
                 ...state,
-                products: action.payload
+                products: action.payload,
+                allProducts: action.payload
             }
 
         case GET_PRODUCT_NAME:
@@ -44,13 +47,13 @@ const reducer = (state = inicialState, action) => {
         case FILTER_BY_CATEGORY:
             return {
                 ...state,
-                products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.category === action.payload)}
-                // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
+                // bycategory: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.category === action.payload)}
+                products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
         
         case FILTER_BY_BRAND:
             return {
                 ...state,
-                products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.brand === action.payload)}
+                products: action.payload === "seeall" ? state.allProducts : state.products.filter(e => e.brand === action.payload)}
                 // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
 
         case ORDER_BY_PRICE:
@@ -74,28 +77,28 @@ const reducer = (state = inicialState, action) => {
                     order: sortedAr
                 };
         
-            case ORDER_BY_NAME:
-                let sortedArr = action.payload === 'name_asc' ? state.products.sort(function (a, b){
+        case ORDER_BY_NAME:
+            let sortedArr = action.payload === 'name_asc' ? state.products.sort(function (a, b){
+                if (a.name > b.name) {
+                    return 1;
+                };
+                if (b.name > a.name) {
+                    return -1;
+                };
+                return 0;
+            }) :
+                state.products.sort(function (a, b) {
                     if (a.name > b.name) {
-                        return 1;
-                    };
-                    if (b.name > a.name) {
                         return -1;
                     };
                     return 0;
-                }) :
-                    state.products.sort(function (a, b) {
-                        if (a.name > b.name) {
-                            return -1;
-                        };
-                        return 0;
-                    });
-                    return {
-                        ...state,
-                        order: sortedArr
-                    };
-        
-                default: return state 
+                });
+                return {
+                    ...state,
+                    order: sortedArr
+                };
+    
+            default: return state 
 
 }
 
