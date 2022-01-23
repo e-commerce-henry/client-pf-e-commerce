@@ -26,6 +26,7 @@ export function getProducts(){
     }
 }
 
+
 export function getProductName(name){
         return async function (dispatch){
             try {
@@ -41,3 +42,32 @@ export function getProductName(name){
         
     }}
     
+export function getCategory(){
+    return async function (dispatch){
+        const category = await axios('http://localhost:3001/category')
+        return(
+            dispatch({type: "GET_CATEGORY", payload: category.data})
+        )
+    }
+};
+
+export function filterProductsByCategory(payload){
+    return{
+        type: 'FILTER_BY_CATEGORY',
+        payload
+    };
+};
+
+export function orderByName(payload) {
+    return {
+        type: 'ORDER_BY_NAME',
+        payload
+    };
+};
+
+export function orderByPrice(payload) {
+    return {
+        type: 'ORDER_BY_PRICE',
+        payload
+    };
+};

@@ -12,37 +12,11 @@ import Pagination from "../Pagination/Pagination"
 
 
 export default function Home(){
-
-    const allProducts = useSelector ((state) => state.allProducts);
-
-    const dispatch = useDispatch();
-
-    const [currentPage,setCurrentPage] = useState(1);
-    const [productsPerPage, setProductsPerPage] = useState(20);
-    const indexOfLastProduct = currentPage * productsPerPage 
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage 
-    const currentProducts = allProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-    
-    const pagination = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-    
-    useEffect (() => {
-        dispatch(getProducts());
-    }, [dispatch]); 
-
-
-
-
-
     return(
         <>
         <Head />
         <NavBar />
         <HomeOrganization />
-        <Pagination productsPerPage = {productsPerPage}
-                    allProducts = {allProducts.length}
-                    pagination = {pagination} />
         <Footer />
         </>
     )
