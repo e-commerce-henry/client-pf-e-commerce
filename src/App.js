@@ -11,6 +11,7 @@ import ProductDetail from './components/ProductDetails/ProductDetails';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import TerminoYcondiciones from './components/TerminosYCondiciones/TerminosYCondiciones';
 import PoliticaDePrivacidad from './components/PoliticaDePrivacidad/PoliticaDePrivacidad';
+import Equipo from './components/Equipo/Equipo';
 
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/sobreNosotros" element={<SobreNosotros />} />
           <Route path= "/terminoYcondiciones" element={<TerminoYcondiciones />} />
           <Route path= "/politicaDePrivacidad" element={<PoliticaDePrivacidad />} />
+          <Route path= "/equipo" element={<Equipo />} />
         </Routes>
       </>  
   );
