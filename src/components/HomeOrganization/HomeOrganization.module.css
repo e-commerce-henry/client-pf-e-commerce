@@ -1,7 +1,7 @@
 .thebar {
   background-color: transparent;
   position: absolute;
-  top: 111px;
+  top: 90px;
   bottom: 0%;
   width: 100%;
   display: grid;
@@ -18,4 +18,23 @@
 
 .central {
   grid-area: 1 / 2 / 2 / 7;
+}
+
+@media only screen and (max-width: 768px) {
+  .thebar {
+    top: 110px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    height: 1426px;
+
+  }
+
+  .lateral {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .central {
+    grid-area: 2 / 1 / 6 / 2;
+  }
 }

@@ -12,13 +12,11 @@ export default function Pagination({productsPerPage, allProducts, pagination}){
         <nav className={Style.thepages}>
             <ul className={Style.ul}>
                 {pageNumbers && pageNumbers.map((num) => (
-                    <div className={Style.aver}>
                         <li className={Style.number} key={num}>
                             <button className={Style.pag} onClick={() => pagination(num)}>
                                 {num}
                             </button>
                         </li>
-                    </div>
                ))}
             </ul>
         </nav>
