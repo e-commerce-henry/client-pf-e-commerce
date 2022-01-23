@@ -2,6 +2,11 @@ import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
+export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY'
+
 
 export function productDetail(id){
     return async function (dispatch){

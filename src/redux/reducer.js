@@ -34,7 +34,6 @@ const reducer = (state = inicialState, action) => {
                 ...state, 
                 products: action.payload
             }
-    default: return state 
 
         case "GET_CATEGORY":
             return {
