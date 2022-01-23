@@ -11,7 +11,7 @@ import Footer from '../Footer/Footer';
 const PoliticaDePrivacidad = () => {
   return <div>
     <Head />
-    <Footer />
+    <div className='polfooter'><Footer /></div>
   </div>;
 };
 
