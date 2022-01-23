@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,8 +57,11 @@ function Cards(){
     return(
         <div className={Style.allcards}>
         {
-            currentProducts.map(e =>(
+            currentProducts.map(e =>
+           
+            (
                 valProduct(e)
+               
             ))
         }
         
@@ -77,9 +81,6 @@ function Cards(){
         <Pagination productsPerPage = {productsPerPage}
             allProducts = {products.length}
             pagination = {pagination} />
-
-        
-
         </div>
     )
 };

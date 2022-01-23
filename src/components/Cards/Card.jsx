@@ -2,15 +2,16 @@ import React from 'react';
 import Style from './Card.module.css';
 import { Link } from "react-router-dom";
 
-function Card({key, id, name, price, img, brand}){
+function Card({ id, name, price, img, brand}){
     return(
-        <>
+        <div>
             <Link to={`/products/${id}`} style={{ textDecoration: 'none' }}>
                 <div className={Style.container} >
                     <div className={Style.productname}>{name}</div> 
                     <div className={Style.boximg}><img className={Style.productimg} src={img} alt='not found' /></div>
 
-                    <div className={Style.productprice}>${Number(Math.ceil(price)).toLocaleString()}</div>
+                    <div className={Style.productprice}>$
+                    {Number(Math.ceil(price)).toLocaleString()}</div>
 
                     <div className={Style.producticons}>
                         <button className={Style.productbtns}>
@@ -27,7 +28,7 @@ function Card({key, id, name, price, img, brand}){
                     </div>         
                 </div>
             </Link>
-        </>
+        </div>
         )
     };
     

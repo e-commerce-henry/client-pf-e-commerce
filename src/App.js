@@ -8,6 +8,10 @@ import ProfileDetails from './components/Profile/ProfileDetails';
 import History from './components/Profile/History';
 import FAQ from './components/FAQ/FAQ';
 import ProductDetail from './components/ProductDetails/ProductDetails';
+import SobreNosotros from './components/SobreNosotros/SobreNosotros';
+import TerminoYcondiciones from './components/TerminosYCondiciones/TerminosYCondiciones';
+import PoliticaDePrivacidad from './components/PoliticaDePrivacidad/PoliticaDePrivacidad';
+
 
 
         
@@ -24,6 +28,9 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path= "/products/:id" element = {<ProductDetail/>} />
+          <Route path="/sobreNosotros" element={<SobreNosotros />} />
+          <Route path= "/terminoYcondiciones" element={<TerminoYcondiciones />} />
+          <Route path= "/politicaDePrivacidad" element={<PoliticaDePrivacidad />} />
         </Routes>
       </>  
   );
