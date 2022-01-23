@@ -1,29 +1,28 @@
 .title1 {
     font-family: "Lexend Deca", sans-serif;
     position: relative;
-    right: -486px;
+    right: -21px;
     bottom: 19px;
     color: #00ADB5;
-    font-size: 30px;
+    font-size: 50px;
 }
-
 .title2 {
     font-family: "Lexend Deca", sans-serif;
     position: relative;
-    right:  -550px;
-    bottom: 87px;
+    right: -17px;
+    bottom: 76px;
     justify-content: center;
     color: #00ADB5;
-    font-size: 30px;
+    font-size: 40px;
 }
 .title3 {
     font-family: "Lexend Deca", sans-serif;
     position: relative;
-    right: -550px;
+    right: -19px;
     bottom: 132px;
     justify-content: center;
-    color:#00ADB5;
-    font-size: 30px;
+    color: #00ADB5;
+    font-size: 40px;
 }
 
 
