@@ -11,7 +11,7 @@ export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
 export function productDetail(id){
     return async function (dispatch){
         try {
-            let json = await axios.get(`http://localhost:3001/products/${id}`)
+            let json = await axios.get(`http://143.244.159.235:3001/products/${id}`)
             return dispatch({
                 type: PRODUCT_DETAIL,
                 payload: json.data
@@ -24,7 +24,7 @@ export function productDetail(id){
 
 export function getProducts(){
     return async function(dispatch){
-        const products = await axios('http://localhost:3001/products')
+        const products = await axios('http://143.244.159.235:3001/products')
         return(
             dispatch({type: GET_PRODUCTS , payload: products.data})
         )
@@ -35,7 +35,7 @@ export function getProducts(){
 export function getProductName(name){
         return async function (dispatch){
             try {
-            let json = await axios.get("http://localhost:3001/products?name=" + name)
+            let json = await axios.get("http://143.244.159.235:3001/products?name=" + name)
             dispatch ({
                 type: GET_PRODUCT_NAME, 
                 payload: json.data
@@ -50,7 +50,7 @@ export function getProductName(name){
 
 export function getCategory(){
     return async function (dispatch){
-        const category = await axios('http://localhost:3001/category')
+        const category = await axios('http://143.244.159.235:3001/category')
         return(
             dispatch({type: "GET_CATEGORY", payload: category.data})
         )
