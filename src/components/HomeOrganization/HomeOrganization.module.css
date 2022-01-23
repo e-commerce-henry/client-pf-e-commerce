@@ -13,6 +13,7 @@
 .lateral {
   grid-area: 1 / 1 / 2 / 2;
   background-color: #00adb5;
+  height: 100%;
 }
 
 .central {
@@ -37,6 +38,10 @@
   }
 
   .central {
-    grid-area: 2 / 1 / 6 / 2;
+    grid-area: 2 / 1 / 5 / 2;
+  }
+
+  .footer {
+    grid-area: 5 / 1 / 6 / 2;
   }
 }
