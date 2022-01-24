@@ -161,4 +161,6 @@ const TerminosYCondiciones = () => {
   )
 }
 
+
 export default TerminosYCondiciones;
+
