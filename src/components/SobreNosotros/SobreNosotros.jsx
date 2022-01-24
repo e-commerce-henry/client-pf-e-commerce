@@ -2,6 +2,7 @@ import React from 'react';
 import './SobreNosotros.css';
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
+import {Link} from 'react-router-dom'
 
 const SobreNosotros = () => {
   return (
