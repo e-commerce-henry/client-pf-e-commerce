@@ -60,6 +60,12 @@
     bottom: 157px;
     font-size: 17px;
 }
+
+.nosfooter {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
 .contacto {
     font-family: "Lexend Deca", sans-serif;
     position: relative;
