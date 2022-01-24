@@ -140,7 +140,7 @@ const TerminosYCondiciones = () => {
         <div className='titulo'><b>16 - Indemnidad</b></div><br></br>
         
         El Usuario mantendrá indemne a <b>MARCA DEL E-COMMERCE</b>, así como a sus filiales, empresas controladas y/o controlantes, funcionarios, directivos, sucesores, administradores, representantes y empleados, por cualquier reclamo iniciado por otros Usuarios, terceros o por cualquier Organismo, relacionado con sus actividades en el Sitio, el cumplimiento y/o el incumplimiento de los Términos y Condiciones Generales o demás Políticas, así como respecto de cualquier violación de leyes o derechos de terceros.<br></br>
-        A tal fin, el Usuario faculta a <b>MARCA DEL E-COMMERCE</b> a: i) intervenir y representarlo en dichos reclamos, pudiendo celebrar los acuerdos transaccionales que considere oportunos y que tiendan a evitar mayores costos y/o evitar eventuales contingencias sin limitación, en su nombre y representación; ii) retener y debitar de su Cuenta de Mercado Pago y/o de la(s) cuenta(s) bancaria(s) registrada(s) en la Cuenta Mercado Pago los fondos existentes y/o futuros para recuperar cualquier gasto incurrido en relación a los supuestos del párrafo anterior, los cuales podrán incluir, entre otros, los honorarios de los letrados intervinientes y las costas judiciales en una cantidad razonable, y/o iii) generar débitos específicos en su facturación.<br></br>
+        A tal fin, el Usuario faculta a <b>MARCA DEL E-COMMERCE</b> a: i- intervenir y representarlo en dichos reclamos, pudiendo celebrar los acuerdos transaccionales que considere oportunos y que tiendan a evitar mayores costos y/o evitar eventuales contingencias sin limitación, en su nombre y representación; ii- retener y debitar de su Cuenta de Mercado Pago y/o de la(s) cuenta(s) bancaria(s) registrada(s) en la Cuenta Mercado Pago los fondos existentes y/o futuros para recuperar cualquier gasto incurrido en relación a los supuestos del párrafo anterior, los cuales podrán incluir, entre otros, los honorarios de los letrados intervinientes y las costas judiciales en una cantidad razonable, y/o iii- generar débitos específicos en su facturación.<br></br>
         
         <br></br>
         <div className='titulo'><b>17 - Jurisdicción y Ley Aplicable</b></div><br></br>
@@ -153,9 +153,7 @@ const TerminosYCondiciones = () => {
         
         Se fija como domicilio de <b>MARCA DEL E-COMMERCE</b> S.R.L. la avenida Caseros 3039, piso 2, Capital Federal, código postal C1264, República Argentina.<br></br>
         Si tienes alguna duda sobre los Términos y Condiciones Generales o demás políticas y principios que rigen <b>MARCA DEL E-COMMERCE</b> consulta nuestra página de Ayuda.<br></br>
-
       </p>
-
       <div className='termfooter'><Footer /></div>
     </div>
   )
