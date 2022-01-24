@@ -12,11 +12,10 @@ const inicialState = {
     products : [],
     allProducts : [],
     details: [],
-    category: [],
+    categories: [],
     order: [],
-    bycategory: [],
-    bybrand: []
 }; 
+
 const reducer = (state = inicialState, action) => {
     switch (action.type) {
         case PRODUCT_DETAIL:
@@ -41,20 +40,26 @@ const reducer = (state = inicialState, action) => {
         case "GET_CATEGORY":
             return {
                 ...state,
-                category: action.payload
+                categories: action.payload
             }
 
         case FILTER_BY_CATEGORY:
+            let produ = state.allProducts
+            const matches = []
+            const produfilter = action.payload === 'none' ? produ : produ.filter(e => e.category.name.includes(action.payload))        
+            console.log(produfilter)     
             return {
                 ...state,
-                // bycategory: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.category === action.payload)}
-                products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
-        
+                products: produfilter
+                // products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categoryId === action.payload)
+            }
+
+                // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.categories?.some((a)=> a.name === action.payload)})            };
+                // bycategory: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categories === action.payload)}
         case FILTER_BY_BRAND:
             return {
                 ...state,
                 products: action.payload === "seeall" ? state.allProducts : state.products.filter(e => e.brand === action.payload)}
-                // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.category?.some((a)=> a.name === action.payload)})            };
 
         case ORDER_BY_PRICE:
             let sortedAr = action.payload === 'price_asc' ? state.products.sort(function (a, b){
@@ -103,5 +108,7 @@ const reducer = (state = inicialState, action) => {
 }
 
 }
+
+
 export default reducer; 
 

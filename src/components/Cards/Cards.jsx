@@ -6,6 +6,7 @@ import { orderByName, orderByPrice, getProducts, filterProductsByCategory, getCa
 import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
+import Footer from "../Footer/Footer";
 
 function valProduct(e){
     if(e.id){
@@ -24,10 +25,11 @@ function valProduct(e){
 }
 
 
+
 function Cards(){
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
-    const category = useSelector(state => state.category)
+    const categories = useSelector(state => state.categories)
     const [orden, setOrden] = useState('');
     const [currentPage,setCurrentPage] = useState(1);
     const [productsPerPage, setProductsPerPage] = useState(20);
@@ -44,6 +46,10 @@ function Cards(){
         setCurrentPage(pageNumber);
     };
 
+    let brandsArray = products.map(e => e.brand)
+    brandsArray = [...new Set(brandsArray)]
+    
+
     function handleSortN (e) {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
@@ -57,6 +63,7 @@ function Cards(){
     };
 
     function handleFilterCategory(e){
+    console.log(e.target.value)
         dispatch(filterProductsByCategory(e.target.value));
     };
 
@@ -65,6 +72,7 @@ function Cards(){
     };
 
     return(
+        <div>
         <div className={Style.allcards}>
         {
             currentProducts.map(e =>
@@ -90,26 +98,23 @@ function Cards(){
                 <option hidden>Marcas</option>
                 <option value='seeall'>Ver todo</option> 
                 {
-                    products.map( p =>  <option value={p.brand}>{p.brand}</option>)
+                    brandsArray.map( p =>  <option value={p}>{p}</option>)
                 }  
             </select>
             <select className={Style.dropdownmenuf1} onChange={e => handleFilterCategory(e)}>
                 <option hidden>Categorías</option>
                 <option value='none'>Ver todo</option> 
                 {
-                    category.map( cat => {
-                        const {name, id} = cat
-                        return (
-                        <option value={name} key={id}>{`${name}`}</option> 
-                        )
-                    })
+                    categories.map( cat => <option value={cat.name} key={cat.id}>{`${cat.name}`}</option> )
                 }               
             </select>
         </div>
-        
+        </div>
+        <div className={Style.paginationn}>
         <Pagination productsPerPage = {productsPerPage}
             allProducts = {products.length}
-            pagination = {pagination} />
+            pagination = {pagination} /></div>
+        <div><Footer /></div>
         </div>
     )
 };
