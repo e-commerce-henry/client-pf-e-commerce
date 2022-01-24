@@ -6,6 +6,7 @@ import { orderByName, orderByPrice, getProducts, filterProductsByCategory, getCa
 import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
+import Footer from "../Footer/Footer";
 
 function valProduct(e){
     if(e.id){
@@ -71,6 +72,7 @@ function Cards(){
     };
 
     return(
+        <div>
         <div className={Style.allcards}>
         {
             currentProducts.map(e =>
@@ -107,10 +109,12 @@ function Cards(){
                 }               
             </select>
         </div>
-        
+        </div>
+        <div className={Style.paginationn}>
         <Pagination productsPerPage = {productsPerPage}
             allProducts = {products.length}
-            pagination = {pagination} />
+            pagination = {pagination} /></div>
+        <div><Footer /></div>
         </div>
     )
 };

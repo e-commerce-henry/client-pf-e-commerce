@@ -42,6 +42,11 @@
   cursor: pointer;
 }
 
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 768px) {
   .flef {
     position: absolute;
@@ -53,4 +58,8 @@
 .eachcard {
   grid-column: span 2;
   justify-self: center;
+}
+
+.paginationn {
+  margin-bottom: 100px;
 }
