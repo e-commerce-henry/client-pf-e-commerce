@@ -4,28 +4,8 @@
   right: -18px;
   bottom: 19px;
   color: #00adb5;
-  font-size: 50px;
+  font-size: 60px;
 }
-
-.title2 {
-  font-family: "Lexend Deca", sans-serif;
-  position: relative;
-  right: -20px;
-  bottom: 82px;
-  justify-content: center;
-  color: #00adb5;
-  font-size: 40px;
-}
-.title3 {
-  font-family: "Lexend Deca", sans-serif;
-  position: relative;
-  right: -18px;
-  bottom: 132px;
-  justify-content: center;
-  color: #00adb5;
-  font-size: 40px;
-}
-
 .styleP {
   margin-left: 20px;
   font-family: "Lexend Deca", sans-serif;
@@ -34,8 +14,17 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 49px;
-  font-size: 17px;
+  bottom: 18px;
+  font-size: 20px;
+}
+.title2 {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -20px;
+  bottom: 30px;
+  justify-content: center;
+  color: #00adb5;
+  font-size: 50px;
 }
 .styleP1 {
   margin-left: 20px;
@@ -45,8 +34,17 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 112px;
-  font-size: 17px;
+  bottom: 18px;
+  font-size: 20px;
+}
+.title3 {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -18px;
+  bottom: 38px;
+  justify-content: center;
+  color: #00adb5;
+  font-size: 50px;
 }
 .styleP2 {
   margin-left: 20px;
@@ -56,8 +54,8 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 157px;
-  font-size: 17px;
+  bottom: 48px;
+  font-size: 20px;
 }
 
 .nosfooter {
@@ -66,19 +64,19 @@
   width: 100%;
 }
 
-.contacto {
+/* .contacto {
   font-family: "Lexend Deca", sans-serif;
   position: relative;
   right: -19px;
   bottom: 163px;
   color: #00adb5;
   font-size: 30px;
-}
+} */
 .equipo {
   font-family: "Lexend Deca", sans-serif;
   position: relative;
   right: -19px;
-  bottom: 163px;
+  bottom: 76px;
   color: #00adb5;
   font-size: 30px;
 }
