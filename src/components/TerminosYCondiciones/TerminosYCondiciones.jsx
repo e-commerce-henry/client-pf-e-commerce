@@ -8,7 +8,7 @@ const TerminosYCondiciones = () => {
     <Head />
     <div><h3 className="title">Términos y condiciones de uso del Sitio</h3></div><br/>
 
-    <p className="stylePa"><b>Versión vigente 17/01/2022</b><br></br><br></br>
+    <p className="stylePa"><b>Versión vigente 17/01/2022</b><br></br><br></br></p>
 
 Este contrato describe los términos y condiciones generales (los "Términos y Condiciones Generales") aplicables al uso de los servicios ofrecidos por <b>MARCA DEL E-COMMERCE</b>., CUIT 30-70308853-4, ("los Servicios") dentro del sitio http://cliente-pf-e-commerce.herokuapp.com/ ("<b>MARCA DEL E-COMMERCE</b>" o el "sitio"). Cualquier persona (en adelante "Usuario" o en plural "Usuarios") que desee acceder y/o usar el sitio o los Servicios podrá hacerlo sujetándose a los Términos y Condiciones Generales respectivos, junto con todas las demás políticas y principios que rigen <b>MARCA DEL E-COMMERCE</b> y que son incorporados al presente por referencia.<br></br><br></br>
 CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.<br></br><br></br>
