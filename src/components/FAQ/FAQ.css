@@ -2,7 +2,6 @@
   justify-content: center;
   color: #303841;
   position: relative;
-  right: -435px;
   bottom: 0;
   display: block;
   font-size: 1.5em;
@@ -11,6 +10,10 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  font-weight: 800;
+  font-size: 25px;
 }
 
 .faq {
@@ -20,13 +23,6 @@
   margin-left: 20px;
   margin-right: 20px;
   border-bottom: 1px solid #ccc;
-}
-.volver {
-  margin-left: 20px;
-  background-color: #00adb5;
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
   font-family: "Lexend Deca", sans-serif;
 }
 

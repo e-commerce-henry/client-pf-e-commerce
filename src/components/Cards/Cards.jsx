@@ -71,6 +71,7 @@ function Cards(){
     };
 
     return(
+        <div>
         <div className={Style.allcards}>
         {
             currentProducts.map(e =>
@@ -107,10 +108,12 @@ function Cards(){
                 }               
             </select>
         </div>
-        
+        </div>
+        <div className={Style.paginationn}>
         <Pagination productsPerPage = {productsPerPage}
             allProducts = {products.length}
-            pagination = {pagination} />
+            pagination = {pagination} /></div>
+
         </div>
     )
 };
