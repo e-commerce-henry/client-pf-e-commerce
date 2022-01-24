@@ -9,18 +9,18 @@ const TerminosYCondiciones = () => {
       <Head />
       <div><h3 className="title">Términos y condiciones de uso del Sitio</h3></div>
       <p className="stylePa">
-        <b>Versión vigente 17/01/2022</b><br></br><br></br>
+      <div className='titulo'><b>Versión vigente 17/01/2022</b></div><br></br>
         
         Este contrato describe los términos y condiciones generales (los "Términos y Condiciones Generales") aplicables al uso de los servicios ofrecidos por <b>MARCA DEL E-COMMERCE</b>., CUIT 30-70308853-4, ("los Servicios") dentro del sitio <a href="http://cliente-pf-e-commerce.herokuapp.com">http://cliente-pf-e-commerce.herokuapp.com</a> ("<b>MARCA DEL E-COMMERCE</b>" o el "sitio"). Cualquier persona (en adelante "Usuario" o en plural "Usuarios") que desee acceder y/o usar el sitio o los Servicios podrá hacerlo sujetándose a los Términos y Condiciones Generales respectivos, junto con todas las demás políticas y principios que rigen <b>MARCA DEL E-COMMERCE</b> y que son incorporados al presente por referencia.<br></br>
         <b>CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.</b><br></br>
         El Usuario debe leer, entender y aceptar todas las condiciones establecidas en los Términos y Condiciones Generales y en las Políticas de Privacidad así como en los demás documentos incorporados a los mismos por referencia, previo a su registración como Usuario de <b>MARCA DEL E-COMMERCE</b>, optando de forma expresa por recibir los mismos y toda otra información por medios digitales.<br></br>
         <br></br>
-        <b>01 - Capacidad</b><br></br><br></br>
+        <div className='titulo'><b>01 - Capacidad</b></div><br></br>
 
         Los Servicios sólo están disponibles para personas que tengan capacidad legal para contratar. No podrán utilizar los servicios las personas que no tengan esa capacidad o Usuarios de <b>MARCA DEL E-COMMERCE</b> que hayan sido suspendidos temporalmente o inhabilitados definitivamente. Si estás registrando un Usuario como Empresa, debes tener capacidad para contratar a nombre de tal entidad y de obligar a la misma en los términos de este Acuerdo.<br></br>
         Los menores de edad, a partir de los 13 años, sólo podrán utilizar su cuenta con autorización del representante legal, quien responderá por todas las acciones y obligaciones que se deriven de la utilización de esa cuenta y quien. También deberá velar por el uso responsable y adecuado de ella en atención a la madurez del menor de edad que autorice.<br></br>
         <br></br>
-        <b>02 - Registración</b><br></br><br></br>
+        <div className='titulo'><b>02 - Registración</b></div><br></br>
 
         Es obligatorio completar el formulario de registración en todos sus campos con datos válidos para poder utilizar los servicios que brinda <b>MARCA DEL E-COMMERCE</b>. El futuro Usuario deberá completarlo con su información personal de manera exacta, precisa y verdadera ("Datos Personales") y asume el compromiso de actualizar los Datos Personales conforme resulte necesario. El Usuario presta expresa conformidad con que <b>MARCA DEL E-COMMERCE</b> utiliza diversos medios para identificar sus datos personales, asumiendo el Usuario la obligación de revisarlos y mantenerlos actualizados. <b>MARCA DEL E-COMMERCE</b> NO se responsabiliza por la certeza de los Datos Personales de los Usuarios. Los Usuarios garantizan y responden, en cualquier caso, de la veracidad, exactitud, vigencia y autenticidad de sus Datos Personales.<br></br>
         A su exclusiva discreción, <b>MARCA DEL E-COMMERCE</b> podrá requerir una registración adicional a los Usuarios que operen como concesionarias o inmobiliarias, como requisito para que dichos Usuarios accedan a paquetes especiales de publicaciones. En estos casos, una vez efectuada la registración adicional, las ofertas de venta de automóviles o inmuebles que realicen las concesionarias o inmobiliarias, respectivamente, sólo se publicarán en <b>MARCA DEL E-COMMERCE</b> a través de alguno de dichos paquetes o bajo las modalidades que <b>MARCA DEL E-COMMERCE</b> habilite para este tipo de Usuarios. <b>MARCA DEL E-COMMERCE</b> se reserva el derecho de solicitar algún comprobante y/o dato adicional a efectos de corroborar los Datos Personales, así como de suspender temporal o definitivamente a aquellos Usuarios cuyos datos no hayan podido ser confirmados. En estos casos de inhabilitación, se darán de baja todos los artículos publicados, así como las ofertas realizadas, sin que ello genere algún derecho a resarcimiento.<br></br>
@@ -33,8 +33,8 @@ const TerminosYCondiciones = () => {
         <b>MARCA DEL E-COMMERCE</b> podrá modificar los Términos y Condiciones Generales en cualquier momento haciendo públicos en el Sitio los términos modificados. Todos los términos modificados entrarán en vigor a los 10 (diez) días de su publicación. Dichas modificaciones serán comunicadas por <b>MARCA DEL E-COMMERCE</b> a los usuarios que en la Configuración de su Cuenta de <b>MARCA DEL E-COMMERCE</b> hayan indicado que desean recibir notificaciones de los cambios en estos Términos y Condiciones. Todo usuario que no esté de acuerdo con las modificaciones efectuadas por <b>MARCA DEL E-COMMERCE</b> podrá solicitar la baja de la cuenta.<br></br>
         El uso del sitio y/o sus servicios implica la aceptación de estos Términos y Condiciones generales de uso de <b>MARCA DEL E-COMMERCE</b>.<br></br>
         <br></br>
-        <b>04 - Listado de Bienes</b><br></br>
-        <b>4.1 Utilización de Mercado Pago</b><br></br><br></br>
+        <div className='titulo'><b>04 - Listado de Bienes</b></div><br></br>
+        <div className='titulo'><b>4.1 Utilización de Mercado Pago</b></div><br></br>
         Al publicar un anuncio en el Sitio, el usuario vendedor consiente expresamente la utilización de Mercado Pago como una de las formas disponibles para el pago del bien o servicio ofrecido y se obliga a no modificar en nada el precio de venta del bien o servicio si el comprador decidiera utilizar Mercado Pago. Asimismo, el usuario declara que ha leído, comprendido y aceptado los Términos y Condiciones de utilización de dicho servicio.<br></br>
         <br></br>
         <b>4.2 Publicación de bienes y/o servicios</b><br></br><br></br>
