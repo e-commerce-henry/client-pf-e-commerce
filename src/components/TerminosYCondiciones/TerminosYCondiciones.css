@@ -1,5 +1,26 @@
+.title {
+  font-family: "Lexend Deca", sans-serif;
+  color: #303841;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #00adb5;
+}
+.stylePa {
+  margin-left: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: justify;
+  color: #303841;
+  position: relative;
+  right: 0px;
+  bottom: 49px;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 80px;
+}
+
 .termfooter {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }

@@ -1,5 +1,33 @@
 .polfooter {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.titulo {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  color: #303841;
+}
+
+.tituloppal {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #00adb5;
+}
+
+.subtitulo {
+  font-weight: 400;
+  color: #303841;
+}
+
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 80px;
+  color: #303841;
 }

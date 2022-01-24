@@ -1,5 +1,87 @@
+.title1 {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -18px;
+  bottom: 19px;
+  color: #00adb5;
+  font-size: 60px;
+}
+.styleP {
+  margin-left: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: justify;
+  color: #303841;
+  margin-right: 20px;
+  position: relative;
+  right: 0px;
+  bottom: 18px;
+  font-size: 20px;
+}
+.title2 {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -20px;
+  bottom: 30px;
+  justify-content: center;
+  color: #00adb5;
+  font-size: 50px;
+}
+.styleP1 {
+  margin-left: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: justify;
+  color: #303841;
+  margin-right: 20px;
+  position: relative;
+  right: 0px;
+  bottom: 18px;
+  font-size: 20px;
+}
+.title3 {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -18px;
+  bottom: 38px;
+  justify-content: center;
+  color: #00adb5;
+  font-size: 50px;
+}
+.styleP2 {
+  margin-left: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: justify;
+  color: #303841;
+  margin-right: 20px;
+  position: relative;
+  right: 0px;
+  bottom: 48px;
+  font-size: 20px;
+}
+
 .nosfooter {
-  position: absolute;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* .contacto {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -19px;
+  bottom: 163px;
+  color: #00adb5;
+  font-size: 30px;
+} */
+.equipo {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  right: -19px;
+  bottom: 76px;
+  color: #00adb5;
+  font-size: 30px;
+}
+.faqfooter {
+  position: relative;
   bottom: 0;
   width: 100%;
 }
