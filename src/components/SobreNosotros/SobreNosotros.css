@@ -14,14 +14,14 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 18px;
+  bottom: 80px;
   font-size: 20px;
 }
 .title2 {
   font-family: "Lexend Deca", sans-serif;
   position: relative;
   right: -20px;
-  bottom: 30px;
+  bottom: 136px;
   justify-content: center;
   color: #00adb5;
   font-size: 50px;
@@ -34,14 +34,14 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 18px;
+  bottom: 182px;
   font-size: 20px;
 }
 .title3 {
   font-family: "Lexend Deca", sans-serif;
   position: relative;
   right: -18px;
-  bottom: 38px;
+  bottom: 232px;
   justify-content: center;
   color: #00adb5;
   font-size: 50px;
@@ -54,7 +54,7 @@
   margin-right: 20px;
   position: relative;
   right: 0px;
-  bottom: 48px;
+  bottom: 280px;
   font-size: 20px;
 }
 
