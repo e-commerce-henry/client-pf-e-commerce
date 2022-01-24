@@ -20,7 +20,7 @@ const SobreNosotros = () => {
     <h3 className="title3">Nuestra Misión</h3>
     <div className="styleDiv"><p className="styleP2">Ofrecer productos tecnológicos que acompañen y satisfagan las necesidades de nuestros clientes, acompañando los mismos con la mejor atención, asesoramiento y servicio post venta. Brindando además, la posibilidad de que cualquier persona en todo el mundo pueda adquirir nuestros productos desde la comodidad de su hogar.</p></div>
     <h1 className="contacto">Contacto</h1>
-    <div className="equipo"><Link to="/equipo">Nuestro Equipo</Link></div>
+    <div className="equipo"><Link to="/equipo" style={{ textDecoration: 'none' }}>Nuestro Equipo</Link></div>
     <div className='nosfooter'><Footer /></div>
   </div>
   )
