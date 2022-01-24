@@ -1,7 +1,6 @@
 
 import React from "react";
 import Faq from "react-faq-component";
-import {Link} from 'react-router-dom';
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import './FAQ.css';
