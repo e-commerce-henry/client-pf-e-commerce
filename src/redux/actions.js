@@ -6,6 +6,10 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const ADD_CART = 'ADD_CART';
+export const REMOVE_ONE_CART = 'REMOVE_ONE_CART';
+export const REMOVE_ALL_CART = 'REMOVE_ALL_CART';
+export const CLEAR_CART = 'CLEAR_CART'
 
 
 export function productDetail(id){
@@ -98,4 +102,20 @@ export function orderByPrice(payload) {
         }))
     };
 };
+//Acciones carrito 
 
+export function addCart(payload){
+    return async function (dispatch){
+        let res = await axios('http://localhost:3001/cart', payload)
+        return res;
+    }
+}
+export function removeOneCart(){
+
+}
+export function removeAllCart(){
+
+}
+export function clearCart(){
+
+}

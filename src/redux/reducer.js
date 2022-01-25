@@ -5,7 +5,10 @@ import {
     ORDER_BY_NAME,
     FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME,
-    FILTER_BY_BRAND
+    FILTER_BY_BRAND,
+    ADD_CART,
+    REMOVE_ONE_CART,
+  
 } from './actions';
 
 const inicialState = {
@@ -14,6 +17,8 @@ const inicialState = {
     details: [],
     category: [],
     order: [],
+
+
 }; 
 const reducer = (state = inicialState, action) => {
     switch (action.type) {
@@ -94,8 +99,19 @@ const reducer = (state = inicialState, action) => {
                         ...state,
                         order: sortedArr
                     };
+        //REDUCER CARRITO 
+
+        case ADD_CART:
+            return{
+                ...state,
+                cart: action.payload
+            }
+        case REMOVE_ONE_CART: 
+            return {
+
+        }
         
-                default: return state 
+           default: return state 
 
 }
 
