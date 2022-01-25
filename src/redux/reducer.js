@@ -1,6 +1,7 @@
 import {
     PRODUCT_DETAIL,
     GET_PRODUCTS,
+    GET_CATEGORY,
     ORDER_BY_PRICE,
     ORDER_BY_NAME,
     FILTER_BY_CATEGORY,
@@ -42,25 +43,20 @@ const reducer = (state = inicialState, action) => {
                 products: action.payload
             }
 
-        case "GET_CATEGORY":
+        case GET_CATEGORY:
             return {
                 ...state,
                 categories: action.payload
             }
 
         case FILTER_BY_CATEGORY:
-            let produ = state.allProducts
-            const matches = []
-            const produfilter = action.payload === 'none' ? produ : produ.filter(e => e.category.name.includes(action.payload))        
-            console.log(produfilter)     
+            let all = state.allProducts
+            const filtered = action.payload === 'none' ? all : all.filter(e => e.category.name.includes(action.payload))        
             return {
                 ...state,
-                products: produfilter
-                // products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categoryId === action.payload)
+                products: filtered
             }
 
-                // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.categories?.some((a)=> a.name === action.payload)})            };
-                // bycategory: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categories === action.payload)}
         case FILTER_BY_BRAND:
             return {
                 ...state,
