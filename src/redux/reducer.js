@@ -8,7 +8,8 @@ import {
     GET_PRODUCT_NAME,
     FILTER_BY_BRAND,
     ADD_PRODUCT_SHOPPING_CART,
-    SHOW_SHOPPING_CART
+    SHOW_SHOPPING_CART,
+    ADD_PRODUCT_WISHLIST
 } from './actions';
 
 const inicialState = {
@@ -18,6 +19,7 @@ const inicialState = {
     details: [],
     categories: [],
     order: [],
+    favs: []
 
 
 }; 
@@ -104,9 +106,16 @@ const reducer = (state = inicialState, action) => {
                     ...state,
                     order: sortedArr
                 };
+
         case ADD_PRODUCT_SHOPPING_CART:
             let {payload} = action
             state.cart.push(payload)
+            return{
+                ...state
+            }
+        
+        case ADD_PRODUCT_WISHLIST:
+            state.favs.push(action.payload)
             return{
                 ...state
             }
