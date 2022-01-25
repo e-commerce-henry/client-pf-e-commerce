@@ -9,6 +9,7 @@ export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
 export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
 export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
+export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 
 
 export function productDetail(id){
@@ -110,6 +111,16 @@ export function addProductShoppingCart(id){
         dispatch ({
             type: ADD_PRODUCT_SHOPPING_CART, 
             payload: json.data
+        })
+    }
+}
+
+export function addProductWishlist(id){
+    return async function(dispatch){
+        let prod = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch ({
+            type: ADD_PRODUCT_WISHLIST, 
+            payload: prod.data
         })
     }
 }

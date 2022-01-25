@@ -2,7 +2,7 @@ import React from 'react';
 import Style from './Card.module.css';
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addProductShoppingCart } from '../../redux/actions';
+import { addProductShoppingCart, addProductWishlist } from '../../redux/actions';
 
 function Card({ id, name, price, img, brand}){
     const dispatch = useDispatch()
@@ -11,6 +11,12 @@ function Card({ id, name, price, img, brand}){
         alert(`Agregado a carrito "${name}"`)
         dispatch(addProductShoppingCart(id))
     }
+
+    function addFavs(id){
+        alert(`Se ha agregado a favoritos: "${name}"`)
+        dispatch(addProductWishlist(id))
+    }
+
     return(
         <div>
             
@@ -22,7 +28,7 @@ function Card({ id, name, price, img, brand}){
                     {Number(Math.ceil(price)).toLocaleString()}</div>
 
                     <div className={Style.producticons}>
-                        <button className={Style.productbtns}>
+                        <button className={Style.productbtns} onClick={() => addFavs(id)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-suit-heart-fill" viewBox="0 0 16 16">
                                 <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
                             </svg>

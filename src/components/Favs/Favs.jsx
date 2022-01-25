@@ -24,12 +24,7 @@ function valProduct(e){
 }
 
 function Favs(){
-    const dispatch = useDispatch()
-    const products = useSelector(state => state.products)
-
-    useEffect(() =>{
-        dispatch(getProducts())
-    },[])
+    const productsFavs = useSelector(state => state.favs)
 
     return(
         <>
@@ -38,7 +33,7 @@ function Favs(){
                 <div className={Style.titulo}>MIS FAVORITOS</div>
                 <div className={Style.allcards}>
                     {
-                        products.map(e =>
+                        productsFavs.map(e =>
                     
                         (
                             valProduct(e)
