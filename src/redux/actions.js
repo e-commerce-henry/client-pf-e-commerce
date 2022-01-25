@@ -1,11 +1,13 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_CATEGORY = 'GET_CATEGORY';
 export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const ADD_FAVS = 'ADD_FAVS';
 
 
 export function productDetail(id){
@@ -98,4 +100,6 @@ export function orderByPrice(payload) {
         }))
     };
 };
+
+expo
 
