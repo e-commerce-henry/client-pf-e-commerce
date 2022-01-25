@@ -7,8 +7,6 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
-export const ADD_FAVS = 'ADD_FAVS';
-
 
 export function productDetail(id){
     return async function (dispatch){
@@ -100,6 +98,3 @@ export function orderByPrice(payload) {
         }))
     };
 };
-
-expo
-
