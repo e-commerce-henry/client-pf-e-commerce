@@ -7,7 +7,7 @@ function Footer(){
             <div className={Style.allfooter}>
             <div className={Style.container} >
                 <div><Link to="/sobreNosotros">Sobre nosotros</Link></div>
-                <div><Link to="/terminoYcondiciones">Términos y condiciones</Link></div>
+                <div><Link to="/terminosYcondiciones">Términos y condiciones</Link></div>
                 <div><Link to="/politicaDePrivacidad">Política de privacidad</Link></div>
                 <div className={Style.icons}>
                     <a href="https://api.whatsapp.com/send?phone=+543415994708" target="_blank" rel="noreferrer noopener" >

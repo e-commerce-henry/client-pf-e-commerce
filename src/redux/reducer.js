@@ -6,15 +6,20 @@ import {
     ORDER_BY_NAME,
     FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME,
-    FILTER_BY_BRAND
+    FILTER_BY_BRAND,
+    ADD_PRODUCT_SHOPPING_CART,
+    SHOW_SHOPPING_CART
 } from './actions';
 
 const inicialState = {
+    cart: [],
     products : [],
     allProducts : [],
     details: [],
     categories: [],
     order: [],
+
+
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -93,11 +98,18 @@ const reducer = (state = inicialState, action) => {
                         return -1;
                     };
                     return 0;
+
                 });
                 return {
                     ...state,
                     order: sortedArr
                 };
+        case ADD_PRODUCT_SHOPPING_CART:
+            let {payload} = action
+            state.cart.push(payload)
+            return{
+                ...state
+            }
     
             default: return state 
 
