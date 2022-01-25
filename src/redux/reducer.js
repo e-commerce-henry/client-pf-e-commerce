@@ -17,6 +17,8 @@ const inicialState = {
     details: [],
     categories: [],
     order: [],
+
+
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -100,6 +102,7 @@ const reducer = (state = inicialState, action) => {
                         return -1;
                     };
                     return 0;
+
                 });
                 return {
                     ...state,

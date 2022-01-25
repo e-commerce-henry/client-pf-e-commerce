@@ -3,7 +3,9 @@ import Head from '../Head/Head';
 import Style from './Cart.module.css'
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
+
 function Cart(){
+   
     return(
         <>
             <Head />

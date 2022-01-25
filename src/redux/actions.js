@@ -9,8 +9,6 @@ export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
 export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
 export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 
-
-
 export function productDetail(id){
     return async function (dispatch){
         try {
@@ -101,6 +99,7 @@ export function orderByPrice(payload) {
         }))
     };
 };
+//Acciones carrito 
 
 export function addProductShoppingCart(id){
     return async function(dispatch){
@@ -111,5 +110,4 @@ export function addProductShoppingCart(id){
         })
     }
 }
-
 
