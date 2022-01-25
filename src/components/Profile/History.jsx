@@ -29,7 +29,7 @@ export default function History(){
                </ul>
             </div>
             
-            <Footer />  
+            <div className={Style.historyfooter}><Footer />  </div>
         </div>
     )
 }

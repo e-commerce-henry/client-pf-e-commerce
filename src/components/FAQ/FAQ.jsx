@@ -1,7 +1,6 @@
 
 import React from "react";
 import Faq from "react-faq-component";
-import {Link} from 'react-router-dom';
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import './FAQ.css';
@@ -19,11 +18,11 @@ const data = {
     },
     {
       title: "¿Puedo hacer compra desde una provincia o desde el extranjero?",
-      content: "Sí, puedes hacer tus compras en E-COMMERCE desde cualquier lugar del mundo."
+      content: "Sí, puedes hacer tus compras en MARCA DEL E-COMMERCE desde cualquier lugar del mundo."
     },
     {
-      title: "¿Cómo comprar en E-COMMERCE?",
-      content: "Para comprar en E-COMMERCE debes iniciar seción en nuestra tienda online, añadir las ofertas en el carrito de compras, programar la fecha y el modo de entrega de tu producto, seleccionar el método de pago y revisar todos los datos antes de finalizar la compra."
+      title: "¿Cómo comprar en MARCA DEL E-COMMERCE?",
+      content: "Para comprar en MARCA DEL E-COMMERCE debes iniciar seción en nuestra tienda online, añadir las ofertas en el carrito de compras, programar la fecha y el modo de entrega de tu producto, seleccionar el método de pago y revisar todos los datos antes de finalizar la compra."
     },
     {
       title: "¿Puedo comprar sin tener una cuenta de usuario?",
@@ -55,9 +54,7 @@ const FAQ = () => {
         arrowColor: "black",
         }} />
         </div>
-      <br />
-      <Link to='/'><button className="volver">Volver</button></Link>
-      <Footer />
+      <div className="faqfooter"><Footer /></div>
 </div>
     );
 };

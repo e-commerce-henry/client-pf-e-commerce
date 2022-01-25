@@ -39,3 +39,10 @@
   color: #00adb5;
   border: solid 2px #00adb5;
 }
+
+@media only screen and (max-width: 768px) {
+  .pag {
+    font-size: 15px;
+    width: 40px;
+  }
+}

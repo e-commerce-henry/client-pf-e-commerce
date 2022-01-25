@@ -2,10 +2,11 @@
   margin-left: 9px;
   /*margin-right: 3%; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   grid-auto-rows: 17rem;
   grid-column-gap: 10px;
   grid-row-gap: 0px;
+  align-items: center;
 }
 
 .flef {
@@ -13,7 +14,8 @@
   border-radius: 0%;
   position: absolute;
   left: 0px;
-  top: 150px;
+  top: 0px;
+  background-color: #00adb5;
 }
 
 .dropdownmenuf1 {
@@ -26,19 +28,7 @@
   font-size: 17px;
   outline: none;
   border: none;
-}
-
-.dropdownmenuf2 {
-  background-color: #303841;
-  color: #eeeeee;
-  width: 100%;
-  height: 60px;
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
-  font-size: 17px;
   margin-top: 10px;
-  outline: none;
-  border: none;
 }
 
 .dropdownmenuf1 option {
@@ -52,21 +42,24 @@
   cursor: pointer;
 }
 
-.dropdownmenuf2 option {
-  background-color: #303841;
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 200;
-  font-size: 17px;
-}
-
-.dropdownmenuf2:hover {
-  cursor: pointer;
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 768px) {
   .flef {
     position: absolute;
-    top: 155px;
+    top: 0px;
     width: 100%;
   }
+}
+
+.eachcard {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+.paginationn {
+  margin-bottom: 100px;
 }

@@ -15,7 +15,7 @@ function Favs(){
                </ul>    
                <Link to='/'><button type="button" className="btn btn-info">Volver</button></Link>      
             </div>
-            <Footer />
+            <div className={Style.favfooter}><Footer /></div>
         </>
     )
 };
