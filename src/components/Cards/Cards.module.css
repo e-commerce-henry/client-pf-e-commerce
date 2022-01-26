@@ -29,6 +29,7 @@
   outline: none;
   border: none;
   margin-top: 10px;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
 }
 
 .dropdownmenuf1 option {

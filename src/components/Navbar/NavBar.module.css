@@ -38,10 +38,10 @@ input::placeholder {
   /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
   text-shadow: inset 0px 1px 0px #303841;
   background: #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
 }
 
 .butt:hover {
-  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
   cursor: pointer;
 }
 
