@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
 function valCart(e){
     if(e.id){
@@ -22,7 +23,7 @@ export default function ShoppingCart(){
     return(
         <>
             <div>
-                <h1>{`Este es tu carrito "Nombre del user"`}</h1>
+                <Link to='/probando'> <h1>{`Este es tu carrito "Nombre del user"`}</h1></Link>
                 <div>
                     {
                         

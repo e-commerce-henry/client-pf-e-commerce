@@ -14,6 +14,8 @@ import PoliticaDePrivacidad from "./components/PoliticaDePrivacidad/PoliticaDePr
 import Equipo from "./components/Equipo/Equipo";
 import AddUsers from "./components/AddUsers/AddUsers";
 import InicioSeccion from "./components/Profile/InicioSeccion";
+import OrderDetails from "./components/Orders/OrderDetails";
+import CompraExitosa from "./components/Orders/CompraExitosa";
 
 function App() {
 	return (
@@ -28,7 +30,6 @@ function App() {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />
-
 				<Route
 					path="/terminosYcondiciones"
 					element={<TerminosYcondiciones />}
@@ -39,6 +40,9 @@ function App() {
 				/>
 				<Route path="/equipo" element={<Equipo />} />
 				<Route path="/addUsers" element={<AddUsers />} />
+				<Route path="/probando" element={<OrderDetails />} /> 
+				<Route path="/probando2" element={<CompraExitosa />} /> 
+
 			</Routes>
 		</>
 	);

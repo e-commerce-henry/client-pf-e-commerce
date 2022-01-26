@@ -1,0 +1,52 @@
+.card {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcoral;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.name {
+  grid-area: 1 / 1 / 2 / 5;
+}
+
+.cant {
+  grid-area: 1 / 5 / 2 / 6;
+  justify-self: center;
+  align-self: center;
+}
+
+.price {
+  grid-area: 1 / 6 / 2 / 7;
+  justify-self: center;
+  align-self: center;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+}
+
+.tit {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.sub {
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}

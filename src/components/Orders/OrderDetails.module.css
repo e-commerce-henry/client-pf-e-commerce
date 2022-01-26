@@ -1,0 +1,30 @@
+.titulo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #00adb5;
+}
+
+.grid {
+  margin-top: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightgreen;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.total {
+  grid-area: 1 / 5 / 2 / 6;
+  justify-self: center;
+  align-self: center;
+  color: #303841;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+}
