@@ -1,6 +1,7 @@
 import {
     PRODUCT_DETAIL,
     GET_PRODUCTS,
+    GET_CATEGORY,
     ORDER_BY_PRICE,
     ORDER_BY_NAME,
     FILTER_BY_CATEGORY,
@@ -8,15 +9,23 @@ import {
     FILTER_BY_BRAND,
     CREAR_USERS,
     GET_CATEGORY,
-    ADD_INICIO_USER
+    ADD_INICIO_USER,
+    ADD_PRODUCT_SHOPPING_CART,
+    SHOW_SHOPPING_CART,
+    ADD_PRODUCT_WISHLIST,
+    DELETE_PRODUCT_WISHLIST
 } from './actions';
 
 const inicialState = {
+    cart: [],
     products : [],
     allProducts : [],
     details: [],
     categories: [],
     order: [],
+    favs: []
+
+
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -47,17 +56,13 @@ const reducer = (state = inicialState, action) => {
             }
 
         case FILTER_BY_CATEGORY:
-            let produ = state.allProducts
-            const produfilter = action.payload === 'none' ? produ : produ.filter(e => e.category.name.includes(action.payload))        
-            console.log(produfilter)     
+            let all = state.allProducts
+            const filtered = action.payload === 'none' ? all : all.filter(e => e.category.name.includes(action.payload))        
             return {
                 ...state,
-                products: produfilter
-                // products: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categoryId === action.payload)
+                products: filtered
             }
 
-                // products: action.payload === 'none' ? state.allProducts : state.allProducts.filter((c)=>{return c.categories?.some((a)=> a.name === action.payload)})            };
-                // bycategory: action.payload === "none" ? state.allProducts : state.allProducts.filter(e => e.categories === action.payload)}
         case FILTER_BY_BRAND:
             return {
                 ...state,
@@ -99,6 +104,7 @@ const reducer = (state = inicialState, action) => {
                         return -1;
                     };
                     return 0;
+
                 });
                 return {
                     ...state,
@@ -110,6 +116,20 @@ const reducer = (state = inicialState, action) => {
 
         case ADD_INICIO_USER:
             return {...state, products: action.payload};
+
+        case ADD_PRODUCT_SHOPPING_CART:
+            let {payload} = action
+            state.cart.push(payload)
+            return{
+                ...state
+            }
+        
+        case ADD_PRODUCT_WISHLIST:
+            state.favs.push(action.payload)
+            return{
+                ...state
+            }
+
     
             default: return state 
 

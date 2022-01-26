@@ -1,19 +1,46 @@
 import Footer from '../Footer/Footer';
 import Head from '../Head/Head';
 import Style from './Favs.module.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from '../../redux/actions';
+import CardFavs from './CardFavs';
+
+function valProduct(e){
+    if(e.id){
+        return(
+            <div className={Style.eachcard}>
+            <CardFavs 
+            key = {e.id}
+            id = {e.id}
+            name = {e.name}
+            price= {e.price}
+            img ={e.img}
+            brand={e.brand}
+            /></div>
+        )
+    }
+}
 
 function Favs(){
+    const productsFavs = useSelector(state => state.favs)
+
     return(
         <>
             <Head />
             <div className={Style.container} >
-               <h3>ACA VAN TODOS LOS FAVS</h3>
-               <ul>
-                <li> <h4>Card</h4>Como usuario quiero ver cada card de cada producto que agregue a la lista de favoritos. En el mismo me interesa ver su foto, nombre de producto, precio unitario actual y un botón para eliminarlo de la lista así como también un botón para agregar el producto al carro.</li>
-                <li> <h4>Botón de seguir comprando</h4>Como usuario necesito un botón que me permita ir hacia atrás para seguir comprando y poder agregar más productos a la wishlist.</li>
-               </ul>    
-               <Link to='/'><button type="button" className="btn btn-info">Volver</button></Link>      
+                <div className={Style.titulo}>MIS FAVORITOS</div>
+                <div className={Style.allcards}>
+                    {
+                        productsFavs.map(e =>
+                    
+                        (
+                            valProduct(e)
+                        
+                        ))
+                    }
+                </div>   
             </div>
             <div className={Style.favfooter}><Footer /></div>
         </>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_CATEGORY = 'GET_CATEGORY';
 export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
@@ -9,6 +10,11 @@ export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
 export const CREAR_USERS = "CREAR_USERS";
 export const GET_CATEGORY ="GET_CATEGORY";
 export const ADD_INICIO_USER = "ADD_INICIO_USER";
+export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
+export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
+export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
+export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+
 
 
 export function productDetail(id){
@@ -115,3 +121,26 @@ export const addInicioUser = (payload) => {
         return response;
     }
 }
+//Acciones carrito 
+
+export function addProductShoppingCart(id){
+    return async function(dispatch){
+        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch ({
+            type: ADD_PRODUCT_SHOPPING_CART, 
+            payload: json.data
+        })
+    }
+}
+
+export function addProductWishlist(id){
+    return async function(dispatch){
+        let prod = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch ({
+            type: ADD_PRODUCT_WISHLIST, 
+            payload: prod.data
+        })
+    }
+}
+
+
