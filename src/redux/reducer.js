@@ -5,7 +5,10 @@ import {
     ORDER_BY_NAME,
     FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME,
-    FILTER_BY_BRAND
+    FILTER_BY_BRAND,
+    CREAR_USERS,
+    GET_CATEGORY,
+    ADD_INICIO_USER
 } from './actions';
 
 const inicialState = {
@@ -37,7 +40,7 @@ const reducer = (state = inicialState, action) => {
                 products: action.payload
             }
 
-        case "GET_CATEGORY":
+        case GET_CATEGORY:
             return {
                 ...state,
                 categories: action.payload
@@ -45,7 +48,6 @@ const reducer = (state = inicialState, action) => {
 
         case FILTER_BY_CATEGORY:
             let produ = state.allProducts
-            const matches = []
             const produfilter = action.payload === 'none' ? produ : produ.filter(e => e.category.name.includes(action.payload))        
             console.log(produfilter)     
             return {
@@ -102,6 +104,12 @@ const reducer = (state = inicialState, action) => {
                     ...state,
                     order: sortedArr
                 };
+
+        case CREAR_USERS:
+                return { ...state, products: action.payload};
+
+        case ADD_INICIO_USER:
+            return {...state, products: action.payload};
     
             default: return state 
 
