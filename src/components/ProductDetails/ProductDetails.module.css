@@ -1,38 +1,107 @@
-.cont{
-    
+.cont {
   width: 70%;
   height: 80%;
-  margin:auto;
+  margin: auto;
   margin-top: 2%;
   background-color: eeeeee;
   border: solid 1px #00adb5;
-  border-radius: 5%;
+  border-radius: 10px;
   text-align: center;
-  font-style:normal;
-  font-size: 12pt;
+  background-color: #fff;
 }
-.text{
-    font-size: 12pt;
+
+.titulo {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #00adb5;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
-.butt{
-    font-size:15px;
-  font-family:Arial;
-  width:140px;
-  height:50px;
-  border-width:1px;
-  color:rgba(240, 240, 240, 1);
-  border-color:rgba(255, 109, 46, 0.96);
-  font-weight:bold;
-  border-top-left-radius:6px;
-  border-top-right-radius:6px;
-  border-bottom-left-radius:6px;
-  border-bottom-right-radius:6px;
-  box-shadow:inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
-  text-shadow:inset 0px 1px 0px rgba(48, 56, 65, 1);
-  background:linear-gradient(rgba(160, 160, 160, 1), rgba(48, 56, 65, 1));
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.img {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+  margin-top: 30px;
+}
+
+.child2 {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-top: 5px;
+}
+
+.descr {
+  text-align: justify;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.det {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.butt {
+  border: none;
+  outline: none;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 100px;
+  height: 32px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
 }
 
 .butt:hover {
-    background: linear-gradient(rgba(48, 56, 65, 1), rgba(160, 160, 160, 1));
-  }
-                
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.productbtns {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #00adb5;
+  width: 100%;
+  height: 100%;
+}
+
+.productbtns:hover {
+  color: #ff5722;
+  cursor: pointer;
+}
+
+.productbtns:focus {
+  color: #ff5722;
+}
+
+.producticons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 90%;
+}
