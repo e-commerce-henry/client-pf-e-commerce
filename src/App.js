@@ -12,6 +12,8 @@ import SobreNosotros from "./components/SobreNosotros/SobreNosotros";
 import TerminosYcondiciones from "./components/TerminosYCondiciones/TerminosYCondiciones";
 import PoliticaDePrivacidad from "./components/PoliticaDePrivacidad/PoliticaDePrivacidad";
 import Equipo from "./components/Equipo/Equipo";
+import AddUsers from "./components/AddUsers/AddUsers";
+import InicioSeccion from "./components/Profile/InicioSeccion";
 
 function App() {
 	return (
@@ -21,10 +23,12 @@ function App() {
 				<Route path="/favs" element={<Favs />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/profile-details" element={<ProfileDetails />} />
+				<Route path="/inicio-seccion" element={<InicioSeccion />} />
 				<Route path="/history" element={<History />} />
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />
+
 				<Route
 					path="/terminosYcondiciones"
 					element={<TerminosYcondiciones />}
@@ -34,6 +38,7 @@ function App() {
 					element={<PoliticaDePrivacidad />}
 				/>
 				<Route path="/equipo" element={<Equipo />} />
+				<Route path="/addUsers" element={<AddUsers />} />
 			</Routes>
 		</>
 	);

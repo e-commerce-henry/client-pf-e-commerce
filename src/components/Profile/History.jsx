@@ -14,12 +14,11 @@ export default function History(){
     return(
         <div >
             <Head />
-            
             <div className={Style.container}>
+                <button className={Style.btnprofile} type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>
                 <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
                 <button className={Style.btnprofileselected} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
             </div>
-            
             <div className={Style.details}>
                <h3>Acá se verá todo el historial de compras</h3>
                <ul>

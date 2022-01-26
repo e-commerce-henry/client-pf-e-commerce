@@ -7,10 +7,14 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const CREAR_USERS = "CREAR_USERS";
+export const GET_CATEGORY ="GET_CATEGORY";
+export const ADD_INICIO_USER = "ADD_INICIO_USER";
 export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
 export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+
 
 
 export function productDetail(id){
@@ -104,6 +108,19 @@ export function orderByPrice(payload) {
     };
 };
 
+export const addUsers = (payload) => {
+    return async (dispatch) => {
+        let response = await axios.post(`http://localhost:3001/auth/signup`, payload);
+        return response;
+    }
+}
+
+export const addInicioUser = (payload) => {
+    return async (dispatch) => {
+        let response = await axios.post(`hhttp://localhost:3001/auth/signIn`, payload);
+        return response;
+    }
+}
 //Acciones carrito 
 
 export function addProductShoppingCart(id){
@@ -125,4 +142,5 @@ export function addProductWishlist(id){
         })
     }
 }
+
 

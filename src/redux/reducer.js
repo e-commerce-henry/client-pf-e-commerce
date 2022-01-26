@@ -7,6 +7,9 @@ import {
     FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME,
     FILTER_BY_BRAND,
+    CREAR_USERS,
+    GET_CATEGORY,
+    ADD_INICIO_USER,
     ADD_PRODUCT_SHOPPING_CART,
     SHOW_SHOPPING_CART,
     ADD_PRODUCT_WISHLIST,
@@ -108,6 +111,12 @@ const reducer = (state = inicialState, action) => {
                     order: sortedArr
                 };
 
+        case CREAR_USERS:
+                return { ...state, products: action.payload};
+
+        case ADD_INICIO_USER:
+            return {...state, products: action.payload};
+
         case ADD_PRODUCT_SHOPPING_CART:
             let {payload} = action
             state.cart.push(payload)
@@ -120,6 +129,7 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+
     
             default: return state 
 
