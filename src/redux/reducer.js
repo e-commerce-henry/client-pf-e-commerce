@@ -9,7 +9,8 @@ import {
     FILTER_BY_BRAND,
     ADD_PRODUCT_SHOPPING_CART,
     SHOW_SHOPPING_CART,
-    ADD_PRODUCT_WISHLIST
+    ADD_PRODUCT_WISHLIST,
+    DELETE_PRODUCT_WISHLIST
 } from './actions';
 
 const inicialState = {
