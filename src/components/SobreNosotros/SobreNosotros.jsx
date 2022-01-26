@@ -2,7 +2,7 @@ import React from 'react';
 import './SobreNosotros.css';
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 
 const SobreNosotros = () => {
@@ -20,8 +20,7 @@ const SobreNosotros = () => {
     <h3 className="title3">Nuestra Misión</h3>
 
     <p className="styleP2">Ofrecer productos tecnológicos que acompañen y satisfagan las necesidades de nuestros clientes, acompañando los mismos con la mejor atención, asesoramiento y servicio post venta. Brindando además, la posibilidad de que cualquier persona en todo el mundo pueda adquirir nuestros productos desde la comodidad de su hogar.</p>
-   
-    <div className="styleDiv"><p className="styleP2">Ofrecer productos tecnológicos que acompañen y satisfagan las necesidades de nuestros clientes, acompañando los mismos con la mejor atención, asesoramiento y servicio post venta. Brindando además, la posibilidad de que cualquier persona en todo el mundo pueda adquirir nuestros productos desde la comodidad de su hogar.</p></div>
+  
     <div className='nosfooter'><Footer /></div>
   </div>
   )

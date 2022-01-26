@@ -1,11 +1,16 @@
 import axios from 'axios'
 export const PRODUCT_DETAIL = 'PRODUCT_DETAIL';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_CATEGORY = 'GET_CATEGORY';
 export const ORDER_BY_PRICE = 'ORDER_BY_PRICE';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY';
 export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
+export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
+export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
+export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
 
 
 export function productDetail(id){
@@ -98,4 +103,26 @@ export function orderByPrice(payload) {
         }))
     };
 };
+
+//Acciones carrito 
+
+export function addProductShoppingCart(id){
+    return async function(dispatch){
+        let json = await axios.get(`http://proyecto-personal.online/products/${id}`)
+        dispatch ({
+            type: ADD_PRODUCT_SHOPPING_CART, 
+            payload: json.data
+        })
+    }
+}
+
+export function addProductWishlist(id){
+    return async function(dispatch){
+        let prod = await axios.get(`http://proyecto-personal.online/products/${id}`)
+        dispatch ({
+            type: ADD_PRODUCT_WISHLIST, 
+            payload: prod.data
+        })
+    }
+}
 
