@@ -7,10 +7,13 @@ input {
   outline: none;
   padding: 5px;
   width: 40%;
+  height: 22px;
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   font-size: 15px;
+  border-radius: 6px;
+  background-color: #eeeeee;
 }
 
 input::placeholder {
@@ -21,25 +24,25 @@ input::placeholder {
   padding: 5px;
 }
 .butt {
+  border: none;
+  outline: none;
+  margin-left: 5px;
   font-size: 15px;
-  font-family: Arial;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
   width: 100px;
-  height: 37px;
+  height: 32px;
   border-width: 1px;
   color: rgba(240, 240, 240, 1);
-  border-color: rgba(255, 109, 46, 0.96);
-  font-weight: bold;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
-  text-shadow: inset 0px 1px 0px rgba(48, 56, 65, 1);
-  background: linear-gradient(rgba(160, 160, 160, 1), rgba(48, 56, 65, 1));
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
 }
 
 .butt:hover {
-  background: linear-gradient(rgba(48, 56, 65, 1), rgba(160, 160, 160, 1));
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
