@@ -15,7 +15,8 @@ import {
     ADD_PRODUCT_WISHLIST,
     DELETE_PRODUCT_WISHLIST,
     CREATE_REVIEWS,
-    GET_REVIEWS
+    GET_REVIEWS,
+    DETALLE_USERS
 } from './actions';
 
 const inicialState = {
@@ -29,7 +30,8 @@ const inicialState = {
     create_review :{},
     getreview:[],
     idUser: [],
-    userAuth: false
+    userAuth: false,
+    userDetail: {}
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -121,8 +123,6 @@ const reducer = (state = inicialState, action) => {
             } 
             return {...state, userAuth: false, idUser: []}
         case ADD_PRODUCT_SHOPPING_CART:
-            let {payload} = action
-            state.cart.push(payload)
             return{
                 ...state
             }
@@ -150,9 +150,16 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 getreview: action.payload
             }
-        
-
-    
+        case "DETALLE_USERS":
+            return {
+                 ...state,
+                  userDetail: action.payload 
+            }
+        case SHOW_SHOPPING_CART:
+            return{
+                ...state,
+                cart: action.payload
+            }
         default: return state 
 
 }
