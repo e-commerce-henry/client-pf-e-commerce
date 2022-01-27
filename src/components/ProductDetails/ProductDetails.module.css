@@ -105,3 +105,24 @@
   justify-content: flex-end;
   margin-left: 90%;
 }
+
+.container_escribir_comentario{
+  border-top: 3px solid #007529;
+  margin-left: 35px;
+  padding: 12px;
+  width: 95%;
+}
+.boton_escribir_comentario{
+  background-color: white;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.boton_escribir_comentario:hover{
+  background-color: rgb(151, 73, 0);
+  color: white;
+ 
+}

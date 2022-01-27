@@ -13,7 +13,9 @@ import {
     REMOVE_CART,
     SHOW_SHOPPING_CART,
     ADD_PRODUCT_WISHLIST,
-    DELETE_PRODUCT_WISHLIST
+    DELETE_PRODUCT_WISHLIST,
+    CREATE_REVIEWS,
+    GET_REVIEWS
 } from './actions';
 
 const inicialState = {
@@ -24,6 +26,8 @@ const inicialState = {
     categories: [],
     order: [],
     favs: [],
+    create_review :{},
+    getreview:[],
     idUser: [],
     userAuth: false
 }; 
@@ -133,10 +137,23 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+
+        //crea mi review
+        case CREATE_REVIEWS:
+            return {
+                ...state,
+                create_review:action.payload
+            }
+        //obtengo todos mis reviews
+        case GET_REVIEWS:
+            return{
+                ...state,
+                getreview: action.payload
+            }
         
 
     
-            default: return state 
+        default: return state 
 
 }
 

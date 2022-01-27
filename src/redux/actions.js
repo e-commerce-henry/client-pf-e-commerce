@@ -14,6 +14,8 @@ export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 export const REMOVE_CART = 'REMOVE_CART';
 export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+export const CREATE_REVIEWS = "CREATE_REVIEWS";
+export const GET_REVIEWS = "GET_REVIEWS";
 
 
 export function productDetail(id){
@@ -158,4 +160,33 @@ export function addProductWishlist(id){
     }
 }
 
+//CreateReview crea una puntuacion y comentario 
+export function createReview(id,review){
+    return dispatch => {
+        axios.post(`http://localhost:3001/productReview/${id}/review`,review)
+        .then((result) => {
+            return dispatch({
+                type:CREATE_REVIEWS,
+                payload: result.data
+            })
+        }).catch((err) => {
+            console.log('err :>> ', err);
+        });
+    }
 
+}
+
+//obtengo todos mis comentarios por ID de producto
+export function getReview(id){
+    return dispatch => {
+        axios.get(`http://localhost:3001/productReview/${id}/review`)
+        .then((result) => {
+            return dispatch({
+                type:GET_REVIEWS,
+                payload:result.data
+            })
+        }).catch((err) => {
+            console.log('err :>> ', err);
+        });
+    }
+}
