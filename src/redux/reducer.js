@@ -10,6 +10,7 @@ import {
     CREAR_USERS,
     ADD_INICIO_USER,
     ADD_PRODUCT_SHOPPING_CART,
+    REMOVE_CART,
     SHOW_SHOPPING_CART,
     ADD_PRODUCT_WISHLIST,
     DELETE_PRODUCT_WISHLIST
@@ -122,7 +123,12 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
-        
+        case REMOVE_CART : 
+            let {vaciar} = action
+            state.cart.shift(vaciar)
+            return{
+            ...state
+            }
         case ADD_PRODUCT_WISHLIST:
             state.favs.push(action.payload)
             return{
