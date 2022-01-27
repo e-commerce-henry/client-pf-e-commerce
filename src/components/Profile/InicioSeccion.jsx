@@ -1,9 +1,9 @@
 import React, { useState} from "react";
 import {addInicioUser} from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import Head from '../Head/Head';
-import Footer from '../Footer/Footer';
-import Style from './Profile.module.css';
+// import Head from '../Head/Head';
+// import Footer from '../Footer/Footer';
+import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
 import {useNavigate} from 'react-router-dom';

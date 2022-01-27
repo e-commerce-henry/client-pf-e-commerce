@@ -5,7 +5,7 @@ import "./AddUsers.css";
 import Head from "../Head/Head";
 import Footer from "../Footer/Footer";
 import {useNavigate} from 'react-router-dom';
-import Style from '../Profile/Profile.module.css';
+import '../Profile/Profile.module.css';
 
 
 export function validate(users) {
