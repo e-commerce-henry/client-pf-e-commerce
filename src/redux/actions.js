@@ -114,9 +114,9 @@ export const addUsers = (payload) => {
     }
 }
 
-export const addInicioUser = (payload) => {
+export const addInicioUser = ({email, pwd}) => {
     return async (dispatch) => {
-        let response = await axios.post(`hhttp://localhost:3001/auth/signIn`, payload);
+        let response = await axios.post(`http://localhost:3001/auth/signIn`, {email, pwd}, { withCredentials: true });
         return response;
     }
 }
