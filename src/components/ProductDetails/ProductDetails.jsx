@@ -6,7 +6,6 @@ import { productDetail, addProductWishlist, addProductShoppingCart} from '../../
 import { Link } from "react-router-dom";
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
-import {addProductShoppingCart} from "../../redux/actions";
 import Style from './ProductDetails.module.css'
 
 export default function ProductDetail(){
