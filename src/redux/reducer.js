@@ -7,7 +7,8 @@ import {
     GET_PRODUCT_NAME,
     FILTER_BY_BRAND,
     ADD_PRODUCT_SHOPPING_CART,
-    SHOW_SHOPPING_CART
+    // SHOW_SHOPPING_CART
+    REMOVE_CART,
 } from './actions';
 
 const inicialState = {
@@ -114,6 +115,13 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+        case REMOVE_CART : 
+            let {vaciar} = action
+            state.cart.shift(vaciar)
+            return{
+            ...state
+            }
+
     
             default: return state 
 

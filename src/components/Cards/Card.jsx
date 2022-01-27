@@ -11,6 +11,8 @@ function Card({ id, name, price, img, brand}){
         alert(`Agregado a carrito "${name}"`)
         dispatch(addProductShoppingCart(id))
     }
+
+    
     return(
         <div>
             

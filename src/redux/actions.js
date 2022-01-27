@@ -8,6 +8,7 @@ export const GET_PRODUCT_NAME = 'GET_PRODUCT_NAME';
 export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
 export const ADD_PRODUCT_SHOPPING_CART = 'ADD_PRODUCT_SHOPPING_CART';
 export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
+export const REMOVE_CART = 'REMOVE_CART';
 
 export function productDetail(id){
     return async function (dispatch){
@@ -106,6 +107,16 @@ export function addProductShoppingCart(id){
         let json = await axios.get(`http://localhost:3001/products/${id}`)
         dispatch ({
             type: ADD_PRODUCT_SHOPPING_CART, 
+            payload: json.data
+        })
+    }
+}
+
+export function removeCart(id){
+    return async function (dispatch){
+        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch({
+            type: REMOVE_CART,
             payload: json.data
         })
     }
