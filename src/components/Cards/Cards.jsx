@@ -48,6 +48,7 @@ function Cards(){
 
     let brandsArray = products.map(e => e.brand)
     brandsArray = [...new Set(brandsArray)]
+    brandsArray = brandsArray.sort()
     
 
     function handleSortN (e) {
@@ -63,7 +64,6 @@ function Cards(){
     };
 
     function handleFilterCategory(e){
-    console.log(e.target.value)
         dispatch(filterProductsByCategory(e.target.value));
     };
 

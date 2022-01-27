@@ -11,12 +11,10 @@ function Card({ id, name, price, img, brand}){
         alert(`Agregado a carrito "${name}"`)
         dispatch(addProductShoppingCart(id))
     }
-
     function addFavs(id){
         alert(`Se ha agregado a favoritos: "${name}"`)
         dispatch(addProductWishlist(id))
     }
-
     return(
         <div>
             

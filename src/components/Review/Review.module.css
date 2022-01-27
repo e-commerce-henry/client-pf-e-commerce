@@ -76,10 +76,10 @@ margin: 0px 0px 2px 2px;
 }
 
 .review_comentario{
-    border-bottom: 1px solid rgba(0, 128, 255, 0.392);
+    border-bottom: 1px solid rgba(255, 123, 0, 0.652);
     margin: 10px;
     padding: 15px 2px 10px 55px;
-    background-color: rgb(228, 225, 225);
+    background-color: white;
     width: 800px;
     font-size: 17px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -87,7 +87,7 @@ margin: 0px 0px 2px 2px;
 
 .create_reviews{
     background-color: rgb(248, 245, 239);
-    border-top: 3px solid rgb(0, 109, 167);
+    border-top: 3px solid rgb(0, 65, 100);
     margin: 15px 0px 0px 0px;
     padding: 5px 0px 10px 0px;
 }
@@ -111,7 +111,7 @@ margin: 0px 0px 2px 2px;
 }
 
 .caja_puntuacion{
-    background-color: rgba(238, 235, 235, 0.823);
+    background-color: white;
     display: flex;
     padding: 20px;
     margin-left: 20px;
@@ -132,9 +132,9 @@ progress {
   }
   
 progress::-webkit-progress-bar {
-    background-color: rgb(230, 225, 225);
+    background-color: white;
     border: 1px solid rgb(151, 151, 151);
-    /* width: 100%; */
+    border-radius: 4px;
 }
 
 progress::-webkit-progress-value {
@@ -142,51 +142,6 @@ progress::-webkit-progress-value {
     -webkit-transition: all .7s;
     transition: all .7s;
 }
-
-
-
-
-
-
-
-
-
-
-
-/******************
-
-.titulo_review{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-size: 28px;
-    margin: 19px 12px 0px 12px;
-}
-
-.cuadro_barras{
-    margin: 15px 0px 0px 20px;
-    color: rgb(1, 82, 163);
-    font-size: 17px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-.promedio{
-    font-size: 45px;
-    font-weight: 500;
-    color: black;
-    margin: 0px 50px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.tamaño_opinion{
-    font-size: 12px;
-}
-
-    /* .stars_radio_input:checked ~ svg {
-fill: yellow;
-    } */
 
 .comentario_vacio{
     margin: 18px;
