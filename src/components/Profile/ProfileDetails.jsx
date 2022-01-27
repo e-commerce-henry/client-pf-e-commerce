@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Style from './ProfileDetails.module.css'
 import {useNavigate} from 'react-router-dom'
@@ -40,7 +41,7 @@ export default function ProfileDetails(){
                     <li>Dirección: (dirección del cliente) <button className={Style.modificar}>Modificar</button></li>
                 </ul> */}
             </div>
-            <div className={Style.detailsfooter}><Footer /></div>
+            {/* <div className={Style.detailsfooter}><Footer /></div> */}
         </div>
     )
 }

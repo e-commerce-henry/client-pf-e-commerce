@@ -67,28 +67,35 @@ const InicioSeccion = () => {
 }
 
     return (
-        <div>
-          <h1>Sesion</h1>
+      
+        <div className="cont">
+          <h1>Iniciar sesion</h1>
             <form className="form" onSubmit={handleSubmit}>
-                <div>
+                <div className="stylo">
                     <label>Username:</label>
-                    <input className={errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={input.email} />
+                    <input className= {errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={input.email} />
                     {errors.email && (<p className="danger">{errors.email}</p>)}
                 </div>
 
-                <div>
+                <div className="stylo">
                     <label>Password:</label>
-                    <input className={errors.pwd && 'danger'} type="pwd" name="pwd" onChange={handleInputChange} value={input.pwd} />
+                    
+                    <input className = {errors.pwd && 'danger'} type="pwd" name="pwd" onChange={handleInputChange} value={input.pwd} />
                     {errors.pwd && (<p className="danger">{errors.pwd}</p>)}
                 </div>
                 <div>
                     <button className="crear" type="submit">Iniciar Sección</button>
                     <p>O tambien puedes </p>
-                    <Link to="/addUsers"><p className="crear" type="submit">registrate aqui</p></Link>
+                    <button className="crear"> <Link to="/addUsers" type="submit">registrate aqui</Link>
+                    </button>
+                    
                 </div>
             </form>
-      <div className={Style.profilefooter}></div>
-  </div>
+            <hr/>
+            
+        </div> 
+       
+      
   );
 };
 

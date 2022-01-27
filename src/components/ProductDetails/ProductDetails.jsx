@@ -53,7 +53,7 @@ export default function ProductDetail(){
                             </button>
                         </div>
                         <div className={Style.titulo}>{detailsProduct.name}</div> <br />
-                        <div className={Style.det}><b>Precio: </b>${Number(Math.ceil(detailsProduct.price)).toLocaleString()} </div> <br />
+                        <div className={Style.det}><b>Precio: </b>$ {Number(Math.ceil(detailsProduct.price)).toLocaleString()} </div> <br />
                         <div className={Style.det}><b>Marca: </b>{detailsProduct.brand}</div><br /> 
                         <div className={Style.det}><b>Stock: </b>{detailsProduct.stock} unidades </div><br />
                     </div>
