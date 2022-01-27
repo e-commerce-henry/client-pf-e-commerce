@@ -68,9 +68,9 @@ const InicioSeccion = () => {
 
     return (
       
-        <div className="cont">
+        <div className="boxIs">
           <h1>Iniciar sesion</h1>
-            <form className="form" onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit}>
                 <div className="stylo">
                     <label>Username:</label>
                     <input className= {errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={input.email} />
