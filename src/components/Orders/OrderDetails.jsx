@@ -39,10 +39,14 @@ function OrderDetails(){
                     <div className={Style.total}>
                         SUMA TOTAL
                     </div>
+                    <div className={Style.tot}>
+                        $
+                    </div>
                 </div>
-                <div> <button>BOTON BACK</button> </div>
-                <div> <button>BOTON FINALIZAR COMPRA</button> </div>
-                
+                <div className={Style.botones}>
+                    <div> <button className={Style.btnback}>BACK</button> </div>
+                    <div> <button className={Style.btnfinalizar}>FINALIZAR COMPRA</button> </div>
+                </div>
             </div>
             <Footer />
         </>

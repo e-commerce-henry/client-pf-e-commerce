@@ -34,9 +34,6 @@ function App() {
 				<Route path="/politicaDePrivacidad" element={<PoliticaDePrivacidad />}/>
 				<Route path="/equipo" element={<Equipo />} />
 				<Route path="/addUsers" element={<AddUsers />} />
-				<Route path="/probando" element={<OrderDetails />} /> 
-				<Route path="/probando2" element={<CompraExitosa />} /> 
-
 			</Routes>
 		</>
 	);
