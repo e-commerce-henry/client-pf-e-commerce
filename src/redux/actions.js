@@ -143,6 +143,9 @@ export function removeCart(id){
         dispatch({
             type: REMOVE_CART,
             payload: json.data
+        })
+    }
+}
 
 export function addProductWishlist(id){
     return async function(dispatch){
