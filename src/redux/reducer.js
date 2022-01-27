@@ -10,6 +10,7 @@ import {
     CREAR_USERS,
     ADD_INICIO_USER,
     ADD_PRODUCT_SHOPPING_CART,
+    REMOVE_CART,
     SHOW_SHOPPING_CART,
     ADD_PRODUCT_WISHLIST,
     DELETE_PRODUCT_WISHLIST
@@ -22,9 +23,9 @@ const inicialState = {
     details: [],
     categories: [],
     order: [],
-    favs: []
-
-
+    favs: [],
+    idUser: [],
+    userAuth: false
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -53,7 +54,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 categories: action.payload
             }
-
         case FILTER_BY_CATEGORY:
             let all = state.allProducts
             const filtered = action.payload === 'none' ? all : all.filter(e => e.category.name.includes(action.payload))        
@@ -61,7 +61,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 products: filtered
             }
-
         case FILTER_BY_BRAND:
             return {
                 ...state,
@@ -109,25 +108,32 @@ const reducer = (state = inicialState, action) => {
                     ...state,
                     order: sortedArr
                 };
-
         case CREAR_USERS:
                 return { ...state, products: action.payload};
 
         case ADD_INICIO_USER:
-            return {...state, products: action.payload};
-
+            if(action.payload){
+                return {...state, userAuth: true, idUser: action.payload}
+            } 
+            return {...state, userAuth: false, idUser: []}
         case ADD_PRODUCT_SHOPPING_CART:
             let {payload} = action
             state.cart.push(payload)
             return{
                 ...state
             }
-        
+        case REMOVE_CART : 
+            let {vaciar} = action
+            state.cart.shift(vaciar)
+            return{
+            ...state
+            }
         case ADD_PRODUCT_WISHLIST:
             state.favs.push(action.payload)
             return{
                 ...state
             }
+        
 
     
             default: return state 

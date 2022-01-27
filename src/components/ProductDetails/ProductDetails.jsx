@@ -11,6 +11,9 @@ import Style from './ProductDetails.module.css'
 export default function ProductDetail(){
     const dispatch = useDispatch()
     const { id } = useParams()
+    function addShoppingCart(id){
+        dispatch(addProductShoppingCart(id))
+    }
 
     useEffect (()=> {
         dispatch(productDetail(id));
@@ -33,6 +36,7 @@ export default function ProductDetail(){
         <><Head/>
         
             <div className= {Style.cont}>
+
                 <div className={Style.grid}>
                     <div className={Style.child2}>
                         <div className={Style.producticons}>
@@ -64,6 +68,7 @@ export default function ProductDetail(){
                 <Link to={`/`}>
                     <button className={Style.butt}>Volver</button>
                 </Link>                    
+
             </div> 
             <div className={Style.footer}><Footer/></div>
         </>
