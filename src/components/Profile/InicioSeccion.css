@@ -1,0 +1,50 @@
+.boxIs {
+    width: 100%;
+    height: 10%;
+    margin-top:2%;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: ;
+    background-color: eeeeee;
+    border: solid 1px #00adb5;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+  }
+.stylo{
+    padding-top: 5px;
+
+}
+
+.crear{
+     border: none;
+    outline: none;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 10px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    width: 100px;
+    height: 32px;
+    border-width: 1px;
+    color: rgba(240, 240, 240, 1);
+    border-radius: 6px;
+    box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); 
+    text-shadow: inset 0px 1px 0px #303841;
+    background: #303841;
+    background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+    
+      
+    }
+    
+   .butt:hover {
+      background: linear-gradient(#303841, rgb(27, 27, 27));
+      cursor: pointer;
+    }
+    .footer{
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  } 
+  

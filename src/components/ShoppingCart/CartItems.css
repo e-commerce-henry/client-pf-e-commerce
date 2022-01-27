@@ -2,23 +2,32 @@
 
 
 .div1 {
-    border: solid 1px #00adb5;   
+    width: 80%;
+    height: 1%;
+   
+    background-color: eeeeee;
+    border: solid 1px #00adb5;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+    /* border: solid 1px #00adb5;   
     border-radius: 5%;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    padding-bottom: 0%;
+    padding-bottom: 0%;*/
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 5%; 
 
 }
 .name{
+    font-family: "Lexend Deca", sans-serif;
     text-align: center;
-  font-style:normal;
-  font-size: 15pt;
+    font-style:normal;
+    font-size: 15pt;
     
 }
 .div2{
@@ -31,31 +40,32 @@
 
 }
 .text{
+    border: #303841;
     margin-top: 0pt;
     font-size:15px;
-    font-family:Arial;
+    font-family: "Lexend Deca", sans-serif;
     line-height: 50pt;
 
 
 }
 .boo{
-    flex-grow: inherit;
-    grid-row: 5px;
-    size: 20%;
-    margin-left: 10%;
-    font-size:15px;
-    font-family:Arial;
-    width:140px;
-    height:50px;
-    border-width:1px;
-    color:rgba(240, 240, 240, 1);
-    border-color:rgba(255, 109, 46, 0.96);
-    font-weight:bold;
-    border-top-left-radius:6px;
-    border-top-right-radius:6px;
-    border-bottom-left-radius:6px;
-    border-bottom-right-radius:6px;
-    box-shadow:inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
-    text-shadow:inset 0px 1px 0px rgba(48, 56, 65, 1);
-    background:linear-gradient(rgba(160, 160, 160, 1), rgba(48, 56, 65, 1));
+
+    border: none;
+    outline: none;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    width: 100px;
+    height: 32px;
+    border-width: 1px;
+    color: rgba(240, 240, 240, 1);
+    border-radius: 6px;
+    /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+    text-shadow: inset 0px 1px 0px #303841;
+    background: #303841;
 }
+.boo:hover {
+    background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+    cursor: pointer;
+  }
