@@ -28,15 +28,8 @@ function App() {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />
-
-				<Route
-					path="/terminosYcondiciones"
-					element={<TerminosYcondiciones />}
-				/>
-				<Route
-					path="/politicaDePrivacidad"
-					element={<PoliticaDePrivacidad />}
-				/>
+				<Route path="/terminosYcondiciones" element={<TerminosYcondiciones />}/>
+				<Route path="/politicaDePrivacidad" element={<PoliticaDePrivacidad />}/>
 				<Route path="/equipo" element={<Equipo />} />
 				<Route path="/addUsers" element={<AddUsers />} />
 			</Routes>

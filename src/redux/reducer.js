@@ -23,9 +23,9 @@ const inicialState = {
     details: [],
     categories: [],
     order: [],
-    favs: []
-
-
+    favs: [],
+    idUser: [],
+    userAuth: false
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -54,7 +54,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 categories: action.payload
             }
-
         case FILTER_BY_CATEGORY:
             let all = state.allProducts
             const filtered = action.payload === 'none' ? all : all.filter(e => e.category.name.includes(action.payload))        
@@ -62,7 +61,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 products: filtered
             }
-
         case FILTER_BY_BRAND:
             return {
                 ...state,
@@ -110,13 +108,14 @@ const reducer = (state = inicialState, action) => {
                     ...state,
                     order: sortedArr
                 };
-
         case CREAR_USERS:
                 return { ...state, products: action.payload};
 
         case ADD_INICIO_USER:
-            return {...state, products: action.payload};
-
+            if(action.payload){
+                return {...state, userAuth: true, idUser: action.payload}
+            } 
+            return {...state, userAuth: false, idUser: []}
         case ADD_PRODUCT_SHOPPING_CART:
             let {payload} = action
             state.cart.push(payload)
@@ -134,6 +133,7 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+        
 
     
             default: return state 

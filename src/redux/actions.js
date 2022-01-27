@@ -113,11 +113,16 @@ export const addUsers = (payload) => {
         return response;
     }
 }
-
+//Responder
 export const addInicioUser = ({email, pwd}) => {
-    return async (dispatch) => {
-        let response = await axios.post(`http://localhost:3001/auth/signIn`, {email, pwd}, { withCredentials: true });
-        return response;
+    return  (dispatch) => {
+        axios.post(`http://localhost:3001/auth/signIn`, {email, pwd}, { withCredentials: true })
+        .then(res =>{
+            res.data.user? 
+            dispatch({type: ADD_INICIO_USER, payload:res.data.user}) 
+            : 
+            dispatch({type: ADD_INICIO_USER, payload: false}) 
+        })
     }
 }
 //Acciones carrito 
