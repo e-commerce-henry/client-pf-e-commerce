@@ -14,12 +14,13 @@ function valProduct(e){
             <div className={Style.eachcard}>
             <Card 
             key = {e.id}
-            id = {e.id}
+            productId = {e.id}
             name = {e.name}
             price= {e.price}
             img ={e.img}
             brand={e.brand}
-            /></div>
+            />
+            </div>
         )
     }
 }

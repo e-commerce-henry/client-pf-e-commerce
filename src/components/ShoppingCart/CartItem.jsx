@@ -8,11 +8,11 @@ import { useDispatch } from 'react-redux';
 
 
 
-export default function CartItem({id,name, price, img, brand}){
+export default function CartItem({ price}){
     const dispatch = useDispatch()
 
-    function removeCart(id){
-    dispatch(removeCart(id))
+    function removeCart(productId){
+    dispatch(removeCart(productId))
 }
     // eslint-disable-next-line no-unused-vars
     // const [carts, setCarts] = useState({
@@ -29,7 +29,8 @@ export default function CartItem({id,name, price, img, brand}){
   
     return(
         <>
-            <div className='div1' viewBox="0 0 16 16">
+        <p>{price}</p>
+{/*             <div className='div1' viewBox="0 0 16 16">
                 <div className='name'>Name{name}
                 
                 </div>
@@ -46,8 +47,8 @@ export default function CartItem({id,name, price, img, brand}){
                 </svg>
                 </button></p></div>
                 </div>
-                {/* <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div> */}
-            </div>
+                <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div>
+            </div> */}
         </>
     )
 }
