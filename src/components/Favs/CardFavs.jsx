@@ -1,19 +1,15 @@
 import React from 'react';
-import Style from './Card.module.css';
-import { useDispatch } from "react-redux";
+import Style from './CardFavs.module.css';
 import { Link } from "react-router-dom";
-import { addProductShoppingCart, addProductWishlist } from '../../redux/actions';
+import { useDispatch } from "react-redux";
+import { addProductShoppingCart } from '../../redux/actions';
 
-function Card({ id, name, price, img, brand}){
+function CardFavs({ id, name, price, img}){
     const dispatch = useDispatch()
 
     function addShoppingCart(id){
         alert(`Agregado a carrito "${name}"`)
         dispatch(addProductShoppingCart(id))
-    }
-    function addFavs(id){
-        alert(`Se ha agregado a favoritos: "${name}"`)
-        dispatch(addProductWishlist(id))
     }
     return(
         <div>
@@ -26,15 +22,15 @@ function Card({ id, name, price, img, brand}){
                     {Number(Math.ceil(price)).toLocaleString()}</div>
 
                     <div className={Style.producticons}>
-                        <button className={Style.productbtns} onClick={() => addFavs(id)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-                            </svg>
-                        </button>
-
                         <button className={Style.productbtns} onClick={() => addShoppingCart(id)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-cart-fill" viewBox="0 0 16 16">
                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </button>
+
+                        <button className={Style.productbtns}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                             </svg>
                         </button>
                     </div>         
@@ -44,4 +40,4 @@ function Card({ id, name, price, img, brand}){
         )
     };
     
-    export default Card;
+    export default CardFavs;
