@@ -1,6 +1,6 @@
 import React, { useState} from "react";
-import { useDispatch } from "react-redux";
 import {addInicioUser} from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import Style from './Profile.module.css';
@@ -68,12 +68,7 @@ const InicioSeccion = () => {
 
     return (
         <div>
-            <Head />
-            <div className={Style.container}>
-                <button className={Style.btnprofile} type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>
-                <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
-                <button className={Style.btnprofileselected} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
-            </div>
+          <h1>Sesion</h1>
             <form className="form" onSubmit={handleSubmit}>
                 <div>
                     <label>Username:</label>
@@ -88,10 +83,11 @@ const InicioSeccion = () => {
                 </div>
                 <div>
                     <button className="crear" type="submit">Iniciar Sección</button>
-                    <Link to="/addUsers"><button className="crear" type="submit">Registrarse</button></Link>
+                    <p>O tambien puedes </p>
+                    <Link to="/addUsers"><p className="crear" type="submit">registrate aqui</p></Link>
                 </div>
             </form>
-      <div className={Style.profilefooter}></div><Footer />
+      <div className={Style.profilefooter}></div>
   </div>
   );
 };
