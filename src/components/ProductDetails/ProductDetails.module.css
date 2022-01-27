@@ -35,4 +35,27 @@
 .butt:hover {
     background: linear-gradient(rgba(48, 56, 65, 1), rgba(160, 160, 160, 1));
   }
-                
+
+.boton_escribir_comentario{
+  padding: 12px;
+  margin-left: 25px;
+  border-radius: 5px;
+  border: 2px solid rgb(0, 50, 77);
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.boton_escribir_comentario:hover{
+  background-color: #25007c;
+  color: white;
+  /* border: 1px solid white; */
+  
+}
+
+.container_escribir_comentario{
+  border-top: 3px solid #027219;
+  width: 95%;
+  margin-left: 35px;
+  padding-top: 10px;
+
+}
