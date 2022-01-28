@@ -4,29 +4,29 @@ import { useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import { getShoppingCart } from "../../redux/actions";
 
-/*             {
-                "id": 1,
-                "quantity": 1,
-                "price": 500,
-                "cartId": 2,
-                "productId": 50
-            } */
 
-function ShoppingCart(){
+export default function ShoppingCart(){
     const shoppingCart = useSelector(state => state.cart)
-    const userId =  useSelector(state => DataTransferItem.idUser)
+    let userId =  useSelector(state => state.idUser)
     const productos = useSelector( state => state.products)
     const dispatch = useDispatch();
-
-/*     products.map(e => {
-        if(e.id = id){
-            name = e.name
-        }
-    }) */
 
     useEffect(() => {
         dispatch(getShoppingCart(userId));
     }, [dispatch]);
+
+    function searchAndComplementInfo(id){
+        for (let i = 0; i < productos.length; i++) {
+            if(productos[i].id === id){
+                return {
+                    name: productos[i].name,
+                    img: productos[i].img,
+                    brand: productos[i].brand
+                }
+            }
+            
+        }
+    }
 
     return(
         <>
@@ -34,10 +34,15 @@ function ShoppingCart(){
                 <h1>{`Este es tu carrito "Nombre del user"`}</h1>
                 <div>
                     {
-                        shoppingCart?
-                        shoppingCart.cartItems.map(e => (
+                        shoppingCart[0]?
+                        shoppingCart[0].cartItems.map(e => (
                             <CartItem
-                                price= "500"
+                                id = {e.id}
+                                key = {e.id}
+                                price = {e.price}
+                                quantity = {e.quantity}
+                                productId = {e.productId}
+                                addInfo = {searchAndComplementInfo(e.productId)}
                             />
                         )):null
                     }
@@ -47,4 +52,4 @@ function ShoppingCart(){
     )
 };
 
-export default {ShoppingCart}
+
