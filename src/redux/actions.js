@@ -14,6 +14,9 @@ export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 export const REMOVE_CART = 'REMOVE_CART';
 export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+export const CREATE_REVIEWS = "CREATE_REVIEWS";
+export const GET_REVIEWS = "GET_REVIEWS";
+export const DETALLE_USERS = "DETALLE_USERS";
 
 
 export function productDetail(id){
@@ -127,12 +130,11 @@ export const addInicioUser = ({email, pwd}) => {
 }
 //Acciones carrito 
 
-export function addProductShoppingCart(id){
+export function addProductShoppingCart(body){
     return async function(dispatch){
-        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        await axios.post(`http://localhost:3001/cart`, body)
         dispatch ({
-            type: ADD_PRODUCT_SHOPPING_CART, 
-            payload: json.data
+            type: ADD_PRODUCT_SHOPPING_CART
         })
     }
 }
@@ -158,4 +160,52 @@ export function addProductWishlist(id){
     }
 }
 
+//CreateReview crea una puntuacion y comentario 
+export function createReview(id,review){
+    return dispatch => {
+        axios.post(`http://localhost:3001/productReview/${id}/review`,review)
+        .then((result) => {
+            return dispatch({
+                type:CREATE_REVIEWS,
+                payload: result.data
+            })
+        }).catch((err) => {
+            console.log('err :>> ', err);
+        });
+    }
 
+}
+
+//obtengo todos mis comentarios por ID de producto
+export function getReview(id){
+    return dispatch => {
+        axios.get(`http://localhost:3001/productReview/${id}/review`)
+        .then((result) => {
+            return dispatch({
+                type:GET_REVIEWS,
+                payload:result.data
+            })
+        }).catch((err) => {
+            console.log('err :>> ', err);
+        });
+    }
+}
+
+export const detalleUsers = (id) => {
+    return async (dispatch) => {
+        let response = await axios.get(`http://localhost:3001/users/${id}`);
+        dispatch({
+            type: DETALLE_USERS,
+            payload: response.data
+        });
+    }
+}
+
+export function getShoppingCart(userId){
+    return async (dispatch) => {
+        let carrito = await axios(`http://localhost:3001/cart/`, userId)
+        dispatch({
+            type: SHOW_SHOPPING_CART, payload: carrito.data
+        })
+    }
+}
