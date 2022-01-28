@@ -21,7 +21,7 @@ import {
 } from './actions';
 
 const inicialState = {
-    cart: [],
+    cart: {},
     products : [],
     allProducts : [],
     details: [],
@@ -30,7 +30,7 @@ const inicialState = {
     favs: [],
     create_review :{},
     getreview:[],
-    idUser: [],
+    idUser: '',
     userAuth: false,
     saleBanner: [],
     userDetail: {}

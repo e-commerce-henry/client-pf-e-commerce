@@ -1,36 +1,26 @@
 import React  from 'react';
 import "./CartItems.css";
 import { Link } from "react-router-dom";
-import  removeCart  from '../../redux/actions';
+/* import  removeCart  from '../../redux/actions'; */
 import { useDispatch } from 'react-redux';
 // import { useState } from 'react';
 // import { useSelector } from 'react-redux';
 
 
 
-export default function CartItem({ price}){
+export default function CartItem({id, price, quantity, productId, addInfo}){
+    const {name, img, brand} = addInfo
     const dispatch = useDispatch()
 
     function removeCart(productId){
     dispatch(removeCart(productId))
-}
-    // eslint-disable-next-line no-unused-vars
-    // const [carts, setCarts] = useState({
-    //     name: ""
-    // })
-    // const cart = useSelector((state)=> state.cart)
-    
-    // function handleDelete (id){
-    // setCarts ({
-    //     ...cart, 
-    //     products: cart.products.filter((el)=> el !== id),
-    // })}
+    }
+
 
   
     return(
-        <>
-        <p>{price}</p>
-{/*             <div className='div1' viewBox="0 0 16 16">
+        <div key={id}>
+            <div className='div1' viewBox="0 0 16 16">
                 <div className='name'>Name{name}
                 
                 </div>
@@ -47,8 +37,8 @@ export default function CartItem({ price}){
                 </svg>
                 </button></p></div>
                 </div>
-                <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div>
-            </div> */}
-        </>
+                {/* <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div> */}
+            </div>
+        </div>
     )
 }

@@ -218,10 +218,10 @@ export const detalleUsers = (id) => {
 }
 
 export function getShoppingCart(userId){
-    return async (dispatch) => {
-        let carrito = await axios(`http://localhost:3001/cart/`, userId)
-        dispatch({
-            type: SHOW_SHOPPING_CART, payload: carrito.data
+    return async function(dispatch){
+        let prod = await axios(`http://localhost:3001/cart/${userId}`)
+        dispatch ({
+            type: SHOW_SHOPPING_CART, payload: prod.data
         })
     }
 }
