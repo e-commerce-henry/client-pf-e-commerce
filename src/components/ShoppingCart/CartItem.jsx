@@ -19,18 +19,20 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
 
      function sumar(){
         if(quantity < stock){
-            quantity = quantity + 1 
-                   
-                console.log(quantity)
+            quantity = quantity + 1        
+             console.log(quantity)
              dispatch(editShoppingCart({productId, userId, quantity}))
         }
         dispatch(getShoppingCart(userId))
     }
     function restar(){
         if(quantity > 1){
-            editShoppingCart(quantity - 1)  
-        }
-    }
+            quantity = quantity -1        
+            console.log(quantity)
+            dispatch(editShoppingCart({productId, userId, quantity}))
+       }
+       dispatch(getShoppingCart(userId))
+   }
 
     function removeCart(productId){
     dispatch(removeCart(productId))
