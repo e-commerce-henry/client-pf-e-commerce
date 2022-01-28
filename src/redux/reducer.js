@@ -17,7 +17,8 @@ import {
     CREATE_REVIEWS,
     GET_REVIEWS,
     GET_SALEBANNER,
-    DETALLE_USERS
+    DETALLE_USERS, 
+    EDIT_SHOPPING_CART
 } from './actions';
 
 const inicialState = {
@@ -175,6 +176,11 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 cart: action.payload
             }
+        case EDIT_SHOPPING_CART:
+            return {
+                ...state
+            }
+        
         default: return state 
 
 }
