@@ -15,7 +15,8 @@ import {
     ADD_PRODUCT_WISHLIST,
     DELETE_PRODUCT_WISHLIST,
     CREATE_REVIEWS,
-    GET_REVIEWS
+    GET_REVIEWS,
+    GET_SALEBANNER
 } from './actions';
 
 const inicialState = {
@@ -29,7 +30,8 @@ const inicialState = {
     create_review :{},
     getreview:[],
     idUser: [],
-    userAuth: false
+    userAuth: false,
+    saleBanner: [],
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -151,6 +153,11 @@ const reducer = (state = inicialState, action) => {
                 getreview: action.payload
             }
         
+        case GET_SALEBANNER:
+        return {
+            ...state,
+            saleBanner: action.payload,
+        };
 
     
         default: return state 

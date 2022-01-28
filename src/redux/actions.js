@@ -16,6 +16,7 @@ export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
 export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
+export const GET_SALEBANNER = "GET_SALEBANNER";
 
 
 export function productDetail(id){
@@ -189,4 +190,20 @@ export function getReview(id){
             console.log('err :>> ', err);
         });
     }
+}
+
+//obtengo mi salebanner
+export function getSaleBanner() {
+	return  (dispatch) => {
+		axios.get("http://localhost:3001/saleBanner")
+        .then((result) => {
+            return dispatch({
+                type: GET_SALEBANNER,
+                payload: result.data
+            })
+        }).catch((err) => {
+            console.error(err)
+        });
+		
+	};
 }
