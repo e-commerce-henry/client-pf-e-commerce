@@ -6,8 +6,11 @@ function HomeOrganization(){
     return(
         <>
         <div className={Style.thebar}>
-             <div className={Style.lateral}></div> 
-            <div className={Style.central}> <SaleBanner /><Cards />  </div>
+            <div className={Style.lateral}></div> 
+            <div className={Style.central}>
+                <SaleBanner />
+                <Cards />
+            </div>
         </div>
             
         </>

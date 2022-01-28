@@ -6,7 +6,7 @@ import { addProductShoppingCart, addProductWishlist } from '../../redux/actions'
 
 function Card({ productId, name, price, img, brand}){
     const dispatch = useDispatch()
-    const userId = 3
+    const userId = useSelector(state => state.idUser)
 
     function addShoppingCart(productId){
         console.log(productId)

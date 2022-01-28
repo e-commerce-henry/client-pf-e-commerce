@@ -16,6 +16,7 @@ export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
 export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
+export const GET_SALEBANNER = "GET_SALEBANNER";
 export const DETALLE_USERS = "DETALLE_USERS";
 
 
@@ -200,6 +201,21 @@ export function getReview(id){
     }
 }
 
+//obtengo mi salebanner
+export function getSaleBanner() {
+	return  (dispatch) => {
+		axios.get("http://localhost:3001/saleBanner")
+        .then((result) => {
+            return dispatch({
+                type: GET_SALEBANNER,
+                payload: result.data
+            })
+        }).catch((err) => {
+            console.error(err)
+        });
+		
+	}
+} 
 export const detalleUsers = (id) => {
     return async (dispatch) => {
         let response = await axios.get(`http://localhost:3001/users/${id}`);
@@ -211,10 +227,10 @@ export const detalleUsers = (id) => {
 }
 
 export function getShoppingCart(userId){
-    return async (dispatch) => {
-        let carrito = await axios(`http://localhost:3001/cart/`, userId)
-        dispatch({
-            type: SHOW_SHOPPING_CART, payload: carrito.data
+    return async function(dispatch){
+        let prod = await axios(`http://localhost:3001/cart/${userId}`)
+        dispatch ({
+            type: SHOW_SHOPPING_CART, payload: prod.data
         })
     }
 }
