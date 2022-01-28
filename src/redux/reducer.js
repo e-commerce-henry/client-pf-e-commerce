@@ -139,6 +139,11 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+        case DELETE_PRODUCT_WISHLIST:
+            return{
+            ...state,
+            favs: state.favs.filter(e => e.id !== action.payload.id)
+            }
 
         //crea mi review
         case CREATE_REVIEWS:

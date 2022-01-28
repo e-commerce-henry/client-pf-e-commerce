@@ -161,6 +161,15 @@ export function addProductWishlist(id){
     }
 }
 
+export function deleteProductWishlist(id){
+    return async function (dispatch){
+        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch({
+            type: DELETE_PRODUCT_WISHLIST,
+            payload: json.data
+        })
+    }
+}
 //CreateReview crea una puntuacion y comentario 
 export function createReview(id,review){
     return dispatch => {
