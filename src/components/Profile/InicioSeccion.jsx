@@ -1,12 +1,11 @@
 import React, { useState} from "react";
 import {addInicioUser} from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import Head from '../Head/Head';
-import Footer from '../Footer/Footer';
+
 import Style from './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
-import {useNavigate} from 'react-router-dom';
+
 
 
 export function validate(input) {
@@ -18,9 +17,7 @@ export function validate(input) {
     }
     if (!input.pwd) {
       errors.pwd = 'Password is required';
-    } else if (!/(?=.*[0-9])/.test(input.pwd)) {
-      errors.pwd = 'Password is invalid';
-    }
+    } 
     return errors;
   };
   
@@ -28,10 +25,6 @@ export function validate(input) {
 
 const InicioSeccion = () => {
 
-    const navigate = useNavigate();
-    function HandleClick(e){
-        navigate(`/${e.target.value}`);
-    };
 
 
   const dispatch = useDispatch();
@@ -71,7 +64,7 @@ const InicioSeccion = () => {
           <h1>Sesion</h1>
             <form className="form" onSubmit={handleSubmit}>
                 <div>
-                    <label>Username:</label>
+                    <label>Email:</label>
                     <input className={errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={input.email} />
                     {errors.email && (<p className="danger">{errors.email}</p>)}
                 </div>
