@@ -17,6 +17,7 @@ export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
 export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
 export const GET_SALEBANNER = "GET_SALEBANNER";
+export const DETALLE_USERS = "DETALLE_USERS";
 
 
 export function productDetail(id){
@@ -130,12 +131,11 @@ export const addInicioUser = ({email, pwd}) => {
 }
 //Acciones carrito 
 
-export function addProductShoppingCart(id){
+export function addProductShoppingCart(body){
     return async function(dispatch){
-        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        await axios.post(`http://localhost:3001/cart`, body)
         dispatch ({
-            type: ADD_PRODUCT_SHOPPING_CART, 
-            payload: json.data
+            type: ADD_PRODUCT_SHOPPING_CART
         })
     }
 }
@@ -205,5 +205,23 @@ export function getSaleBanner() {
             console.error(err)
         });
 		
-	};
+	}
+} 
+export const detalleUsers = (id) => {
+    return async (dispatch) => {
+        let response = await axios.get(`http://localhost:3001/users/${id}`);
+        dispatch({
+            type: DETALLE_USERS,
+            payload: response.data
+        });
+    }
+}
+
+export function getShoppingCart(userId){
+    return async (dispatch) => {
+        let carrito = await axios(`http://localhost:3001/cart/`, userId)
+        dispatch({
+            type: SHOW_SHOPPING_CART, payload: carrito.data
+        })
+    }
 }

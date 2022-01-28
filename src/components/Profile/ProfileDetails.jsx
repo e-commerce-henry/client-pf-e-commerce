@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Style from './ProfileDetails.module.css'
-import {useNavigate} from 'react-router-dom'
 import Head from '../Head/Head';
-import Footer from '../Footer/Footer';
 import InicioSeccion from "./InicioSeccion";
+import { detalleUsers } from "../../redux/actions";
+import PersonalInfo from "./PersonalInfo";
 
 export default function ProfileDetails(){
-    const userAuth = useSelector(state => state.userAuth)
+    const dispatch = useDispatch();
+    const userAuth = useSelector(state => state.userAuth);
+    const userID = useSelector(state => state.idUser)
     const navigate = useNavigate();
+
     function HandleClick(e){
         navigate(`/${e.target.value}`);
     };
+
+    useEffect(() => {
+        dispatch(detalleUsers(userID));
+    }, [dispatch]);
+
 
     return(
         <div >
@@ -30,18 +39,10 @@ export default function ProfileDetails(){
             
             <div className={Style.details}>
                 {
-                    userAuth? <p>Estos son tus datos personales</p>:
+                    userAuth? <PersonalInfo/>:
                     <InicioSeccion/>
                 }
-                
-{/*                 <ul>
-                    <li>Nombre: (nombre del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Usuario: (usuario del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Email: (email del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Dirección: (dirección del cliente) <button className={Style.modificar}>Modificar</button></li>
-                </ul> */}
             </div>
-            {/* <div className={Style.detailsfooter}><Footer /></div> */}
         </div>
     )
 }
