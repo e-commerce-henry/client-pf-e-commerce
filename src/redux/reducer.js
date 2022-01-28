@@ -167,7 +167,7 @@ const reducer = (state = inicialState, action) => {
 
     
         case "DETALLE_USERS":
-            return {
+                return {
                  ...state,
                   userDetail: action.payload 
             }

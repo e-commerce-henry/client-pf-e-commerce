@@ -16,10 +16,7 @@ export default function ProfileDetails(){
     function HandleClick(e){
         navigate(`/${e.target.value}`);
     };
-
-    useEffect(() => {
-        dispatch(detalleUsers(userID));
-    }, [dispatch]);
+    
 
 
     return(

@@ -1,10 +1,10 @@
 import React, { useState} from "react";
 import {addInicioUser} from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux"
-import Style from './Profile.module.css';
+import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
+
 
 
 
@@ -29,6 +29,8 @@ const InicioSeccion = () => {
 
   const dispatch = useDispatch();
 
+
+
   
   const [input, setInput] = useState({
     email: '',
@@ -50,13 +52,14 @@ const InicioSeccion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate({...input, [e.target.name]: e.target.value}))
-    alert("Usuario Creado");
+    
     dispatch(addInicioUser(input));
     setInput ({
         email: '',
         pwd: ''
      
     })
+    
 }
 
     return (
