@@ -16,6 +16,7 @@ import {
     DELETE_PRODUCT_WISHLIST,
     CREATE_REVIEWS,
     GET_REVIEWS,
+    GET_SALEBANNER,
     DETALLE_USERS
 } from './actions';
 
@@ -31,6 +32,7 @@ const inicialState = {
     getreview:[],
     idUser: [],
     userAuth: false,
+    saleBanner: [],
     userDetail: {}
 }; 
 
@@ -150,6 +152,14 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 getreview: action.payload
             }
+        
+        case GET_SALEBANNER:
+        return {
+            ...state,
+            saleBanner: action.payload,
+        };
+
+    
         case "DETALLE_USERS":
             return {
                  ...state,
