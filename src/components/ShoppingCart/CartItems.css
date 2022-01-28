@@ -48,6 +48,11 @@
 
 
 }
+
+.contador{
+    display: flex;
+    flex-direction: column;
+}
 .boo{
 
     border: none;
