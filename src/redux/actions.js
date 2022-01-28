@@ -18,6 +18,7 @@ export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
 export const GET_SALEBANNER = "GET_SALEBANNER";
 export const DETALLE_USERS = "DETALLE_USERS";
+export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART"
 
 
 export function productDetail(id){
@@ -161,6 +162,15 @@ export function addProductWishlist(id){
     }
 }
 
+export function deleteProductWishlist(id){
+    return async function (dispatch){
+        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        dispatch({
+            type: DELETE_PRODUCT_WISHLIST,
+            payload: json.data
+        })
+    }
+}
 //CreateReview crea una puntuacion y comentario 
 export function createReview(id,review){
     return dispatch => {
@@ -222,6 +232,16 @@ export function getShoppingCart(userId){
         let prod = await axios(`http://localhost:3001/cart/${userId}`)
         dispatch ({
             type: SHOW_SHOPPING_CART, payload: prod.data
+        })
+    }
+}
+
+export function editShoppingCart(body){
+    return async function (dispatch){
+        console.log(body);
+        await axios.put(`http://localhost:3001/cart/`, body)
+        dispatch({
+            type: EDIT_SHOPPING_CART
         })
     }
 }

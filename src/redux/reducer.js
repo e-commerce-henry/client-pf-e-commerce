@@ -17,7 +17,8 @@ import {
     CREATE_REVIEWS,
     GET_REVIEWS,
     GET_SALEBANNER,
-    DETALLE_USERS
+    DETALLE_USERS, 
+    EDIT_SHOPPING_CART
 } from './actions';
 
 const inicialState = {
@@ -139,6 +140,11 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state
             }
+        case DELETE_PRODUCT_WISHLIST:
+            return{
+            ...state,
+            favs: state.favs.filter(e => e.id !== action.payload.id)
+            }
 
         //crea mi review
         case CREATE_REVIEWS:
@@ -161,7 +167,7 @@ const reducer = (state = inicialState, action) => {
 
     
         case "DETALLE_USERS":
-            return {
+                return {
                  ...state,
                   userDetail: action.payload 
             }
@@ -170,6 +176,11 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 cart: action.payload
             }
+        case EDIT_SHOPPING_CART:
+            return {
+                ...state
+            }
+        
         default: return state 
 
 }

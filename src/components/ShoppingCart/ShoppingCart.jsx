@@ -21,7 +21,8 @@ export default function ShoppingCart(){
                 return {
                     name: productos[i].name,
                     img: productos[i].img,
-                    brand: productos[i].brand
+                    brand: productos[i].brand,
+                    stock: productos[i].stock
                 }
             }
             
