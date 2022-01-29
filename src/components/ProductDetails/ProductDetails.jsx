@@ -152,11 +152,11 @@ export default function ProductDetail(){
                 >X</button>
             </div>
             <div align='center' >
-                <h2>Tu opinión nos importa ¡Evalúa tu Producto!</h2>
+                <h2 className={Style.title}>Tu opinión nos importa ¡Evalúa tu Producto!</h2>
             </div>
             <br/>
             <div >
-                <label>¿Cuántas estrellas le das a este producto? (Selecciona de 1 a 5 estrellas en tu respuesta, siendo 1 la peor valoración y 5 la mejor).*</label>
+                <label className={Style.subtitle}>¿Cuántas estrellas le das a este producto? (Selecciona de 1 a 5 estrellas en tu respuesta, siendo 1 la peor valoración y 5 la mejor).*</label>
                 <div className={s.estrellas} >
                     <ReactStars
                         count={5}
@@ -169,13 +169,13 @@ export default function ProductDetail(){
             </div>
             <br/>
             <div>
-                <label>
+                <label className={Style.subtitle}>
                     Tu Opinión en un Título
                 </label>
                 <input
                     title="maximo 40 caracteres"
                     maxLength={40}
-                    placeholder='Escribe tu opinión del Producto en una frase*'
+                    placeholder='Escribe tu opinión del producto en una frase'
                     className={s.caja}
                     type="text"
                     value={values.title}
@@ -185,7 +185,7 @@ export default function ProductDetail(){
             </div>
             <br/>
             <div>
-                <label>Cuéntanos más del Producto</label>
+                <label className={Style.subtitle}>Cuéntanos más del Producto</label>
                 <textarea
                     className={s.description}
                     title="maximo 200 caracteres"

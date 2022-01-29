@@ -27,9 +27,11 @@ export default function ShoppingCart(){
                     stock: productos[i].stock
                 }
 
-            } 
+            }
         }
     }
+
+        
 
 
     function calculateTotal(){

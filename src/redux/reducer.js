@@ -147,7 +147,7 @@ const reducer = (state = inicialState, action) => {
             }
         case DELETE_PRODUCT_WISHLIST:
             return{
-            ...state
+            ...state,
             // favs: state.favs.filter(e => e.id !== action.payload.id)
             }
 
