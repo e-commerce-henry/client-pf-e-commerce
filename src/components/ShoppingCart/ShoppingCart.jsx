@@ -87,23 +87,23 @@ export default function ShoppingCart(){
                 </div>
                 <button onClick={e => creOrder()}>Comprar ahora</button>
             </div>
-            <div>
-                 <p>
-                 Total de tus productos : <h3> $ 
-                        {
-                           total
-                        }
-                        
-                     </h3>
-                  </p>
-                  <p>
-                 Cant. de Productos : <h3>  
+                  <th>
+                 Cant. de Productos :   
                         {
                          totalCant
                         }
                         
-                     </h3>
-                  </p>
+                   
+                  </th>
+            <div>
+                 <th>
+                 Total de tus productos :  $ 
+                        {
+                           total
+                        }
+                        
+                     
+                  </th>  
                   
             </div>
 
