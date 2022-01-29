@@ -24,8 +24,14 @@ export default function ShoppingCart(){
                     name: productos[i].name,
                     img: productos[i].img,
                     brand: productos[i].brand,
-                    stock: productos[i].stock
+                    stock: productos[i].stock,
+                    
                 }
+
+            }
+        }
+    }
+
             } 
         }
     }
@@ -53,7 +59,6 @@ export default function ShoppingCart(){
         alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`)
         resetCartShopping()
     }
-
     return(
         <>
             <div>
@@ -72,8 +77,19 @@ export default function ShoppingCart(){
                             />
                         )):null
                     }
+                    <div>
+                     <p>
+                    Total de tus productos : <h3> $ 
+                        {
+                           
+                        }
+                        
+                        </h3>
+                    </p>
+                 </div>
                 </div>
                 <button onClick={e => creOrder()}>Comprar ahora</button>
+
             </div>
         </>
     )

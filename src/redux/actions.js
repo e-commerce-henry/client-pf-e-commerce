@@ -147,7 +147,7 @@ export function addProductShoppingCart(body){
 
 export function removeCart(id){
     return async function (dispatch){
-        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        let json = await axios.post(`http://localhost:3001/cart`)
         dispatch({
             type: REMOVE_CART,
             payload: json.data
