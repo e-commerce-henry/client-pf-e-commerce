@@ -22,13 +22,16 @@ export default function ShoppingCart(){
                     name: productos[i].name,
                     img: productos[i].img,
                     brand: productos[i].brand,
-                    stock: productos[i].stock
+                    stock: productos[i].stock,
+                    
                 }
             }
-            
         }
     }
-
+      const nCant = Object.values(CartItem).reduce((acc, quantity)=> acc + quantity, 0)
+      console.log(nCant);
+      const nPrecio = Object.values(CartItem).reduce((acc, {quantity,price})=> acc + quantity * price, 0)
+      console.log(nPrecio);
     return(
         <>
             <div>
@@ -47,7 +50,18 @@ export default function ShoppingCart(){
                             />
                         )):null
                     }
+                    <div>
+                     <p>
+                    Total de tus productos : <h3> $ 
+                        {
+                           
+                        }
+                        
+                        </h3>
+                    </p>
+                 </div>
                 </div>
+                
             </div>
         </>
     )
