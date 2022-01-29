@@ -26,9 +26,11 @@ export default function ShoppingCart(){
                     brand: productos[i].brand,
                     stock: productos[i].stock
                 }
+
             } 
         }
     }
+
 
     function calculateTotal(){
 

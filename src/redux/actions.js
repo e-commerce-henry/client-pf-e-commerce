@@ -156,7 +156,6 @@ export function removeCart(id){
 }
 
 export function addProductWishlist(body){
-    console.log(body) //{productId: 192, price: 2289, userId: ''}
     return async function(dispatch){
         await axios.post(`http://localhost:3001/wishlist`, body)
         dispatch ({
@@ -165,12 +164,12 @@ export function addProductWishlist(body){
     }
 }
 
-export function deleteProductWishlist(id){
+export function deleteProductWishlist({productId, userId}){
+    console.log({productId, userId});
     return async function (dispatch){
-        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        await axios.delete(`http://localhost:3001/wishlist`, {productId, userId})
         dispatch({
-            type: DELETE_PRODUCT_WISHLIST,
-            payload: json.data
+            type: DELETE_PRODUCT_WISHLIST
         })
     }
 }
