@@ -24,25 +24,31 @@ export default function ShoppingCart(){
                     name: productos[i].name,
                     img: productos[i].img,
                     brand: productos[i].brand,
-                    stock: productos[i].stock,
-                    
+                    stock: productos[i].stock
                 }
-
-            }
-        }
-    }
-
             } 
         }
     }
 
     function calculateTotal(){
+
         let suma = 0
         shoppingCart[0].cartItems.map(e=>{
             suma = suma + (e.quantity * e.price)
         })
         return suma
     }
+    let total = shoppingCart[0] ? calculateTotal() : null 
+
+    function nCant(){
+        let cant = 0
+        shoppingCart[0].cartItems.map(e=> {
+            cant = cant + (e.quantity)
+        })
+        return cant
+    }
+    let totalCant = shoppingCart[0] ? nCant() : null 
+
     // { productId, userId } deleteCartItem
     function resetCartShopping(){
         shoppingCart[0].cartItems.map(e=>{
@@ -59,6 +65,7 @@ export default function ShoppingCart(){
         alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`)
         resetCartShopping()
     }
+
     return(
         <>
             <div>
@@ -77,22 +84,32 @@ export default function ShoppingCart(){
                             />
                         )):null
                     }
-                    <div>
-                     <p>
-                    Total de tus productos : <h3> $ 
-                        {
-                           
-                        }
-                        
-                        </h3>
-                    </p>
-                 </div>
                 </div>
                 <button onClick={e => creOrder()}>Comprar ahora</button>
-
             </div>
+            <div>
+                 <p>
+                 Total de tus productos : <h3> $ 
+                        {
+                           total
+                        }
+                        
+                     </h3>
+                  </p>
+                  <p>
+                 Cant. de Productos : <h3>  
+                        {
+                         totalCant
+                        }
+                        
+                     </h3>
+                  </p>
+                  
+            </div>
+
         </>
     )
 };
+           
 
 

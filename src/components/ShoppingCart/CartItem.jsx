@@ -46,13 +46,13 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                 <div className='name'>Name{name}
                 
                 </div>
-                <div className='div2'><Link to={`/products/${id}`}><img src={img} alt='not found' width="260px" height="200px"/></Link>
+                <div className='div2'><img src={img} alt='not found' width="100%"/>
                 
                 <div>
                 <p className='text'>{brand}
                 <br/>
-                Precio: $ {price} xUn
-                Precio: $ {price * quantity} x {quantity} Un
+                Precio por Unidad: $ {price} <br/>
+                SubTotal por {quantity} Unidad(es): $ {price * quantity}
                 <br/>
                 <button className='boo' onClick={() => removeCart(productId)}>  
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
