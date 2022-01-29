@@ -18,7 +18,8 @@ import {
     GET_REVIEWS,
     GET_SALEBANNER,
     DETALLE_USERS, 
-    EDIT_SHOPPING_CART
+    EDIT_SHOPPING_CART,
+    SHOW_WISHLIST
 } from './actions';
 
 const inicialState = {
@@ -175,6 +176,11 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state,
                 cart: action.payload
+            }
+        case SHOW_WISHLIST:
+            return{
+                ...state,
+                favs: action.payload
             }
         case EDIT_SHOPPING_CART:
             return {
