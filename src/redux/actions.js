@@ -14,11 +14,12 @@ export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 export const REMOVE_CART = 'REMOVE_CART';
 export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+export const SHOW_WISHLIST = 'SHOW_WISHLIST';
 export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
 export const GET_SALEBANNER = "GET_SALEBANNER";
 export const DETALLE_USERS = "DETALLE_USERS";
-export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART"
+export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART";
 
 
 export function productDetail(id){
@@ -151,13 +152,12 @@ export function removeCart(id){
     }
 }
 
-export function addProductWishlist(id){
+export function addProductWishlist(body){
+    console.log(body) //{productId: 192, price: 2289, userId: ''}
     return async function(dispatch){
-        let prod = await axios.get(`http://localhost:3001/products/${id}`)
+        await axios.post(`http://localhost:3001/wishlist`, body)
         dispatch ({
-            type: ADD_PRODUCT_WISHLIST, 
-            payload: prod.data
-
+            type: ADD_PRODUCT_WISHLIST
         })
     }
 }
@@ -232,6 +232,15 @@ export function getShoppingCart(userId){
         let prod = await axios(`http://localhost:3001/cart/${userId}`)
         dispatch ({
             type: SHOW_SHOPPING_CART, payload: prod.data
+        })
+    }
+}
+
+export function getWishlist(userId){
+    return async function(dispatch){
+        let prod = await axios(`http://localhost:3001/wishlist/${userId}`)
+        dispatch ({
+            type: SHOW_WISHLIST, payload: prod.data
         })
     }
 }
