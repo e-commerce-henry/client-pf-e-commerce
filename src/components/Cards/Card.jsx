@@ -12,7 +12,6 @@ function Card({ productId, name, price, img, brand}){
     const navigate = useNavigate();
 
     function addShoppingCart(productId){
-        console.log(productId)
         dispatch(addProductShoppingCart({productId, price, userId}))
     }
     function addFavs(productId){

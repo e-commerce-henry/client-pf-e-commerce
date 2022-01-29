@@ -32,9 +32,7 @@ export default function ShoppingCart(){
         }
     }
 
-            } 
-        }
-    }
+        
 
     function calculateTotal(){
         let suma = 0
