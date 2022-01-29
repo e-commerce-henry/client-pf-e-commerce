@@ -20,6 +20,9 @@ export const GET_REVIEWS = "GET_REVIEWS";
 export const GET_SALEBANNER = "GET_SALEBANNER";
 export const DETALLE_USERS = "DETALLE_USERS";
 export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART";
+export const CREATE_ORDER = "CREATE_ORDER";
+export const GET_ORDER = "GET_ORDER";
+export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
 
 
 export function productDetail(id){
@@ -251,6 +254,34 @@ export function editShoppingCart(body){
         await axios.put(`http://localhost:3001/cart/`, body)
         dispatch({
             type: EDIT_SHOPPING_CART
+        })
+    }
+}
+
+export function createOrder(userId, body){
+    return async function(dispatch){
+        await axios.post(`http://localhost:3001/orders/${userId}`, body)
+        dispatch({
+            type: CREATE_ORDER
+        })
+    }
+}
+
+export function getUserOrder(id){
+    return async function(dispatch){
+        let orden = await axios(`http://localhost:3001/orders/${id}`)
+        dispatch({
+            type: GET_ORDER, payload: orden.data
+        })
+    }
+}
+
+export function deleteCartItem(body){
+    console.log(body)
+    return async function(dispatch){
+        await axios.delete(`http://localhost:3001/cart/`, body)
+        dispatch({
+            type: DELETE_ITEM_SHOPPINGCART
         })
     }
 }

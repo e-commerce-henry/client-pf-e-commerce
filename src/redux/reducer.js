@@ -19,7 +19,10 @@ import {
     GET_SALEBANNER,
     DETALLE_USERS, 
     EDIT_SHOPPING_CART,
-    SHOW_WISHLIST
+    SHOW_WISHLIST,
+    CREATE_ORDER,
+    GET_ORDER,
+    DELETE_ITEM_SHOPPINGCART
 } from './actions';
 
 const inicialState = {
@@ -35,7 +38,8 @@ const inicialState = {
     idUser: '',
     userAuth: false,
     saleBanner: [],
-    userDetail: {}
+    userDetail: {},
+    order: {}
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -186,7 +190,19 @@ const reducer = (state = inicialState, action) => {
             return {
                 ...state
             }
-        
+        case CREATE_ORDER:
+            return {
+                ...state
+            }
+        case GET_ORDER:
+            return {
+                ...state,
+                order: action.payload
+            }
+        case DELETE_ITEM_SHOPPINGCART:
+            return {
+                ...state
+            }
         default: return state 
 
 }
