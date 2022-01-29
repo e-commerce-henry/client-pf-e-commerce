@@ -2,13 +2,15 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CartItem from "./CartItem";
-import { getShoppingCart } from "../../redux/actions";
+import { getShoppingCart, createOrder, deleteCartItem } from "../../redux/actions";
+
 
 
 export default function ShoppingCart(){
     const shoppingCart = useSelector(state => state.cart)
     let userId =  useSelector(state => state.idUser)
     const productos = useSelector( state => state.products)
+    const userInfo = useSelector(state =>state.userDetail)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,15 +26,38 @@ export default function ShoppingCart(){
                     brand: productos[i].brand,
                     stock: productos[i].stock
                 }
-            }
-            
+            } 
         }
+    }
+
+    function calculateTotal(){
+        let suma = 0
+        shoppingCart[0].cartItems.map(e=>{
+            suma = suma + (e.quantity * e.price)
+        })
+        return suma
+    }
+    // { productId, userId } deleteCartItem
+    function resetCartShopping(){
+        shoppingCart[0].cartItems.map(e=>{
+            let productId = e.productId
+            dispatch(deleteCartItem({userId, productId}))
+        })
+    }
+
+    function creOrder(){
+        let products = shoppingCart[0].cartItems
+        let addressId = userInfo.clientAddresses[0].id
+        let total = calculateTotal()
+        dispatch(createOrder(userId,{products, addressId, total})) 
+        alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`)
+        resetCartShopping()
     }
 
     return(
         <>
             <div>
-                <h1>{`Este es tu carrito "Nombre del user"`}</h1>
+                <h1>{`Ya casi lo tienes ${userInfo.name}`}</h1>
                 <div>
                     {
                         shoppingCart[0]?
@@ -48,6 +73,7 @@ export default function ShoppingCart(){
                         )):null
                     }
                 </div>
+                <button onClick={e => creOrder()}>Comprar ahora</button>
             </div>
         </>
     )
