@@ -44,7 +44,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
         <div key={id}>
         
     <div className= {Style.div1} viewBox="0 0 16 16">
-                <div className={Style.img}><img src={img} alt='not found' width="160px" height="100px"/>
+                <div className={Style.img}><img src={img} alt='not found'  width="160px" height="100px"/>
                 </div>
                 <div className={Style.name}>Name{name}</div>
                 
