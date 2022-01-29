@@ -144,7 +144,7 @@ export default function Reviews(props) {
 
                     emptyIcon={<i className="far fa-star"></i>}
                 />
-            Sin Puntuacion y Comentarios
+            Sin puntuación y comentarios
         </div> 
     </div>
 

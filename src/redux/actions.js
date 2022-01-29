@@ -167,7 +167,9 @@ export function addProductWishlist(body){
 export function deleteProductWishlist({productId, userId}){
     console.log({productId, userId});
     return async function (dispatch){
-        await axios.delete(`http://localhost:3001/wishlist`, {productId, userId})
+        await axios.delete(`http://localhost:3001/wishlist`, {
+            data: {productId, userId},
+        })
         dispatch({
             type: DELETE_PRODUCT_WISHLIST
         })
