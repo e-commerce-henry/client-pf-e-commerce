@@ -4,27 +4,31 @@ import Style from './Favs.module.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from '../../redux/actions';
 import CardFavs from './CardFavs';
-
-function valProduct(e){
-    if(e.id){
-        return(
-            <div className={Style.eachcard}>
-            <CardFavs 
-            key = {e.id}
-            id = {e.id}
-            name = {e.name}
-            price= {e.price}
-            img ={e.img}
-            brand={e.brand}
-            /></div>
-        )
-    }
-}
+import { getWishlist } from '../../redux/actions';
 
 function Favs(){
+    const dispatch = useDispatch();
     const productsFavs = useSelector(state => state.favs)
+    let userId =  useSelector(state => state.idUser)
+    const productos = useSelector( state => state.products)
+
+    useEffect(() => {
+        dispatch(getWishlist(userId));
+    }, [dispatch]);
+
+    function searchAndComplementInfo(id){
+        for (let i = 0; i < productos.length; i++) {
+            if(productos[i].id === id){
+                return {
+                    name: productos[i].name,
+                    img: productos[i].img,
+                    brand: productos[i].brand,
+                }
+            }
+            
+        }
+    }
 
     return(
         <>
@@ -32,13 +36,17 @@ function Favs(){
             <div className={Style.container} >
                 <div className={Style.titulo}>MIS FAVORITOS</div>
                 <div className={Style.allcards}>
-                    {
-                        productsFavs.map(e =>
-                    
-                        (
-                            valProduct(e)
-                        
-                        ))
+                {
+                        productsFavs[0]?
+                        productsFavs[0].wishlistItems.map(e => (
+                            <CardFavs
+                                id = {e.id}
+                                key = {e.id}
+                                price = {e.price}
+                                productId = {e.productId}
+                                addInfo = {searchAndComplementInfo(e.productId)}
+                            />
+                        )):null
                     }
                 </div>   
             </div>

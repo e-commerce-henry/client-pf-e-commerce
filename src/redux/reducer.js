@@ -18,7 +18,11 @@ import {
     GET_REVIEWS,
     GET_SALEBANNER,
     DETALLE_USERS, 
-    EDIT_SHOPPING_CART
+    EDIT_SHOPPING_CART,
+    SHOW_WISHLIST,
+    CREATE_ORDER,
+    GET_ORDER,
+    DELETE_ITEM_SHOPPINGCART
 } from './actions';
 
 const inicialState = {
@@ -34,7 +38,8 @@ const inicialState = {
     idUser: '',
     userAuth: false,
     saleBanner: [],
-    userDetail: {}
+    userDetail: {},
+    order: {}
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -176,11 +181,28 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 cart: action.payload
             }
+        case SHOW_WISHLIST:
+            return{
+                ...state,
+                favs: action.payload
+            }
         case EDIT_SHOPPING_CART:
             return {
                 ...state
             }
-        
+        case CREATE_ORDER:
+            return {
+                ...state
+            }
+        case GET_ORDER:
+            return {
+                ...state,
+                order: action.payload
+            }
+        case DELETE_ITEM_SHOPPINGCART:
+            return {
+                ...state
+            }
         default: return state 
 
 }

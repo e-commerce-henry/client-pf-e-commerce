@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductShoppingCart, deleteProductWishlist } from '../../redux/actions';
 
-function CardFavs({ id, name, price, img}){
+function CardFavs({id, price, productId, addInfo}){
     const dispatch = useDispatch()
+    const {name, img, brand} = addInfo
 
     function addShoppingCart(id){
         alert(`Agregado a carrito "${name}"`)
