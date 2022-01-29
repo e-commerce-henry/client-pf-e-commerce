@@ -141,14 +141,14 @@ const reducer = (state = inicialState, action) => {
             ...state
             }
         case ADD_PRODUCT_WISHLIST:
-            state.favs.push(action.payload)
+            // state.favs.push(action.payload)
             return{
                 ...state
             }
         case DELETE_PRODUCT_WISHLIST:
             return{
-            ...state,
-            favs: state.favs.filter(e => e.id !== action.payload.id)
+            ...state
+            // favs: state.favs.filter(e => e.id !== action.payload.id)
             }
 
         //crea mi review
