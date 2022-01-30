@@ -20,7 +20,7 @@ export default function PersonalInfo(){
            
             <h1 className={Style.saludo}>Bienvenid@ {userDetail.name}, nos dá gusto que nos visites!</h1>
              <hr/>Que quieres hacer hoy?
-            {/* <div className={Style.detalle}>
+            <div className={Style.detalle}>
             <h4>Nombre: {userDetail.name}</h4>
             <h4>Apellido: {userDetail.surname}</h4>
             <h4>Correo: {userDetail.email}</h4> 
@@ -37,7 +37,7 @@ export default function PersonalInfo(){
 
                 ))
             }
-            </div> */}
+            </div>
         </div>
     )
 }
