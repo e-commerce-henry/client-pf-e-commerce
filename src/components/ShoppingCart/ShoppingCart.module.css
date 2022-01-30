@@ -44,7 +44,7 @@
     border-radius: 6px;
     /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
     text-shadow: inset 0px 1px 0px #303841;
-    background: #e84e07;
+    /* background: #e84e07; */
 }
 .boo:hover {
     background: linear-gradient(#303841, rgba(0, 0, 0, 1));
