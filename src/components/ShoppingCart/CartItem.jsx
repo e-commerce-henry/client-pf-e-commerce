@@ -6,6 +6,7 @@ import { editShoppingCart , getShoppingCart} from '../../redux/actions';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 // import { useState } from 'react';
 
 
@@ -14,24 +15,27 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
     const {name, img, brand, stock} = addInfo
     const dispatch = useDispatch()
     const userId = useSelector(state => state.idUser)
+    useEffect(() => {
+        dispatch(getShoppingCart(userId));
+    }, [dispatch]);
+    
 
-    // const sumar = () => setquantity (quantity + 1);
-
-     function sumar(){
+    async function sumar(){
         if(quantity < stock){
-            quantity = quantity + 1        
-             console.log(quantity)
-             dispatch(editShoppingCart({productId, userId, quantity}))
+            quantity = quantity + 1
+            await dispatch(editShoppingCart({productId, userId, quantity}))
+            await dispatch(getShoppingCart(userId))
         }
-        dispatch(getShoppingCart(userId))
+        
     }
-    function restar(){
+
+    async function restar(){
         if(quantity > 1){
-            quantity = quantity -1        
-            console.log(quantity)
-            dispatch(editShoppingCart({productId, userId, quantity}))
+            quantity = quantity -1
+            await dispatch(editShoppingCart({productId, userId, quantity}))
+            await dispatch(getShoppingCart(userId))
        }
-       dispatch(getShoppingCart(userId))
+       
    }
 
 
@@ -55,9 +59,9 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                     <th> Agregar cantidad: <br/>
                     <div className={Style.masmenos}>
                  
-                        <button className={Style.masmenos} onClick={sumar}>+</button>
+                        <button className={Style.masmenos} onClick={restar}>-</button>
                             <th>{quantity}</th>
-                        <button  className={Style.masmenos} onClick={restar}>-</button>
+                        <button  className={Style.masmenos} onClick={sumar}>+</button>
                       </div>
                     </th>
                 </div>

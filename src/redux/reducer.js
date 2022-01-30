@@ -22,7 +22,9 @@ import {
     SHOW_WISHLIST,
     CREATE_ORDER,
     GET_ORDER,
-    DELETE_ITEM_SHOPPINGCART
+    DELETE_ITEM_SHOPPINGCART,
+    RESET_CART,
+    GET_ORDER_HISTORY
 } from './actions';
 
 const inicialState = {
@@ -39,7 +41,8 @@ const inicialState = {
     userAuth: false,
     saleBanner: [],
     userDetail: {},
-    order: {}
+    order: {},
+    orderHistory: {}
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -162,15 +165,12 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state,
                 getreview: action.payload
-            }
-        
+            } 
         case GET_SALEBANNER:
         return {
             ...state,
             saleBanner: action.payload,
         };
-
-    
         case "DETALLE_USERS":
                 return {
                  ...state,
@@ -202,6 +202,16 @@ const reducer = (state = inicialState, action) => {
         case DELETE_ITEM_SHOPPINGCART:
             return {
                 ...state
+            }
+        case RESET_CART:
+            return{
+                ...state,
+                cart: {}
+            }
+        case GET_ORDER_HISTORY:
+            return{
+                ...state,
+                orderHistory: 'Hola aqui va tu historial'
             }
         default: return state 
 
