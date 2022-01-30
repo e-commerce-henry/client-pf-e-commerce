@@ -1,78 +1,82 @@
 import React, { useState} from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import {addUsers } from "../../redux/actions";
 import "./AddUsers.css";
 import Head from "../Head/Head";
 import Footer from "../Footer/Footer";
-import {useNavigate} from 'react-router-dom';
 import '../Profile/Profile.module.css';
+import { Link} from "react-router-dom";
+
+
+
+import IconButton from "@material-ui/core/IconButton";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Input from "@material-ui/core/Input";
+
 
 
 export function validate(users) {
     let errors = {};
     if (!users.name) {
-      errors.name = 'Username is required';
+      errors.name = 'El nombre requerido';
     }
-    //  else if (!/\S+/.test(users.name)) {//
-    //   errors.name = 'Name is invalid';
+    //  else if (/^[A-Z]+$/i.test(users.name)) {//
+    //   errors.name = 'El nombre es invalido';
     // }
 
     if(!users.surname){
-      errors.surname = 'Surname is required';
-    } else if (!/\S+/.test(users.surname)) {//
-      errors.surname = 'Surname is invalid';
+      errors.surname = 'El apellido es requerido';
     }
+    // else if (/^[A-Z]+$/i.test(users.surname)) {//
+    //   errors.surname = 'El apellido es invalido';
+    // }
 
     if(!users.email){
-      errors.email = 'Email is required';
+      errors.email = 'El correo es requerido';
     } else if (!/\S+@\S+\.\S+/.test(users.email)) {
-      errors.email = 'Email is invalid';
+      errors.email = 'El correo es invalido';
     }
 
     if (!users.pwd) {
-      errors.pwd = 'Password is required';
-    } else if (!/(?=.*[0-9])/.test(users.pwd)) {
-      errors.pwd = 'Password is invalid';
-    }
+      errors.pwd = 'La contraseña es requerida';
+    } 
 
     if(!users.address){
-      errors.address = 'Address is required';
+      errors.address = 'La dirección es requerida';
     } 
     // else if (!/\S+@\S+\.\S+/.test(users.address)) {//
     //   errors.address = 'Address is invalid';
     // }
 
     if(!users.cp){
-      errors.cp = 'Postal Code is required';
+      errors.cp = 'El código postal es requerido';
     } else if (!/^\d{5}$/.test(users.cp)) {
-      errors.address = 'Address is invalid';
+      errors.address = 'El código postal es invalido';
     }
 
     if(!users.city){
-      errors.city = 'City is required';
+      errors.city = 'La ciudad es requerida';
     }
-    //  else if (!/\S+@\S+\.\S+/.test(users.city)) {//
-    //   errors.city = 'City is invalid';
+    //  else if (/^[A-Z]+$/i.test(users.city)) {//
+    //   errors.city = 'La ciudad es requerida';
     // }
 
     if(!users.province){
-      errors.province = 'Province is required';
+      errors.province = 'La provincia es requerida';
     } 
-    // else if (!/\S+@\S+\.\S+/.test(users.province)) {//
-    //   errors.province = 'Province is invalid';
+    // else if (/^[A-Z]+$/i.test(users.province)) {//
+    //   errors.province = 'La provincia es invalida';
     // }
     return errors;
   };
 
 const AddUsers = () => {
 
-  const navigate = useNavigate();
-    function HandleClick(e){
-        navigate(`/${e.target.value}`);
-    };
+  
 
-
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
 
     const [users, setUsers] = useState({
         name: "",
@@ -83,7 +87,8 @@ const AddUsers = () => {
         cp: "",
         city: "",
         province: "",
-        floor: ""
+        floor: "",
+        showPassword: false,
     });
     const [errors, setErrors] = useState({});
 
@@ -98,23 +103,35 @@ const AddUsers = () => {
         }));
       }
 
+   
+    const handleClickShowPassword = () => {
+      setUsers({ ...users, showPassword: !users.showPassword });
+    };
+
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
+
+
       const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors(validate({...users, [e.target.name]: e.target.value}))
-        alert("Usuario Creado");
-        dispatch(addUsers(users));
-        setUsers ({
-          name: "",
-          surname: "",
-          email: "",
-          pwd: "",
-          address: "",
-          cp: 0,
-          city: "",
-          province: "",
-          floor: ""
-    
-        })
+        setErrors(validate(errors))
+        if(Object.keys(errors).length !== 0){
+        }else {
+          dispatch(addUsers(users));
+          setUsers ({
+            name: "",
+            surname: "",
+            email: "",
+            pwd: "",
+            address: "",
+            cp: 0,
+            city: "",
+            province: "",
+            floor: ""
+          })
+          setErrors(validate({...users, [e.target.name]: e.target.value}))
+        } 
     }
 
 
@@ -123,13 +140,7 @@ const AddUsers = () => {
 
   return (
   <div className='formulario'>
-    <Head />
-    <div className="botonesP">
-                <button className="b1" type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>
-                <button  className="b1" type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
-                <button  className="b1" type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
-            </div>
-    
+    <Head />  
       <form className="form" onSubmit={handleSubmit}>
     <div>
       <h1>Regístrese</h1>
@@ -154,7 +165,12 @@ const AddUsers = () => {
 
         <div className="secc">
           <label>Contraseña:</label>
-          <input className={errors.pwd && 'danger'} type="password" name="pwd" onChange={handleInputChange} value={users.pwd} />
+          <Input className={errors.pwd && 'danger'} type={users.showPassword ? "text" : "password"} name="pwd" onChange={handleInputChange} value={users.pwd} 
+          endAdornment={
+          <InputAdornment position="end">
+            <IconButton onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
+              {users.showPassword ? <Visibility /> : <VisibilityOff />}</IconButton></InputAdornment>
+        }/>
           {errors.pwd && (<p className="danger">{errors.pwd}</p>)}
         </div>
 
@@ -166,7 +182,7 @@ const AddUsers = () => {
 
         <div className="secc">
           <label>Código Postal:</label>
-          <input className={errors.cp && 'danger'} type="Number" name="cp" onChange={handleInputChange} value={users.cp} />
+          <input className={errors.cp && 'danger'} type="number" name="cp" onChange={handleInputChange} value={users.cp} />
           {errors.cp && (<p className="danger">{errors.cp}</p>)}
         </div>
 
@@ -189,7 +205,10 @@ const AddUsers = () => {
         </div>
         
         <div>
-          <button className="crear" type="submit">Aceptar</button>
+          <button className="crear" type="submit">Registrar</button> 
+          <Link to="/profile-details"><button className="crear" type="submit">Iniciar Sección</button></Link>
+          
+          
         </div>
       </form>
       <Footer />
