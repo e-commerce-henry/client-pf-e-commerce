@@ -80,8 +80,12 @@ const InicioSeccion = () => {
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
                 
-                   <label>Correo: </label>
+
+                   
+
+                   <label>Correo Electrónico: </label>
                     <input id='mail' className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
+
                
                 </div>
 
@@ -103,10 +107,9 @@ const InicioSeccion = () => {
                         </IconButton>
                       </InputAdornment>
                     } />
-                    
-                    
                     {errors.pwd && (<p className="danger">{errors.pwd}</p>)}
                 </div>
+                
                 <div>
                     <button className="bu" type="submit">Iniciar Sesión</button>
                     <p className="o">o también puedes </p>
