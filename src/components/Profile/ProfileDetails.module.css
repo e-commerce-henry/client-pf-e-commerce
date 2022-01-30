@@ -20,8 +20,8 @@ li {
 }
 
 .container {
-  background-color: #00adb5;
   color: #303841;
+  
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
   font-size: 17px;
@@ -35,7 +35,7 @@ li {
   outline: none;
   margin-left: 5%;
   margin-right: 5%;
-  color: #eeeeee;
+  color: #050505;
   background-color: transparent;
 }
 
