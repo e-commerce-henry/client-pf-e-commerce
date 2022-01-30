@@ -1,6 +1,7 @@
 import React,{ useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {detalleUsers} from '../../redux/actions';
+import './PersonalInfo.css';
 
 export default function PersonalInfo(){
     const dispatch = useDispatch();
@@ -16,21 +17,22 @@ export default function PersonalInfo(){
 
     return(
         <div>
-            <div className="">
-            <h1>Bienvenid@</h1>
-            <p>Nombre: {userDetail.name}</p>
-            <p>Apellido: {userDetail.surname}</p>
-            <p>Correo: {userDetail.email}</p>
+           
+            <h1 className="titulo">Bienvenid@</h1>
+            <div className="Detalle">
+            <h4>Nombre: {userDetail.name}</h4>
+            <h4>Apellido: {userDetail.surname}</h4>
+            <h4>Correo: {userDetail.email}</h4>
             {
                userDetail.clientAddresses && userDetail.clientAddresses.map((e) =>(
-                    <p key={e.id}>
-                        <p>Dirección: {e.address}</p>
-                        <p>Código Postal: {e.postalCode}</p>
-                        <p>Ciudad: {e.city}</p>
-                        <p>Provincia: {e.province}</p>
-                        <p>Piso: {e.floor}</p>
+                    <h4 key={e.id}>
+                        <h4>Dirección: {e.address}</h4>
+                        <h4>Código Postal: {e.postalCode}</h4>
+                        <h4>Ciudad: {e.city}</h4>
+                        <h4>Provincia: {e.province}</h4>
+                        <h4>Piso: {e.floor}</h4>
 
-                    </p>
+                    </h4>
 
                 ))
             }

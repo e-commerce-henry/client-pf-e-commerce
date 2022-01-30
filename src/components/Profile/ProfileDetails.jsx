@@ -8,9 +8,8 @@ import { detalleUsers } from "../../redux/actions";
 import PersonalInfo from "./PersonalInfo";
 
 export default function ProfileDetails(){
-    const dispatch = useDispatch();
+   
     const userAuth = useSelector(state => state.userAuth);
-    const userID = useSelector(state => state.idUser)
     const navigate = useNavigate();
 
     function HandleClick(e){
