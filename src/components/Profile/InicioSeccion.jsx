@@ -76,12 +76,16 @@ const InicioSeccion = () => {
     return (
 
         <div className="boxIs">
-          <h1>Iniciar sesion</h1>
+          <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
                 
+
+                   
+
                    <label>Correo Electrónico: </label>
-                    <input className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
+                    <input id='mail' className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
+
                
                 </div>
 
@@ -107,8 +111,8 @@ const InicioSeccion = () => {
                 </div>
                 
                 <div>
-                    <button className="crear" type="submit">Iniciar Sección</button>
-                    <p>O tambien puedes </p>
+                    <button className="bu" type="submit">Iniciar Sesión</button>
+                    <p className="o">o también puedes </p>
                     <Link to="/addUsers" type="submit">registrate aquí</Link>
                 </div>
             </form>

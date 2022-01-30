@@ -4,55 +4,76 @@
 .div1 {
     width: 80%;
     height: 1%;
-   
-    background-color: eeeeee;
+    display: flex;
     border: solid 1px #00adb5;
     border-radius: 10px;
     text-align: center;
     background-color: #fff;
-    /* border: solid 1px #00adb5;   
-    border-radius: 5%;
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding-bottom: 0%;*/
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%; 
+ 
 
 }
+
 .name{
-    font-family: "Lexend Deca", sans-serif;
-    text-align: center;
-    font-style:normal;
-    font-size: 15pt;
+    width: 15%;
     
-}
-.div2{
-    font-family:sans-serif;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-
-}
-.text{
-    border: #303841;
-    margin-top: 0pt;
-    font-size:15px;
     font-family: "Lexend Deca", sans-serif;
-    line-height: 50pt;
-
+    display:ruby;
+    font-style:normal;
+    font-size: 12pt;    
+}
+.masmenos{
+    display: inline;
+    -moz-border-radius: 10;
+    border-radius: 3px;
+    font-family: Georgia;
+    color: #fffaff;
+    font-size: 15px;
+    background: #2f3030;
+    /* padding: 3px 8px 3px 8px; */
+    border: solid #000000 1px;
+    text-decoration: none;
 
 }
+.masmenos:hover {
+        background: #e84e07;
+        text-decoration: none;
+      }
+
+.stock{
+    width: 10%;
+    padding-top: 3%;
+    font-size: 18px;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+
+.box{
+    border-left: solid 1px grey;
+}
+
+.contador{
+    width: 15%;
+    font-size: small;
+    padding: 3%;
+}
+.precio {
+    width: 25%;
+    font-size: 11pt;
+    padding: 3%;
+   
+}
+  
+
+
 .boo{
 
     border: none;
     outline: none;
     margin-bottom: 5px;
+    margin-top: 20px;
     font-size: 15px;
     font-family: "Lexend Deca", sans-serif;
     font-weight: 400;
@@ -68,4 +89,6 @@
 .boo:hover {
     background: linear-gradient(#303841, rgba(0, 0, 0, 1));
     cursor: pointer;
+    background: #e84e07;
+    text-decoration: none;
   }

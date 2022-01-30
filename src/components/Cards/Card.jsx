@@ -3,18 +3,25 @@ import Style from './Card.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProductShoppingCart, addProductWishlist } from '../../redux/actions';
+import {useNavigate} from 'react-router-dom'
 
 function Card({ productId, name, price, img, brand}){
     const dispatch = useDispatch()
     const userId = useSelector(state => state.idUser)
+    const auth = useSelector(state => state.userAuth )
+    const navigate = useNavigate();
 
     function addShoppingCart(productId){
-        console.log(productId)
         dispatch(addProductShoppingCart({productId, price, userId}))
     }
     function addFavs(productId){
-        alert(`Se ha agregado a favoritos: "${name}"`)
-        dispatch(addProductWishlist(productId))
+        if(auth){
+            alert(`Se ha agregado a favoritos: "${name}"`)
+            dispatch(addProductWishlist({productId, price, userId}))
+        } else {
+            navigate(`/profile-details`);
+        }
+        
     }
     return(
         <div key={productId}>

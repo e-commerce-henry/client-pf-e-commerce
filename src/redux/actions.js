@@ -14,10 +14,17 @@ export const SHOW_SHOPPING_CART = 'SHOW_SHOPPING_CART';
 export const REMOVE_CART = 'REMOVE_CART';
 export const ADD_PRODUCT_WISHLIST = 'ADD_PRODUCT_WISHLIST';
 export const DELETE_PRODUCT_WISHLIST = 'DELETE_PRODUCT_WISHLIST';
+export const SHOW_WISHLIST = 'SHOW_WISHLIST';
 export const CREATE_REVIEWS = "CREATE_REVIEWS";
 export const GET_REVIEWS = "GET_REVIEWS";
 export const GET_SALEBANNER = "GET_SALEBANNER";
 export const DETALLE_USERS = "DETALLE_USERS";
+export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART";
+export const CREATE_ORDER = "CREATE_ORDER";
+export const GET_ORDER = "GET_ORDER";
+export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
+export const RESET_CART = "RESET_CART";
+export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 
 
 export function productDetail(id){
@@ -142,7 +149,7 @@ export function addProductShoppingCart(body){
 
 export function removeCart(id){
     return async function (dispatch){
-        let json = await axios.get(`http://localhost:3001/products/${id}`)
+        let json = await axios.post(`http://localhost:3001/cart`, id)
         dispatch({
             type: REMOVE_CART,
             payload: json.data
@@ -150,17 +157,26 @@ export function removeCart(id){
     }
 }
 
-export function addProductWishlist(id){
+export function addProductWishlist(body){
     return async function(dispatch){
-        let prod = await axios.get(`http://localhost:3001/products/${id}`)
+        await axios.post(`http://localhost:3001/wishlist`, body)
         dispatch ({
-            type: ADD_PRODUCT_WISHLIST, 
-            payload: prod.data
-
+            type: ADD_PRODUCT_WISHLIST
         })
     }
 }
 
+export function deleteProductWishlist({productId, userId}){
+    console.log({productId, userId});
+    return async function (dispatch){
+        await axios.delete(`http://localhost:3001/wishlist`, {
+            data: {productId, userId},
+        })
+        dispatch({
+            type: DELETE_PRODUCT_WISHLIST
+        })
+    }
+}
 //CreateReview crea una puntuacion y comentario 
 export function createReview(id,review){
     return dispatch => {
@@ -222,6 +238,72 @@ export function getShoppingCart(userId){
         let prod = await axios(`http://localhost:3001/cart/${userId}`)
         dispatch ({
             type: SHOW_SHOPPING_CART, payload: prod.data
+        })
+    }
+}
+
+export function getWishlist(userId){
+    return async function(dispatch){
+        let prod = await axios(`http://localhost:3001/wishlist/${userId}`)
+        dispatch ({
+            type: SHOW_WISHLIST, payload: prod.data
+        })
+    }
+}
+
+export function editShoppingCart(body){
+    return async function (dispatch){
+        console.log(body);
+        await axios.put(`http://localhost:3001/cart/`, body)
+        dispatch({
+            type: EDIT_SHOPPING_CART
+        })
+    }
+}
+
+export function createOrder(userId, body){
+    return async function(dispatch){
+        await axios.post(`http://localhost:3001/orders/${userId}`, body)
+        dispatch({
+            type: CREATE_ORDER
+        })
+    }
+}
+
+export function getUserOrder(id){
+    return async function(dispatch){
+        let orden = await axios(`http://localhost:3001/orders/${id}`)
+        dispatch({
+            type: GET_ORDER, payload: orden.data
+        })
+    }
+}
+
+export function deleteCartItem({productId, userId}){
+    return async function(dispatch){
+        await axios.delete(`http://localhost:3001/cart/`, {
+            data: {productId, userId},
+        })
+        dispatch({
+            type: DELETE_ITEM_SHOPPINGCART
+        })
+    }
+}
+
+export function resetShoppingCart(){
+    return async function(dispatch){
+        dispatch({
+            type: RESET_CART
+        })
+    }
+}
+
+export function getOrderHistory(id){
+    return async function(dispatch){
+        let historial = await(`http://localhost:3001/orders/${id}`)
+        console.log(historial.data)
+        dispatch({
+            type: GET_ORDER_HISTORY, payload: historial.data
         })
     }
 }

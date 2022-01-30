@@ -63,6 +63,7 @@
 
 .productbtns:hover {
   color: #ff5722;
+  cursor: pointer;
 }
 
 .productbtns:focus {

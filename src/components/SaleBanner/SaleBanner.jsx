@@ -47,7 +47,7 @@ export default function SaleBanner() {
                                 <label className={style.precios} >
                                     Antes:
                                     <div>
-                                    $.{e.product.price}
+                                    ${e.product.price}
                                     </div>
                                 </label>
                                 <br/>
@@ -59,7 +59,7 @@ export default function SaleBanner() {
                                     <label className={style.precios_oferta}>
                                         Ahora:
                                         <div>
-                                            $.{Math.round(e.product.price-(e.product.price*(0+'.'+e.discount)))}
+                                            ${Math.round(e.product.price-(e.product.price*(0+'.'+e.discount)))}
                                         </div>
                                     </label>
                                 </div>
