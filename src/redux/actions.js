@@ -23,6 +23,8 @@ export const EDIT_SHOPPING_CART = "EDIT_SHOPPING_CART";
 export const CREATE_ORDER = "CREATE_ORDER";
 export const GET_ORDER = "GET_ORDER";
 export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
+export const RESET_CART = "RESET_CART";
+export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 
 
 export function productDetail(id){
@@ -277,12 +279,31 @@ export function getUserOrder(id){
     }
 }
 
-export function deleteCartItem(body){
-    console.log(body)
+export function deleteCartItem({productId, userId}){
     return async function(dispatch){
-        await axios.delete(`http://localhost:3001/cart/`, body)
+        await axios.delete(`http://localhost:3001/cart/`, {
+            data: {productId, userId},
+        })
         dispatch({
             type: DELETE_ITEM_SHOPPINGCART
+        })
+    }
+}
+
+export function resetShoppingCart(){
+    return async function(dispatch){
+        dispatch({
+            type: RESET_CART
+        })
+    }
+}
+
+export function getOrderHistory(id){
+    return async function(dispatch){
+        let historial = await(`http://localhost:3001/orders/${id}`)
+        console.log(historial.data)
+        dispatch({
+            type: GET_ORDER_HISTORY, payload: historial.data
         })
     }
 }

@@ -11,9 +11,9 @@ function CardFavs({id, price, productId, addInfo}){
 
     const {name, img, brand} = addInfo   
 
-    function addShoppingCart(id){
+    function addShoppingCart(){
         alert(`Agregado a carrito "${name}"`)
-        dispatch(addProductShoppingCart(id))
+        dispatch(addProductShoppingCart({productId, price, userId}))
     }
 
     function deleteFavs(productId){

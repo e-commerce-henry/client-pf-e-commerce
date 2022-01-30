@@ -6,6 +6,7 @@ import {
   getShoppingCart,
   createOrder,
   deleteCartItem,
+  resetShoppingCart,
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 
@@ -52,11 +53,13 @@ export default function ShoppingCart() {
   let totalCant = shoppingCart[0] ? nCant() : null;
 
   // { productId, userId } deleteCartItem
-  function resetCartShopping() {
+  async function resetCartShopping() {
     shoppingCart[0].cartItems.map((e) => {
       let productId = e.productId;
       dispatch(deleteCartItem({ userId, productId }));
     });
+    await dispatch(getShoppingCart(userId))
+    await dispatch(resetShoppingCart())
   }
 
   function creOrder() {
