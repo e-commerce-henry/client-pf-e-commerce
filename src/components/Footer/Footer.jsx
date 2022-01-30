@@ -27,7 +27,7 @@ function Footer(){
                 
             </div>
             <div className={Style.copy}>
-                <p>&copy; E - commerce | 2022</p>
+                &copy; E - commerce | 2022
             </div>
             </div>
         </>

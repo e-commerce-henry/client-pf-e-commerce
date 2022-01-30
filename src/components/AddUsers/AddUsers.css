@@ -1,0 +1,96 @@
+.form {
+  width: 70%;
+  height: 80%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-top: 2%;
+  background-color: eeeeee;
+  border: solid 1px #00adb5;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+  font-family: "Lexend Deca", sans-serif;
+}
+/* .botonesP {
+    display: flex;
+    margin-left: 35%;
+    margin-right: 20%;
+    padding: 3px;
+  } */
+/* .b1 {
+    margin-bottom: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    width: 100px;
+    height: 32px;
+    border-width: 1px;
+    color: rgba(240, 240, 240, 1);
+    border-radius: 6px;
+    box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
+    text-shadow: inset 0px 1px 0px #303841;
+    background: #303841;
+  } */
+
+.secc {
+  padding-top: 10px;
+}
+
+.label {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.danger {
+  margin: 0px;
+  padding: 0px;
+  color: #ff5722;
+  font-weight: 400;
+}
+
+.butt {
+  margin: 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 100px;
+  height: 45px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+}
+
+.butt:hover {
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.titulo {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  color: #00adb5;
+  margin: 30px;
+}

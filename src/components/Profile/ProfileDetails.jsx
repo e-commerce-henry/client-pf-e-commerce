@@ -1,32 +1,45 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Style from './ProfileDetails.module.css'
-import {useNavigate} from 'react-router-dom'
 import Head from '../Head/Head';
-import Footer from '../Footer/Footer';
+import InicioSeccion from "./InicioSeccion";
+
+import PersonalInfo from "./PersonalInfo";
 
 export default function ProfileDetails(){
-
+   
+    const userAuth = useSelector(state => state.userAuth);
     const navigate = useNavigate();
+
     function HandleClick(e){
         navigate(`/${e.target.value}`);
     };
+    
+
 
     return(
         <div >
             <Head />
-            <div className={Style.container}>
-                <button className={Style.btnprofileselected} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>
-                <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>
-            </div>
-            
+                     
             <div className={Style.details}>
-                <ul>
-                    <li>Nombre: (nombre del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Usuario: (usuario del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Email: (email del cliente) <button className={Style.modificar}>Modificar</button></li>
-                    <li>Dirección: (dirección del cliente) <button className={Style.modificar}>Modificar</button></li>
-                </ul>
+                {
+                    userAuth? <PersonalInfo/>:
+                    <InicioSeccion/>
+                }
             </div>
-            <div className={Style.detailsfooter}><Footer /></div>
+            <div className={Style.container}>
+                {
+                    userAuth?
+                    <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Ver tus datos personales</button>
+                    :null
+                }
+                {
+                    userAuth?
+                    <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Ver tu historial de Compras</button>: null
+                } 
+
+            </div>
         </div>
     )
 }

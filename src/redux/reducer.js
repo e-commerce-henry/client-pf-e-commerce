@@ -7,22 +7,42 @@ import {
     FILTER_BY_CATEGORY,
     GET_PRODUCT_NAME,
     FILTER_BY_BRAND,
+    CREAR_USERS,
+    ADD_INICIO_USER,
     ADD_PRODUCT_SHOPPING_CART,
+    REMOVE_CART,
     SHOW_SHOPPING_CART,
     ADD_PRODUCT_WISHLIST,
-    DELETE_PRODUCT_WISHLIST
+    DELETE_PRODUCT_WISHLIST,
+    CREATE_REVIEWS,
+    GET_REVIEWS,
+    GET_SALEBANNER,
+    DETALLE_USERS, 
+    EDIT_SHOPPING_CART,
+    SHOW_WISHLIST,
+    CREATE_ORDER,
+    GET_ORDER,
+    DELETE_ITEM_SHOPPINGCART,
+    RESET_CART,
+    GET_ORDER_HISTORY
 } from './actions';
 
 const inicialState = {
-    cart: [],
+    cart: {},
     products : [],
     allProducts : [],
     details: [],
     categories: [],
     order: [],
-    favs: []
-
-
+    favs: [],
+    create_review :{},
+    getreview:[],
+    idUser: '',
+    userAuth: false,
+    saleBanner: [],
+    userDetail: {},
+    order: {},
+    history: []
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -51,7 +71,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 categories: action.payload
             }
-
         case FILTER_BY_CATEGORY:
             let all = state.allProducts
             const filtered = action.payload === 'none' ? all : all.filter(e => e.category.name.includes(action.payload))        
@@ -59,7 +78,6 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 products: filtered
             }
-
         case FILTER_BY_BRAND:
             return {
                 ...state,
@@ -107,22 +125,95 @@ const reducer = (state = inicialState, action) => {
                     ...state,
                     order: sortedArr
                 };
+        case CREAR_USERS:
+                return { ...state, products: action.payload};
 
+        case ADD_INICIO_USER:
+            if(action.payload){
+                return {...state, userAuth: true, idUser: action.payload}
+            } 
+            return {...state, userAuth: false, idUser: []}
         case ADD_PRODUCT_SHOPPING_CART:
-            let {payload} = action
-            state.cart.push(payload)
             return{
                 ...state
             }
-        
+        case REMOVE_CART : 
+            let {vaciar} = action
+            state.cart.shift(vaciar)
+            return{
+            ...state
+            }
         case ADD_PRODUCT_WISHLIST:
-            state.favs.push(action.payload)
+            // state.favs.push(action.payload)
             return{
                 ...state
             }
-    
-            default: return state 
+        case DELETE_PRODUCT_WISHLIST:
+            return{
+            ...state,
+            // favs: state.favs.filter(e => e.id !== action.payload.id)
+            }
 
+        //crea mi review
+        case CREATE_REVIEWS:
+            return {
+                ...state,
+                create_review:action.payload
+            }
+        //obtengo todos mis reviews
+        case GET_REVIEWS:
+            return{
+                ...state,
+                getreview: action.payload
+            } 
+        case GET_SALEBANNER:
+        return {
+            ...state,
+            saleBanner: action.payload,
+        };
+        case "DETALLE_USERS":
+                return {
+                 ...state,
+                  userDetail: action.payload 
+            }
+        case SHOW_SHOPPING_CART:
+            return{
+                ...state,
+                cart: action.payload
+            }
+        case SHOW_WISHLIST:
+            return{
+                ...state,
+                favs: action.payload
+            }
+        case EDIT_SHOPPING_CART:
+            return {
+                ...state
+            }
+        case CREATE_ORDER:
+            return {
+                ...state
+            }
+        case GET_ORDER:
+            return {
+                ...state,
+                order: action.payload
+            }
+        case DELETE_ITEM_SHOPPINGCART:
+            return {
+                ...state
+            }
+        case RESET_CART:
+            return{
+                ...state,
+                cart: {}
+            }
+        case GET_ORDER_HISTORY:
+            return{
+                ...state,
+                history: action.payload
+            }
+        default: return state 
 }
 
 }

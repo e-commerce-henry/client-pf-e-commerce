@@ -14,12 +14,13 @@ function valProduct(e){
             <div className={Style.eachcard}>
             <Card 
             key = {e.id}
-            id = {e.id}
+            productId = {e.id}
             name = {e.name}
             price= {e.price}
             img ={e.img}
             brand={e.brand}
-            /></div>
+            />
+            </div>
         )
     }
 }
@@ -48,6 +49,7 @@ function Cards(){
 
     let brandsArray = products.map(e => e.brand)
     brandsArray = [...new Set(brandsArray)]
+    brandsArray = brandsArray.sort()
     
 
     function handleSortN (e) {
@@ -63,7 +65,6 @@ function Cards(){
     };
 
     function handleFilterCategory(e){
-    console.log(e.target.value)
         dispatch(filterProductsByCategory(e.target.value));
     };
 
