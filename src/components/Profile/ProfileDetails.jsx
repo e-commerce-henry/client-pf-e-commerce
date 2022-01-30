@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Style from './ProfileDetails.module.css'
 import Head from '../Head/Head';
 import InicioSeccion from "./InicioSeccion";
-import { detalleUsers } from "../../redux/actions";
+
 import PersonalInfo from "./PersonalInfo";
 
 export default function ProfileDetails(){

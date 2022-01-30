@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
 
 import IconButton from "@material-ui/core/IconButton";
-import InputLabel from "@material-ui/core/InputLabel";
 import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
@@ -81,13 +80,13 @@ const InicioSeccion = () => {
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
                 
-                   <label>Correo:</label>
+                   <label>Correo: </label>
                     <input className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
                
                 </div>
 
                 <div className="stylo">
-                    <label>Password:</label>
+                    <label>Password: </label>
                     
                     <Input className = {errors.pwd && 'danger'} 
                     type={input.showPassword ? "text" : "password"} 
@@ -111,9 +110,7 @@ const InicioSeccion = () => {
                 <div>
                     <button className="crear" type="submit">Iniciar Sección</button>
                     <p>O tambien puedes </p>
-                    <button className="crear"> <Link to="/addUsers" type="submit">registrate aqui</Link>
-                    </button>
-                    
+                    <Link to="/addUsers" type="submit">registrate aquí</Link>
                 </div>
             </form>
             <hr/>
