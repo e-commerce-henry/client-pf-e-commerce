@@ -53,7 +53,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                 <div className={Style.name}>Name{name}</div>
                 
                 <div className={Style.stock}>
-                <th> Stock: {stock}</th>
+                <th> Stock: {stock - quantity}</th>
                 </div> 
                 <div className={Style.contador}>
                     <th> Agregar cantidad: <br/>
