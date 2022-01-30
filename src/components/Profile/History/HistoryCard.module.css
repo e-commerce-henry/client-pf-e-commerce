@@ -1,0 +1,23 @@
+.container{
+    background-color: #EEEEEE;
+    margin: 3% 5%;
+    border: 1px solid #303841;
+    border-radius: 10px;
+}
+.header{
+    background-color: #303841; /* FF5722 */
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+.contenido{
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer{
+    display: flex;
+    justify-content: end;
+    background-color: #303841;
+    color: white;
+}
