@@ -21,7 +21,7 @@ li {
 
 .container {
   color: #303841;
-  
+
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
   font-size: 17px;
@@ -41,6 +41,7 @@ li {
 
 .btnprofile:hover {
   color: #ff5722;
+  cursor: pointer;
 }
 
 .btnprofileselected {
