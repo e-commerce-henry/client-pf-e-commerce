@@ -42,7 +42,7 @@ const inicialState = {
     saleBanner: [],
     userDetail: {},
     order: {},
-    orderHistory: {}
+    history: []
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -211,10 +211,9 @@ const reducer = (state = inicialState, action) => {
         case GET_ORDER_HISTORY:
             return{
                 ...state,
-                orderHistory: 'Hola aqui va tu historial'
+                history: action.payload
             }
         default: return state 
-
 }
 
 }
