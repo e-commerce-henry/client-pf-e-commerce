@@ -142,29 +142,29 @@ const AddUsers = () => {
   <div className='formulario'>
     <Head />  
       <form className="form" onSubmit={handleSubmit}>
-    <div>
+    <div className="titulo">
       <h1>Regístrese</h1>
     </div>
     <div className="secc">
-      <label>Nombre:</label>
+      <div className="label"><label>Nombre:</label> </div>
       <input className={errors.name && 'danger'} type="text" name="name" onChange={handleInputChange} value={users.name} />
       {errors.name && (<p className="danger">{errors.name}</p>)}
     </div>
 
     <div className="secc">
-      <label>Apellido:</label>
+      <div className="label"><label>Apellido:</label> </div>
       <input className={errors.surname && 'danger'} type="text" name="surname" onChange={handleInputChange} value={users.surname} />
       {errors.surname && (<p className="danger">{errors.surname}</p>)}
     </div>
 
         <div className="secc">
-          <label>Correo:</label>
+          <div className="label"><label>Correo:</label> </div>
           <input className={errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={users.email} />
           {errors.email && (<p className="danger">{errors.email}</p>)}
         </div>
 
         <div className="secc">
-          <label>Contraseña:</label>
+          <div className="label"><label>Contraseña:</label> </div>
           <Input className={errors.pwd && 'danger'} type={users.showPassword ? "text" : "password"} name="pwd" onChange={handleInputChange} value={users.pwd} 
           endAdornment={
           <InputAdornment position="end">
@@ -175,38 +175,38 @@ const AddUsers = () => {
         </div>
 
         <div className="secc">
-          <label>Dirección:</label>
+          <div className="label"><label>Dirección:</label></div>
           <input className={errors.address && 'danger'} type="text" name="address" onChange={handleInputChange} value={users.address} />
           {errors.address && (<p className="danger">{errors.address}</p>)}
         </div>
 
         <div className="secc">
-          <label>Código Postal:</label>
+          <div className="label"><label>Código Postal:</label> </div>
           <input className={errors.cp && 'danger'} type="number" name="cp" onChange={handleInputChange} value={users.cp} />
           {errors.cp && (<p className="danger">{errors.cp}</p>)}
         </div>
 
         <div className="secc">
-          <label>Ciudad:</label>
+          <div className="label"><label>Ciudad:</label></div>
           <input className={errors.city && 'danger'} type="text" name="city" onChange={handleInputChange} value={users.city}/>
           {errors.city && (<p className="danger">{errors.city}</p>)}
         </div>
 
         <div className="secc">
-          <label>Provincia:</label>
+          <div className="label"><label>Provincia:</label> </div>
           <input className={errors.province && 'danger'} type="text" name="province" onChange={handleInputChange} value={users.province}/>
           {errors.province && (<p className="danger">{errors.province}</p>)}
         </div>
 
         <div className="secc">
-          <label>Piso:</label>
+          <div className="label"><label>Piso:</label> </div>
           <input className={errors.floor && 'danger'} type="Number" name="floor" onChange={handleInputChange} value={users.floor} />
           {errors.floor && (<p className="danger">{errors.floor}</p>)}
         </div>
         
-        <div>
-          <button className="crear" type="submit">Registrar</button> 
-          <Link to="/profile-details"><button className="crear" type="submit">Iniciar Sección</button></Link>
+        <div className="btns">
+          <button className="butt" type="submit">Registrarse</button> 
+          <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link>
           
           
         </div>
