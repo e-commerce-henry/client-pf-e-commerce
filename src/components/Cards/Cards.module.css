@@ -95,11 +95,27 @@
   border: solid 2px #00adb5;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 868px) {
   .flef {
     position: absolute;
     top: 0px;
     width: 100%;
+  }
+  .pag {
+    border: solid 2px #303841;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #303841;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .paginationn {
+    padding-bottom: 80px;
   }
 }
 
