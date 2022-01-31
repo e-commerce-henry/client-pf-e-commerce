@@ -68,9 +68,9 @@
   cursor: pointer;
 }
 
-.productbtns:focus {
+/* .productbtns:focus {
   color: #ff5722;
-}
+} */
 
 .producticons {
   margin-left: 40px;
