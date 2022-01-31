@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Style from './ProfileDetails.module.css'
 import Head from '../Head/Head';
 import InicioSeccion from "./InicioSeccion";
+import Footer from "../Footer/Footer";
 
 import PersonalInfo from "./PersonalInfo";
 
@@ -21,13 +22,6 @@ export default function ProfileDetails(){
     return(
         <div >
             <Head />
-                     
-            <div className={Style.details}>
-                {
-                    userAuth? <PersonalInfo/>:
-                    <InicioSeccion/>
-                }
-            </div>
             <div className={Style.container}>
                 {
                     userAuth?
@@ -39,7 +33,14 @@ export default function ProfileDetails(){
                     <button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Ver tu historial de Compras</button>: null
                 } 
 
+            </div>  
+            <div className={Style.details}>
+                {
+                    userAuth? <PersonalInfo/>:
+                    <InicioSeccion/>
+                }
             </div>
+            <Footer/>
         </div>
     )
 }
