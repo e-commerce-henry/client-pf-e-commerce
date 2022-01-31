@@ -38,7 +38,7 @@ function Favs(){
                 <div className={Style.allcards}>
                 {
                         productsFavs[0]?
-                        productsFavs[0].wishlistItems.map(e => (
+                        productsFavs[0].wishlistItems[0]? productsFavs[0].wishlistItems.map(e => (
                             <CardFavs
                                 id = {e.id}
                                 key = {e.id}
@@ -46,7 +46,7 @@ function Favs(){
                                 productId = {e.productId}
                                 addInfo = {searchAndComplementInfo(e.productId)}
                             />
-                        )):null
+                        )):null :null
                     }
                 </div>   
             </div>
