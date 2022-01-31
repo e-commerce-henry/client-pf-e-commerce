@@ -135,7 +135,7 @@ export default function ProductDetail(){
             <br/>
             <Reviews idproduct={id}/>
             <br/> */}
-            <div className={Style.footer}><Footer/></div>
+           <Footer/>
 
 
 {/* *********Modal calificacion******** */}

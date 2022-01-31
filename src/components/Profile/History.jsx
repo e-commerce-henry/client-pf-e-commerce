@@ -32,7 +32,7 @@ export default function History(){
             <div>
                 <HistoryCards/>
             </div>  
-            <div className={Style.historyfooter}><Footer />  </div>
+            <Footer />
         </div>
     )
 }

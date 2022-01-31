@@ -47,6 +47,22 @@ function Cards(){
         setCurrentPage(pageNumber);
     };
 
+    let next = () => {
+        setCurrentPage(currentPage + 1)
+    }
+
+    let prev = () => {
+        setCurrentPage(currentPage - 1)
+    }
+
+    let ult = () => {
+        setCurrentPage(10)
+    }
+
+    let prim = () => {
+        setCurrentPage(1)
+    }
+
     let brandsArray = products.map(e => e.brand)
     brandsArray = [...new Set(brandsArray)]
     brandsArray = brandsArray.sort()
@@ -112,11 +128,21 @@ function Cards(){
         </div>
         </div>
         <div className={Style.paginationn}>
-        <Pagination productsPerPage = {productsPerPage}
-            allProducts = {products.length}
-            pagination = {pagination} /></div>
-        <div><Footer /></div>
+            <div className={Style.uno}>
+            {currentPage !== 1 ? <button className={Style.pag} onClick={prim}> ◄◄ </button> : <div></div> }
+            {currentPage !== 1 ? <button className={Style.pag} onClick={prev}>◄</button> : <div></div> }  
+            </div>
+            <div className={Style.dos}>
+            <Pagination productsPerPage = {productsPerPage}
+                allProducts = {products.length}
+                pagination = {pagination} />
+            </div>
+            <div className={Style.tres}>
+            {currentPage !== 10 ? <button className={Style.pag} onClick={next}>►</button> : <div></div>}
+            {currentPage !== 10 ? <button className={Style.pag} onClick={ult}> ►► </button> : <div></div>}
+            </div>
         </div>
+    </div>
     )
 };
 

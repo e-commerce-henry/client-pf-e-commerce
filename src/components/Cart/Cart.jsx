@@ -20,7 +20,7 @@ function Cart(){
                 }
                 
             </div>
-            <div className={Style.favfooter}><Footer /></div>
+            <Footer />
         </>
     )
 };

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.box {
+  margin-top: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  border: solid 1px #e84e07;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.parrafo {
+  margin-top: 2px;
+  font-size: 12pt;
+  width: 35%;
+  margin-left: 10%;
+  margin-right: 40%;
+}
+.parrafo1 {
+  padding-bottom: 5%;
+  font-size: 12pt;
+  width: 40%;
+  padding-left: 10%;
+  /* margin-bottom: 5%; */
+}
+
+.boo {
+  margin-top: 20%;
+  margin-bottom: 5%;
+  margin-left: 150%;
+  border: none;
+  outline: none;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 150px;
+  height: 32px;
+  border-width: 1px;
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  /* background: #e84e07; */
+}
+.boo:hover {
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  cursor: pointer;
+  background: #e84e07;
+  color: white;
+  text-decoration: none;
+}
