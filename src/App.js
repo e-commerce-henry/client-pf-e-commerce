@@ -16,6 +16,7 @@ import AddUsers from "./components/AddUsers/AddUsers";
 import InicioSeccion from "./components/Profile/InicioSeccion";
 import OrderDetails from "./components/Orders/OrderDetails";
 import CompraExitosa from "./components/Orders/CompraExitosa";
+import EditUser from "./components/EditUsers/EditUser";
 
 function App() {
 	return (
@@ -34,6 +35,7 @@ function App() {
 				<Route path="/politicaDePrivacidad" element={<PoliticaDePrivacidad />}/>
 				<Route path="/equipo" element={<Equipo />} />
 				<Route path="/addUsers" element={<AddUsers />} />
+				<Route path="/editUser" element={<EditUser />} />
 			</Routes>
 		</>
 	);
