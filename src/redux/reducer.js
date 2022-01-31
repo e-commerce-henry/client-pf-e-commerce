@@ -45,6 +45,7 @@ const inicialState = {
     order: {},
     orderHistory: {},
     updateUser: [],
+    history: []
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -213,7 +214,7 @@ const reducer = (state = inicialState, action) => {
         case GET_ORDER_HISTORY:
             return{
                 ...state,
-                orderHistory: 'Hola aqui va tu historial'
+                history: action.payload
             }
         case UPDATE_USER:
             return {
@@ -221,7 +222,6 @@ const reducer = (state = inicialState, action) => {
                 updateUser: action.payload,
             }
         default: return state 
-
 }
 
 }

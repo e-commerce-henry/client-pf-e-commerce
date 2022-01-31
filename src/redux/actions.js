@@ -299,9 +299,9 @@ export function resetShoppingCart(){
     }
 }
 
-export function getOrderHistory(id){
+export function getOrderHistory(userId){
     return async function(dispatch){
-        let historial = await(`http://localhost:3001/orders/${id}`)
+        let historial = await axios(`http://localhost:3001/orders/${userId}`)
         console.log(historial.data)
         dispatch({
             type: GET_ORDER_HISTORY, payload: historial.data
