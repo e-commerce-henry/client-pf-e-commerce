@@ -12,6 +12,7 @@ function Card({ productId, name, price, img, brand}){
     const navigate = useNavigate();
 
     function addShoppingCart(productId){
+        alert(`Se ha agregado a tu carrito: "${name}"`)
         dispatch(addProductShoppingCart({productId, price, userId}))
     }
     function addFavs(productId){
