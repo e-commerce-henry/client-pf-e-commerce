@@ -13,13 +13,14 @@ function Cart(){
     return(
         <>
             <Head />
+            <div className={Style.titulo}>MI CARRITO</div>
             <div className={Style.container} >
                 {
-                    auth?<ShoppingCart />: <p>Redirigir a logIn...</p>
+                    auth?<ShoppingCart />: <p>Debes iniciar sesion</p>
                 }
                 
             </div>
-            <Footer />
+            <div className={Style.favfooter}><Footer /></div>
         </>
     )
 };

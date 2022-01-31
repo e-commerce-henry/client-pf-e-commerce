@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import { getOrderHistory } from "../../redux/actions";
+import HistoryCards from "./History/HistoryCards";
 
 
 export default function History(){
@@ -29,7 +30,7 @@ export default function History(){
                 {userAuth?<button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>:<button className={Style.btnprofile} type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>}  
             </div>
             <div>
-
+                <HistoryCards/>
             </div>  
             <div className={Style.historyfooter}><Footer />  </div>
         </div>

@@ -53,7 +53,7 @@ export function validate(users) {
     if(!users.cp){
       errors.cp = 'El código postal es requerido';
     } else if (!/^\d{5}$/.test(users.cp)) {
-      errors.address = 'El código postal es invalido';
+      errors.cp = 'El código postal es invalido';
     }
 
     if(!users.city){
@@ -125,7 +125,7 @@ const AddUsers = () => {
             email: "",
             pwd: "",
             address: "",
-            cp: 0,
+            cp: "",
             city: "",
             province: "",
             floor: ""
@@ -158,7 +158,7 @@ const AddUsers = () => {
     </div>
 
         <div className="secc">
-          <div className="label"><label>Correo:</label> </div>
+          <div className="label"><label>Correo Electrónico: </label> </div>
           <input className={errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={users.email} />
           {errors.email && (<p className="danger">{errors.email}</p>)}
         </div>
