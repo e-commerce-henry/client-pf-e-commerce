@@ -40,7 +40,6 @@
     width: 150px;
     height: 32px;
     border-width: 1px;
-    color: rgba(240, 240, 240, 1);
     border-radius: 6px;
     /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
     text-shadow: inset 0px 1px 0px #303841;
@@ -49,7 +48,7 @@
 .boo:hover {
     background: linear-gradient(#303841, rgba(0, 0, 0, 1));
     cursor: pointer;
-    background: #303841;
-
+    background: #e84e07;
+    color: white;
     text-decoration: none;
   }

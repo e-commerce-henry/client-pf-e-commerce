@@ -46,8 +46,8 @@ function Favs(){
                                 productId = {e.productId}
                                 addInfo = {searchAndComplementInfo(e.productId)}
                             />
-                        )):null
-                    }
+                        )):<p>Debes iniciar sesion</p>
+                }
                 </div>   
             </div>
             <div className={Style.favfooter}><Footer /></div>
