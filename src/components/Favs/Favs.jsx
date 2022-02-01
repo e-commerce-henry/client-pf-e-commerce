@@ -12,6 +12,8 @@ function Favs(){
     const productsFavs = useSelector(state => state.favs)
     let userId =  useSelector(state => state.idUser)
     const productos = useSelector( state => state.products)
+    const auth = useSelector(state => state.userAuth )
+
 
     useEffect(() => {
         dispatch(getWishlist(userId));
@@ -37,8 +39,8 @@ function Favs(){
                 <div className={Style.titulofav}>MIS FAVORITOS</div>
                 <div className={Style.allcards}>
                 {
-                        productsFavs[0]?
-                        productsFavs[0].wishlistItems.map(e => (
+                        auth? productsFavs[0]?
+                        productsFavs[0].wishlistItems.length === 0 ? <div>Lista vacía</div> : productsFavs[0].wishlistItems.map(e => (
                             <CardFavs
                                 id = {e.id}
                                 key = {e.id}
@@ -46,7 +48,7 @@ function Favs(){
                                 productId = {e.productId}
                                 addInfo = {searchAndComplementInfo(e.productId)}
                             />
-                        )):<p>Debes iniciar sesion</p> 
+                        )):<div>Lista vacía</div> :<div>Debes <Link to='/profile-details'> iniciar sesión</Link></div>
                         }
                 </div>   
             </div>

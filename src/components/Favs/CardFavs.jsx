@@ -13,31 +13,26 @@ function CardFavs({id, price, productId, addInfo}){
 
     const {name, img, brand} = addInfo   
 
-    function addShoppingCart(productId){
-        // swal({
-        //     title: "Se ha agregado al carrito:",
-        //     text: `${name}`,
-        //     icon: "success",
-        //     button: "Ok"})
-        console.log(productId);
-        dispatch(addProductShoppingCart({productId, price, userId}))
-        dispatch(deleteProductWishlist({productId, userId}))
-        alert('e')
-        dispatch(getWishlist(userId))
+    async function addShoppingCart(productId){
+        swal({
+            title: "Se ha agregado al carrito:",
+            text: `${name}`,
+            icon: "success",
+            button: "Ok"})
+        await dispatch(addProductShoppingCart({productId, price, userId}))
+        await dispatch(deleteProductWishlist({productId, userId}))
+        await dispatch(getWishlist(userId))
 
     }
 
-    function deleteFavs(productId){
-       
-        dispatch(deleteProductWishlist({productId, userId}))
-        alert('a')
-        // swal({
-        //     title: "Se ha eliminado de favoritos:",
-        //     text: `${name}`,
-        //     icon: "warning",
-        //     button: "Ok"})
-        dispatch(getWishlist(userId))
-        // window.location.reload("/favs");
+   async function  deleteFavs(productId){
+        await dispatch(deleteProductWishlist({productId, userId}))
+        swal({
+            title: "Se ha eliminado de favoritos:",
+            text: `${name}`,
+            icon: "warning",
+            button: "Ok"})
+        await dispatch(getWishlist(userId))
     }
 
 
