@@ -17,10 +17,18 @@ function Card({ productId, name, price, img, brand}){
     const auth = useSelector(state => state.userAuth )
     const [fav, setFav] = useState([]);
     const [cart, setCart] = useState([]);
+    const [error, setError] = useState([])
 
     const navigate = useNavigate();
 
     function addShoppingCart(productId){
+        setError(error)
+        if(productId >= 1){
+            swal({
+                title: "No. Ya está!!",
+                icon: "warning"
+            })
+        }else {
         setCart(name)
         swal({
             title: "Se ha agregado al carrito:",
@@ -28,7 +36,7 @@ function Card({ productId, name, price, img, brand}){
             icon: "success",
             button: "Ok"})
         dispatch(addProductShoppingCart({productId, price, userId}))
-
+}
     }
 
 
