@@ -43,7 +43,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
 
    async function deleteCart(productId){
        
-     await dispatch(removeCart({productId, userId}))
+  await dispatch(removeCart({productId, userId}))
     swal({
         title: "Se ha eliminado este producto del carrito:",
         text: `${name}`,
@@ -52,7 +52,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
         await dispatch(getShoppingCart(userId))
 
     // window.location.reload("/favs");
-}
+} 
 
    
     return(
