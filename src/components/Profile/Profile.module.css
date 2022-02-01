@@ -17,8 +17,10 @@
   outline: none;
   margin-left: 5%;
   margin-right: 5%;
-  color: #eeeeee;
+  color: #303841;
   background-color: transparent;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
 }
 
 .btnprofile:hover {

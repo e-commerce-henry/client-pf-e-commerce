@@ -34,7 +34,7 @@ function Favs(){
         <>
             <Head />
             <div className={Style.container} >
-                <div className={Style.titulo}>MIS FAVORITOS</div>
+                <div className={Style.titulofav}>MIS FAVORITOS</div>
                 <div className={Style.allcards}>
                 {
                         productsFavs[0]?
