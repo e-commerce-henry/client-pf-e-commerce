@@ -8,8 +8,11 @@ import {useNavigate} from 'react-router-dom'
 import swal from 'sweetalert'
 
 
+
+
 function Card({ productId, name, price, img, brand}){
     const dispatch = useDispatch()
+
     const userId = useSelector(state => state.idUser)
     const auth = useSelector(state => state.userAuth )
     const [fav, setFav] = useState([]);
@@ -25,7 +28,10 @@ function Card({ productId, name, price, img, brand}){
             icon: "success",
             button: "Ok"})
         dispatch(addProductShoppingCart({productId, price, userId}))
+
     }
+
+
     function addFavs(productId){
         if(auth){
             setFav(name)
