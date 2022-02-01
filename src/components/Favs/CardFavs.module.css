@@ -4,7 +4,7 @@
   width: 250px;
   height: 250px;
   background-color: white;
-  border: solid 1px #00adb5;
+  box-shadow: 0px 0px 5px 1px #00adb5;
   border-radius: 5%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -32,7 +32,6 @@
 .productimg {
   width: 100%;
   padding: 10px 0px;
-  cursor: pointer;
 }
 
 .boximg {

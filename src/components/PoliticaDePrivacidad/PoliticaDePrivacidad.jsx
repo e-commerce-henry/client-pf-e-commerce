@@ -301,7 +301,7 @@ La Declaración de Privacidad se regirá por las leyes aplicables conforme se de
 
       </p>
     </div>
-    <div className='polfooter'><Footer /></div>
+    <Footer />
   </div>;
 };
 

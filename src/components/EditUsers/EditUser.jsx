@@ -8,6 +8,9 @@ import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
+import Footer from '../Footer/Footer';
+import Head from '../Head/Head';
+import './EditUser.css'
 
 
 
@@ -134,9 +137,9 @@ const EditUser = ({name, surname, email, pwd, address, postalCode, city, provinc
 
   return (
         <div>
-
+          <Head />
             <form className="form" onSubmit={handleSubmit}>
-                <div className="titulo">
+                <div className="tituloedit">
                     <h2>Editar usuario</h2>
                 </div>
                 <div className="secc">
@@ -202,11 +205,12 @@ const EditUser = ({name, surname, email, pwd, address, postalCode, city, provinc
                 <div className="btns">
                     <Link to="/profile-details"><button className="butt" type="submit">Cancelar</button></Link>
                     <button className="butt" type="submit">Actualizar</button>
-                    <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sección</button></Link>
+                    <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link>
 
 
                 </div>
             </form>
+            <Footer />
         </div>
     );
 };

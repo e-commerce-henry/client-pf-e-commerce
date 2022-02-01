@@ -34,7 +34,7 @@ function Favs(){
         <>
             <Head />
             <div className={Style.container} >
-                <div className={Style.titulo}>MIS FAVORITOS</div>
+                <div className={Style.titulofav}>MIS FAVORITOS</div>
                 <div className={Style.allcards}>
                 {
                         productsFavs[0]?
@@ -46,11 +46,11 @@ function Favs(){
                                 productId = {e.productId}
                                 addInfo = {searchAndComplementInfo(e.productId)}
                             />
-                        )):<p>Debes iniciar sesion</p>
-                }
+                        )):<p>Debes iniciar sesion</p> 
+                        }
                 </div>   
             </div>
-            <div className={Style.favfooter}><Footer /></div>
+            <Footer />
         </>
     )
 };

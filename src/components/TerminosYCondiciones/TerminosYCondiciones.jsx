@@ -154,7 +154,7 @@ const TerminosYCondiciones = () => {
         Se fija como domicilio de <b>MARCA DEL E-COMMERCE</b> S.R.L. la avenida Caseros 3039, piso 2, Capital Federal, código postal C1264, República Argentina.<br></br>
         Si tienes alguna duda sobre los Términos y Condiciones Generales o demás políticas y principios que rigen <b>MARCA DEL E-COMMERCE</b> consulta nuestra página de Ayuda.<br></br>
       </p>
-      <div className='termfooter'><Footer /></div>
+     <Footer />
     </div>
   )
 }

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from 'react';
 import { addProductShoppingCart, deleteProductWishlist, getWishlist } from '../../redux/actions';
+import swal from 'sweetalert'
+
 
 function CardFavs({id, price, productId, addInfo}){
     const dispatch = useDispatch()
@@ -11,15 +13,23 @@ function CardFavs({id, price, productId, addInfo}){
 
     const {name, img, brand} = addInfo   
 
-    function addShoppingCart(){
-        alert(`Agregado a carrito "${name}"`)
+    function addShoppingCart(productId){
+        swal({
+            title: "Se ha agregado al carrito:",
+            text: `${name}`,
+            icon: "success",
+            button: "Ok"})
         dispatch(addProductShoppingCart({productId, price, userId}))
     }
 
     function deleteFavs(productId){
        
         dispatch(deleteProductWishlist({productId, userId}))
-        alert(`Eliminado de favoritos "${name}"`)
+        swal({
+            title: "Se ha eliminado de favoritos:",
+            text: `${name}`,
+            icon: "warning",
+            button: "Ok"})
         dispatch(getWishlist(userId))
         // window.location.reload("/favs");
     }

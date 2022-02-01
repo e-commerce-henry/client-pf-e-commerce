@@ -1,22 +1,66 @@
-
-.cont{
-    width: 100%;
-    height: 10%;
-    margin-top:2%;
-    margin-right: 20%;
-    margin-left: 20%;
-    border-radius: 10px;
-    text-align: center;
+.cont {
+  width: 100%;
+  height: 10%;
+  margin-top: 2%;
+  margin-right: 20%;
+  margin-left: 20%;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 0;
 }
-.saludo{
-  display: flex;
-  justify-content: center;
+.saludo {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 27px;
+  text-align: center;
+  color: #00adb5;
 }
-.detalle{
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  border: 1px solid black;
+.detalle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: 0px 0px 5px 1px #00adb5;
   background-color: white;
   border-radius: 10px;
+  text-align: left;
+  height: 350px;
+  color: #303841;
+}
+
+.aaa {
+  margin-left: 20%;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  align-self: center;
+  color: #303841;
+}
+
+.bbb {
+  margin-left: 20%;
+  font-size: 20px;
+  align-self: center;
+  color: #303841;
+}
+
+.crear {
+  border: none;
+  outline: none;
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 100px;
+  height: 42px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  margin-top: 20px;
+}
+
+.crear:hover {
+  cursor: pointer;
 }
