@@ -74,7 +74,13 @@ export default function ShoppingCart() {
   return (
     <>
       <div className={Style.cont}>
-        <h1>{`Ya casi lo tienes ${userInfo.name}`}</h1>
+        <h1 className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</h1>
+        <div className={Style.headcart}>
+          <div className={Style.div7}>Producto</div>
+          <div className={Style.div8}>Precio unitario</div>
+          <div className={Style.div9}>Cantidad</div>
+          <div className={Style.div10}>Subtotales</div>
+        </div>
         <div>
           {shoppingCart[0]
             ? shoppingCart[0].cartItems.map((e) => (
@@ -91,15 +97,15 @@ export default function ShoppingCart() {
         </div>
       </div>
       <div className={Style.box}>
-          <th className={Style.parrafo}>Cant. de Productos :{totalCant}</th>
-       
-          <th className={Style.parrafo1}>Total de tus productos : $ {total}</th>
-         <th>
-             <button className={Style.boo} onClick={(e) => creOrder()}>
-          Comprar ahora
-            </button>
-        </th>
-     </div>
+        {/* <div className={Style.parrafo0}>Estas por realizar la compra</div> */}
+        <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
+        <div className={Style.parrafo1}>
+          ${Number(Math.ceil(total)).toLocaleString()} <br />
+          <button className={Style.boo} onClick={(e) => creOrder()}>
+            Comprar ahora
+          </button>
+      </div>
+      </div>
     </>
   );
 }
