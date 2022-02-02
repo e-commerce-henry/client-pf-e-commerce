@@ -205,7 +205,7 @@ const EditUser = ({name, surname, email, pwd, address, postalCode, city, provinc
                 <div className="btns">
                     <Link to="/profile-details"><button className="butt" type="submit">Cancelar</button></Link>
                     <button className="butt" type="submit">Actualizar</button>
-                    <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link>
+                    {/* <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link> */}
 
 
                 </div>
