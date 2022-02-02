@@ -34,8 +34,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
             quantity = quantity -1
             await dispatch(editShoppingCart({productId, userId, quantity}))
             await dispatch(getShoppingCart(userId))
-       }
-       
+       }   
    }
 
 
