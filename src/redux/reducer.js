@@ -25,7 +25,8 @@ import {
     DELETE_ITEM_SHOPPINGCART,
     RESET_CART,
     GET_ORDER_HISTORY,
-    UPDATE_USER
+    UPDATE_USER, 
+    EDIT_CART
 } from './actions';
 
 const inicialState = {
@@ -136,16 +137,21 @@ const reducer = (state = inicialState, action) => {
                 return {...state, userAuth: true, idUser: action.payload}
             } 
             return {...state, userAuth: false, idUser: []}
+
         case ADD_PRODUCT_SHOPPING_CART:
             return{
                 ...state
             }
         case REMOVE_CART : 
-            let {vaciar} = action
-            state.cart.shift(vaciar)
+        
             return{
             ...state
             }
+
+        case EDIT_CART : 
+        return {
+            ...state
+        }
         case ADD_PRODUCT_WISHLIST:
             // state.favs.push(action.payload)
             return{

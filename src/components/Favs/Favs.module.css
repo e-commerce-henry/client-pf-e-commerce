@@ -29,11 +29,39 @@
   margin-right: auto;
 }
 
-.titulo {
+.titulofav {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 800;
   font-size: 30px;
   text-align: center;
   color: #00adb5;
   margin: 30px;
+}
+
+.nada {
+  /* padding: 20px;
+  width: 350px;
+  text-align: center;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 16%; */
+  color: #303841;
+  margin-top: 15px;
+}
+
+.iconoadv {
+  /* width: 560px;
+  text-align: center;
+  position: absolute;
+  margin-top: 9%;
+  margin-left: 16%; */
+  color: #303841;
+}
+.bothh {
+  position: absolute;
+  left: 44.5%;
+  right: 40%;
+  top: 20%;
+  width: max-content;
+  text-align: center;
 }

@@ -14,6 +14,7 @@ function Cart(){
     return(
         <>
             <Head />
+            <div className={Style.titulo}>MI CARRITO</div>
             <div className={Style.container} >
                 {
                     auth?<ShoppingCart />:  <InicioSeccion/>

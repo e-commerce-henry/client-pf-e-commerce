@@ -18,7 +18,7 @@ const Equipo = () => {
           </div>
         </div>
       </div> */}
-      <div className='nosfooter'><Footer /></div>
+      <Footer />
     </div>
   )
 }

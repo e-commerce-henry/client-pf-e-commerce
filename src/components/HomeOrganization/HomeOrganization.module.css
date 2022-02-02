@@ -19,11 +19,6 @@
 .central {
   grid-area: 1 / 2 / 2 / 7;
 }
-
-.footer {
-  grid-area: 2 / 1 / 3 / 7;
-}
-
 @media only screen and (max-width: 768px) {
   .thebar {
     top: 110px;

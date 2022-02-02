@@ -25,7 +25,8 @@ export const GET_ORDER = "GET_ORDER";
 export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
 export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
-export const UPDATE_USER = "UPDATE_USER"
+export const UPDATE_USER = "UPDATE_USER";
+export const EDIT_CART= "EDIT_CART";
 
 
 export function productDetail(id){
@@ -148,12 +149,14 @@ export function addProductShoppingCart(body){
     }
 }
 
-export function removeCart(id){
+export function removeCart({ productId, userId}){
     return async function (dispatch){
-        let json = await axios.post(`http://localhost:3001/cart`, id)
+        await axios.delete(`http://localhost:3001/cart`, {
+            data: {productId, userId},
+        })
         dispatch({
             type: REMOVE_CART,
-            payload: json.data
+            action: productId, userId
         })
     }
 }
@@ -163,6 +166,17 @@ export function addProductWishlist(body){
         await axios.post(`http://localhost:3001/wishlist`, body)
         dispatch ({
             type: ADD_PRODUCT_WISHLIST
+        })
+        
+    }
+}
+export function editCart({ productId, userId, quantity }){
+    return async function (dispatch){
+        await axios.put(`http://localhost:3001/cart`, {
+            data: { productId, userId, quantity }
+        })
+        dispatch({
+            type: EDIT_CART
         })
     }
 }
