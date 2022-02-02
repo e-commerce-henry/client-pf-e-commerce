@@ -113,15 +113,15 @@ const InicioSeccion = () => {
                 
                 <div>
                     <button className="bu" type="submit">Iniciar Sesión</button>
-                    <p className="o">o también puedes </p>
-                    <Link to="/addUsers" type="submit">registrate aquí</Link>
+                    
+                    
                 </div>
             </form>
             <hr/>
                     <div>
-                    <h3>Tambien puedes</h3>
                     <GoogleAuth/>
                     </div>
+                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarte aquí</Link></p>
             
         </div> 
        

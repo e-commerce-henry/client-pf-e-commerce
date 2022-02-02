@@ -1,10 +1,18 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
-
+import swal from 'sweetalert'
 
 export default function GoogleAuth(){
+    const navigate = useNavigate();
     const respuestaCorrectaGoogle=(respuesta)=>{
         console.log(respuesta.profileObj)
+        navigate(`/`);
+        swal({
+            title: "Todo ok",
+            text: `Bienvenido ${respuesta.profileObj.givenName}, este componente aun no te registra/loguea en realidad`,
+            icon: "success"
+        })
     }
     return(
         <>
