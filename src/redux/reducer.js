@@ -26,7 +26,8 @@ import {
     RESET_CART,
     GET_ORDER_HISTORY,
     UPDATE_USER, 
-    EDIT_CART
+    EDIT_CART,
+    ADD_PRODUCT_BANNER_A_CART
 } from './actions';
 
 const inicialState = {
@@ -226,6 +227,11 @@ const reducer = (state = inicialState, action) => {
             return {
                 ...state,
                 updateUser: action.payload,
+            }
+
+        case ADD_PRODUCT_BANNER_A_CART:
+            return{
+                ...state,
             }
         default: return state 
 }

@@ -27,6 +27,7 @@ export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const UPDATE_USER = "UPDATE_USER";
 export const EDIT_CART= "EDIT_CART";
+export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
 
 
 export function productDetail(id){
@@ -148,6 +149,15 @@ export function addProductShoppingCart(body){
         })
     }
 }
+export function addProductBanneraCart(body){
+    return async function (dispatch){
+        await axios.post(`http://localhost:3001/cart`, body)
+        dispatch({
+            type: ADD_PRODUCT_BANNER_A_CART
+        })
+    }
+}
+
 
 export function removeCart({ productId, userId}){
     return async function (dispatch){

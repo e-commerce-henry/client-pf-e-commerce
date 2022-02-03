@@ -41,7 +41,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
    }
 
 
-   async function deleteCart(productId){
+ async function deleteCart(productId){
        
   await dispatch(removeCart({productId, userId}))
     swal({
@@ -88,7 +88,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                 </button> 
               
                 
-                <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div>
+                {/* <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div> */}
             </div>
         </div>
     )
