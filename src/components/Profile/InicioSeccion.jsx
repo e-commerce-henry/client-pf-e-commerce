@@ -4,6 +4,7 @@ import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
+import GoogleAuth from "./GoogleAuth/GoogleAuth";
 
 import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
@@ -112,11 +113,15 @@ const InicioSeccion = () => {
                 
                 <div>
                     <button className="bu" type="submit">Iniciar Sesión</button>
-                    <p className="o">o también puedes </p>
-                    <Link to="/addUsers" type="submit">registrate aquí</Link>
+                    
+                    
                 </div>
             </form>
             <hr/>
+                    <div>
+                    <GoogleAuth/>
+                    </div>
+                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarte aquí</Link></p>
             
         </div> 
        

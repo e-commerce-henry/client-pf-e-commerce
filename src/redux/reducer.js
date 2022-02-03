@@ -25,8 +25,9 @@ import {
     DELETE_ITEM_SHOPPINGCART,
     RESET_CART,
     GET_ORDER_HISTORY,
-    EDIT_USER, 
-    EDIT_CART
+    EDIT_USER,  
+    EDIT_CART,
+    ADD_PRODUCT_BANNER_A_CART
 } from './actions';
 
 const inicialState = {
@@ -225,7 +226,7 @@ const reducer = (state = inicialState, action) => {
                 userDetail: action.payload
             }
 
-        
+
         case EDIT_USER:
             console.log(action.payload)
             return {
@@ -239,6 +240,11 @@ const reducer = (state = inicialState, action) => {
                 authUser: [],
             };
                         
+
+        case ADD_PRODUCT_BANNER_A_CART:
+            return{
+                ...state,
+            }
         default: return state 
 }
 

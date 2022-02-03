@@ -1,15 +1,16 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import Head from '../Head/Head';
-import Style from './Cart.module.css'
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import Style from './Favoritos.module.css'
 import { useSelector } from 'react-redux';
-import InicioSeccion from '../Profile/InicioSeccion';
 import Warning from '../Warning/Warning';
+import Favs from './Favs';
 
 
 
-function Cart(){
+
+
+function Favoritos(){
     const auth = useSelector(state => state.userAuth)
     return(
         <>
@@ -17,10 +18,7 @@ function Cart(){
             {/* <div className={Style.titulo}>MI CARRITO</div> */}
             <div className={Style.container} >
                 {
-
-                    auth?<ShoppingCart />:  <InicioSeccion/>
-
-                    auth?<ShoppingCart />: <Warning /> 
+                    auth?<Favs />: <Warning /> 
                 }
                 
             </div>
@@ -29,4 +27,4 @@ function Cart(){
     )
 };
 
-export default Cart;
+export default Favoritos;

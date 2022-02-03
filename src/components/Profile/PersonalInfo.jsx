@@ -19,9 +19,7 @@ export default function PersonalInfo(){
 
     return(
         <div className={Style.cont}>
-            <div className={Style.saludo}>
-                <h1 >Nos dá gusto verte de nuevo {userDetail.name}</h1>
-            </div>
+                <div className={Style.saludo}>Nos dá gusto verte de nuevo {userDetail.name}</div>
             
             <div className={Style.detalle}>
                 
