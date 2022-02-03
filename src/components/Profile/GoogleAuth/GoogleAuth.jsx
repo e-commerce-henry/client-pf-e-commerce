@@ -3,19 +3,24 @@ import {useNavigate} from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
 import swal from 'sweetalert'
 import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
+import { detalleUsers } from '../../../redux/actions';
 
 export default function GoogleAuth(){
-
+    const dispatch = useDispatch()
+    
     
     const navigate = useNavigate();
     
     const handleSuccess = async (googleResponse)=>{
         
         const res = (await axios.post('http://localhost:3001/auth/googleAuth', {token:googleResponse.tokenId})).data;
-        
         console.log(res);
+        await dispatch(detalleUsers(res.id));
+        await dispatch({ type: "ADD_INICIO_USER", payload: res.id})
 
-        // navigate(`/`);
+
+        navigate(`/profile-details`);
         // swal({
         //     title: "Todo ok",
         //     text: `Bienvenido ${respuesta.profileObj.givenName}, este componente aun no te registra/loguea en realidad`,
@@ -30,14 +35,15 @@ export default function GoogleAuth(){
             icon: 'error'
         })
     }
+    
     return(
         <>
         <GoogleLogin
-            clientId={process.env.GOOGLE_CLIENT_ID}
+            clientId='717748977655-p9dkof4v46h3bragngk2510fjovqbkrd.apps.googleusercontent.com'
             buttonText="Login"
             onSuccess={handleSuccess}
             onFailure={handleFailure}
-            // cookiePolicy={'single_host_origin'}
+            //cookiePolicy={'single_host_origin'}
         />
         </>
     )
