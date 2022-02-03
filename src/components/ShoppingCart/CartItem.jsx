@@ -86,24 +86,14 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                     <br />
                 </div>
                 <div className={Style.div3}>
-                    ${Number(Math.ceil(price)).toLocaleString()}
+                    $ {Number(Math.ceil(price)).toLocaleString()}
                 </div>
                 <div className={Style.div6}>
                     $ {Number(Math.ceil(price * quantity)).toLocaleString()}
                 </div>
-                <div className={Style.precio}>
-                <br/>
-                Precio por Unidad:<b> $ {price}</b> <br/>
-                SubTotal por {quantity} Unidad(es): $ {price * quantity}
-                <br/></div>
-                 <button className={Style.boo} onClick={() => deleteCart(productId)}>  
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                </svg>
-                </button> 
-              
                
-                {/* <div className='text'><Link to={`/products/${id}`}><img src={img} alt='not found' width="130px" height="100px"/></Link></div> */}
+                 
+
             </div>
         </div>
     )
