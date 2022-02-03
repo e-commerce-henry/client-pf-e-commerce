@@ -92,7 +92,7 @@ export default function SaleBanner({discount, productId, name}) {
                                     </label>
                                 </div>
                              
-                                <button onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)))}>
+                                <button className={style.botton_compras} onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)))}>
                                     Comprar Ahora  </button>
                                  
                             </div>

@@ -28,7 +28,6 @@ export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const UPDATE_USER = "UPDATE_USER";
 export const EDIT_CART= "EDIT_CART";
 export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
-export const EDIT_CART = "EDIT_CART";
 
 export function productDetail(id) {
 	return async function (dispatch) {
