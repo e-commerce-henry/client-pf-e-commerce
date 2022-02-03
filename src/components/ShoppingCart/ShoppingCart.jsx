@@ -7,6 +7,7 @@ import {
   createOrder,
   deleteCartItem,
   resetShoppingCart,
+  getSaleBanner
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 
@@ -15,11 +16,13 @@ export default function ShoppingCart() {
   let userId = useSelector((state) => state.idUser);
   const productos = useSelector((state) => state.products);
   const userInfo = useSelector((state) => state.userDetail);
+  const ofertas = useSelector((state) => state.saleBanner);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
   }, [dispatch]);
+
 
   function searchAndComplementInfo(id) {
     for (let i = 0; i < productos.length; i++) {
@@ -33,6 +36,7 @@ export default function ShoppingCart() {
       }
     }
   }
+  
 
   function calculateTotal() {
     let suma = 0;
@@ -52,10 +56,11 @@ export default function ShoppingCart() {
   }
   let totalCant = shoppingCart[0] ? nCant() : null;
 
-  // { productId, userId } deleteCartItem
+  //{ productId, userId } deleteCartItem
   async function resetCartShopping() {
     shoppingCart[0].cartItems.map((e) => {
       let productId = e.productId;
+
       dispatch(deleteCartItem({ userId, productId }));
     });
     await dispatch(getShoppingCart(userId))
@@ -96,6 +101,8 @@ export default function ShoppingCart() {
             : null}
         </div>
       </div>
+  
+
       <div className={Style.box}>
         {/* <div className={Style.parrafo0}>Estas por realizar la compra</div> */}
         <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>

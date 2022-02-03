@@ -30,6 +30,13 @@ function Card({ productId, name, price, img, brand}){
         //     })
         // }else {
         // setCart(name)
+        swal({
+            title: "Se ha agregado al carrito:",
+            text: `${name}`,
+            icon: "success",
+            button: "Ok"})
+        dispatch(addProductShoppingCart({productId, price, userId}))
+ //}
         // swal({
         //     title: "Se ha agregado al carrito:",
         //     text: `${name}`,
