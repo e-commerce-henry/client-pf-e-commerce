@@ -339,3 +339,10 @@ export const detalleUsers = (id) => {
     }
 }
 
+export function logOut() {
+	return async function (dispatch) {
+		let response = (await axios.get("http://localhost:3001/auth/logOut")).data;
+		console.log(response);
+		return dispatch({ type: "LOG_OUT", payload: response });
+	};
+}

@@ -6,6 +6,7 @@ import {editUser, detalleUsers} from "../../redux/actions";
 import { Modal, TextField} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { useState } from "react";
+import Style from'../Profile/PersonalInfo.module.css';
 
 //Material-ui styles
 const useStyles = makeStyles((theme)=>({
@@ -87,7 +88,7 @@ const EditUser = () =>{
    
     return(
         <>
-        <button value={user.id} onClick={onClick}>Editar Usuario</button>
+        <button className={Style.crear} value={user.id} onClick={onClick}>Editar Usuario</button>
         {
             userToEdit 
                 ? <Modal

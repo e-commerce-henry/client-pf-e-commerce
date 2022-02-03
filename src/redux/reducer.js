@@ -35,7 +35,6 @@ const inicialState = {
     allProducts : [],
     details: [],
     categories: [],
-    order: [],
     favs: [],
     create_review :{},
     getreview:[],
@@ -233,6 +232,12 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 userDetail: action.payload
             }
+
+        case "LOG_OUT":
+            return {
+                ...state,
+                authUser: [],
+            };
                         
         default: return state 
 }
