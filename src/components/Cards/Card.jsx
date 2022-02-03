@@ -29,14 +29,25 @@ function Card({ productId, name, price, img, brand}){
         //         icon: "warning"
         //     })
         // }else {
-        setCart(name)
-        swal({
-            title: "Se ha agregado al carrito:",
-            text: `${name}`,
-            icon: "success",
-            button: "Ok"})
-        dispatch(addProductShoppingCart({productId, price, userId}))
+        // setCart(name)
+        // swal({
+        //     title: "Se ha agregado al carrito:",
+        //     text: `${name}`,
+        //     icon: "success",
+        //     button: "Ok"})
+        // dispatch(addProductShoppingCart({productId, price, userId}))
 // }
+        if(auth){
+            setCart(name)
+            swal({
+                title: "Se ha agregado al carrito:",
+                text: `${name}`,
+                icon: "success",
+                button: "Ok"})
+                dispatch(addProductShoppingCart({productId, price, userId}))
+            } else {
+            navigate(`/profile-details`);
+        }
     }
 
 

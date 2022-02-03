@@ -74,7 +74,7 @@ export default function ShoppingCart() {
   return (
     <>
       <div className={Style.cont}>
-        <h1 className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</h1>
+        <div className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</div>
         <div className={Style.headcart}>
           <div className={Style.div7}>Producto</div>
           <div className={Style.div8}>Precio unitario</div>
