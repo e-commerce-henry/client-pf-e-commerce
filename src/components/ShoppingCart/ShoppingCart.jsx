@@ -10,6 +10,14 @@ import {
   getSaleBanner
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
+import axios from "axios";
+
+
+
+
+
+
+
 
 export default function ShoppingCart() {
   const shoppingCart = useSelector((state) => state.cart);
@@ -18,10 +26,52 @@ export default function ShoppingCart() {
   const userInfo = useSelector((state) => state.userDetail);
   const ofertas = useSelector((state) => state.saleBanner);
   const dispatch = useDispatch();
+  const orderId = useSelector((state)=> state.orderCreated)
+  const [ordenCreada, setOrdenCreada] = useState(false);
+  const [preferenceId, setPreferenceId] = useState(null);
+
+
+  // const checkoutMP = ()=>{
+  //   const mp = new window.MercadoPago('TEST-ad741651-25c4-4a96-b06f-9c0a436e0fc4', {
+  //     locale: 'es-AR'
+  //   });
+  
+  //   mp.checkout({
+  //     preference: {
+  //       id: preferenceId,
+  //     },
+  //     render :{
+  //       container: `#payment-form`,
+  //       label: 'Pagar'
+  //     }
+  //   })
+  // }
+
+
+
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
   }, [dispatch]);
+
+  // useEffect(async ()=>{
+  //   if(ordenCreada){
+  //     const response = (await axios.post(`http://localhost:3001/mercadoPago/${orderId}`)).data
+  //     console.log(response)
+  //     setPreferenceId(response)
+  //     setOrdenCreada(!ordenCreada)
+  //   }
+  // },[ordenCreada])
+
+  // useEffect(()=>{
+  //   if(preferenceId){
+  //     const script = document.createElement('script');
+  //     script.type = 'text/javascript';
+  //     script.src = 'https://sdk.mercadopago.com/js/v2';
+  //     script.addEventListener('load', checkoutMP);
+  //     document.body.appendChild(script)
+  //   }
+  // }, [preferenceId])
 
 
   function searchAndComplementInfo(id) {
@@ -69,12 +119,16 @@ export default function ShoppingCart() {
 
   function creOrder() {
     let products = shoppingCart[0].cartItems;
+    console.log(products)
     let addressId = userInfo.clientAddresses[0].id;
     let total = calculateTotal();
     dispatch(createOrder(userId, { products, addressId, total }));
+    setOrdenCreada(true);
     alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
     resetCartShopping();
   }
+
+  
 
   return (
     <>
@@ -111,6 +165,8 @@ export default function ShoppingCart() {
           <button className={Style.boo} onClick={(e) => creOrder()}>
             Comprar ahora
           </button>
+          {/* testing MP */}
+          <form id='payment-form' method="GET"></form>
       </div>
       </div>
     </>
