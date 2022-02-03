@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Favs from "./components/Favs/Favs";
 import Cart from "./components/Cart/Cart";
 import ProfileDetails from "./components/Profile/ProfileDetails";
 import History from "./components/Profile/History";
@@ -17,13 +16,14 @@ import InicioSeccion from "./components/Profile/InicioSeccion";
 import OrderDetails from "./components/Orders/OrderDetails";
 import CompraExitosa from "./components/Orders/CompraExitosa";
 import EditUser from "./components/EditUsers/EditUser";
+import Favoritos from "./components/Favs/Favoritos";
 
 function App() {
 	return (
 		<>
 			<Routes>
 				<Route exact path="/" element={<Home />} />
-				<Route path="/favs" element={<Favs />} />
+				<Route path="/favs" element={<Favoritos />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/profile-details" element={<ProfileDetails />} />
 				<Route path="/inicio-seccion" element={<InicioSeccion />} />
