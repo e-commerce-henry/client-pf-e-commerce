@@ -4,7 +4,7 @@ import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
-import GoogleAuth from "./GoogleAuth/GoogleAuth";
+import GoogleAuth from './GoogleAuth/GoogleAuth'
 
 import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
