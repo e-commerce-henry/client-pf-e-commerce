@@ -12,7 +12,7 @@ import swal from 'sweetalert'
 
 function Card({ productId, name, price, img, brand}){
     const dispatch = useDispatch()
-
+    const [error, setError] = useState()
     const userId = useSelector(state => state.idUser)
     const auth = useSelector(state => state.userAuth )
     const [fav, setFav] = useState([]);
@@ -21,21 +21,21 @@ function Card({ productId, name, price, img, brand}){
     const navigate = useNavigate();
 
     function addShoppingCart(productId){
-        // setError(error)
-        // if(productId >= 1){
-        //     swal({
-        //         title: "No. Ya está!!",
-        //         icon: "warning"
-        //     })
-        // }else {
-        // setCart(name)
+        setError(error)
+        if(name >= 1){
+            swal({
+                title: "No. Ya está!!",
+                icon: "warning"
+            })
+        }else {
+        setCart(name)
         swal({
             title: "Se ha agregado al carrito:",
             text: `${name}`,
             icon: "success",
             button: "Ok"})
         dispatch(addProductShoppingCart({productId, price, userId}))
- //}
+ }
     }
 
 

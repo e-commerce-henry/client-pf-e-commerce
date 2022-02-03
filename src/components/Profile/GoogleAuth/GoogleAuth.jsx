@@ -33,7 +33,7 @@ export default function GoogleAuth(){
     return(
         <>
         <GoogleLogin
-            clientId={process.env.GOOGLE_CLIENT_ID}
+            clientId={process.env.GOOGLE_CLIENT_ID = 717748977655}
             buttonText="Login"
             onSuccess={handleSuccess}
             onFailure={handleFailure}

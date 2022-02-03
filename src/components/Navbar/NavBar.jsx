@@ -7,14 +7,21 @@ import Style from './NavBar.module.css';
 export default function SearchBar(){
     const dispatch = useDispatch();
     const [name , setName] = useState("")
+    const [error, setError] = useState({});
 
 function handleInputChange(e){
     setName(e.target.value)
     console.log(name)
 }
 function handleOnClick(e){
+   e.preventDefault()
+   setError(error) 
+       if(!name){
+           alert("eso no existe")
+       }
+   else{
     dispatch(getProductName(name))
-}
+}}
     return(
         <>
             <div className={Style.containernav} >

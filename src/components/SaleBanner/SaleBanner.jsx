@@ -30,7 +30,6 @@ export default function SaleBanner({discount, productId, name}) {
     }, [dispatch]);
 
 
-    //////////////
     async function addCart(productId, price){
         await dispatch(addProductBanneraCart({productId, userId , price}))
         // setError(error)
@@ -49,7 +48,6 @@ export default function SaleBanner({discount, productId, name}) {
  //}
     }
 
-    /////////////
     
 
   return(

@@ -107,7 +107,7 @@ export default function ShoppingCart() {
         {/* <div className={Style.parrafo0}>Estas por realizar la compra</div> */}
         <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
         <div className={Style.parrafo1}>
-          ${Number(Math.ceil(total)).toLocaleString()} <br />
+          $ {Number(Math.ceil(total)).toLocaleString()} <br />
           <button className={Style.boo} onClick={(e) => creOrder()}>
             Comprar ahora
           </button>

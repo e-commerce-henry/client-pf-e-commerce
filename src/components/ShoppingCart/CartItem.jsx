@@ -86,7 +86,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                     <br />
                 </div>
                 <div className={Style.div3}>
-                    ${Number(Math.ceil(price)).toLocaleString()}
+                    $ {Number(Math.ceil(price)).toLocaleString()}
                 </div>
                 <div className={Style.div6}>
                     $ {Number(Math.ceil(price * quantity)).toLocaleString()}
