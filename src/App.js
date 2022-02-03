@@ -17,6 +17,7 @@ import OrderDetails from "./components/Orders/OrderDetails";
 import CompraExitosa from "./components/Orders/CompraExitosa";
 import EditUser from "./components/EditUsers/EditUser";
 import Favoritos from "./components/Favs/Favoritos";
+import HistoryDetailCards from "./components/Profile/History/HistoryDetail/HistoryDetailCards";
 
 function App() {
 	return (
@@ -28,6 +29,7 @@ function App() {
 				<Route path="/profile-details" element={<ProfileDetails />} />
 				<Route path="/inicio-seccion" element={<InicioSeccion />} />
 				<Route path="/history" element={<History />} />
+				<Route path="/history/:id" element={<HistoryDetailCards />} />
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />

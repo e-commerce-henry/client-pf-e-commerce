@@ -25,7 +25,7 @@ export const GET_ORDER = "GET_ORDER";
 export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
 export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
-export const UPDATE_USER = "UPDATE_USER";
+export const EDIT_USER = "EDIT_USER";
 export const EDIT_CART= "EDIT_CART";
 export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
 
@@ -232,29 +232,18 @@ export function getReview(id) {
 
 //obtengo mi salebanner
 export function getSaleBanner() {
-	return (dispatch) => {
-		axios
-			.get("http://localhost:3001/saleBanner")
-			.then((result) => {
-				return dispatch({
-					type: GET_SALEBANNER,
-					payload: result.data,
-				});
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	};
+	return  (dispatch) => {
+		axios.get("http://localhost:3001/saleBanner")
+        .then((result) => {
+            return dispatch({
+                type: GET_SALEBANNER,
+                payload: result.data
+            })
+        }).catch((err) => {
+            console.error(err)
+        });	
+	}
 }
-export const detalleUsers = (id) => {
-	return async (dispatch) => {
-		let response = await axios.get(`http://localhost:3001/users/${id}`);
-		dispatch({
-			type: DETALLE_USERS,
-			payload: response.data,
-		});
-	};
-};
 
 export function getShoppingCart(userId) {
 	return async function (dispatch) {
@@ -335,19 +324,36 @@ export function getOrderHistory(userId) {
 	};
 }
 
-export function editUser(id, value) {
-	console.log("id", id);
-	return (dispatch) => {
-		axios
-			.put(`http://localhost:3001/users/${id}`, value)
-			.then((result) => {
-				return dispatch({
-					type: UPDATE_USER,
-					payload: result.data,
-				});
-			})
-			.catch((err) => {
-				console.error(err);
-			});
+
+export function editUser(userToEdit) {
+	return async function (dispatch) {
+		const edited = (
+			await axios.put(
+				`http://localhost:3001/users/${userToEdit.id}`,
+				userToEdit
+			)
+		).data;
+		return dispatch({ type: EDIT_USER, payload: userToEdit });
 	};
 }
+
+
+export const detalleUsers = (id) => {
+    return async (dispatch) => {
+        let response = await axios.get(`http://localhost:3001/users/${id}`);
+        dispatch({
+            type: DETALLE_USERS,
+            payload: response.data
+        });
+    }
+}
+
+export function logOut() {
+	return async function (dispatch) {
+		let response = (await axios.get("http://localhost:3001/auth/logOut")).data;
+		console.log(response);
+		return dispatch({ type: "LOG_OUT", payload: response });
+	};
+}
+
+

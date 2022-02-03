@@ -1,219 +1,197 @@
-import React, {useState} from 'react';
-import {useSelector, useDispatch} from "react-redux";
-import {editUser} from "../../redux/actions";
-import {Link} from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Input from "@material-ui/core/Input";
-import Footer from '../Footer/Footer';
-import Head from '../Head/Head';
-import './EditUser.css'
+import {editUser, detalleUsers} from "../../redux/actions";
 
+import { Modal, TextField} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { useState } from "react";
+import Style from'../Profile/PersonalInfo.module.css';
 
-
-
-export function validate(values) {
-    let errors = {};
-    if (!values.name) {
-      errors.name = 'El nombre requerido';
+//Material-ui styles
+const useStyles = makeStyles((theme)=>({
+    modal:{
+        position:'absolute',
+        display: 'flex',
+        flexDirection: 'column',
+        width:700,
+        height:800,
+        backgroundColor:'white',
+        border:'2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2,4,3),
+        top:'50%',
+        left:'50%',
+        transform:'translate(-50%,-50%)'
+    },
+    textfield:{
+        width:'80%',
     }
-    //  else if (/^[A-Z]+$/i.test(users.name)) {//
-    //   errors.name = 'El nombre es invalido';
-    // }
-
-    if(!values.surname){
-      errors.surname = 'El apellido es requerido';
-    }
-    // else if (/^[A-Z]+$/i.test(users.surname)) {//
-    //   errors.surname = 'El apellido es invalido';
-    // }
-
-    if(!values.email){
-      errors.email = 'El correo es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = 'El correo es invalido';
-    }
-
-    if (!values.pwd) {
-      errors.pwd = 'La contraseña es requerida';
-    } 
-
-    if(!values.address){
-      errors.address = 'La dirección es requerida';
-    } 
-    // else if (!/\S+@\S+\.\S+/.test(users.address)) {//
-    //   errors.address = 'Address is invalid';
-    // }
-
-    if(!values.postalCode){
-      errors.postalCode = 'El código postal es requerido';
-    } else if (!/^\d{5}$/.test(values.postalCode)) {
-      errors.postalCode = 'El código postal es invalido';
-    }
-
-    if(!values.city){
-      errors.city = 'La ciudad es requerida';
-    }
-    //  else if (/^[A-Z]+$/i.test(users.city)) {//
-    //   errors.city = 'La ciudad es requerida';
-    // }
-
-    if(!values.province){
-      errors.province = 'La provincia es requerida';
-    } 
-    // else if (/^[A-Z]+$/i.test(users.province)) {//
-    //   errors.province = 'La provincia es invalida';
-    // }
-    return errors;
-  };
+}))
 
 
-const EditUser = ({name, surname, email, pwd, address, postalCode, city, province, addressId, floor}) => {
-     
+
+
+const EditUser = () =>{
     const dispatch = useDispatch();
-    const idUsers = useSelector(state => state.idUser);
-   
-    const [values, setValues] = useState({
-        name: name,
-		surname: surname,
-		email: email,
-		pwd: pwd,
-		address: address,
-		postalCode: postalCode,
-		city: city,
-		province: province,
-		addressId: idUsers,
-		floor: floor,
-        showPassword: false
 
-    })
-    const [errors, setErrors] = useState({});
-    
-    
-   
+    const styles = useStyles();
 
-    const handleInputChange = e => {
-        setValues({
-            ...values,
+    const user = useSelector(state => state.userDetail);
+
+
+    const idUsers =useSelector(state => state.idUser)
+
+    const [showModal, setShowModal]= useState(false)
+    
+    const [userToEdit, setUserToEdit] = useState({})
+
+    useEffect(()=>{
+        dispatch(detalleUsers(idUsers))
+    }, [dispatch, idUsers])
+
+    // let foundById = null
+    const onClick = (e)=>{
+        setShowModal(!showModal)
+        // foundById = user.filter(elem=>{return elem.id == e.target.value})
+        console.log('user', user);
+
+        const { id, name, surname, email } = user;
+        const { address, postalCode, city, province, floor} = user.clientAddresses[0];
+        setUserToEdit({
+            id,
+            name,
+            surname,
+            email,
+            address,
+            postalCode,
+            city,
+            province,
+            addressId : user.clientAddresses[0].id,
+            floor: floor || ''
+        })
+    }
+
+    const onChangeHandler = (e) =>{
+        setUserToEdit({
+            ...userToEdit,
             [e.target.name]: e.target.value
         })
-        setErrors(validate({
-            ...values,
-            [e.target.name]: e.target.value
-          }));
     }
 
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-      };
-    
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
-    
-
-    const handleSubmit = e =>{
+    const editUserHandler = (e)=>{
         e.preventDefault();
-        console.log('idUsers', idUsers);
-        console.log('values', values);
-        dispatch(editUser(idUsers, values));
-        setValues ({
-            name: "",
-            surname: "",
-            email: "",
-            pwd: "",
-            address: "",
-            postalCode: "",
-            city: "",
-            province: "",
-            floor: ""
-          })
-          setErrors(validate({...values, [e.target.name]: e.target.value}))
+        dispatch(editUser(userToEdit))
+        setShowModal(!showModal)
     }
 
-
-  return (
-        <div>
-          <Head />
-            <form className="form" onSubmit={handleSubmit}>
-                <div className="tituloedit">
-                    <h2>Editar usuario</h2>
-                </div>
-                <div className="secc">
-                    <div className="label"><label>Nombre: </label> </div>
-                    <input className={errors.name && 'danger'} type="text" name="name" onChange={handleInputChange} value={values.name} />
-                    {errors.name && (<p className="danger">{errors.name}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Apellido: </label> </div>
-                    <input className={errors.surname && 'danger'} type="text" name="surname" onChange={handleInputChange} value={values.surname} />
-                    {errors.surname && (<p className="danger">{errors.surname}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Correo Electrónico: </label> </div>
-                    <input className={errors.email && 'danger'} type="email" name="email" onChange={handleInputChange} value={values.email} />
-                    {errors.email && (<p className="danger">{errors.email}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Contraseña: </label> </div>
-                    <Input className={errors.pwd && 'danger'} type={values.showPassword ? "text" : "password"} name="pwd" onChange={handleInputChange} value={values.pwd}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
-                                    {values.showPassword ? <Visibility /> : <VisibilityOff />}</IconButton></InputAdornment>
-                        } />
-                    {errors.pwd && (<p className="danger">{errors.pwd}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Dirección: </label></div>
-                    <input className={errors.address && 'danger'} type="text" name="address" onChange={handleInputChange} value={values.address} />
-                    {errors.address && (<p className="danger">{errors.address}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Código Postal: </label> </div>
-                    <input className={errors.cp && 'danger'} type="number" name="postalCode" onChange={handleInputChange} value={values.postalCode} />
-                    {errors.cp && (<p className="danger">{errors.cp}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Ciudad: </label></div>
-                    <input className={errors.city && 'danger'} type="text" name="city" onChange={handleInputChange} value={values.city} />
-                    {errors.city && (<p className="danger">{errors.city}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Provincia: </label> </div>
-                    <input className={errors.province && 'danger'} type="text" name="province" onChange={handleInputChange} value={values.province} />
-                    {errors.province && (<p className="danger">{errors.province}</p>)}
-                </div>
-
-                <div className="secc">
-                    <div className="label"><label>Piso: </label> </div>
-                    <input className={errors.floor && 'danger'} type="Number" name="floor" onChange={handleInputChange} value={values.floor} />
-                    {errors.floor && (<p className="danger">{errors.floor}</p>)}
-                </div>
-               
-
-                <div className="btns">
-                    <Link to="/profile-details"><button className="butt" type="submit">Cancelar</button></Link>
-                    <button className="butt" type="submit">Actualizar</button>
-                    {/* <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link> */}
-
-
-                </div>
-            </form>
-            <Footer />
-        </div>
-    );
+   
+    return(
+        <>
+        <button className={Style.crear} value={user.id} onClick={onClick}>Editar Usuario</button>
+        {
+            userToEdit 
+                ? <Modal
+                open={showModal}
+                onClose={()=>{setShowModal(!showModal)}}
+                >
+                    <form className={styles.modal} onSubmit={editUserHandler} >
+                        <div align='center' >
+                            <h2>Edit User</h2>
+                        </div>
+                        <TextField
+                            label='N° Id:'
+                            name='id'
+                            className={styles.textfield}
+                            value={userToEdit.id}
+                            // onChange={handleOnChange}
+                            disabled
+                        />
+                        <br/>
+                        <TextField
+                            label='Name: '
+                            name='name'
+                            className={styles.textfield}
+                            value={userToEdit.name}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Surname:'
+                            name='surname'
+                            className={styles.textfield}
+                            value={userToEdit.surname}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Email:'
+                            name='email'
+                            className={styles.textfield}
+                            value={userToEdit.email}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Role:'
+                            name='role'
+                            className={styles.textfield}
+                            value={userToEdit.role}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Address:'
+                            name='address'
+                            className={styles.textfield}
+                            value={userToEdit.address}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='City:'
+                            name='city'
+                            className={styles.textfield}
+                            value={userToEdit.city}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Province:'
+                            name='province'
+                            className={styles.textfield}
+                            value={userToEdit.province}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Postal Code:'
+                            name='cp'
+                            className={styles.textfield}
+                            value={userToEdit.postalCode}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Floor:'
+                            name='floor'
+                            className={styles.textfield}
+                            value={userToEdit.floor}
+                            onChange={onChangeHandler}
+                        />
+                        
+                        <div align='rigth' >
+                            <button type="submit" >Update</button>
+                            <button onClick={()=>setShowModal(!showModal)} >Cancel</button>
+                        </div>
+                    </form>
+                </Modal>
+                :null
+        }    
+        
+        </>
+        
+    )
 };
 
 export default EditUser;
-
