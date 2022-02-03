@@ -23,7 +23,7 @@ function Card({ productId, name, price, img, brand}){
 
     function addShoppingCart(productId){
         setError(error)
-        if(productId >= 1){
+        if(productId < 1){
             swal({
                 title: "No. Ya está!!",
                 icon: "warning"
