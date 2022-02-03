@@ -1,8 +1,14 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from 'react-router-dom'
 import Style from './HistoryCard.module.css'
 
 export default function HistoryCard({idOrder, status, total, address, shipping, fecha, userId, detail}){
+    const navigate = useNavigate();
+
+    function detalleOrden(){
+        navigate(`/history/${idOrder}`)
+    }
     
     return(
         <>
@@ -19,7 +25,7 @@ export default function HistoryCard({idOrder, status, total, address, shipping, 
 
                 
                 <div className={Style.footer}>
-                    {/* <button>Ver detalles de la compra</button> */} {/* proximamente ver detalles */}
+                    <button onClick={e => detalleOrden()}>Ver detalles de la compra</button>
                 </div>
             </div>
         </>
