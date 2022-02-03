@@ -20,12 +20,12 @@ export default function GoogleAuth(){
         await dispatch({ type: "ADD_INICIO_USER", payload: res.id})
 
 
-        navigate(`/profile-details`);
-        // swal({
-        //     title: "Todo ok",
-        //     text: `Bienvenido ${respuesta.profileObj.givenName}, este componente aun no te registra/loguea en realidad`,
-        //     icon: "success"
-        // })
+        navigate(`/`);
+        swal({
+            title: "Todo ok",
+            text: `Bienvenido ${res.name}`,
+            icon: "success"
+        })
     }
 
     const handleFailure = (response) =>{
