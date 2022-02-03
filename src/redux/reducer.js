@@ -25,7 +25,7 @@ import {
     DELETE_ITEM_SHOPPINGCART,
     RESET_CART,
     GET_ORDER_HISTORY,
-    UPDATE_USER, 
+    EDIT_USER,  
     EDIT_CART,
     ADD_PRODUCT_BANNER_A_CART
 } from './actions';
@@ -36,7 +36,6 @@ const inicialState = {
     allProducts : [],
     details: [],
     categories: [],
-    order: [],
     favs: [],
     create_review :{},
     getreview:[],
@@ -47,7 +46,8 @@ const inicialState = {
     order: {},
     orderHistory: {},
     updateUser: [],
-    history: []
+    history: [],
+    users: []
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -181,11 +181,7 @@ const reducer = (state = inicialState, action) => {
             ...state,
             saleBanner: action.payload,
         };
-        case DETALLE_USERS:
-                return {
-                 ...state,
-                  userDetail: action.payload 
-            }
+        
         case SHOW_SHOPPING_CART:
             return{
                 ...state,
@@ -223,11 +219,27 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 history: action.payload
             }
-        case UPDATE_USER:
+     
+        case DETALLE_USERS:
             return {
                 ...state,
-                updateUser: action.payload,
+                userDetail: action.payload
             }
+
+
+        case EDIT_USER:
+            console.log(action.payload)
+            return {
+                ...state,
+                userDetail: action.payload
+            }
+
+        case "LOG_OUT":
+            return {
+                ...state,
+                authUser: [],
+            };
+                        
 
         case ADD_PRODUCT_BANNER_A_CART:
             return{
