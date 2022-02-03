@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 .container {
+  border: solid 1px 00adb5;
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
   font-size: 20px;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+  margin-bottom: 100px;
 }
 
 .favfooter {
@@ -17,19 +16,7 @@
   width: 100%;
 }
 
-.allcards {
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-  grid-auto-rows: 17rem;
-  grid-column-gap: 170px;
-  grid-row-gap: 10px;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.titulofav {
+.titulo {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 800;
   font-size: 30px;
