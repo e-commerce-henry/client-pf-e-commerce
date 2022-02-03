@@ -241,34 +241,9 @@ export function getSaleBanner() {
             })
         }).catch((err) => {
             console.error(err)
-        });
-		
+        });	
 	}
-} 
-
-	return (dispatch) => {
-		axios
-			.get("http://localhost:3001/saleBanner")
-			.then((result) => {
-				return dispatch({
-					type: GET_SALEBANNER,
-					payload: result.data,
-				});
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	};
 }
-export const detalleUsers = (id) => {
-	return async (dispatch) => {
-		let response = await axios.get(`http://localhost:3001/users/${id}`);
-		dispatch({
-			type: DETALLE_USERS,
-			payload: response.data,
-		});
-	};
-};
 
 export function getShoppingCart(userId) {
 	return async function (dispatch) {
