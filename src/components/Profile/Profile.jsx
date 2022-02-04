@@ -18,7 +18,7 @@ export default function Profile(){
     return(
         <div >
             <Head />
-            <div className={Style.container}>
+            <div className={Style.headbtns}>
                 {
                     userAuth?
                     <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>

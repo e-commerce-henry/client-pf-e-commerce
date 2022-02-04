@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CardFavs from './CardFavs';
 import { getWishlist } from '../../redux/actions';
 import Warning from '../Warning/Warning';
+import Vacío from '../Vacío/Vacío';
 
 function Favs(){
     const dispatch = useDispatch();
@@ -37,22 +38,24 @@ function Favs(){
         <>
             <div className={Style.container} >
             {
-                        auth? <div className={Style.titulofav}>Mis Favoritos</div> : null }
-                <div className={Style.allcards}>
-                {
-                        auth?
+                        auth? <div className={Style.titulofav}>Lista de Favoritos</div> : null }
+                <div>
+                  { auth?
                         productsFavs[0]?
-                        productsFavs[0].wishlistItems.length === 0 ? <div>Lista vacía</div> : productsFavs[0].wishlistItems.map(e => (
-                            <CardFavs
-                                id = {e.id}
-                                key = {e.id}
-                                price = {e.price}
-                                productId = {e.productId}
-                                addInfo = {searchAndComplementInfo(e.productId)}
-                            />
-                        )):<div className={Style.nada}>Lista vacía</div> : <Warning />
-                    }
-                </div>   
+                        productsFavs[0].wishlistItems.length === 0 ? <Vacío /> :
+                        <div className={Style.allcards}>
+                            { productsFavs[0].wishlistItems.map(e => (
+                                <CardFavs
+                                    id = {e.id}
+                                    key = {e.id}
+                                    price = {e.price}
+                                    productId = {e.productId}
+                                    addInfo = {searchAndComplementInfo(e.productId)}
+                                />
+                            ))}
+                        </div> : null : <Warning />
+                        }
+                </div>
             </div>
         </>
     )

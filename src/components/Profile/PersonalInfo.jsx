@@ -18,7 +18,7 @@ export default function PersonalInfo(){
         
 
     return(
-        <div className={Style.cont}>
+        <div className={Style.fadeinbck8}>
                 <div className={Style.saludo}>Nos dá gusto verte de nuevo {userDetail.name}</div>
             
             <div className={Style.detalle}>
