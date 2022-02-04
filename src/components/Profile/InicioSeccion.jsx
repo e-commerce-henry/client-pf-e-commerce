@@ -20,7 +20,7 @@ export function validate(input) {
     if (!input.email) {
       errors.email = 'Error, campo obligatorio';
     } else if (!/\S+@\S+\.\S+/.test(input.email)) {
-      errors.email = 'Username is invalid';
+      errors.email = 'Email inválido';
     }
     if (!input.pwd) {
       errors.pwd = 'Error, campo obligatorio';

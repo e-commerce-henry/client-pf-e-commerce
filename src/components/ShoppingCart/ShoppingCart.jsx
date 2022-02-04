@@ -86,7 +86,7 @@ export default function ShoppingCart() {
           <div className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</div>
           <div className={Style.headcart}>
             <div className={Style.div7}>Producto</div>
-            <div className={Style.div8}>Precio unitario</div>
+            <div className={Style.div8}>Precio</div>
             <div className={Style.div9}>Cantidad</div>
             <div className={Style.div10}>Subtotales</div>
           </div>

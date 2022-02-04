@@ -25,7 +25,7 @@
 .marca {
   font-size: 25px;
   font-weight: 600;
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 4;
   margin-left: 50px;
   align-self: center;
 }
@@ -43,4 +43,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 868x) {
+  .container {
+    height: 100%;
+  }
 }

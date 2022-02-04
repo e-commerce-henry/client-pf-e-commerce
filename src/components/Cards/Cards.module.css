@@ -85,13 +85,12 @@
 }
 
 @media only screen and (max-width: 868px) {
-  .flef {
+  .fadeinbck4 {
     position: absolute;
     top: 0px;
     width: 100%;
   }
   .pag {
-    border: solid 2px #00adb5;
     background-color: #eeeeee;
     border-radius: 50%;
     width: 40px;
@@ -101,10 +100,15 @@
     font-weight: 600;
     font-size: 12px;
     text-align: center;
+    margin-bottom: 70px;
   }
 
   .paginationn {
     padding-bottom: 80px;
+  }
+
+  .fadeinbck3 {
+    margin-top: 30px;
   }
 }
 
