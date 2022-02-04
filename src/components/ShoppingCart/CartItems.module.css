@@ -117,3 +117,23 @@
 .rembtn:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1000px) {
+  .imgcart {
+    height: 100px;
+    align-self: center;
+  }
+  .div1 {
+    font-size: 16px;
+    /* align-self: center; */
+    margin-top: 20px;
+  }
+
+  .div3 {
+    font-size: 18px;
+  }
+
+  .div4 {
+    font-size: 18px;
+  }
+}

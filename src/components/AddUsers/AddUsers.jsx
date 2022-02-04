@@ -141,7 +141,7 @@ const AddUsers = () => {
   return (
   <div className='formulario'>
     <Head />  
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="fadeinbck7" onSubmit={handleSubmit}>
     <div className="titulo">
       <h1>Regístrese</h1>
     </div>

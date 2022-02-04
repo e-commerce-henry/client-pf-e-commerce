@@ -20,7 +20,7 @@ export function validate(input) {
     if (!input.email) {
       errors.email = 'Error, campo obligatorio';
     } else if (!/\S+@\S+\.\S+/.test(input.email)) {
-      errors.email = 'Username is invalid';
+      errors.email = 'Email inválido';
     }
     if (!input.pwd) {
       errors.pwd = 'Error, campo obligatorio';
@@ -76,7 +76,7 @@ const InicioSeccion = () => {
 
     return (
 
-        <div className="boxIs">
+        <div className="fadeinbck6">
           <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">

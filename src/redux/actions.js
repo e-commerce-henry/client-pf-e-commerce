@@ -26,8 +26,12 @@ export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
 export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const EDIT_USER = "EDIT_USER";
-export const EDIT_CART = "EDIT_CART";
-export const ADD_PRODUCT_BANNER_A_CART = "ADD_PRODUCT_BANNER_A_CART";
+
+export const EDIT_CART= "EDIT_CART";
+export const LOG_OUT = "LOG_OUT";
+export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
+export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
+
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -341,20 +345,28 @@ export function editUser(userToEdit) {
 	};
 }
 
-export const detalleUsers = (id) => {
-	return async (dispatch) => {
-		let response = await axios.get(`http://localhost:3001/users/${id}`);
+
+
+export function detalleUsers (id) {
+    return async (dispatch) => {
+        let response = await axios.get(`http://localhost:3001/users/${id}`);
+        dispatch({
+            type: DETALLE_USERS,
+            payload: response.data
+        });
+    }
+}
+
+
+
+export function logout() {
+	return async function (dispatch) {
 		dispatch({
-			type: DETALLE_USERS,
-			payload: response.data,
+			type: LOG_OUT,
 		});
 	};
-};
 
-export function logOut() {
-	return async function (dispatch) {
-		let response = (await axios.get("http://localhost:3001/auth/logOut")).data;
-		console.log(response);
-		return dispatch({ type: "LOG_OUT", payload: response });
-	};
+
 }
+
+

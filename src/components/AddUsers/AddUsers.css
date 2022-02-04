@@ -1,4 +1,4 @@
-.form {
+.fadeinbck7 {
   width: 70%;
   height: 80%;
   margin-bottom: 5%;
@@ -12,31 +12,6 @@
   background-color: #fff;
   font-family: "Lexend Deca", sans-serif;
 }
-/* .botonesP {
-    display: flex;
-    margin-left: 35%;
-    margin-right: 20%;
-    padding: 3px;
-  } */
-/* .b1 {
-    margin-bottom: 1px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: none;
-    outline: none;
-    margin-bottom: 5px;
-    font-size: 10px;
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
-    width: 100px;
-    height: 32px;
-    border-width: 1px;
-    color: rgba(240, 240, 240, 1);
-    border-radius: 6px;
-    box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1);
-    text-shadow: inset 0px 1px 0px #303841;
-    background: #303841;
-  } */
 
 .secc {
   padding-top: 10px;
@@ -68,7 +43,6 @@
   border-width: 1px;
   color: rgba(240, 240, 240, 1);
   border-radius: 6px;
-  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
   text-shadow: inset 0px 1px 0px #303841;
   background: #303841;
   background: linear-gradient(#303841, rgba(0, 0, 0, 1));
@@ -93,4 +67,40 @@
   text-align: center;
   color: #00adb5;
   margin: 30px;
+}
+
+.fadeinbck7 {
+  -webkit-animation: fadeinbck7 0.7s ease-in both;
+  animation: fadeinbck7 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck7 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck7 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  .label {
+    width: 70%;
+  }
 }

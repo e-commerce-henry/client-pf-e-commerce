@@ -115,3 +115,17 @@
 .boo:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1000px) {
+  .headcart {
+    font-size: 18px;
+  }
+  .parrafo {
+    font-size: 20px;
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .parrafo1 {
+    font-size: 38px;
+    grid-area: 1 / 6 / 2 / 9;
+  }
+}

@@ -46,8 +46,13 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 868px) {
   .containernav {
     height: 200px;
+    margin: 0;
+    left: 0;
+  }
+  input {
+    width: 70%;
   }
 }

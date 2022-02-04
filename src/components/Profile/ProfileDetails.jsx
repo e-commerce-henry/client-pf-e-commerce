@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Style from './ProfileDetails.module.css'
 import Head from '../Head/Head';
@@ -22,7 +22,7 @@ export default function ProfileDetails(){
     return(
         <div >
             <Head />
-            <div className={Style.container}>
+            <div className={Style.headprofile}>
                 {
                     userAuth?
                     <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Ver tus datos personales</button>

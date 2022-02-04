@@ -114,7 +114,7 @@ export default function ProductDetail(){
     return(
         <>
         <Head/>        
-            <div className= {Style.cont}>
+            <div className= {Style.fadeinbck}>
 
                 <div className={Style.grid}>
                     <div className={Style.child2}>

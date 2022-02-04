@@ -64,14 +64,6 @@
   width: 100%;
 }
 
-/* .contacto {
-  font-family: "Lexend Deca", sans-serif;
-  position: relative;
-  right: -19px;
-  bottom: 163px;
-  color: #00adb5;
-  font-size: 30px;
-} */
 .equipo {
   font-family: "Lexend Deca", sans-serif;
   position: relative;
@@ -80,8 +72,33 @@
   color: #00adb5;
   font-size: 30px;
 }
-.faqfooter {
-  position: relative;
-  bottom: 0;
-  width: 100%;
+
+.fadeinbck11 {
+  -webkit-animation: fadeinbck11 0.7s ease-in both;
+  animation: fadeinbck11 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck11 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck11 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
