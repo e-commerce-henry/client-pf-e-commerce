@@ -88,23 +88,29 @@ function Cards(){
         dispatch(filterProductsByBrand(e.target.value));
     };
 
+    function restablecer(){
+        dispatch(getProducts())
+    };
+
     return(
         <div>
         <div className={Style.allcards}>
-        {
-            currentProducts.map(e =>
-           
-            (
-                valProduct(e)
-               
-            ))
-        }
+            <div className={Style.fadeinbck3}>
+                {
+                    currentProducts.map(e =>
+                
+                    (
+                        valProduct(e)
+                    
+                    ))
+                }
+            </div>
         
-        <div className={Style.flef}>
+        <div className={Style.fadeinbck4}>
             <select className={Style.dropdownmenuf1} onChange={(e) => handleSortP(e)}>
                 <option hidden>Precio</option>
-                <option value="price_asc">Precio 🡩</option>
-                <option value="price_desc">Precio 🡫</option>
+                <option value="price_asc">Menor a Mayor</option>
+                <option value="price_desc">Mayor a Menor</option>
             </select>
             <select className={Style.dropdownmenuf1} onChange={(e) => handleSortN(e)}>
                 <option hidden>Nombre</option>
@@ -125,9 +131,10 @@ function Cards(){
                     categories.map( cat => <option value={cat.name} key={cat.id}>{`${cat.name}`}</option> )
                 }               
             </select>
+            <button className={Style.restablecer} onClick={restablecer}>Borrar filtros</button>
         </div>
         </div>
-        <div className={Style.paginationn}>
+        <div className={Style.fadeinbck5}>
             <div className={Style.uno}>
             {currentPage !== 1 ? <button className={Style.pag} onClick={prim}> ◄◄ </button> : <div></div> }
             {currentPage !== 1 ? <button className={Style.pag} onClick={prev}>◄</button> : <div></div> }  

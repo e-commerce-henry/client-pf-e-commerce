@@ -25,7 +25,7 @@ export default function History(){
     return(
         <div >
             <Head />
-            <div className={Style.container}>
+            <div className={Style.headprofile}>
                 {userAuth?<button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>:null}
                 {userAuth?<button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>:<button className={Style.btnprofile} type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>}  
             </div>

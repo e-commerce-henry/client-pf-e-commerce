@@ -16,7 +16,7 @@ function Favoritos(){
         <>
             <Head />
             {/* <div className={Style.titulo}>MI CARRITO</div> */}
-            <div className={Style.container} >
+            <div className={Style.fadeinbck2} >
                 {
                     auth?<Favs />: <Warning /> 
                 }

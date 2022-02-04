@@ -1,6 +1,7 @@
 .container {
   /* position: absolute;
   bottom: 0; */
+  box-shadow: 0px 0px 5px 1px #303841;
 
   padding-top: 4px;
   height: 8%;

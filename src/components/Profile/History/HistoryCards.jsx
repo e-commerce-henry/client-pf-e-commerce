@@ -1,13 +1,14 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import HistoryCard from "./HistoryCard";
+import Style from './HistoryCards.module.css'
 
 export default function HistoryCards(){
     const ordenes = useSelector(state=> state.history)
     const user = useSelector(state=> state.userDetail)
 
     return(
-        <>
+        <div className={Style.fadeinbck10}>
         <h1>Historial de compras de {user.name}</h1>
         {
             ordenes.length? 
@@ -28,6 +29,6 @@ export default function HistoryCards(){
             :
             <p>Este lugar se ve muy vacio :C</p>
         }
-        </>
+        </div>
     )
 }

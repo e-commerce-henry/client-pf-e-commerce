@@ -76,7 +76,7 @@ const InicioSeccion = () => {
 
     return (
 
-        <div className="boxIs">
+        <div className="fadeinbck6">
           <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
