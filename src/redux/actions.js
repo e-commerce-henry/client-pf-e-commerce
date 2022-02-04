@@ -29,6 +29,7 @@ export const EDIT_USER = "EDIT_USER";
 export const EDIT_CART= "EDIT_CART";
 export const LOG_OUT = "LOG_OUT";
 export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
+export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -356,4 +357,6 @@ export function logout() {
 			type: LOG_OUT,
 		});
 	};
+
 }
+

@@ -27,9 +27,9 @@ import {
     GET_ORDER_HISTORY,
     EDIT_USER,  
     EDIT_CART,
+    ADD_PRODUCT_BANNER_A_CART,
+    ADD_ACTUAL_ORDER_DETAIL,
     LOG_OUT,
-    ADD_PRODUCT_BANNER_A_CART
-
 } from './actions';
 
 const inicialState = {
@@ -48,7 +48,8 @@ const inicialState = {
     order: {},
     orderHistory: {},
     updateUser: [],
-    history: []
+    history: [],
+    historyDetail: [],
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -219,22 +220,18 @@ const reducer = (state = inicialState, action) => {
             return{
                 ...state,
                 history: action.payload
-            }
-     
+            }     
         case DETALLE_USERS:
             return {
                 ...state,
                 userDetail: action.payload
             }
-
-
         case EDIT_USER:
           
             return {
                 ...state,
                 userDetail: action.payload
             }
-
         case LOG_OUT:
                 return {
                     ...state,
@@ -248,11 +245,14 @@ const reducer = (state = inicialState, action) => {
                     orderHistory: {},
                     history: []
             }
-                     
-
         case ADD_PRODUCT_BANNER_A_CART:
             return{
                 ...state,
+            }
+        case ADD_ACTUAL_ORDER_DETAIL:
+            return{
+                ...state,
+                historyDetail: action.payload
             }
         default: return state 
 }

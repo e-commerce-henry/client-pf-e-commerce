@@ -4,9 +4,19 @@ import {useNavigate} from 'react-router-dom'
 import Style from './HistoryCard.module.css'
 
 export default function HistoryCard({idOrder, status, total, address, shipping, fecha, userId, detail}){
+    const dispatch = useDispatch()
+    const productos = useSelector(state=> state.products)
+    const shoppingCart = useSelector((state) => state.history);
     const navigate = useNavigate();
 
     function detalleOrden(){
+        let detalle = []
+        for (let i = 0; i < shoppingCart.length; i++) {
+            if(shoppingCart[i].id === idOrder){
+                detalle = shoppingCart[i].orderDetails
+            } 
+        }
+        dispatch({type: "ADD_ACTUAL_ORDER_DETAIL", payload: detalle})
         navigate(`/history/${idOrder}`)
     }
     
