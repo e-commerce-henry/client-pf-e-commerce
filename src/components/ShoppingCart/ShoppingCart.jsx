@@ -7,17 +7,29 @@ import {
   createOrder,
   deleteCartItem,
   resetShoppingCart,
-  getSaleBanner
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
-import { useMercadopago } from 'react-sdk-mercadopago';
+import { useMercadopago} from 'react-sdk-mercadopago';
 
 
+const FORM_ID = 'payment-form';
+function addCheckout (preferenceId){
+  const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
+    locale: 'es-AR'
+  });
 
-
-
-
+  // Inicializa el checkout
+  mp.checkout({
+    preference: {
+      id: preferenceId,
+    },
+    render: {
+      container: `#${FORM_ID}`, // Indica el nombre de la clase donde se mostrará el botón de pago
+      label: 'Pagar', // Cambia el texto del botón de pago (opcional)
+    },
+  });
+}
 
 
 export default function ShoppingCart() {
@@ -32,49 +44,11 @@ export default function ShoppingCart() {
   const [preferenceId, setPreferenceId] = useState(null);
   
   
-  const mercadopago = useMercadopago.v2('TEST-f1c9aa4b-935e-493e-870c-4a26bd4d4490', {
-    locale: 'es-AR'
-  });
-  console.log(mercadopago);
-  console.log(preferenceId, typeof(preferenceId))
-  useEffect(()=>{
-    console.log('entra')
-    console.log(preferenceId)
-    if(mercadopago){
-      mercadopago.checkout({
-        preference: {
-          id: preferenceId
-        },
-        render: {
-          container: '.cho-container',
-          label: "Pagar"
-        }
-      })
-    }
-  }, [mercadopago])
-
-  // const checkoutMP = ()=>{
-  //   const mp = new window.MercadoPago('TEST-ad741651-25c4-4a96-b06f-9c0a436e0fc4', {
-  //     locale: 'es-AR'
-  //   });
-  
-  //   mp.checkout({
-  //     preference: {
-  //       id: preferenceId,
-  //     },
-  //     render :{
-  //       container: `#payment-form`,
-  //       label: 'Pagar'
-  //     }
-  //   })
-  // }
-
-
-
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
   }, [dispatch]);
+
 
   useEffect(async ()=>{
     if(orderId){
@@ -85,15 +59,75 @@ export default function ShoppingCart() {
     }
   },[orderId])
 
-  // useEffect(()=>{
-  //   if(preferenceId){
-  //     const script = document.createElement('script');
-  //     script.type = 'text/javascript';
-  //     script.src = 'https://sdk.mercadopago.com/js/v2';
-  //     script.addEventListener('load', checkoutMP);
-  //     document.body.appendChild(script)
+  //sdk v2
+
+  // useEffect(() => {
+  //   if (preferenceId) {
+  //     const redirectToMercadoPago = (preferenceId) => {
+  //       const loadScript = (url, callback) => {
+  //         let script = document.createElement('script');
+  //         script.type = 'text/javascript';
+      
+  //         if (script.readyState) {
+  //           script.onreadystatechange = () => {
+  //             if (
+  //               script.readyState === 'loaded' ||
+  //               script.readyState === 'complete'
+  //             ) {
+  //               script.onreadystatechange = null;
+  //               callback();
+  //             }
+  //           };
+  //         } else {
+  //           script.onload = () => callback();
+  //         }
+  //         script.src = url;
+  //         document.getElementsByTagName('head')[0].appendChild(script);
+  
+  //       };
+        
+      
+  //       const handleScriptLoad = () => {
+  //         const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
+  //           locale: 'es-AR'
+  //         });
+  //         mp.checkout({
+  //           preference: {
+  //             id: preferenceId
+  //           },
+  //           autoOpen: true
+  //         });
+  //       };
+      
+  //       loadScript('https://sdk.mercadopago.com/js/v2', handleScriptLoad);
+  //     };
+  //     redirectToMercadoPago(preferenceId);
   //   }
-  // }, [preferenceId])
+  // }, [preferenceId]);
+
+
+
+
+
+  //sdk v1
+
+  useEffect(()=>{
+    if(preferenceId){
+      const script = document.createElement('script');
+      const attr_data_preference = document.createAttribute('data-preference-id')
+      attr_data_preference.value = preferenceId
+      script.type = 'text/javascript';
+      script.src = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
+      script.setAttributeNode(attr_data_preference)
+
+     
+      document.getElementById(FORM_ID).appendChild(script)
+      
+      return ()=>{
+        document.getElementById(FORM_ID).removeChild(script)
+      }
+    }
+  }, [preferenceId])
 
 
   function searchAndComplementInfo(id) {
@@ -188,10 +222,10 @@ export default function ShoppingCart() {
             Comprar ahora
           </button>
           {/* testing MP */}
-          {/* <form id='payment-form' method="GET"></form> */}
-          <div>
-              <div className="cho-container"></div>
-          </div>
+          <form id={FORM_ID} ></form>
+          {/* <div>
+              <div id='mp' className="cho-container"></div>
+          </div> */}
       </div>
       </div>
     </>
