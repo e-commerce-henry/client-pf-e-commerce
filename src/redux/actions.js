@@ -140,6 +140,7 @@ export const addInicioUser = ({ email, pwd }) => {
 //Acciones carrito
 
 export function addProductShoppingCart(body) {
+console.log(body)
 	return async function (dispatch) {
 		await axios.post(`http://localhost:3001/cart`, body);
 		dispatch({
