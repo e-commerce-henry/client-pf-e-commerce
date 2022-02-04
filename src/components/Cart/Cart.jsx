@@ -18,8 +18,6 @@ function Cart(){
             <div className={Style.container} >
                 {
 
-                    auth?<ShoppingCart />:  <InicioSeccion/>
-
                     auth?<ShoppingCart />: <Warning /> 
                 }
                 

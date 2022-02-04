@@ -2,8 +2,9 @@ import React,{ useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {detalleUsers} from '../../redux/actions';
 import Style from'./PersonalInfo.module.css';
-import {Link} from "react-router-dom";
+
 import EditUser from '../EditUsers/EditUser';
+
 
 export default function PersonalInfo(){
     const dispatch = useDispatch();
@@ -49,11 +50,12 @@ export default function PersonalInfo(){
                     }
             </div>
             < EditUser />
+            
 
 
 
             
-            {/* <Link to="/editUser"><button className={Style.crear}>Editar Usuario</button></Link> */}
+            
         </div>
     )
 }
