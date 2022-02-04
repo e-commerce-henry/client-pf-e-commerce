@@ -11,12 +11,12 @@ import {
 import Style from "./ShoppingCart.module.css";
 
 import axios from "axios";
+import Vacío from "../Vacío/Vacío";
 
 
 const FORM_ID = 'payment-form';
 
 
-import Vacío from "../Vacío/Vacío";
 
 
 export default function ShoppingCart() {
