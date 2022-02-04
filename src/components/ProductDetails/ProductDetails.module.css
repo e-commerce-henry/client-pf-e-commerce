@@ -152,3 +152,18 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .titulo {
+    font-size: 20px;
+  }
+
+  .det {
+    font-size: 18px;
+  }
+  .producticons {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 70%;
+  }
+}

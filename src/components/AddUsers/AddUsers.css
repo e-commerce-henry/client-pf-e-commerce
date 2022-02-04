@@ -98,3 +98,9 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 868px) {
+  .label {
+    width: 70%;
+  }
+}
