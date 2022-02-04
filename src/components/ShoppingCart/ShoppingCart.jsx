@@ -10,26 +10,10 @@ import {
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
-import { useMercadopago} from 'react-sdk-mercadopago';
 
 
 const FORM_ID = 'payment-form';
-function addCheckout (preferenceId){
-  const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
-    locale: 'es-AR'
-  });
 
-  // Inicializa el checkout
-  mp.checkout({
-    preference: {
-      id: preferenceId,
-    },
-    render: {
-      container: `#${FORM_ID}`, // Indica el nombre de la clase donde se mostrará el botón de pago
-      label: 'Pagar', // Cambia el texto del botón de pago (opcional)
-    },
-  });
-}
 
 
 export default function ShoppingCart() {
