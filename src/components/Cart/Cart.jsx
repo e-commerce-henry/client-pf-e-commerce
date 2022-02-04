@@ -20,9 +20,11 @@ function Cart(){
             <div className={Style.fadeinbck1} >
                 {
 
+
                     auth?<ShoppingCart /> :  <InicioSeccion/>,
 
                     auth?<ShoppingCart /> : <Warning /> 
+
                 }
                 
             </div>
