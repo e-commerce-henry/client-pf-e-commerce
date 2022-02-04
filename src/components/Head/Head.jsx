@@ -12,6 +12,7 @@ function Head(){
         <>
             <div className={Style.container} >
                 <div className={Style.marca}>MARCA DEL E-COMMERCE</div>
+                <div className={Style.flexboxx}>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">
@@ -42,7 +43,8 @@ function Head(){
                     </button>                  
                 </Link>
                 <CerrarSeccion />
-               
+
+                </div>
             </div>
         </>
     )

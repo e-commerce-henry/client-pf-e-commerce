@@ -10,6 +10,7 @@ import {
   getSaleBanner
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
+import Vacío from "../Vacío/Vacío";
 
 export default function ShoppingCart() {
   const shoppingCart = useSelector((state) => state.cart);
@@ -79,16 +80,22 @@ export default function ShoppingCart() {
   return (
     <>
       <div className={Style.cont}>
-        <div className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</div>
-        <div className={Style.headcart}>
-          <div className={Style.div7}>Producto</div>
-          <div className={Style.div8}>Precio unitario</div>
-          <div className={Style.div9}>Cantidad</div>
-          <div className={Style.div10}>Subtotales</div>
-        </div>
+      {shoppingCart[0]
+            ? shoppingCart[0].cartItems.length === 0 ? null :
+        <div>
+          <div className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</div>
+          <div className={Style.headcart}>
+            <div className={Style.div7}>Producto</div>
+            <div className={Style.div8}>Precio</div>
+            <div className={Style.div9}>Cantidad</div>
+            <div className={Style.div10}>Subtotales</div>
+          </div>
+        </div> : null
+        }
         <div>
           {shoppingCart[0]
-            ? shoppingCart[0].cartItems.map((e) => (
+            ? shoppingCart[0].cartItems.length === 0 ? <Vacío /> :
+            shoppingCart[0].cartItems.map((e) => (
                 <CartItem
                   id={e.id}
                   key={e.id}
@@ -103,16 +110,17 @@ export default function ShoppingCart() {
       </div>
   
 
-      <div className={Style.box}>
-        {/* <div className={Style.parrafo0}>Estas por realizar la compra</div> */}
-        <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
-        <div className={Style.parrafo1}>
-          ${Number(Math.ceil(total)).toLocaleString()} <br />
-          <button className={Style.boo} onClick={(e) => creOrder()}>
-            Comprar ahora
-          </button>
-      </div>
-      </div>
+      {shoppingCart[0]
+            ? shoppingCart[0].cartItems.length === 0 ? null :
+            <div className={Style.box}>
+              <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
+              <div className={Style.parrafo1}>
+                $ {Number(Math.ceil(total)).toLocaleString()} <br />
+                <button className={Style.boo} onClick={(e) => creOrder()}>
+                  Comprar ahora
+                </button>
+              </div>
+            </div> : null }
     </>
   );
 }

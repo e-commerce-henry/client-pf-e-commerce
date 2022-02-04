@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container {
+.headprofile {
   background-color: #00adb5;
-
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
@@ -19,10 +18,14 @@
   margin-right: 5%;
   color: #eeeeee;
   background-color: transparent;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .btnprofile:hover {
   color: #ff5722;
+  cursor: pointer;
 }
 
 .btnprofileselected {

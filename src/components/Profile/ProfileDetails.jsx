@@ -22,7 +22,7 @@ export default function ProfileDetails(){
     return(
         <div >
             <Head />
-            <div className={Style.container}>
+            <div className={Style.headprofile}>
                 {
                     userAuth?
                     <button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Ver tus datos personales</button>

@@ -20,7 +20,7 @@
 .central {
   grid-area: 1 / 2 / 2 / 7;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 868px) {
   .thebar {
     top: 110px;
     display: grid;
@@ -31,6 +31,7 @@
 
   .lateral {
     grid-area: 1 / 1 / 2 / 2;
+    display: none;
   }
 
   .central {

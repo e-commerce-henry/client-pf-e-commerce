@@ -242,13 +242,9 @@ export function getSaleBanner() {
             })
         }).catch((err) => {
             console.error(err)
-        });
-		
+        });	
 	}
-} 
-
-	
-
+}
 
 export function getShoppingCart(userId) {
 	return async function (dispatch) {
