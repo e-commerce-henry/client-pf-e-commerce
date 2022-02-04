@@ -11,6 +11,7 @@ import {
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
+import { useMercadopago } from 'react-sdk-mercadopago';
 
 
 
@@ -29,7 +30,28 @@ export default function ShoppingCart() {
   const orderId = useSelector((state)=> state.orderCreated)
   const [ordenCreada, setOrdenCreada] = useState(false);
   const [preferenceId, setPreferenceId] = useState(null);
-
+  
+  
+  const mercadopago = useMercadopago.v2('TEST-f1c9aa4b-935e-493e-870c-4a26bd4d4490', {
+    locale: 'es-AR'
+  });
+  console.log(mercadopago);
+  console.log(preferenceId, typeof(preferenceId))
+  useEffect(()=>{
+    console.log('entra')
+    console.log(preferenceId)
+    if(mercadopago){
+      mercadopago.checkout({
+        preference: {
+          id: preferenceId
+        },
+        render: {
+          container: '.cho-container',
+          label: "Pagar"
+        }
+      })
+    }
+  }, [mercadopago])
 
   // const checkoutMP = ()=>{
   //   const mp = new window.MercadoPago('TEST-ad741651-25c4-4a96-b06f-9c0a436e0fc4', {
@@ -54,14 +76,14 @@ export default function ShoppingCart() {
     dispatch(getShoppingCart(userId));
   }, [dispatch]);
 
-  // useEffect(async ()=>{
-  //   if(ordenCreada){
-  //     const response = (await axios.post(`http://localhost:3001/mercadoPago/${orderId}`)).data
-  //     console.log(response)
-  //     setPreferenceId(response)
-  //     setOrdenCreada(!ordenCreada)
-  //   }
-  // },[ordenCreada])
+  useEffect(async ()=>{
+    if(orderId){
+      const response = (await axios.post(`http://localhost:3001/mercadoPago/${orderId}`)).data
+      console.log(response)
+      setPreferenceId(response)
+      setOrdenCreada(false)
+    }
+  },[orderId])
 
   // useEffect(()=>{
   //   if(preferenceId){
@@ -166,7 +188,10 @@ export default function ShoppingCart() {
             Comprar ahora
           </button>
           {/* testing MP */}
-          <form id='payment-form' method="GET"></form>
+          {/* <form id='payment-form' method="GET"></form> */}
+          <div>
+              <div className="cho-container"></div>
+          </div>
       </div>
       </div>
     </>
