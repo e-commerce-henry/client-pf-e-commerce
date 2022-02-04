@@ -28,6 +28,7 @@ export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const EDIT_USER = "EDIT_USER";
 export const EDIT_CART= "EDIT_CART";
 export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
+export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -355,5 +356,11 @@ export function logOut() {
 		return dispatch({ type: "LOG_OUT", payload: response });
 	};
 }
+
+/* export function orderDetail(){
+	return async function(dispatch) {
+		
+	}
+} */
 
 
