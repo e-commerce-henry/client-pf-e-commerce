@@ -34,7 +34,7 @@ function Card({ productId, name, price, img, brand}){
             text: `${name}`,
             icon: "success",
             button: "Ok"})
-        dispatch(addProductShoppingCart({productId, price, userId}))
+        dispatch(addProductShoppingCart({productId, price, userId, name, img}))
  }
     }
 

@@ -26,10 +26,12 @@ export const DELETE_ITEM_SHOPPINGCART = "DELETE_ITEM_SHOPPINGCART";
 export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const EDIT_USER = "EDIT_USER";
+
 export const EDIT_CART= "EDIT_CART";
 export const LOG_OUT = "LOG_OUT";
 export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
 export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
+
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -145,15 +147,14 @@ export function addProductShoppingCart(body) {
 		});
 	};
 }
-export function addProductBanneraCart(body){
-    return async function (dispatch){
-        await axios.post(`http://localhost:3001/cart`, body)
-        dispatch({
-            type: ADD_PRODUCT_BANNER_A_CART
-        })
-    }
+export function addProductBanneraCart(body) {
+	return async function (dispatch) {
+		await axios.post(`http://localhost:3001/cart`, body);
+		dispatch({
+			type: ADD_PRODUCT_BANNER_A_CART,
+		});
+	};
 }
-
 
 export function removeCart({ productId, userId }) {
 	return async function (dispatch) {
@@ -234,17 +235,19 @@ export function getReview(id) {
 
 //obtengo mi salebanner
 export function getSaleBanner() {
-	return  (dispatch) => {
-		axios.get("http://localhost:3001/saleBanner")
-        .then((result) => {
-            return dispatch({
-                type: GET_SALEBANNER,
-                payload: result.data
-            })
-        }).catch((err) => {
-            console.error(err)
-        });	
-	}
+	return (dispatch) => {
+		axios
+			.get("http://localhost:3001/saleBanner")
+			.then((result) => {
+				return dispatch({
+					type: GET_SALEBANNER,
+					payload: result.data,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
 }
 
 export function getShoppingCart(userId) {
@@ -279,9 +282,13 @@ export function editShoppingCart(body) {
 
 export function createOrder(userId, body) {
 	return async function (dispatch) {
-		await axios.post(`http://localhost:3001/orders/${userId}`, body);
+		const response = await axios.post(
+			`http://localhost:3001/orders/${userId}`,
+			body
+		);
 		dispatch({
 			type: CREATE_ORDER,
+			payload: response.data,
 		});
 	};
 }
@@ -326,7 +333,6 @@ export function getOrderHistory(userId) {
 	};
 }
 
-
 export function editUser(userToEdit) {
 	return async function (dispatch) {
 		const edited = (
@@ -340,6 +346,7 @@ export function editUser(userToEdit) {
 }
 
 
+
 export function detalleUsers (id) {
     return async (dispatch) => {
         let response = await axios.get(`http://localhost:3001/users/${id}`);
@@ -351,6 +358,7 @@ export function detalleUsers (id) {
 }
 
 
+
 export function logout() {
 	return async function (dispatch) {
 		dispatch({
@@ -358,5 +366,7 @@ export function logout() {
 		});
 	};
 
+
 }
+
 
