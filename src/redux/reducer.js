@@ -28,7 +28,8 @@ import {
     EDIT_USER,  
     EDIT_CART,
     ADD_PRODUCT_BANNER_A_CART,
-    ADD_ACTUAL_ORDER_DETAIL
+    ADD_ACTUAL_ORDER_DETAIL,
+    LOG_OUT,
 } from './actions';
 
 const inicialState = {
@@ -49,7 +50,6 @@ const inicialState = {
     updateUser: [],
     history: [],
     historyDetail: [],
-    users: []
 }; 
 
 const reducer = (state = inicialState, action) => {
@@ -227,16 +227,24 @@ const reducer = (state = inicialState, action) => {
                 userDetail: action.payload
             }
         case EDIT_USER:
-            console.log(action.payload)
+          
             return {
                 ...state,
                 userDetail: action.payload
             }
-        case "LOG_OUT":
-            return {
-                ...state,
-                authUser: [],
-            };
+        case LOG_OUT:
+                return {
+                    ...state,
+                    userAuth: false,
+                    cart: {},
+                    details: [],
+                    favs: [],
+                    idUser: '',
+                    userDetail: {},
+                    order: {},
+                    orderHistory: {},
+                    history: []
+            }
         case ADD_PRODUCT_BANNER_A_CART:
             return{
                 ...state,

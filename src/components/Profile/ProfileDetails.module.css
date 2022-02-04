@@ -19,7 +19,8 @@ li {
   list-style-type: none;
 }
 
-.container {
+.headprofile {
+  background-color: #00adb5;
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
@@ -34,10 +35,11 @@ li {
   outline: none;
   margin-left: 5%;
   margin-right: 5%;
-  color: #303841;
+  color: #eeeeee;
   background-color: transparent;
   font-family: "Lexend Deca", sans-serif;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .btnprofile:hover {

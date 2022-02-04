@@ -2,8 +2,9 @@ import React,{ useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {detalleUsers} from '../../redux/actions';
 import Style from'./PersonalInfo.module.css';
-import {Link} from "react-router-dom";
+
 import EditUser from '../EditUsers/EditUser';
+
 
 export default function PersonalInfo(){
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export default function PersonalInfo(){
         
 
     return(
-        <div className={Style.cont}>
+        <div className={Style.fadeinbck8}>
                 <div className={Style.saludo}>Nos dá gusto verte de nuevo {userDetail.name}</div>
             
             <div className={Style.detalle}>
@@ -49,11 +50,12 @@ export default function PersonalInfo(){
                     }
             </div>
             < EditUser />
+            
 
 
 
             
-            {/* <Link to="/editUser"><button className={Style.crear}>Editar Usuario</button></Link> */}
+            
         </div>
     )
 }

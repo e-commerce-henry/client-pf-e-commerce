@@ -14,12 +14,11 @@ function Cart(){
     return(
         <>
             <Head />
-            {/* <div className={Style.titulo}>MI CARRITO</div> */}
-            <div className={Style.container} >
+            {
+                auth? <div className={Style.titulofav}>Carrito</div> : null
+            }
+            <div className={Style.fadeinbck1} >
                 {
-
-                    auth?<ShoppingCart />:  <InicioSeccion/>,
-
                     auth?<ShoppingCart />: <Warning /> 
                 }
                 

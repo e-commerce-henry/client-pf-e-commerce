@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const PoliticaDePrivacidad = () => {
   return <div>
     <Head />
-    <div>
+    <div className='fadeinbck13'>
       <p>
       <div className='tituloppal'>Declaración de privacidad y confidencialidad de la información de MARCA DEL E-COMMERCE</div> <br />
 Versión actualizada al 17 de enero de 2022. 

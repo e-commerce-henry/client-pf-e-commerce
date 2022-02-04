@@ -29,3 +29,33 @@ a {
   color: #303841;
   font-weight: 600;
 }
+
+.fadeinbck12 {
+  -webkit-animation: fadeinbck12 0.7s ease-in both;
+  animation: fadeinbck12 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck12 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck12 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
