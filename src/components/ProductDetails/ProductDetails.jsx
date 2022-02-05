@@ -45,6 +45,7 @@ export default function ProductDetail(){
     const detailsProduct = useSelector ((state) => state.details)
     const price = detailsProduct.price
     const name = detailsProduct.name
+    const img = detailsProduct.img
     const productId = detailsProduct.id
     const [fav, setFav] = useState([]);
     const [cart, setCart] = useState([]);
@@ -81,15 +82,19 @@ export default function ProductDetail(){
     }
 
     function addShoppingCart(productId){
-        setCart(name)
-        swal({
-            title: "Se ha agregado al carrito:",
-            text: `${name}`,
-            icon: "success",
-            button: "Ok"})
-        dispatch(addProductShoppingCart({productId, price, userId}))
+        if(auth){
+            setCart(name)
+            swal({
+                title: "Se ha agregado al carrito:",
+                text: `${name}`,
+                icon: "success",
+                button: "Ok"})
+            dispatch(addProductShoppingCart({productId, price, userId, name, img}))
+        } else {
+            navigate(`/profile-details`);
+        }
     }
-
+   
     useEffect (()=> {
         dispatch(productDetail(id));
     }, [dispatch, id])
