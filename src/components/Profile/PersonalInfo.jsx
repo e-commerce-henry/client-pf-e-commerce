@@ -30,8 +30,8 @@ export default function PersonalInfo(){
                 <div className={Style.saludo}>Nos dá gusto verte de nuevo {userDetail.name}
                 <h4 className={Style.preg}> Que quieres hacer hoy?</h4>
                 <hr/>
-                <hr/>
-                </div>
+                <hr/></div>
+                
             
 
             <Info/>
