@@ -48,49 +48,49 @@ export default function ShoppingCart() {
 
   //sdk v2
 
-  // useEffect(() => {
-  //   if (preferenceId) {
-  //     const redirectToMercadoPago = (preferenceId) => {
-  //       const loadScript = (url, callback) => {
-  //         let script = document.createElement('script');
-  //         script.type = 'text/javascript';
+  useEffect(() => {
+    if (preferenceId) {
+      const redirectToMercadoPago = (preferenceId) => {
+        const loadScript = (url, callback) => {
+          let script = document.createElement('script');
+          script.type = 'text/javascript';
       
-  //         if (script.readyState) {
-  //           script.onreadystatechange = () => {
-  //             if (
-  //               script.readyState === 'loaded' ||
-  //               script.readyState === 'complete'
-  //             ) {
-  //               script.onreadystatechange = null;
-  //               callback();
-  //             }
-  //           };
-  //         } else {
-  //           script.onload = () => callback();
-  //         }
-  //         script.src = url;
-  //         document.getElementsByTagName('head')[0].appendChild(script);
+          if (script.readyState) {
+            script.onreadystatechange = () => {
+              if (
+                script.readyState === 'loaded' ||
+                script.readyState === 'complete'
+              ) {
+                script.onreadystatechange = null;
+                callback();
+              }
+            };
+          } else {
+            script.onload = () => callback();
+          }
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
   
-  //       };
+        };
         
       
-  //       const handleScriptLoad = () => {
-  //         const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
-  //           locale: 'es-AR'
-  //         });
-  //         mp.checkout({
-  //           preference: {
-  //             id: preferenceId
-  //           },
-  //           autoOpen: true
-  //         });
-  //       };
+        const handleScriptLoad = () => {
+          const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
+            locale: 'es-AR'
+          });
+          mp.checkout({
+            preference: {
+              id: preferenceId
+            },
+            autoOpen: true
+          });
+        };
       
-  //       loadScript('https://sdk.mercadopago.com/js/v2', handleScriptLoad);
-  //     };
-  //     redirectToMercadoPago(preferenceId);
-  //   }
-  // }, [preferenceId]);
+        loadScript('https://sdk.mercadopago.com/js/v2', handleScriptLoad);
+      };
+      redirectToMercadoPago(preferenceId);
+    }
+  }, [preferenceId]);
 
 
 
@@ -98,23 +98,23 @@ export default function ShoppingCart() {
 
   //sdk v1
 
-  useEffect(()=>{
-    if(preferenceId){
-      const script = document.createElement('script');
-      const attr_data_preference = document.createAttribute('data-preference-id')
-      attr_data_preference.value = preferenceId
-      script.type = 'text/javascript';
-      script.src = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
-      script.setAttributeNode(attr_data_preference)
+  // useEffect(()=>{
+  //   if(preferenceId){
+  //     const script = document.createElement('script');
+  //     const attr_data_preference = document.createAttribute('data-preference-id')
+  //     attr_data_preference.value = preferenceId
+  //     script.type = 'text/javascript';
+  //     script.src = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
+  //     script.setAttributeNode(attr_data_preference)
 
-     
-      document.getElementById(FORM_ID).appendChild(script)
+  //     console.log(script)
+  //     document.getElementById(FORM_ID).appendChild(script)
       
-      return ()=>{
-        document.getElementById(FORM_ID).removeChild(script)
-      }
-    }
-  }, [preferenceId])
+  //     return ()=>{
+  //       document.getElementById(FORM_ID).removeChild(script)
+  //     }
+  //   }
+  // }, [preferenceId])
 
 
   function searchAndComplementInfo(id) {
