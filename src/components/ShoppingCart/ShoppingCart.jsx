@@ -27,7 +27,6 @@ export default function ShoppingCart() {
   const ofertas = useSelector((state) => state.saleBanner);
   const dispatch = useDispatch();
   const orderId = useSelector((state)=> state.orderCreated)
-  const [ordenCreada, setOrdenCreada] = useState(false);
   const [preferenceId, setPreferenceId] = useState(null);
   
   
@@ -42,7 +41,6 @@ export default function ShoppingCart() {
       const response = (await axios.post(`http://localhost:3001/mercadoPago/${orderId}`)).data
       console.log(response)
       setPreferenceId(response)
-      setOrdenCreada(false)
     }
   },[orderId])
 
@@ -166,7 +164,6 @@ export default function ShoppingCart() {
     let addressId = userInfo.clientAddresses[0].id;
     let total = calculateTotal();
     dispatch(createOrder(userId, { products, addressId, total }));
-    setOrdenCreada(true);
     alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
     resetCartShopping();
   }

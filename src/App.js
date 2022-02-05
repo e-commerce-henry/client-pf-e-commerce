@@ -15,6 +15,7 @@ import AddUsers from "./components/AddUsers/AddUsers";
 import InicioSeccion from "./components/Profile/InicioSeccion";
 import OrderDetails from "./components/Orders/OrderDetails";
 import CompraExitosa from "./components/Orders/CompraExitosa";
+import CompraRealizada from "./components/CompraRealizada/CompraRealizada";
 import EditUser from "./components/EditUsers/EditUser";
 import Favoritos from "./components/Favs/Favoritos";
 import HistoryDetailCards from "./components/Profile/History/HistoryDetail/HistoryDetailCards";
@@ -33,11 +34,18 @@ function App() {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />
-				<Route path="/terminosYcondiciones" element={<TerminosYcondiciones />}/>
-				<Route path="/politicaDePrivacidad" element={<PoliticaDePrivacidad />}/>
+				<Route
+					path="/terminosYcondiciones"
+					element={<TerminosYcondiciones />}
+				/>
+				<Route
+					path="/politicaDePrivacidad"
+					element={<PoliticaDePrivacidad />}
+				/>
 				<Route path="/equipo" element={<Equipo />} />
 				<Route path="/addUsers" element={<AddUsers />} />
 				<Route path="/editUser" element={<EditUser />} />
+				<Route path="/realizado" element={<CompraRealizada />} />
 			</Routes>
 		</>
 	);
