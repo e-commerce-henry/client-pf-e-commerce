@@ -41,16 +41,13 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
 
 
  async function deleteCart(productId){
-       
-  await dispatch(removeCart({productId, userId}))
+    await dispatch(removeCart({productId, userId}))
     swal({
         title: "Se ha eliminado este producto del carrito:",
         text: `${name}`,
         icon: "warning",
         button: "Ok"})
-        await dispatch(getShoppingCart(userId))
-
-    // window.location.reload("/favs");
+    await dispatch(getShoppingCart(userId))
 } 
 
    
@@ -65,17 +62,17 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                 <div className={Style.div1}>{name}</div>
                 </div>
                 <div className={Style.div4}>
-                    <br />
+                    {/* <br /> */}
                     <div className={Style.stock}>
                         Stock: {stock - quantity}
                     </div>
-                    <br />
+                    {/* <br /> */}
                     <div className={Style.contador}>
                                 <button className={Style.masmenos} onClick={restar}>-</button>
                                 {quantity}
                                 <button  className={Style.masmenos} onClick={sumar}>+</button> 
                     </div>
-                    <br />
+                    {/* <br /> */}
                     <div className={Style.rem}>
                         <button className={Style.rembtn} onClick={() => deleteCart(productId)}>  
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -83,7 +80,7 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
                             </svg>
                         </button>
                     </div>
-                    <br />
+                    {/* <br /> */}
                 </div>
                 <div className={Style.div3}>
                     $ {Number(Math.ceil(price)).toLocaleString()}

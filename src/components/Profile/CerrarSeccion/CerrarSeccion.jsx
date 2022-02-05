@@ -3,7 +3,7 @@ import React from 'react';
 
 import IconButton from '@material-ui/core/IconButton';
 import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp';
-
+import './CerrarSeccion.css'
 import {useNavigate} from 'react-router-dom';
 import {logout} from "../../../redux/actions";
 import { useDispatch, useSelector} from 'react-redux'; 
@@ -23,7 +23,7 @@ const CerrarSeccion = () => {
    }
 
   return (
-  <div> 
+  <div className='probando'> 
       {
           isAuth ? (<IconButton color="inherit" onClick={onLogout} > <ExitToAppSharpIcon/></IconButton>): null
       }

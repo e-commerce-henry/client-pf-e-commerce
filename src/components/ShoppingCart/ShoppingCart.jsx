@@ -9,7 +9,6 @@ import {
   resetShoppingCart,
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
-
 import axios from "axios";
 import Vacío from "../Vacío/Vacío";
 

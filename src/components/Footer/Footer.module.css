@@ -52,3 +52,12 @@
     font-size: 10px;
   }
 }
+
+@media only screen and (max-width: 658px) {
+  .container {
+    display: none;
+  }
+  .copy {
+    display: none;
+  }
+}

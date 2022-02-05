@@ -1,7 +1,7 @@
 .fadeinbck7 {
   width: 70%;
   height: 80%;
-  margin-bottom: 5%;
+  margin-bottom: 90px;
   margin-left: 15%;
   margin-right: 5%;
   margin-top: 2%;
@@ -101,6 +101,12 @@
 
 @media only screen and (max-width: 868px) {
   .label {
-    width: 70%;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .titulo {
+    font-size: 18px;
   }
 }
