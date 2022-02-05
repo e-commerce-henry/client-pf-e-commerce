@@ -29,6 +29,27 @@ li {
   display: flex;
   justify-content: center;
 }
+.button{
+  border: none;
+  
+  outline: none;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 30%;
+  height: 40px;
+  border-width: 1px;
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  text-align: center;
+}
+.button:hover {
+  cursor: pointer;
+}
+
 
 .btnprofile {
   border: none;
