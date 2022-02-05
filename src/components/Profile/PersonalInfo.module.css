@@ -16,6 +16,14 @@
   color: #00adb5;
   margin: 30px;
 }
+.preg{
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 30px;
+}
 .detalle {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

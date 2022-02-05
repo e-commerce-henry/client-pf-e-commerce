@@ -25,7 +25,7 @@ export default function HistoryCard({idOrder, status, total, address, shipping, 
 
                 
                 <div className={Style.footer}>
-                    <button onClick={e => detalleOrden()}>Ver detalles de la compra</button>
+                    <button onClick={e => detalleOrden()} className= {Style.boo}>Ver detalles de la compra</button>
                 </div>
             </div>
         </>
