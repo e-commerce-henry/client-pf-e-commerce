@@ -7,6 +7,7 @@ import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
 import Footer from "../Footer/Footer";
+import NotFound from "./NotFound";
 
 function valProduct(e){
     if(e.id){
@@ -36,7 +37,10 @@ function Cards(){
     const [productsPerPage, setProductsPerPage] = useState(20);
     const indexOfLastProduct = currentPage * productsPerPage 
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage 
-    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+    let currentProducts = ''
+    if (products.length) {
+        currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct)
+    }  
 
     useEffect(() =>{
         dispatch(getProducts())
@@ -63,7 +67,10 @@ function Cards(){
         setCurrentPage(1)
     }
 
-    let brandsArray = products.map(e => e.brand)
+    let brandsArray; 
+    if(products.length){
+        brandsArray = products.map(e => e.brand)
+    }  
     brandsArray = [...new Set(brandsArray)]
     brandsArray = brandsArray.sort()
     
@@ -96,14 +103,14 @@ function Cards(){
         <div>
         <div className={Style.allcards}>
             <div className={Style.fadeinbck3}>
-                {
+                { currentProducts.length?
                     currentProducts.map(e =>
                 
                     (
                         
                         valProduct(e)
                     
-                    ))
+                    )): <NotFound/>
                 }
             </div>
         
