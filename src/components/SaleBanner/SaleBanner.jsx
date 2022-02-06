@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import { getSaleBanner , addProductBanneraCart } from '../../redux/actions';
 import Pagination from '../Paginationsalebanner/Pagination2';
 import style from './SaleBanner.module.css';
@@ -10,8 +11,9 @@ export default function SaleBanner({discount, productId, name}) {
 
     const sales = useSelector(state=>state.saleBanner)
     const userId = useSelector (state => state.idUser)
-
+    const auth = useSelector (state => state.userAuth)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [cart, setCart] = useState([]);
 
     const numberPage =[];
@@ -30,22 +32,24 @@ export default function SaleBanner({discount, productId, name}) {
     }, [dispatch]);
 
 
-    async function addCart(productId, price){
-        await dispatch(addProductBanneraCart({productId, userId , price}))
-        // setError(error)
-        // if(productId >= 1){
-        //     swal({
-        //         title: "No. Ya está!!",
-        //         icon: "warning"
-        //     })
-        // }else {
-        // setCart(name)
-        swal({
-            title: "Se ha agregado al carrito:",
-            icon: "success",
-            button: "Ok"})
-       
- //}
+    async function addCart(productId, price, img, name){
+        if(auth){
+            await dispatch(addProductBanneraCart({productId, userId , price, name, img}))
+            swal({
+                title: `Se ha agregado al carrito: ${name}`,
+                icon: "success",
+                button: "Ok"
+            })
+        }else {
+            navigate('/profile-details')
+            swal({
+                title: "Debes iniciar sesion",
+                icon: "warning",
+                button: "Ok"
+            })
+        }
+
+
     }
 
     
@@ -90,7 +94,7 @@ export default function SaleBanner({discount, productId, name}) {
                                     </label>
                                 </div>
                              
-                                <button className={style.botton_compras} onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)))}>
+                                <button className={style.botton_compras} onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)), e.product.img, e.name)}>
                                     Comprar Ahora  </button>
                                  
                             </div>
