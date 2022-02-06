@@ -29,9 +29,9 @@ export default function History(){
   
             <div>
                 <HistoryCards/>
-              
+              <br />
             <Link to = {"/profile-details"}>
-            <button className={Style.boo}> Volver </button></Link>
+            <button className={Style.boo}> Volver a mi perfil </button></Link>
             </div>
             <Footer />
         </div>

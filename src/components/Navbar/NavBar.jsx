@@ -15,11 +15,7 @@ function handleInputChange(e){
 }
 function handleOnClick(e){
    e.preventDefault()
-   setError(error) 
-       if(!name){
-           alert("eso no existe")
-       }
-   else{
+       if(name){
     dispatch(getProductName(name))
 }}
     return(

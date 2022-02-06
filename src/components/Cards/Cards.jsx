@@ -142,6 +142,7 @@ function Cards(){
             <button className={Style.restablecer} onClick={restablecer}>Borrar filtros</button>
         </div>
         </div>
+        { currentProducts.length?
         <div className={Style.fadeinbck5}>
             <div className={Style.uno}>
             {currentPage !== 1 ? <button className={Style.pag} onClick={prim}> ◄◄ </button> : <div></div> }
@@ -156,7 +157,8 @@ function Cards(){
             {currentPage !== 10 ? <button className={Style.pag} onClick={next}>►</button> : <div></div>}
             {currentPage !== 10 ? <button className={Style.pag} onClick={ult}> ►► </button> : <div></div>}
             </div>
-        </div>
+        </div> : null
+                }
     </div>
     )
 };
