@@ -11,7 +11,7 @@ function CardFavs({id, price, productId, addInfo}){
     const dispatch = useDispatch()
     const userId = useSelector(state => state.idUser)
 
-    const {name, img, brand} = addInfo   
+    const {name, img} = addInfo   
 
     async function addShoppingCart(productId){
         swal({
@@ -19,7 +19,7 @@ function CardFavs({id, price, productId, addInfo}){
             text: `${name}`,
             icon: "success",
             button: "Ok"})
-        await dispatch(addProductShoppingCart({productId, price, userId}))
+        await dispatch(addProductShoppingCart({productId, price, userId, name, img}))
         await dispatch(deleteProductWishlist({productId, userId}))
         await dispatch(getWishlist(userId))
 

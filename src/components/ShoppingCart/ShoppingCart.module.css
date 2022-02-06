@@ -118,7 +118,7 @@
 
 @media only screen and (max-width: 1000px) {
   .headcart {
-    font-size: 18px;
+    font-size: 16px;
   }
   .parrafo {
     font-size: 20px;
@@ -127,5 +127,43 @@
   .parrafo1 {
     font-size: 38px;
     grid-area: 1 / 6 / 2 / 9;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .headcart {
+    width: 95%;
+  }
+  .box {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .parrafo {
+    font-size: 16px;
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .parrafo1 {
+    font-size: 30px;
+    grid-area: 1 / 6 / 2 / 9;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .headcart {
+    display: none;
+  }
+  .parrafo {
+    font-size: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .parrafo1 {
+    font-size: 25px;
+  }
+  .boo {
+    height: 38px;
+    margin-bottom: 0;
   }
 }
