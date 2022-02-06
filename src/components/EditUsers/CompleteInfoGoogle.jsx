@@ -56,11 +56,11 @@ export default function CompleteInfoGoogle(){
         })
     }
 
-    const editUserHandler = (e)=>{
+    const editUserHandler = async (e)=>{
         e.preventDefault();
         dispatch(editUser(userToEdit))
         setShowModal(!showModal)
-        dispatch(detalleUsers(idUsers))
+        await dispatch(detalleUsers(idUsers))
     }
 
     return(
