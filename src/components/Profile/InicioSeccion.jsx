@@ -121,7 +121,7 @@ const InicioSeccion = () => {
                     <div>
                     <GoogleAuth/>
                     </div>
-                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarte aquí</Link></p>
+                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarse aquí</Link></p>
             
         </div> 
        
