@@ -57,6 +57,7 @@ const EditUser = () =>{
         console.log('user', user);
 
         const { id, name, surname, email } = user;
+        
         const { address, postalCode, city, province, floor} = user.clientAddresses[0];
         setUserToEdit({
             id,
