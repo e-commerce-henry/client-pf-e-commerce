@@ -7,6 +7,7 @@ import {
   createOrder,
   deleteCartItem,
   resetShoppingCart,
+  detalleUsers
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
@@ -32,6 +33,7 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
+    dispatch(detalleUsers(userId))
   }, [dispatch]);
 
 
@@ -157,7 +159,8 @@ export default function ShoppingCart() {
   //   await dispatch(resetShoppingCart())
   // }
 
-  function creOrder() {
+  async function creOrder() {
+    await dispatch(detalleUsers(userId))
     let products = shoppingCart[0].cartItems;
     console.log(products)
     let addressId = userInfo.clientAddresses[0].id;
