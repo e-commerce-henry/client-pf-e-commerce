@@ -212,12 +212,9 @@ export default function ShoppingCart() {
 
 
                 {
-                  userInfo.clientAddresses 
-                  && userInfo.clientAddresses[0].address? 
-                  <button className={Style.boo} onClick={(e) => creOrder()}>Comprar ahora</button>
-                  : 
+                  userInfo.clientAddresses && userInfo.clientAddresses[0].address === null? 
                   <CompleteInfoGoogle/>
-                
+                  : <button className={Style.boo} onClick={(e) => creOrder()}>Comprar ahora</button>
                 }
 
 
