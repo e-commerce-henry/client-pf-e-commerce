@@ -2,6 +2,14 @@
   -webkit-animation: fadeinbck10 0.7s ease-in both;
   animation: fadeinbck10 0.7s ease-in both;
 }
+.hist {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  color: #00adb5;
+  margin: 30px;
+}
 
 @-webkit-keyframes fadeinbck10 {
   0% {

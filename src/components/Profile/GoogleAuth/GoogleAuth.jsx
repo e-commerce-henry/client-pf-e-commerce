@@ -21,8 +21,8 @@ export default function GoogleAuth(){
 
         navigate(`/`);
         swal({
-            title: "Todo ok",
-            text: `Bienvenido ${res.name}`,
+            title: `Hola ${res.name}`,
+            text: "Qué gusto verte!" ,
             icon: "success"
         })
     }
