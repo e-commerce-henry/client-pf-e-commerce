@@ -100,14 +100,14 @@ const EditUser = () =>{
                         <div align='center' >
                             <h2>Edit User</h2>
                         </div>
-                        <TextField
+                        {/* <TextField
                             label='N° Id:'
                             name='id'
                             className={styles.textfield}
                             value={userToEdit.id}
                             // onChange={handleOnChange}
                             disabled
-                        />
+                        /> */}
                         <br/>
                         <TextField
                             label='Name: '
