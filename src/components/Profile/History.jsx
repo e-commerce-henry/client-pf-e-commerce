@@ -6,6 +6,7 @@ import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import { getOrderHistory } from "../../redux/actions";
 import HistoryCards from "./History/HistoryCards";
+import { Link } from "react-router-dom";
 
 
 export default function History(){
@@ -25,14 +26,15 @@ export default function History(){
     return(
         <div >
             <Head />
-            <div className={Style.container}>
-                {userAuth?<button className={Style.btnprofile} type='button' value='profile-details' onClick={(e) =>HandleClick(e)}>Mis datos personales</button>:null}
-                {userAuth?<button className={Style.btnprofile} type='button' value='history' onClick={(e) =>HandleClick(e)}>Historial de compras</button>:<button className={Style.btnprofile} type='button' value='inicio-seccion' onClick={(e) =>HandleClick(e)}>Iniciar Sección</button>}  
-            </div>
+  
             <div>
                 <HistoryCards/>
-            </div>  
-            <div className={Style.historyfooter}><Footer />  </div>
+              <br />
+            <Link to = {"/profile-details"}>
+            <button className={Style.bo7o}> Volver a mi perfil </button>
+            </Link>
+            </div>
+            <Footer />
         </div>
     )
 }

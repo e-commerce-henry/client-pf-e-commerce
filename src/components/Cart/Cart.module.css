@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container {
+.fadeinbck1 {
   border: solid 1px 00adb5;
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
@@ -9,17 +9,41 @@
   margin-top: 10px;
 }
 
-.favfooter {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.titulo {
+.titulofav {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 800;
   font-size: 30px;
   text-align: center;
   color: #00adb5;
   margin: 30px;
+}
+
+.fadeinbck1 {
+  -webkit-animation: fadeinbck1 0.7s ease-in both;
+  animation: fadeinbck1 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck1 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck1 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

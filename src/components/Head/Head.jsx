@@ -1,12 +1,18 @@
 import React from 'react';
 import Style from './Head.module.css'
 import { Link } from 'react-router-dom';
+import CerrarSeccion from '../Profile/CerrarSeccion/CerrarSeccion';
+
 
 function Head(){
+
+
+
     return(
         <>
             <div className={Style.container} >
                 <div className={Style.marca}>MARCA DEL E-COMMERCE</div>
+                <div className={Style.flexboxx}>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">
@@ -34,8 +40,11 @@ function Head(){
                          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         </svg> 
-                    </button>
+                    </button>                  
                 </Link>
+                <CerrarSeccion />
+
+                </div>
             </div>
         </>
     )

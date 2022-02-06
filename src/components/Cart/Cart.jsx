@@ -4,7 +4,8 @@ import Head from '../Head/Head';
 import Style from './Cart.module.css'
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import { useSelector } from 'react-redux';
-
+import InicioSeccion from '../Profile/InicioSeccion';
+import Warning from '../Warning/Warning';
 
 
 
@@ -13,14 +14,21 @@ function Cart(){
     return(
         <>
             <Head />
-            <div className={Style.titulo}>MI CARRITO</div>
-            <div className={Style.container} >
+            {
+                auth? <div className={Style.titulofav}>Carrito</div> : null
+            }
+            <div className={Style.fadeinbck1} >
                 {
-                    auth?<ShoppingCart />: <p>Debes iniciar sesion</p>
+
+
+                    auth?<ShoppingCart /> :  <InicioSeccion/>,
+
+                    auth?<ShoppingCart /> : <Warning /> 
+
                 }
                 
             </div>
-            <div className={Style.favfooter}><Footer /></div>
+            <Footer />
         </>
     )
 };

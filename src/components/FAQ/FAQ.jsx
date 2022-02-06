@@ -39,6 +39,7 @@ const FAQ = () => {
   return (
     <div>
       <Head />
+      <div className="fadeinbck14">
       <div ><h2 className="title">Preguntas Frecuentes</h2></div>
       <div className="faq">
         <Faq className="styleFAQ" data={data} styles={{
@@ -53,8 +54,8 @@ const FAQ = () => {
         rowContentPaddingRight: '150px',
         arrowColor: "black",
         }} />
-        </div>
-      <div className="faqfooter"><Footer /></div>
+        </div></div>
+      <Footer />
 </div>
     );
 };

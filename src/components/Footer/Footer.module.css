@@ -1,10 +1,10 @@
 .container {
   /* position: absolute;
   bottom: 0; */
-  /* position: fixed;
-  bottom: 0; */
-  padding-top: 12px;
-  height: 9%;
+  box-shadow: 0px 0px 5px 1px #303841;
+
+  padding-top: 4px;
+  height: 8%;
   background-color: #303841;
   width: 100%;
   display: flex;
@@ -28,24 +28,36 @@
 .copy {
   /* position: fixed;
   bottom: 0; */
-  padding-top: 2px;
+  /* padding-top: 2px; */
   background-color: #303841;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eeeeee;
-  height: 30px;
+  height: 20px;
   width: 100%;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
 }
 
-/* .allfooter {
+.allfooter {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  position: absolute;
-  bottom: -750px;
-} */
+}
 
 @media only screen and (max-width: 768px) {
   .container {
     font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  .container {
+    display: none;
+  }
+  .copy {
+    display: none;
   }
 }

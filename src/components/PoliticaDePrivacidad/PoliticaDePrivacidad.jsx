@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const PoliticaDePrivacidad = () => {
   return <div>
     <Head />
-    <div>
+    <div className='fadeinbck13'>
       <p>
       <div className='tituloppal'>Declaración de privacidad y confidencialidad de la información de MARCA DEL E-COMMERCE</div> <br />
 Versión actualizada al 17 de enero de 2022. 
@@ -21,7 +21,7 @@ Esta Declaración de Privacidad forma parte de los Términos y Condiciones Gener
 <br />
 <br />
 <br />
-<div className='titulo'>1. ¿Cómo se integra MARCA DEL E-COMMERCE y cómo aplica esta Declaración de Privacidad?</div> 
+<div className='titulopp'>1. ¿Cómo se integra MARCA DEL E-COMMERCE y cómo aplica esta Declaración de Privacidad?</div> 
 El objetivo de MARCA DEL E-COMMERCE es democratizar el comercio, el dinero, los pagos, los envíos y el crédito. Para ello ha generado un ecosistema de servicios integrados a través de sus plataformas: MARCA DEL E-COMMERCE (Marketplace), Mercado Pago, Clasificados, Publicidad, Mercado Envíos, Mercado Créditos, Mercado Shops, y Mercado Puntos. Todas estas plataformas conforman un todo y son necesarias e indispensables para brindarte los servicios de MARCA DEL E-COMMERCE.
 <br />
 Por esta razón, es importante que tengás en cuenta que cuando te registrás en cualquiera de estas plataformas, estás generando un usuario que te permitirá operar en todas las demás. Para ello es necesario que tus datos sean compartidos entre todas las empresas de MARCA DEL E-COMMERCE que conforman las plataformas. En la sección 5. “¿Cómo compartimos la Información Personal?” podrás encontrar más información respecto a esto último.
@@ -32,14 +32,14 @@ Creemos importante destacar que los servicios de MARCA DEL E-COMMERCE y cada una
 <br />
 <br />
 <br />
-<div className='titulo'>2. ¿Quién es el responsable del tratamiento de la Información Personal?</div>
+<div className='titulopp'>2. ¿Quién es el responsable del tratamiento de la Información Personal?</div>
 MARCA DEL E-COMMERCE es el responsable del tratamiento de los datos de los usuarios y de los visitantes de sus Plataformas a través de sus empresas subsidiarias o filiales. Para conocer cuál es la compañía o compañías responsable/s del tratamiento en tu país de residencia, por favor consultá el Anexo correspondiente a ese país.
 <br />
 El responsable del tratamiento es quien decide sobre el tratamiento de los datos personales. Para ello determina los fines o usos para los que se utilizará la información personal y los medios que serán utilizados para ese tratamiento (consultá la Sección 4. “¿Para qué se utilizará la información personal?”).
 <br />
 <br />
 <br />
-<div className='titulo'>3. ¿Qué información recolectamos y tratamos?</div>
+<div className='titulopp'>3. ¿Qué información recolectamos y tratamos?</div>
 MARCA DEL E-COMMERCE recolecta tu información personal para que puedas disfrutar de nuestros servicios, y poder mejorarlos de manera continua.
 <br />
 En algunos casos, la información la facilitás vos mismo, al registrarte o al proveer información cuando utilizás alguno de nuestros servicios. En otros, los recolectamos automáticamente, como cuando navegás por nuestras páginas y utilizás nuestros servicios. También podemos recolectar información acerca de vos de otras fuentes confiables. 
@@ -99,7 +99,7 @@ Información que recopilamos de otras fuentes:
 En algunos casos, esta información podría ser considerada sensible de acuerdo a la legislación aplicable. En estos casos, solicitamos tu consentimiento expreso para procesarlos.
 <br />
 <br />
-<div className='titulo'>4. ¿Qué hacemos con la información personal?</div>
+<div className='titulopp'>4. ¿Qué hacemos con la información personal?</div>
 La recolección y tratamiento de tu información personal nos permite prestarte un excelente servicio para que puedas realizar operaciones de forma rápida y segura y ofrecerte funcionalidades que se adaptan mejor a tus necesidades. Salvo en aquellos casos en los que la normativa aplicable lo prohíba, MARCA DEL E-COMMERCE podrá utilizar tu información personal para las siguientes finalidades:
 <br />
 <br />
@@ -171,7 +171,7 @@ MARCA DEL E-COMMERCE mantendrá tu información personal durante el plazo que se
 <br />
 <br />
 <br />
-<div className='titulo'>5. ¿Cómo compartimos la información personal?</div>
+<div className='titulopp'>5. ¿Cómo compartimos la información personal?</div>
 El resguardo de tu privacidad es muy importante para MARCA DEL E-COMMERCE. Por ello, no vendemos ni comercializamos información que identifique a nuestros usuarios. Tampoco compartimos o transferimos de ningún otro modo tu información personal a terceros, salvo de la manera indicada a continuación:
 <br /><br />
 MARCA DEL E-COMMERCE podrá ceder, transmitir y/o transferir tu información personal a: 
@@ -218,7 +218,7 @@ Finalmente, MARCA DEL E-COMMERCE no será responsable por el uso indebido de tu 
 <br />
 <br />
 <br />
-<div className='titulo'>6. Transferencias internacionales de datos</div>
+<div className='titulopp'>6. Transferencias internacionales de datos</div>
 Los servicios que brinda MARCA DEL E-COMMERCE requieren del soporte de una infraestructura tecnológica, como servidores y servicios en la nube, que pueden ser propios o provistos por terceros.
 <br />
 Parte de esa infraestructura puede estar establecida en un país diferente al tuyo.
@@ -231,14 +231,14 @@ En estos casos, MARCA DEL E-COMMERCE adopta medidas para resguardar tus datos, m
 <br />
 <br />
 <br />
-<div className='titulo'>7. ¿Por cuánto tiempo vamos a almacenar la información personal?</div>
+<div className='titulopp'>7. ¿Por cuánto tiempo vamos a almacenar la información personal?</div>
 Solo almacenaremos la información personal durante el tiempo necesario para cumplir con el propósito para el que se ha recopilado, para cumplir con requisitos reglamentarios o legales, o durante el periodo de prescripción legal de posibles responsabilidades legales o contractuales.
 <br />
 Una vez concluido el lapso, los datos serán eliminados o anonimizados de manera tal que no pueda ser individualizada ninguna persona, según lo permita la normativa de cada país.
 <br />
 <br />
 <br />
-<div className='titulo'>8. Decisiones automatizadas y elaboración de perfiles</div>
+<div className='titulopp'>8. Decisiones automatizadas y elaboración de perfiles</div>
 En MARCA DEL E-COMMERCE estamos comprometidos con brindarte más servicios y mejores, que simplifiquen tu vida.
 <br />
 Para esto recurrimos a herramientas que nos ayudan a ser más eficientes mediante técnicas conocidas como “inteligencia artificial”, “machine learning” o “Big Data” que utilizamos para diversos fines, como prevención del fraude, análisis y predicción de la capacidad económica, personalización de servicios y publicidad, mecanismos de ciberseguridad automatizados o validación de identidad mediante reconocimiento de imágenes.
@@ -250,16 +250,16 @@ Por su parte, la elaboración de perfiles es la evaluación de algunos aspectos 
 Tienes derecho a solicitar que se revise una decisión basada en un tratamiento automatizado de datos desde aquí.
 <br />
 <br /><br />
-<div className='titulo'>9. Confidencialidad de la información personal y Responsabilidad de los Usuarios</div>
+<div className='titulopp'>9. Confidencialidad de la información personal y Responsabilidad de los Usuarios</div>
 Haremos todo lo que esté a nuestro alcance para proteger la privacidad de tu información personal. El usuario será responsable de todos los actos que tengan lugar mediante el uso de su apodo y clave. Si por cualquier razón creyeras que alguien puede conocer tu clave, deberás modificarla ingresando desde el menú de navegación en Mi cuenta ➤ Configuración ➤ Datos personales.
 <br /><br /><br />
-<div className='titulo'>10. Menores de Edad</div>
+<div className='titulopp'>10. Menores de Edad</div>
 Los Servicios de MARCA DEL E-COMMERCE podrán estar disponibles para los menores de edad,  mediante el previo consentimiento del representante legal. Si estás comprendido en esta categoría y no contás con el consentimiento de tu representante, no deberás suministrar su información personal. 
 <br />
 A través de tu representante legal podrás también ejercer tus derechos que se mencionan en la cláusula 13 de esta Declaración. 
 <br /><br />
 <br />
-<div className='titulo'>11. El uso de la información personal por otros Usuarios</div>
+<div className='titulopp'>11. El uso de la información personal por otros Usuarios</div>
 MARCA DEL E-COMMERCE permite a los usuarios un acceso limitado a ciertos datos (como nombre, apodo, correo electrónico, otros datos de contacto e información para facturación y envíos) del resto de los usuarios para facilitar la interacción entre ellos. Bajo ninguna circunstancia otros usuarios podrán comunicar tu información personal a terceros sin tu consentimiento y/o el consentimiento de MARCA DEL E-COMMERCE, según corresponda.
 <br />
 Cuando un usuario vendedor recibe información personal de sus compradores, se constituye en responsable por el tratamiento de esos datos y adquiere las obligaciones que ello implica. Por ello, no puede usar los datos para una finalidad distinta o incompatible a la transacción que originó la recolección. Por esta razón, sólo podrán utilizar la información personal de otros usuarios obtenida en el sitio para:
@@ -274,11 +274,11 @@ MARCA DEL E-COMMERCE no controla, almacena ni tiene acceso a los mensajes y cont
 MARCA DEL E-COMMERCE no es responsable del uso que cualquier usuario u otra persona pudieran hacer de la información publicada en las Plataformas. Los usuarios aceptan que MARCA DEL E-COMMERCE no será responsable de las pérdidas ni daños que se puedan generar como resultado de las negociaciones entre usuarios. En consecuencia, liberás a MARCA DEL E-COMMERCE de todo tipo de responsabilidad en caso de que tengas un conflicto con uno o más usuarios.
 <br />
 <br /><br />
-<div className='titulo'>12. Enlaces a otros sitios web</div>
+<div className='titulopp'>12. Enlaces a otros sitios web</div>
 A través de las plataformas, MARCA DEL E-COMMERCE podría incluir enlaces a sitios web de terceros, lo cual no indica que sean propiedad de, o sean operados por MARCA DEL E-COMMERCE. Se aclara que el procesamiento de la información personal que hagan los terceros responsables de los sitios web antes mencionados no está alcanzado por esta Declaración de Privacidad. Asimismo, reconocés y aceptás que MARCA DEL E-COMMERCE no tiene control sobre tales sitios web y no es ni será responsable por el contenido ni por los servicios prestados por tales sitios, ni por el modo en que éstos procesen tu información personal, por lo que ingresás a dichos sitios web bajo tu propia responsabilidad.
 <br /><br />
 <br />
-<div className='titulo'>13. ¿Cómo podés ejercer tus derechos para controlar tu información personal?</div>
+<div className='titulopp'>13. ¿Cómo podés ejercer tus derechos para controlar tu información personal?</div>
 La normativa aplicable te confiere ciertos derechos sobre tu información personal, los cuales podrás consultar según se especifica en el anexo de cada país, como por ejemplo: (i) acceso; (ii) actualización; (iii) rectificación; (iv) el cese en el envío de publicidades, ofertas y promociones; (v) supresión; (vi) revocación del consentimiento; (vii) confidencialidad y (viii) revisión de decisiones automatizadas. 
 <br />
 Podrás hacer consultas y/o peticiones relativas a tu información personal desde Mis derechos de Privacidad o a través de los datos de contacto provistos en los anexos de cada país incluidos debajo.
@@ -286,22 +286,22 @@ Podrás hacer consultas y/o peticiones relativas a tu información personal desd
 En determinados casos, y siempre que así lo permita o lo imponga la legislación aplicable, mantendremos en nuestros archivos la información personal que nos hayas pedido que suprimamos por un plazo limitado en el tiempo. Una vez cumplido ese plazo, procederemos a suprimir tu información personal.
 <br /><br />
 <br />
-<div className='titulo'>14. Seguridad. Almacenamiento de la información personal</div>
+<div className='titulopp'>14. Seguridad. Almacenamiento de la información personal</div>
 MARCA DEL E-COMMERCE cumple con la normativa y ha adoptado medidas de seguridad siguiendo los estándares de la industria para proteger tu información personal. 
 <br />
 En la medida en que MARCA DEL E-COMMERCE haya cumplido con las normas y adoptado las medidas mencionadas en el apartado anterior, no se hace responsable por interceptaciones ilegales o violaciones de sus sistemas o bases de datos, ni por su utilización por parte de personas no autorizadas. MARCA DEL E-COMMERCE tampoco se hace responsable por la indebida utilización de la información obtenida por esos medios.
 <br /><br />
 <br />
-<div className='titulo'>15. Cambios en la Declaración de Privacidad </div>
+<div className='titulopp'>15. Cambios en la Declaración de Privacidad </div>
 MARCA DEL E-COMMERCE realizará actualizaciones periódicas de la Declaración de Privacidad para reflejar los cambios constantes en los servicios que ofrecemos. Estas actualizaciones reflejarán de manera transparente la forma en que la información personal es tratada. Te notificaremos de estos cambios por nuestros canales habituales, como el correo electrónico o mensajes a través de las aplicaciones. En los casos que corresponda, recabaremos tu consentimiento. 
 <br /><br />
 <br />
-<div className='titulo'>16. Ley Aplicable y Jurisdicción</div>
+<div className='titulopp'>16. Ley Aplicable y Jurisdicción</div>
 La Declaración de Privacidad se regirá por las leyes aplicables conforme se detalla en los anexos de cada país incluidos debajo. Ante cualquier controversia o divergencia relacionada con la interpretación, validez, celebración o cumplimiento de la presente Declaración de Privacidad, se resolverá por los tribunales competentes indicados en dichos anexos de cada país incluidos debajo.
 
       </p>
     </div>
-    <div className='polfooter'><Footer /></div>
+    <Footer />
   </div>;
 };
 

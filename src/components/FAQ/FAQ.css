@@ -26,9 +26,32 @@
   font-family: "Lexend Deca", sans-serif;
 }
 
-.faqfooter {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-inline-start: 0px;
+.fadeinbck14 {
+  -webkit-animation: fadeinbck14 0.7s ease-in both;
+  animation: fadeinbck14 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck14 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck14 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container {
+.headprofile {
   background-color: #00adb5;
-
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
@@ -10,6 +9,7 @@
   padding: 10px;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 0px 5px 1px #00adb5;
 }
 
 .btnprofile {
@@ -19,10 +19,32 @@
   margin-right: 5%;
   color: #eeeeee;
   background-color: transparent;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+}
+.bo7o {
+  margin-left: 45%;
+  margin-right: 35%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 200px;
+  height: 32px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  text-align: center;
 }
 
 .btnprofile:hover {
   color: #ff5722;
+  cursor: pointer;
 }
 
 .btnprofileselected {

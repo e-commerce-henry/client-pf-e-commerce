@@ -4,6 +4,7 @@ import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
+import GoogleAuth from './GoogleAuth/GoogleAuth'
 
 import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
@@ -19,7 +20,7 @@ export function validate(input) {
     if (!input.email) {
       errors.email = 'Error, campo obligatorio';
     } else if (!/\S+@\S+\.\S+/.test(input.email)) {
-      errors.email = 'Username is invalid';
+      errors.email = 'Email inválido';
     }
     if (!input.pwd) {
       errors.pwd = 'Error, campo obligatorio';
@@ -75,7 +76,7 @@ const InicioSeccion = () => {
 
     return (
 
-        <div className="boxIs">
+        <div className="fadeinbck6">
           <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
@@ -104,7 +105,7 @@ const InicioSeccion = () => {
                           onMouseDown={handleMouseDownPassword}
                         >
                           {input.showPassword ? <Visibility /> : <VisibilityOff />}
-                        </IconButton>
+                      </IconButton> 
                       </InputAdornment>
                     } />
                     {errors.pwd && (<p className="danger">{errors.pwd}</p>)}
@@ -112,11 +113,15 @@ const InicioSeccion = () => {
                 
                 <div>
                     <button className="bu" type="submit">Iniciar Sesión</button>
-                    <p className="o">o también puedes </p>
-                    <Link to="/addUsers" type="submit">registrate aquí</Link>
+                    
+                    
                 </div>
             </form>
             <hr/>
+                    <div>
+                    <GoogleAuth/>
+                    </div>
+                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarse aquí</Link></p>
             
         </div> 
        

@@ -52,8 +52,8 @@ export function validate(users) {
 
     if(!users.cp){
       errors.cp = 'El código postal es requerido';
-    } else if (!/^\d{5}$/.test(users.cp)) {
-      errors.cp = 'El código postal es invalido';
+    // } else if (!/^\d{5}$/.test(users.cp)) {
+      // errors.cp = 'El código postal es invalido';
     }
 
     if(!users.city){
@@ -141,7 +141,7 @@ const AddUsers = () => {
   return (
   <div className='formulario'>
     <Head />  
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="fadeinbck7" onSubmit={handleSubmit}>
     <div className="titulo">
       <h1>Regístrese</h1>
     </div>
@@ -175,15 +175,9 @@ const AddUsers = () => {
         </div>
 
         <div className="secc">
-          <div className="label"><label>Dirección:</label></div>
-          <input className={errors.address && 'danger'} type="text" name="address" onChange={handleInputChange} value={users.address} />
-          {errors.address && (<p className="danger">{errors.address}</p>)}
-        </div>
-
-        <div className="secc">
-          <div className="label"><label>Código Postal:</label> </div>
-          <input className={errors.cp && 'danger'} type="number" name="cp" onChange={handleInputChange} value={users.cp} />
-          {errors.cp && (<p className="danger">{errors.cp}</p>)}
+          <div className="label"><label>Provincia:</label> </div>
+          <input className={errors.province && 'danger'} type="text" name="province" onChange={handleInputChange} value={users.province}/>
+          {errors.province && (<p className="danger">{errors.province}</p>)}
         </div>
 
         <div className="secc">
@@ -193,9 +187,15 @@ const AddUsers = () => {
         </div>
 
         <div className="secc">
-          <div className="label"><label>Provincia:</label> </div>
-          <input className={errors.province && 'danger'} type="text" name="province" onChange={handleInputChange} value={users.province}/>
-          {errors.province && (<p className="danger">{errors.province}</p>)}
+          <div className="label"><label>Código Postal:</label> </div>
+          <input className={errors.cp && 'danger'} type="number" name="cp" onChange={handleInputChange} value={users.cp} />
+          {errors.cp && (<p className="danger">{errors.cp}</p>)}
+        </div>
+
+        <div className="secc">
+          <div className="label"><label>Dirección:</label></div>
+          <input className={errors.address && 'danger'} type="text" name="address" onChange={handleInputChange} value={users.address} />
+          {errors.address && (<p className="danger">{errors.address}</p>)}
         </div>
 
         <div className="secc">

@@ -9,6 +9,7 @@ const SobreNosotros = () => {
   return (
   <div>
     <Head />
+    <div className='fadeinbck11'>
     <div><h3 className="title1">SOMOS MARCA DEL E-COMMERCE</h3></div>
     <div className="styleDiv"><p className="styleP">Somos una empresa de comercio electrónico online. 
     Nuestro principal capital invertido fue esfuerzo, trabajo y las ganas de superarnos día a día con la esperanza de crear una estructura sólida que nos permitiera hacer frente a los distintos desafíos que se nos podían presentar a lo largo del tiempo. 
@@ -20,8 +21,8 @@ const SobreNosotros = () => {
     <h3 className="title3">Nuestra Misión</h3>
 
     <p className="styleP2">Ofrecer productos tecnológicos que acompañen y satisfagan las necesidades de nuestros clientes, acompañando los mismos con la mejor atención, asesoramiento y servicio post venta. Brindando además, la posibilidad de que cualquier persona en todo el mundo pueda adquirir nuestros productos desde la comodidad de su hogar.</p>
-  
-    <div className='nosfooter'><Footer /></div>
+    </div>
+    <Footer />
   </div>
   )
 }
