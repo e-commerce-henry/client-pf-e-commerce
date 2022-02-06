@@ -83,13 +83,6 @@ export default function CompleteInfoGoogle(){
                             disabled
                         />
                         <TextField
-                            label='Role:'
-                            name='role'
-                            className={styles.textfield}
-                            value={userToEdit.role}
-                            onChange={onChangeHandler}
-                        />
-                        <TextField
                             label='Nombre(s): '
                             name='name'
                             className={styles.textfield}
