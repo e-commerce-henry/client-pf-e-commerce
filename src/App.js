@@ -19,6 +19,7 @@ import CompraRealizada from "./components/CompraRealizada/CompraRealizada";
 import EditUser from "./components/EditUsers/EditUser";
 import Favoritos from "./components/Favs/Favoritos";
 import HistoryDetailCards from "./components/Profile/History/HistoryDetail/HistoryDetailCards";
+import CompraFallida from "./components/CompraFallida/CompraFallida";
 
 function App() {
 	return (
@@ -46,6 +47,7 @@ function App() {
 				<Route path="/addUsers" element={<AddUsers />} />
 				<Route path="/editUser" element={<EditUser />} />
 				<Route path="/realizado" element={<CompraRealizada />} />
+				<Route path="/rechazada" element={<CompraFallida />} />
 			</Routes>
 		</>
 	);
