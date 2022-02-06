@@ -5,6 +5,8 @@ import Head from "../../../Head/Head";
 import Footer from "../../../Footer/Footer";
 import {useNavigate} from 'react-router-dom'
 import HistoryDetailCard from "./HistoryDetailCard";
+import Style from "./HistoryDetailCard.module.css"
+
 
 export default function HistoryDetailCards(){
     const productos = useSelector(state=> state.products)
@@ -31,11 +33,15 @@ export default function HistoryDetailCards(){
     return(
         <>
             <Head />
-                <div>
-                    <button onClick={()=> regresar()}>Regresar</button>
-                </div>
-                <div>
-
+                
+                <div className={Style.uppp}>
+                    <div className={Style.iii}>
+                        <div className={Style.ii1}>Producto</div>
+                        <div className={Style.ii2}>Marca</div>
+                        <div className={Style.ii3}>Cantidad</div>
+                        <div className={Style.ii4}>Precio</div>
+                        <div className={Style.ii5}>Subtotal</div>
+                    </div>
                     <div>
                         {
                             detalle.map(e => {
@@ -51,8 +57,11 @@ export default function HistoryDetailCards(){
                             })
                         }
                     </div>
-
+                    <div className={Style.btnult}>
+                        <button className={Style.backk} onClick={()=> regresar()}>Regresar</button>
+                    </div>
                 </div>
+                
             <Footer />
         </>
     )
