@@ -335,6 +335,7 @@ export function getOrderHistory(userId) {
 }
 
 export function editUser(userToEdit) {
+	console.log(userToEdit);
 	return async function (dispatch) {
 		const edited = (
 			await axios.put(

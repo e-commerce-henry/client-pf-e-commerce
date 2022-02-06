@@ -1,13 +1,14 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom'
-import Style from './HistoryCard.module.css'
+import Style from './HistoryCard.module.css';
 
 export default function HistoryCard({idOrder, status, total, address, shipping, fecha, userId, detail}){
     const dispatch = useDispatch()
     const productos = useSelector(state=> state.products)
     const shoppingCart = useSelector((state) => state.history);
     const navigate = useNavigate();
+
 
     function detalleOrden(){
         let detalle = []
