@@ -15,7 +15,6 @@ export default function GoogleAuth(){
     const handleSuccess = async (googleResponse)=>{
         
         const res = (await axios.post('http://localhost:3001/auth/googleAuth', {token:googleResponse.tokenId})).data;
-        console.log(res);
         await dispatch(detalleUsers(res.id));
         await dispatch({ type: "ADD_INICIO_USER", payload: res.id})
 

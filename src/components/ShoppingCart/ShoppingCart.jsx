@@ -7,10 +7,16 @@ import {
   createOrder,
   deleteCartItem,
   resetShoppingCart,
-  getSaleBanner
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
+import axios from "axios";
 import Vacío from "../Vacío/Vacío";
+
+
+const FORM_ID = 'payment-form';
+
+
+
 
 export default function ShoppingCart() {
   const shoppingCart = useSelector((state) => state.cart);
@@ -19,10 +25,93 @@ export default function ShoppingCart() {
   const userInfo = useSelector((state) => state.userDetail);
   const ofertas = useSelector((state) => state.saleBanner);
   const dispatch = useDispatch();
+  const orderId = useSelector((state)=> state.orderCreated)
+  const [preferenceId, setPreferenceId] = useState(null);
+  
+  
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
   }, [dispatch]);
+
+
+  useEffect(async ()=>{
+    if(orderId){
+      const response = (await axios.post(`http://localhost:3001/mercadoPago/${orderId}`)).data
+      console.log(response)
+      setPreferenceId(response)
+    }
+  },[orderId])
+
+  //sdk v2
+
+  useEffect(() => {
+    if (preferenceId) {
+      const redirectToMercadoPago = (preferenceId) => {
+        const loadScript = (url, callback) => {
+          let script = document.createElement('script');
+          script.type = 'text/javascript';
+      
+          if (script.readyState) {
+            script.onreadystatechange = () => {
+              if (
+                script.readyState === 'loaded' ||
+                script.readyState === 'complete'
+              ) {
+                script.onreadystatechange = null;
+                callback();
+              }
+            };
+          } else {
+            script.onload = () => callback();
+          }
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+  
+        };
+        
+      
+        const handleScriptLoad = () => {
+          const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
+            locale: 'es-AR'
+          });
+          mp.checkout({
+            preference: {
+              id: preferenceId
+            },
+            autoOpen: true
+          });
+        };
+      
+        loadScript('https://sdk.mercadopago.com/js/v2', handleScriptLoad);
+      };
+      redirectToMercadoPago(preferenceId);
+    }
+  }, [preferenceId]);
+
+
+
+
+
+  //sdk v1
+
+  // useEffect(()=>{
+  //   if(preferenceId){
+  //     const script = document.createElement('script');
+  //     const attr_data_preference = document.createAttribute('data-preference-id')
+  //     attr_data_preference.value = preferenceId
+  //     script.type = 'text/javascript';
+  //     script.src = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
+  //     script.setAttributeNode(attr_data_preference)
+
+  //     console.log(script)
+  //     document.getElementById(FORM_ID).appendChild(script)
+      
+  //     return ()=>{
+  //       document.getElementById(FORM_ID).removeChild(script)
+  //     }
+  //   }
+  // }, [preferenceId])
 
 
   function searchAndComplementInfo(id) {
@@ -70,12 +159,15 @@ export default function ShoppingCart() {
 
   function creOrder() {
     let products = shoppingCart[0].cartItems;
+    console.log(products)
     let addressId = userInfo.clientAddresses[0].id;
     let total = calculateTotal();
     dispatch(createOrder(userId, { products, addressId, total }));
     alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
     resetCartShopping();
   }
+
+  
 
   return (
     <>
@@ -110,6 +202,7 @@ export default function ShoppingCart() {
       </div>
   
 
+
       {shoppingCart[0]
             ? shoppingCart[0].cartItems.length === 0 ? null :
             <div className={Style.box}>
@@ -121,6 +214,12 @@ export default function ShoppingCart() {
                 </button>
               </div>
             </div> : null }
+             {/* testing MP */}
+          <form id={FORM_ID} ></form>
+          {/* <div>
+              <div id='mp' className="cho-container"></div>
+          </div> */}
+
     </>
   );
 }
