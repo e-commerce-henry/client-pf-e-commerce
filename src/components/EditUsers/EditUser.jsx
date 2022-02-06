@@ -89,7 +89,7 @@ const EditUser = () =>{
    
     return(
         <>
-        <button className={Style.crear} value={user.id} onClick={onClick}>Editar Usuario</button>
+        <button value={user.id} onClick={onClick}>Edit Usuario</button>
         {
             userToEdit 
                 ? <Modal
@@ -100,14 +100,14 @@ const EditUser = () =>{
                         <div align='center' >
                             <h2>Edit User</h2>
                         </div>
-                        <TextField
+                        {/* <TextField
                             label='N° Id:'
                             name='id'
                             className={styles.textfield}
                             value={userToEdit.id}
                             // onChange={handleOnChange}
                             disabled
-                        />
+                        /> */}
                         <br/>
                         <TextField
                             label='Name: '
@@ -182,8 +182,8 @@ const EditUser = () =>{
                         />
                         
                         <div align='rigth' >
-                            <button type="submit" >Update</button>
-                            <button onClick={()=>setShowModal(!showModal)} >Cancel</button>
+                            <button type="submit" className={Style.crear} >Update</button>
+                            <button onClick={()=>setShowModal(!showModal)}className={Style.crear}  >Cancel</button>
                         </div>
                     </form>
                 </Modal>

@@ -36,8 +36,8 @@ export default function SaleBanner({discount, productId, name}) {
         if(auth){
             await dispatch(addProductBanneraCart({productId, userId , price, name, img}))
             swal({
-                title: `Se ha agregado al carrito: ${name}`,
-                icon: "success",
+                title: "Se ha agregado al carrito:",
+                text: `${name}`,                icon: "success",
                 button: "Ok"
             })
         }else {
@@ -63,42 +63,34 @@ export default function SaleBanner({discount, productId, name}) {
                     return (
                         <div className={style.card} >
                             <div className={style.image}>
-                                <img
-                                    src={e.product.img}  alt="prueba"
-                                />
-                                <label>
-                                    {e.product.brand}
-                                    <div className={style.name_precio} >{e.name}</div>
-                                </label>
+                                <img src={e.product.img} alt="prueba" />
                             </div>
-                            <div>
-                                <label className={style.precios} >
-                                    Antes:
-                                    <div>
-                                    $ {e.product.price}
-                                    </div>
-                                </label>
-                                <br/>
-                                <div className={style.oferta_botton} >
-                                    <label className={style.oferta_title}>
-
-                                        Oferta con {e.discount}% de descuento
-                                    </label>
-                                    <br/>
-                                    <label className={style.precios_oferta}>
-                                        Ahora:
-                                        <div>
-                                           $ {Math.round(e.product.price-((e.product.price * e.discount) /100))}
-                                        
-                                        </div>
-                                    </label>
+                            <div className={style.nombres}>
+                                {e.product.brand}
+                                <div className={style.name_precio} >{e.name}</div>
+                            </div>
+                            <div className={style.precios} >
+                                Antes: $ {Number(Math.ceil(e.product.price)).toLocaleString()}
+                            </div>
+                            <div className={style.oferta_botton} >
+                                <div className={style.oferta_title}>
+                                    Oferta con {e.discount}% de descuento
                                 </div>
-                             
-                                <button className={style.botton_compras} onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)), e.product.img, e.name)}>
-                                    Comprar Ahora  </button>
-                                 
+                                <br/>
+                                <div className={style.precios_oferta}>
+                                    Ahora:
+                                    <div>
+                                        $ {Number(Math.ceil(Math.round(e.product.price-((e.product.price * e.discount) /100)))).toLocaleString()}
+                                    </div>
+                                </div>
                             </div>
+                            <div className={style.btngrid}>
+                                <button className={style.botton_compras} onClick={() => addCart(e.product.id, Math.round(e.product.price-((e.product.price * e.discount) /100)), e.product.img, e.name)}>
+                                    Comprar ahora
+                                </button>
+                            </div>     
                         </div>
+                        
                     
                     )
                 })

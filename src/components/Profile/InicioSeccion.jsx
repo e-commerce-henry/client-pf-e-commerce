@@ -105,7 +105,7 @@ const InicioSeccion = () => {
                           onMouseDown={handleMouseDownPassword}
                         >
                           {input.showPassword ? <Visibility /> : <VisibilityOff />}
-                        </IconButton>
+                      </IconButton> 
                       </InputAdornment>
                     } />
                     {errors.pwd && (<p className="danger">{errors.pwd}</p>)}

@@ -36,6 +36,7 @@
 }
 
 .aaa {
+  margin-top: 2%;
   margin-left: 20%;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
@@ -44,15 +45,41 @@
   color: #303841;
 }
 
-.bbb {
+.bbb{
+
+  margin-top: 5%;
   margin-left: 20%;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
   font-size: 20px;
-  align-self: center;
-  color: #303841;
-}
+  align-self: center;}
+
+.boton{
+  display: flex;
+  margin-left: 80%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border: none;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 40;
+   width: 160px;
+  -moz-text-decoration-color: rgb(253, 253, 253);
+   /*height: 42px; */
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  margin-top: 20px;
+} 
 
 .crear {
-  border: none;
+  display: flex;
+   border: none;
   outline: none;
   margin-left: 5px;
   font-size: 15px;
