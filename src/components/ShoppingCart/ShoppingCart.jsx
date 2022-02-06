@@ -72,7 +72,7 @@ export default function ShoppingCart() {
         
       
         const handleScriptLoad = () => {
-          const mp = new window.MercadoPago('APP_USR-e5bd5ecb-eb29-4f00-930b-3981e0b77b5c', {
+          const mp = new window.MercadoPago('APP_USR-642eafee-0eab-415f-ac25-742c4a58252b', {
             locale: 'es-AR'
           });
           mp.checkout({
@@ -146,16 +146,16 @@ export default function ShoppingCart() {
   }
   let totalCant = shoppingCart[0] ? nCant() : null;
 
-  //{ productId, userId } deleteCartItem
-  async function resetCartShopping() {
-    shoppingCart[0].cartItems.map((e) => {
-      let productId = e.productId;
+  //reseteo el carro desde el back si la compra fue exitosa
+  // async function resetCartShopping() {
+  //   shoppingCart[0].cartItems.map((e) => {
+  //     let productId = e.productId;
 
-      dispatch(deleteCartItem({ userId, productId }));
-    });
-    await dispatch(getShoppingCart(userId))
-    await dispatch(resetShoppingCart())
-  }
+  //     dispatch(deleteCartItem({ userId, productId }));
+  //   });
+  //   await dispatch(getShoppingCart(userId))
+  //   await dispatch(resetShoppingCart())
+  // }
 
   function creOrder() {
     let products = shoppingCart[0].cartItems;
@@ -163,8 +163,8 @@ export default function ShoppingCart() {
     let addressId = userInfo.clientAddresses[0].id;
     let total = calculateTotal();
     dispatch(createOrder(userId, { products, addressId, total }));
-    alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
-    resetCartShopping();
+    // alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
+    // resetCartShopping();
   }
 
   
