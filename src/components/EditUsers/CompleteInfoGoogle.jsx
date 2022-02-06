@@ -45,6 +45,7 @@ export default function CompleteInfoGoogle(){
             name,
             surname,
             email,
+            addressId : user.clientAddresses[0].id,
         })
     }
 
@@ -55,11 +56,11 @@ export default function CompleteInfoGoogle(){
         })
     }
 
-    const editUserHandler = async (e)=>{
+    const editUserHandler = (e)=>{
         e.preventDefault();
         dispatch(editUser(userToEdit))
         setShowModal(!showModal)
-        await dispatch(detalleUsers(idUsers))
+        dispatch(detalleUsers(idUsers))
     }
 
     return(
@@ -80,6 +81,13 @@ export default function CompleteInfoGoogle(){
                             value={userToEdit.id}
                             // onChange={handleOnChange}
                             disabled
+                        />
+                        <TextField
+                            label='Role:'
+                            name='role'
+                            className={styles.textfield}
+                            value={userToEdit.role}
+                            onChange={onChangeHandler}
                         />
                         <TextField
                             label='Nombre(s): '
