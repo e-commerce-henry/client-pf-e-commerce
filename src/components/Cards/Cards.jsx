@@ -100,6 +100,7 @@ function Cards(){
                     currentProducts.map(e =>
                 
                     (
+                        
                         valProduct(e)
                     
                     ))
@@ -121,7 +122,7 @@ function Cards(){
                 <option hidden>Marcas</option>
                 <option value='seeall'>Ver todo</option> 
                 {
-                    brandsArray.map( p =>  <option value={p}>{p}</option>)
+                    brandsArray.map( p =>  <option value={p} >{p}</option>)
                 }  
             </select>
             <select className={Style.dropdownmenuf1} onChange={e => handleFilterCategory(e)}>
