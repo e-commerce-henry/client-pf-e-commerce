@@ -58,7 +58,7 @@ export default function PersonalInfo(){
                     </div>
                 </div>
           <div className={Style.crear}>
-            < EditUser />
+          < EditUser />
             <div>
                  {
                     userAuth?
