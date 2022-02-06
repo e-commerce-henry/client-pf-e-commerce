@@ -11,7 +11,7 @@ import {
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
 import Vacío from "../Vacío/Vacío";
-
+import CompleteInfoGoogle from "../EditUsers/CompleteInfoGoogle";
 
 const FORM_ID = 'payment-form';
 
@@ -209,9 +209,18 @@ export default function ShoppingCart() {
               <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
               <div className={Style.parrafo1}>
                 $ {Number(Math.ceil(total)).toLocaleString()} <br />
-                <button className={Style.boo} onClick={(e) => creOrder()}>
-                  Comprar ahora
-                </button>
+
+
+                {
+                  userInfo.clientAddresses 
+                  && userInfo.clientAddresses[0].address? 
+                  <button className={Style.boo} onClick={(e) => creOrder()}>Comprar ahora</button>
+                  : 
+                  <CompleteInfoGoogle/>
+                
+                }
+
+
               </div>
             </div> : null }
              {/* testing MP */}
