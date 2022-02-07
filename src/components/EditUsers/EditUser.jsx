@@ -8,25 +8,43 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useState } from "react";
 import Style from'../Profile/PersonalInfo.module.css';
 
+
 //Material-ui styles
 const useStyles = makeStyles((theme)=>({
     modal:{
         position:'absolute',
         display: 'flex',
         flexDirection: 'column',
-        width:700,
-        height:800,
+        justifyContent: 'center',
+        width:'70%',
+        height:'90%',
         backgroundColor:'white',
-        border:'2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2,4,3),
+        border:'none',
+        boxShadow: '0px 0px 5px 1px #00adb5',
+        padding: theme.spacing(0,4,0),
         top:'50%',
         left:'50%',
-        transform:'translate(-50%,-50%)'
+        transform:'translate(-50%,-50%)',
+        borderRadius: '20px',
+        color:'#00adb5',
+        fontSize:'18px',
+        fontFamily:'Lexend Deca'
     },
     textfield:{
-        width:'80%',
+        width:'90%',
+    },
+    floatingLabelFocusStyle: {
+        color: "#00adb5",
+        fontFamily:'Lexend Deca',
+        fontSize:'17px',
+    },
+    floatingValueFocusStyle: {
+        color: "#303841",
+        fontFamily:'Lexend Deca',
+        fontSize:'17px',
+        border:'red'
     }
+
 }))
 
 
@@ -98,7 +116,7 @@ const EditUser = () =>{
                 >
                     <form className={styles.modal} onSubmit={editUserHandler} >
                         <div align='center' >
-                            <h2>Editar Usuario</h2>
+                            <h3>Editar Usuario</h3>
                         </div>
                         {/* <TextField
                             label='N° Id:'
@@ -108,21 +126,33 @@ const EditUser = () =>{
                             // onChange={handleOnChange}
                             disabled
                         /> */}
-                        <br/>
+                        {/* <br/> */}
                         <TextField
-                            label='Name: '
+                            label='Nombre: '
                             name='name'
                             className={styles.textfield}
                             value={userToEdit.name}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Surname:'
+                            label='Apellido:'
                             name='surname'
                             className={styles.textfield}
                             value={userToEdit.surname}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
@@ -131,59 +161,95 @@ const EditUser = () =>{
                             className={styles.textfield}
                             value={userToEdit.email}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
-                        <br/>
+                        {/* <br/>
                         <TextField
                             label='Role:'
                             name='role'
                             className={styles.textfield}
                             value={userToEdit.role}
                             onChange={onChangeHandler}
-                        />
+                        /> */}
                         <br/>
                         <TextField
-                            label='Address:'
+                            label='Dirección:'
                             name='address'
                             className={styles.textfield}
                             value={userToEdit.address}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='City:'
+                            label='Ciudad:'
                             name='city'
                             className={styles.textfield}
                             value={userToEdit.city}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Province:'
+                            label='Provincia:'
                             name='province'
                             className={styles.textfield}
                             value={userToEdit.province}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Postal Code:'
+                            label='Código postal:'
                             name='cp'
                             className={styles.textfield}
                             value={userToEdit.postalCode}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Floor:'
+                            label='Piso: (opcional)'
                             name='floor'
                             className={styles.textfield}
                             value={userToEdit.floor}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         
-                        <div align='rigth' >
-                            <button type="submit" className={Style.crear} >Update</button>
-                            <button onClick={()=>setShowModal(!showModal)}className={Style.crear}  >Cancel</button>
+                        <div className={Style.crear}>
+                            <button type="submit" className={Style.btnedit} >Aceptar</button>
+                            <button onClick={()=>setShowModal(!showModal)}className={Style.btnedit}  >Cancelar</button>
                         </div>
                     </form>
                 </Modal>

@@ -11,6 +11,9 @@ import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
+import {useNavigate} from 'react-router-dom'
+import swal from 'sweetalert'
+
 
 
 
@@ -33,6 +36,7 @@ export function validate(input) {
 const InicioSeccion = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [input, setInput] = useState({
     email: '',
@@ -64,7 +68,12 @@ const InicioSeccion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate({...input, [e.target.name]: e.target.value}))
-    
+    navigate(`/`);
+    swal({
+        title: `Hola de nuevo`,
+        text: "Qué gusto verte!" ,
+        icon: "success"
+    })
     dispatch(addInicioUser(input));
     setInput ({
         email: '',
@@ -112,9 +121,7 @@ const InicioSeccion = () => {
                 </div>
                 
                 <div>
-                    <button className="bu" type="submit">Iniciar Sesión</button>
-                    
-                    
+                    <button className="bu" type="submit">Iniciar Sesión</button>  
                 </div>
             </form>
             <hr/>
