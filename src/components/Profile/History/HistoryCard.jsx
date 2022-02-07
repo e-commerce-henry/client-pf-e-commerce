@@ -30,12 +30,12 @@ export default function HistoryCard({idOrder, status, total, address, shipping, 
                     <div className={Style.v3}>{status.toUpperCase()}</div>
                     <div className={Style.v4}>{shipping.toUpperCase()}</div>
                     <div className={Style.v5}>$ {Number(Math.ceil(total)).toLocaleString()}</div>
+                    <div className={Style.footer}>
+                        <button onClick={e => detalleOrden()} className= {Style.bo8o}>Ver detalles de la compra</button>
+                    </div>
                 </div>
 
                 
-                <div className={Style.footer}>
-                    <button onClick={e => detalleOrden()} className= {Style.bo8o}>Ver detalles de la compra</button>
-                </div>
             </div>
         </>
     )
