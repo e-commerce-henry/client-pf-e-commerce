@@ -360,8 +360,6 @@ export function detalleUsers (id) {
     }
 }
 
-
-
 export function logout() {
 	return async function (dispatch) {
 		dispatch({

@@ -12,7 +12,7 @@ import NotFound from "./NotFound";
 function valProduct(e){
     if(e.id){
         return(
-            <div className={Style.eachcard}>
+            <div className={Style.eachcard} key={e.id}>
             <Card 
             key = {e.id}
             productId = {e.id}
@@ -116,24 +116,24 @@ function Cards(){
         
         <div className={Style.fadeinbck4}>
             <select className={Style.dropdownmenuf1} onChange={(e) => handleSortP(e)}>
-                <option hidden>Precio</option>
-                <option value="price_asc">Menor a Mayor</option>
-                <option value="price_desc">Mayor a Menor</option>
+                <option hidden key="Precio">Precio</option>
+                <option value="price_asc" key="Menor a Mayor">Menor a Mayor</option>
+                <option value="price_desc" key="Mayor a Menor">Mayor a Menor</option>
             </select>
             <select className={Style.dropdownmenuf1} onChange={(e) => handleSortN(e)}>
-                <option hidden>Nombre</option>
-                <option value="name_asc"> A 🡪 Z</option>
-                <option value="name_desc">Z 🡪 A</option>
+                <option hidden key="">Nombre</option>
+                <option value="name_asc" key="az"> A 🡪 Z</option>
+                <option value="name_desc" key="za">Z 🡪 A</option>
             </select>
             <select className={Style.dropdownmenuf1} onChange={e => handleFilterBrand(e)}>
-                <option hidden>Marcas</option>
-                <option value='seeall'>Ver todo</option> 
+                <option hidden key="Marcas">Marcas</option>
+                <option value='seeall' key="Ver todo">Ver todo</option> 
                 {
-                    brandsArray.map( p =>  <option value={p} >{p}</option>)
+                    brandsArray.map( p =>  <option value={p} key={p}>{p}</option>)
                 }  
             </select>
             <select className={Style.dropdownmenuf1} onChange={e => handleFilterCategory(e)}>
-                <option hidden>Categorías</option>
+                <option hidden key="Categorias">Categorías</option>
                 <option value='none'>Ver todo</option> 
                 {
                     categories.map( cat => <option value={cat.name} key={cat.id}>{`${cat.name}`}</option> )

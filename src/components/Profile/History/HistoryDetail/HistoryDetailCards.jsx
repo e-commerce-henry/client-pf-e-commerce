@@ -47,6 +47,7 @@ export default function HistoryDetailCards(){
                             detalle.map(e => {
                                 return(
                                     <HistoryDetailCard
+                                        key={e.productId}
                                         id = {e.orderId}
                                         quantity = {e.quantity}
                                         price = {e.price}

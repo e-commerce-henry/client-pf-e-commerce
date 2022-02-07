@@ -23,6 +23,7 @@ export default function HistoryCards(){
             ordenes.map(e => {
                 return(
                     <HistoryCard
+                    key={e.id}
                         idOrder = {e.id}
                         status = {e.status}
                         total = {e.total}
