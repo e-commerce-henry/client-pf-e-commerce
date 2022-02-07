@@ -121,7 +121,7 @@ const InicioSeccion = () => {
                 </div>
                 
                 <div>
-                    <button className="bu" type="submit">Iniciar Sesión</button>  
+                    <button className="bu" type="submit">Iniciar sesión</button>  
                 </div>
             </form>
             <hr/>
