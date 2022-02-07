@@ -110,7 +110,7 @@ const EditUser = () =>{
                         /> */}
                         <br/>
                         <TextField
-                            label='Name: '
+                            label='Nombre: '
                             name='name'
                             className={styles.textfield}
                             value={userToEdit.name}
@@ -118,7 +118,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Surname:'
+                            label='Apellido:'
                             name='surname'
                             className={styles.textfield}
                             value={userToEdit.surname}
@@ -126,7 +126,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Email:'
+                            label='Correo Electrónico:'
                             name='email'
                             className={styles.textfield}
                             value={userToEdit.email}
@@ -134,15 +134,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Role:'
-                            name='role'
-                            className={styles.textfield}
-                            value={userToEdit.role}
-                            onChange={onChangeHandler}
-                        />
-                        <br/>
-                        <TextField
-                            label='Address:'
+                            label='Dirección:'
                             name='address'
                             className={styles.textfield}
                             value={userToEdit.address}
@@ -150,7 +142,15 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='City:'
+                            label='Piso:'
+                            name='floor'
+                            className={styles.textfield}
+                            value={userToEdit.floor}
+                            onChange={onChangeHandler}
+                        />
+                        <br/>
+                        <TextField
+                            label='Ciudad:'
                             name='city'
                             className={styles.textfield}
                             value={userToEdit.city}
@@ -158,7 +158,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Province:'
+                            label='Provincia:'
                             name='province'
                             className={styles.textfield}
                             value={userToEdit.province}
@@ -166,20 +166,13 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Postal Code:'
+                            label='Codigo Postal:'
                             name='cp'
                             className={styles.textfield}
                             value={userToEdit.postalCode}
                             onChange={onChangeHandler}
                         />
-                        <br/>
-                        <TextField
-                            label='Floor:'
-                            name='floor'
-                            className={styles.textfield}
-                            value={userToEdit.floor}
-                            onChange={onChangeHandler}
-                        />
+                        
                         
                         <div align='rigth' >
                             <button type="submit" className={Style.crear} >Update</button>
