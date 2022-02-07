@@ -89,7 +89,7 @@ const EditUser = () =>{
    
     return(
         <>
-        <button value={user.id} onClick={onClick}>Edit Usuario</button>
+        <button className="bu" value={user.id} onClick={onClick}>Editar Usuario</button>
         {
             userToEdit 
                 ? <Modal
@@ -98,7 +98,7 @@ const EditUser = () =>{
                 >
                     <form className={styles.modal} onSubmit={editUserHandler} >
                         <div align='center' >
-                            <h2>Edit User</h2>
+                            <h2>Editar Usuario</h2>
                         </div>
                         {/* <TextField
                             label='N° Id:'
