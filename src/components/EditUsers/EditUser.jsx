@@ -156,7 +156,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Email:'
+                            label='Correo Electrónico:'
                             name='email'
                             className={styles.textfield}
                             value={userToEdit.email}
@@ -170,18 +170,18 @@ const EditUser = () =>{
                         />
                         {/* <br/>
                         <TextField
-                            label='Role:'
-                            name='role'
-                            className={styles.textfield}
-                            value={userToEdit.role}
-                            onChange={onChangeHandler}
-                        /> */}
-                        <br/>
-                        <TextField
                             label='Dirección:'
                             name='address'
                             className={styles.textfield}
                             value={userToEdit.address}
+                            onChange={onChangeHandler}
+                        /> */}
+                        <br/>
+                        <TextFiel
+                            label='Dirección:'
+                            name='address'
+                            className={styles.textfield}
+                            value={userToEdit.floor}
                             onChange={onChangeHandler}
                             InputLabelProps={{
                                 className: styles.floatingLabelFocusStyle,
