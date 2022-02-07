@@ -1,8 +1,5 @@
 .container {
-  /* position: absolute;
-  bottom: 0; */
   box-shadow: 0px 0px 5px 1px #303841;
-
   padding-top: 4px;
   height: 8%;
   background-color: #303841;
@@ -26,9 +23,6 @@
 }
 
 .copy {
-  /* position: fixed;
-  bottom: 0; */
-  /* padding-top: 2px; */
   background-color: #303841;
   display: flex;
   justify-content: center;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Modal, TextField} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { useState } from "react";
-
+import Style from "../ShoppingCart/ShoppingCart.module.css";
 import { editUser, detalleUsers } from "../../redux/actions";
 
 //Material-ui styles
@@ -65,7 +65,7 @@ export default function CompleteInfoGoogle(){
 
     return(
         <>
-            <button value={user.id} onClick={onClick}>
+            <button className={Style.boo} value={user.id} onClick={onClick}>
                 Completar informacion de entrega  
             </button>
             {
