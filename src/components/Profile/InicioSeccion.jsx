@@ -94,6 +94,7 @@ const InicioSeccion = () => {
                    
 
                    <label>Correo Electrónico: </label>
+                   <br />
                     <input id='mail' className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
 
                
@@ -101,7 +102,7 @@ const InicioSeccion = () => {
 
                 <div className="stylo">
                     <label>Password: </label>
-                    
+                    <br />
                     <Input className = {errors.pwd && 'danger'} 
                     type={input.showPassword ? "text" : "password"} 
                     name="pwd" 
