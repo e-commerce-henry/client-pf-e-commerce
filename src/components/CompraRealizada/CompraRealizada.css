@@ -1,0 +1,68 @@
+.todoesto {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+}
+.fadeinbck31 {
+  -webkit-animation: fadeinbck31 0.7s ease-in both;
+  animation: fadeinbck31 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck31 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck31 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.felicitaciones {
+  font-weight: 800;
+  font-size: 38px;
+  color: rgb(63, 163, 63);
+}
+
+.procesando {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #303841;
+}
+
+.check {
+  color: rgb(63, 163, 63);
+}
+.sorry {
+  font-weight: 800;
+  font-size: 38px;
+  color: rgb(175, 38, 38);
+}
+.fail {
+  color: rgb(175, 38, 38);
+}
+
+.redirigido {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+  color: #303841;
+}
