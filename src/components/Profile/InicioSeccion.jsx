@@ -61,11 +61,12 @@ const InicioSeccion = () => {
     }));
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validate({...input, [e.target.name]: e.target.value}))
     
     dispatch(addInicioUser(input));
+    
     setInput ({
         email: '',
         pwd: ''

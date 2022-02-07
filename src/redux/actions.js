@@ -27,11 +27,10 @@ export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const EDIT_USER = "EDIT_USER";
 
-export const EDIT_CART= "EDIT_CART";
+export const EDIT_CART = "EDIT_CART";
 export const LOG_OUT = "LOG_OUT";
-export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
+export const ADD_PRODUCT_BANNER_A_CART = "ADD_PRODUCT_BANNER_A_CART";
 export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
-
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -130,9 +129,9 @@ export const addInicioUser = ({ email, pwd }) => {
 				{ withCredentials: true }
 			)
 			.then((res) => {
-				console.log(res);
-				res.data.user
-					? dispatch({ type: ADD_INICIO_USER, payload: res.data.user })
+				console.log(res.data);
+				return res.data.user
+					? dispatch({ type: ADD_INICIO_USER, payload: res.data })
 					: dispatch({ type: ADD_INICIO_USER, payload: false });
 			});
 	};
@@ -347,19 +346,18 @@ export function editUser(userToEdit) {
 	};
 }
 
-
-
-export function detalleUsers (id) {
-    return async (dispatch) => {
-        let response = await axios.get(`http://localhost:3001/users/${id}`);
-        dispatch({
-            type: DETALLE_USERS,
-            payload: response.data
-        });
-    }
+export function detalleUsers(id) {
+	return async (dispatch) => {
+		let response = await axios.get(`http://localhost:3001/users/${id}`);
+		dispatch({
+			type: DETALLE_USERS,
+			payload: response.data,
+		});
+	};
 }
-
-
+export function authUser(loggedInUser) {
+	return { type: "AUTH_USER", payload: loggedInUser };
+}
 
 export function logout() {
 	return async function (dispatch) {
@@ -367,8 +365,4 @@ export function logout() {
 			type: LOG_OUT,
 		});
 	};
-
-
 }
-
-
