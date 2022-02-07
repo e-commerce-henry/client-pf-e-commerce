@@ -9,6 +9,7 @@ function Footer(){
                 <div><Link to="/sobreNosotros">Sobre nosotros</Link></div>
                 <div><Link to="/terminosYcondiciones">Términos y condiciones</Link></div>
                 <div><Link to="/politicaDePrivacidad">Política de privacidad</Link></div>
+                <div><Link to="/contactanos">Contactános</Link></div>
                 <div className={Style.icons}>
                     <a href="https://api.whatsapp.com/send?phone=+543415994708" target="_blank" rel="noreferrer noopener" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">
