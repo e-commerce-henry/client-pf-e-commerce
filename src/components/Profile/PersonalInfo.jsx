@@ -62,7 +62,7 @@ export default function PersonalInfo(){
             <div>
                  {
                     userAuth?
-                    <button className={Style.boton} type='button' value='history' onClick={(e) =>HandleClick(e)}>Ver tu historial de Compras</button>: null
+                    <button className="bu" type='button' value='history' onClick={(e) =>HandleClick(e)}>Ver tu historial de Compras</button>: null
                 }
                  </div>
               </div>

@@ -40,7 +40,7 @@
   margin-left: 20%;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   align-self: center;
   color: #303841;
 }
@@ -64,7 +64,7 @@
   font-size: 15px;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 40;
-   width: 160px;
+   width: 412px;
   -moz-text-decoration-color: rgb(253, 253, 253);
    /*height: 42px; */
   border-width: 1px;
@@ -90,10 +90,7 @@
   border-width: 1px;
   color: rgba(240, 240, 240, 1);
   border-radius: 6px;
-  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
-  text-shadow: inset 0px 1px 0px #303841;
-  background: #303841;
-  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+
   margin-top: 20px;
 }
 
