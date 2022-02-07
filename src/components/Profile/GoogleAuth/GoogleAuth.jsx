@@ -29,7 +29,7 @@ export default function GoogleAuth(){
 
     const handleFailure = (response) =>{
         swal({
-            title: 'Login Error',
+            title: 'Error al acceder',
             text: `${response}`,
             icon: 'error'
         })
@@ -39,7 +39,7 @@ export default function GoogleAuth(){
         <>
         <GoogleLogin
             clientId='717748977655-p9dkof4v46h3bragngk2510fjovqbkrd.apps.googleusercontent.com'
-            buttonText="Login"
+            buttonText="Acceder"
             onSuccess={handleSuccess}
             onFailure={handleFailure}
             //cookiePolicy={'single_host_origin'}
