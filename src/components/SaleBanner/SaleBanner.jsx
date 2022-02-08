@@ -42,11 +42,11 @@ export default function SaleBanner({discount, productId, name}) {
             })
         }else {
             navigate('/profile-details')
-            swal({
-                title: "Debes iniciar sesion",
-                icon: "warning",
-                button: "Ok"
-            })
+            // swal({
+            //     title: "Debes iniciar sesion",
+            //     icon: "warning",
+            //     button: "Ok"
+            // })
         }
 
 

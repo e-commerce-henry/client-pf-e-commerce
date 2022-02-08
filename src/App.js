@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -20,19 +20,9 @@ import EditUser from "./components/EditUsers/EditUser";
 import Favoritos from "./components/Favs/Favoritos";
 import HistoryDetailCards from "./components/Profile/History/HistoryDetail/HistoryDetailCards";
 import CompraFallida from "./components/CompraFallida/CompraFallida";
-import { useDispatch } from "react-redux";
-import { authUser } from "./redux/actions";
+import Contactanos from "./components/Contactanos/Contactanos";
 
 function App() {
-	const dispatch = useDispatch();
-	useEffect(() => {
-		const loggedInUser = sessionStorage.getItem("userAuth");
-		console.log(loggedInUser);
-		if (loggedInUser) {
-			dispatch(authUser(loggedInUser));
-		}
-	}, []);
-
 	return (
 		<>
 			<Routes>
@@ -46,6 +36,8 @@ function App() {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/products/:id" element={<ProductDetail />} />
 				<Route path="/sobreNosotros" element={<SobreNosotros />} />
+				<Route path="/contactanos" element={<Contactanos />} />
+
 				<Route
 					path="/terminosYcondiciones"
 					element={<TerminosYcondiciones />}

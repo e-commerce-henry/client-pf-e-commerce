@@ -105,6 +105,35 @@
   border-bottom-left-radius: 10px;
   grid-area: 4 / 1 / 6 / 3;
 }
+.container {
+  -webkit-animation: fadeinbck3 0.7s ease-in both;
+  animation: fadeinbck3 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck3 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck3 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 
 @media screen and (max-width: 1470px) {
   .oferta_title {
