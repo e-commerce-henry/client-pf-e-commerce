@@ -114,7 +114,7 @@ const EditUser = () =>{
                 open={showModal}
                 onClose={()=>{setShowModal(!showModal)}}
                 >
-                    <form className={styles.modal} onSubmit={editUserHandler} >
+                    <form className={styles.modal} onSubmit={editUserHandler} ><div>
                         <div align='center' >
                             <h3>Editar Usuario</h3>
                         </div>
@@ -248,10 +248,10 @@ const EditUser = () =>{
                         />
                         
                         <div className={Style.crear}>
-                            <button type="submit" className={Style.btnedit} >Aceptar</button>
-                            <button onClick={()=>setShowModal(!showModal)}className={Style.btnedit}  >Cancelar</button>
+                            <button type="submit" className={Style.btneedit} >Aceptar</button>
+                            <button onClick={()=>setShowModal(!showModal)}className={Style.btneedit}  >Cancelar</button>
                         </div>
-                    </form>
+                    </div></form>
                 </Modal>
                 :null
         }    

@@ -23,9 +23,9 @@ const CerrarSeccion = () => {
    }
 
   return (
-  <div className='probando'> 
+  <div className='logout'> 
       {
-          isAuth ? (<Icon onClick={onLogout} icon="ri:logout-circle-r-fill" color="white" width="25" />): null
+          isAuth ? (<Icon onClick={onLogout} icon="ri:logout-circle-r-fill" color="currentColor" width="26" />): null
       }
   </div>
   );
