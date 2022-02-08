@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/actions";
 import Head from "../Head/Head";
-
+import swal from 'sweetalert'
 import Style from "./Contacto.module.css";
 
 export function validate(user) {
@@ -48,7 +48,10 @@ export function validate(user) {
     e.preventDefault();
     setError(validate(error));
     if (Object.keys(error).length !== 0) {
-      alert("Debe llenar todos los campos");
+      swal({
+        title: "Debes completar todos los campos",
+        icon: "warning",
+        button: "Ok"})
     } else {
       dispatch(addContact(user));
       setUser({
@@ -57,12 +60,15 @@ export function validate(user) {
         subject: "",
         content: "",
       });
-      alert("Su Mensaje se envio correctamente");
+      swal({
+        title: "Su mensaje se envió correctamente",
+        icon: "success",
+        button: "Ok"})
       setError(
-        validate({
-          ...user,
-          [e.target.name]: e.target.value,
-        })
+      validate({
+        ...user,
+        [e.target.name]: e.target.value,
+      })
       );
     }
   }
@@ -70,7 +76,7 @@ export function validate(user) {
   return (
     <div className="fadeinbck8">
       <Head />
-      <div className="box">
+      <div className={Style.todotodo}>
         <div className={Style.titulocontacto}>Ingrese sus datos y nos contactaremos con usted</div>
         <form  onSubmit={(e) => handleSubmit(e)}>
         <div className={Style.formcontacto}>

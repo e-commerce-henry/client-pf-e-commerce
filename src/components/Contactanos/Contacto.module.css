@@ -9,6 +9,11 @@
   animation: fadeinbck1 0.7s ease-in both;
 }
 
+.todotodo {
+  -webkit-animation: fadeinbck1 0.7s ease-in both;
+  animation: fadeinbck1 0.7s ease-in both;
+}
+
 .formcontacto {
   box-shadow: 0px 0px 5px 1px #00adb5;
   background-color: #fff;
@@ -85,6 +90,10 @@
   border-radius: 10px;
   padding-top: 20px;
   padding-left: 20px;
+}
+
+.mensaje::placeholder {
+  color: #30384187;
 }
 
 .cadadiv5 {

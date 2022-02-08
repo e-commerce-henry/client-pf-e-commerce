@@ -8,7 +8,7 @@
   border-radius: 10px;
   text-align: center;
   background-color: #fff;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .titulo {
@@ -121,6 +121,29 @@
   animation: fadeinbck 0.7s ease-in both;
 }
 
+.ofertass {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  color: #00adb5;
+  margin: 30px;
+}
+
+.off {
+  margin-bottom: 50px;
+}
+hr {
+  width: 80%;
+}
+
+.probando {
+  border: none;
+  width: 80%;
+  height: 2px;
+  outline: none;
+  background-color: #ff5722;
+}
 @-webkit-keyframes fadeinbck {
   0% {
     -webkit-transform: translateZ(80px);

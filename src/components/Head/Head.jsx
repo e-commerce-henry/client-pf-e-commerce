@@ -11,7 +11,7 @@ function Head(){
     return(
         <>
             <div className={Style.container} >
-                <div className={Style.marca}>MARCA DEL E-COMMERCE</div>
+                <div className={Style.marca}> <b>ATR </b> COMPUTACIÓN</div>
                 <div className={Style.flexboxx}>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
