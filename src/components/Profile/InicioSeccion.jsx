@@ -4,7 +4,10 @@ import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
 import './InicioSeccion.css';
-import GoogleAuth from './GoogleAuth/GoogleAuth'
+import GoogleAuth from './GoogleAuth/GoogleAuth';
+
+import Head from '../Head/Head';
+import Footer from "../Footer/Footer";
 
 import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
@@ -84,8 +87,11 @@ const InicioSeccion = () => {
 }
 
     return (
+      <div>
+        <Head />
 
         <div className="fadeinbck6">
+          
           <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
                 <div className="stylo">
@@ -130,8 +136,10 @@ const InicioSeccion = () => {
                     <GoogleAuth/>
                     </div>
                     <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarse aquí</Link></p>
-            
+                    
         </div> 
+        <Footer/>
+        </div>
        
       
   );

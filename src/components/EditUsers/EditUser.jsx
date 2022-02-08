@@ -156,7 +156,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Correo Electrónico:'
+                            label='Correo electrónico:'
                             name='email'
                             className={styles.textfield}
                             value={userToEdit.email}
