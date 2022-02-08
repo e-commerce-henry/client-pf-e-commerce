@@ -32,6 +32,12 @@
   align-self: center;
 }
 
+.marca b {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 28px;
+}
+
 .btnhead:hover {
   color: #ff5722;
 }
