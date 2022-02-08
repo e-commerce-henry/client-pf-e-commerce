@@ -177,7 +177,7 @@ const EditUser = () =>{
                             onChange={onChangeHandler}
                         /> */}
                         <br/>
-                        <TextFiel
+                        <TextField
                             label='Dirección:'
                             name='address'
                             className={styles.textfield}
