@@ -65,7 +65,7 @@ const InicioSeccion = () => {
     }));
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validate({...input, [e.target.name]: e.target.value}))
     navigate(`/`);
@@ -75,6 +75,7 @@ const InicioSeccion = () => {
         icon: "success"
     })
     dispatch(addInicioUser(input));
+    
     setInput ({
         email: '',
         pwd: ''
