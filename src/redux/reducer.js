@@ -254,6 +254,7 @@ const reducer = (state = inicialState, action) => {
 			};
 
 		case LOG_OUT:
+			sessionStorage.removeItem("userAuth");
 			return {
 				...state,
 				userAuth: false,
