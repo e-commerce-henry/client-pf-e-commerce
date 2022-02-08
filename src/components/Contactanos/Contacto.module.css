@@ -116,6 +116,10 @@
   /* align-self: flex-end; */
 }
 
+.cadadiv5:hover {
+  cursor: pointer;
+}
+
 @-webkit-keyframes fadeinbck1 {
   0% {
     -webkit-transform: translateZ(80px);

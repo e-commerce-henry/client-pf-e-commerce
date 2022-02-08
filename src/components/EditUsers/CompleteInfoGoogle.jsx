@@ -13,19 +13,36 @@ const useStyles = makeStyles((theme)=>({
         position:'absolute',
         display: 'flex',
         flexDirection: 'column',
-        width:500,
-        height:700,
+        justifyContent: 'center',
+        width:'70%',
+        height:'90%',
         backgroundColor:'white',
-        border:'2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2,4,3),
+        border:'none',
+        boxShadow: '0px 0px 5px 1px #00adb5',
+        padding: theme.spacing(0,4,0),
         top:'50%',
         left:'50%',
-        transform:'translate(-50%,-50%)'
+        transform:'translate(-50%,-50%)',
+        borderRadius: '20px',
+        color:'#00adb5',
+        fontSize:'18px',
+        fontFamily:'Lexend Deca'
     },
     textfield:{
-        width:'80%',
+        width:'90%',
+    },
+    floatingLabelFocusStyle: {
+        color: "#00adb5",
+        fontFamily:'Lexend Deca',
+        fontSize:'17px',
+    },
+    floatingValueFocusStyle: {
+        color: "#303841",
+        fontFamily:'Lexend Deca',
+        fontSize:'17px',
+        border:'red'
     }
+
 }))
 
 export default function CompleteInfoGoogle(){
@@ -74,51 +91,68 @@ export default function CompleteInfoGoogle(){
                 open={showModal}
                 onClose={()=>{setShowModal(!showModal)}}>
                     <form onSubmit={editUserHandler} className={styles.modal}>
-                        <TextField
+                        {/* <TextField
                             label='N° de cliente:'
                             name='id'
                             className={styles.textfield}
                             value={userToEdit.id}
                             // onChange={handleOnChange}
                             disabled
-                        />
+                        /> */}
                         <TextField
-                            label='Nombre(s): '
+                            label='Nombre: '
                             name='name'
                             className={styles.textfield}
                             value={userToEdit.name}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
+                        <br />
                         <TextField
-                            label='Apellido(s):'
+                            label='Apellido:'
                             name='surname'
                             className={styles.textfield}
                             value={userToEdit.surname}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Correo electronico:'
+                            label='Correo electrónico:'
                             name='email'
                             className={styles.textfield}
                             value={userToEdit.email}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Direccion:'
+                            label='Dirección:'
                             name='address'
                             className={styles.textfield}
                             value={userToEdit.address}
                             onChange={onChangeHandler}
-                        />
-                         <br/>
-                        <TextField
-                            label='Piso:'
-                            name='floor'
-                            className={styles.textfield}
-                            value={userToEdit.floor}
-                            onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
@@ -127,6 +161,12 @@ export default function CompleteInfoGoogle(){
                             className={styles.textfield}
                             value={userToEdit.city}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
@@ -135,19 +175,45 @@ export default function CompleteInfoGoogle(){
                             className={styles.textfield}
                             value={userToEdit.province}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                         <br/>
                         <TextField
-                            label='Codigo postal:'
+                            label='Código postal:'
                             name='postalCode'
                             className={styles.textfield}
                             value={userToEdit.postalCode}
                             onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
+                        />
+                         <br/>
+                        <TextField
+                            label='Piso: (opcional)'
+                            name='floor'
+                            className={styles.textfield}
+                            value={userToEdit.floor}
+                            onChange={onChangeHandler}
+                            InputLabelProps={{
+                                className: styles.floatingLabelFocusStyle,
+                            }}
+                            InputProps={{
+                                className: styles.floatingValueFocusStyle,
+                            }}
                         />
                        
-                        <div align='rigth' >
-                            <button type="submit" >Guardar</button>
-                            <button onClick={()=>setShowModal(!showModal)} >Cancelar</button>
+                        <div className={Style.crear} >
+                            <button type="submit" className={Style.btnedit} >Aceptar</button>
+                            <button onClick={()=>setShowModal(!showModal)} className={Style.btnedit} >Cancelar</button>
                         </div>
                     </form>
                 </Modal>

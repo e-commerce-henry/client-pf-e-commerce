@@ -8,14 +8,20 @@ import Style from "./Contacto.module.css";
 
 export function validate(user) {
   let error = {};
-  // if(!user.name){
-  //     error.name = 'Su nombre es requerido';
-  // }
+  if(!user.name){
+      error.name = 'Su nombre es requerido';
+  }
 
   if (!user.email) {
     error.email = "El correo es requerido";
   } else if (!/\S+@\S+\.\S+/.test(user.email)) {
     error.email = "El correo es invalido";
+  }
+  if(!user.subject){
+    error.subject = "El asunto es requerido"
+  }
+  if(!user.content){
+    error.content = "El mensaje es requerido"
   }
   return error;
 }
@@ -46,13 +52,14 @@ export function validate(user) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setError(validate(error));
+    // setError(validate(error));
     if (Object.keys(error).length !== 0) {
       swal({
         title: "Debes completar todos los campos",
         icon: "warning",
         button: "Ok"})
     } else {
+      console.log(user)
       dispatch(addContact(user));
       setUser({
         name: "",

@@ -132,6 +132,8 @@
 
 .off {
   margin-bottom: 50px;
+  -webkit-animation: fadeinbck 0.7s ease-in both;
+  animation: fadeinbck 0.7s ease-in both;
 }
 hr {
   width: 80%;
@@ -140,9 +142,10 @@ hr {
 .probando {
   border: none;
   width: 80%;
-  height: 2px;
+  height: 0px;
   outline: none;
-  background-color: #ff5722;
+  /* background-color: #ff5722; */
+  box-shadow: 0px 0px 5px 1px #ff5722;
 }
 @-webkit-keyframes fadeinbck {
   0% {

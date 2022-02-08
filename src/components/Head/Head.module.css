@@ -45,12 +45,35 @@
 .ahead:hover {
   color: #ff5722;
 }
+.iniciarrr:hover {
+  color: #ff5722;
+}
 
 .flexboxx {
   grid-area: 1 / 4 / 2 / 5;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.reg {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 105px;
+  height: 30px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  text-shadow: inset 0px 1px 0px #303841;
+  background: #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+}
+
+.reg:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 868x) {

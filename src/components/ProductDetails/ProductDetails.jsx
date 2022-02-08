@@ -171,8 +171,8 @@ export default function ProductDetail(){
             <br/>
             <Reviews idproduct={id}/>
             <br/> */}
-            <hr className={Style.probando}/>
             <div className={Style.off}>
+            <hr className={Style.probando}/>
                 <div className={Style.ofertass}>OFERTAS QUE TE PUEDEN INTERESAR</div>
                 <SaleBanner />
             </div>

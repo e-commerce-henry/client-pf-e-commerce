@@ -10,19 +10,19 @@ input {
   height: 22px;
   color: #303841;
   font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
   border-radius: 6px;
   background-color: #eeeeee;
   width: 40%;
   margin-left: 15px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 input::placeholder {
-  color: #303841;
+  font-size: 18px;
   font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
+  font-weight: 400;
+  color: #30384187;
   padding: 5px;
 }
 .butt {
