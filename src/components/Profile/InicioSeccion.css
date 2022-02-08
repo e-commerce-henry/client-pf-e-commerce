@@ -76,7 +76,8 @@
 }
 
 #mail {
-  width: 26%;
+  margin-top: 5px;
+  width: 50%;
 }
 
 .fadeinbck6 {
@@ -106,6 +107,12 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 880px) {
+  #mail {
+    margin-top: 5px;
+    width: 80%;
   }
 }
 

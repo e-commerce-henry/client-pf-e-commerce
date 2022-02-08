@@ -7,11 +7,12 @@ import {
   createOrder,
   deleteCartItem,
   resetShoppingCart,
+  detalleUsers
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
 import Vacío from "../Vacío/Vacío";
-
+import CompleteInfoGoogle from "../EditUsers/CompleteInfoGoogle";
 
 const FORM_ID = 'payment-form';
 
@@ -32,6 +33,7 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
+    dispatch(detalleUsers(userId))
   }, [dispatch]);
 
 
@@ -157,7 +159,8 @@ export default function ShoppingCart() {
   //   await dispatch(resetShoppingCart())
   // }
 
-  function creOrder() {
+  async function creOrder() {
+    await dispatch(detalleUsers(userId))
     let products = shoppingCart[0].cartItems;
     console.log(products)
     let addressId = userInfo.clientAddresses[0].id;
@@ -209,9 +212,15 @@ export default function ShoppingCart() {
               <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
               <div className={Style.parrafo1}>
                 $ {Number(Math.ceil(total)).toLocaleString()} <br />
-                <button className={Style.boo} onClick={(e) => creOrder()}>
-                  Comprar ahora
-                </button>
+
+
+                {
+                  userInfo.clientAddresses && userInfo.clientAddresses[0].address === null? 
+                  <CompleteInfoGoogle/>
+                  : <button className={Style.boo} onClick={(e) => creOrder()}>Comprar ahora</button>
+                }
+
+
               </div>
             </div> : null }
              {/* testing MP */}

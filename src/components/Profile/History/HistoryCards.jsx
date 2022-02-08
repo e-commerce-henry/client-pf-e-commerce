@@ -11,6 +11,13 @@ export default function HistoryCards(){
     return(
         <div className={Style.fadeinbck10}>
         <div className={Style.hist}>Historial de compras de {user.name}</div>
+        <div className={Style.headhist}>
+            <div className={Style.d1}> Orden </div>
+            <div className={Style.d2}> Fecha </div>
+            <div className={Style.d3}> Pago </div>
+            <div className={Style.d4}> Estado del envío </div>
+            <div className={Style.d5}> Total de la compra </div>
+        </div>
         {
             ordenes.length? 
             ordenes.map(e => {

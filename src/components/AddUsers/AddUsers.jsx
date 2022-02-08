@@ -5,7 +5,7 @@ import "./AddUsers.css";
 import Head from "../Head/Head";
 import Footer from "../Footer/Footer";
 import '../Profile/Profile.module.css';
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 
 
@@ -18,6 +18,7 @@ import Input from "@material-ui/core/Input";
 
 
 export function validate(users) {
+
     let errors = {};
     if (!users.name) {
       errors.name = 'El nombre requerido';
@@ -73,7 +74,8 @@ export function validate(users) {
   };
 
 const AddUsers = () => {
-
+  
+  const navigate = useNavigate();
   
 
    const dispatch = useDispatch();
@@ -132,6 +134,7 @@ const AddUsers = () => {
           })
           setErrors(validate({...users, [e.target.name]: e.target.value}))
         } 
+        navigate("/profile-details");
     }
 
 
@@ -206,7 +209,7 @@ const AddUsers = () => {
         
         <div className="btns">
           <button className="butt" type="submit">Registrarse</button> 
-          <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link>
+          <Link to="/profile-details"><button className="butt" type="submit">Iniciar sesión</button></Link>
           
           
         </div>

@@ -21,12 +21,21 @@
     border-width: 1px;
     color: rgba(240, 240, 240, 1);
     border-radius: 6px;
+<<<<<<< HEAD
     /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
     /* text-shadow: inset 0px 1px 0px #303841;
+=======
+    box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); 
+    text-shadow: inset 0px 1px 0px #303841;
+>>>>>>> main
     background: #303841;
     background: linear-gradient(#303841, rgba(0, 0, 0, 1));
     margin-top: 20px;
 }
 .button:hover {
     cursor: pointer;
+<<<<<<< HEAD
   } */ 
+=======
+  }  */
+>>>>>>> main
