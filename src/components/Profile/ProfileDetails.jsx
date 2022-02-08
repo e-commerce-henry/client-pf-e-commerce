@@ -11,12 +11,7 @@ import PersonalInfo from "./PersonalInfo";
 export default function ProfileDetails(){
    
     const userAuth = useSelector(state => state.userAuth);
-    // const navigate = useNavigate();
-
-    // function HandleClick(e){
-    //     navigate(`/${e.target.value}`);
-    // };
-    
+  
 
 
     return(
@@ -36,8 +31,7 @@ export default function ProfileDetails(){
             {/* </div>   */}
             <div className={Style.details}>
                 {
-                    userAuth? <PersonalInfo/>:
-                    <InicioSeccion/>
+                    userAuth? <PersonalInfo/>:null
                 }
             </div>
             <Footer/>

@@ -134,7 +134,7 @@ const AddUsers = () => {
           })
           setErrors(validate({...users, [e.target.name]: e.target.value}))
         } 
-        navigate("/profile-details");
+        navigate("/inicio-seccion");
     }
   return (
   <div className='formulario'>

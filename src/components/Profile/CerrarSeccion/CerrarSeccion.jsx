@@ -1,12 +1,12 @@
 
 import React from 'react';
 
-import IconButton from '@material-ui/core/IconButton';
-import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp';
+import { Icon } from '@iconify/react';
 import './CerrarSeccion.css'
 import {useNavigate} from 'react-router-dom';
 import {logout} from "../../../redux/actions";
 import { useDispatch, useSelector} from 'react-redux'; 
+
 
 const CerrarSeccion = () => {
 
@@ -25,7 +25,7 @@ const CerrarSeccion = () => {
   return (
   <div className='probando'> 
       {
-          isAuth ? (<IconButton color="inherit" onClick={onLogout} > <ExitToAppSharpIcon/></IconButton>): null
+          isAuth ? (<Icon onClick={onLogout} icon="ri:logout-circle-r-fill" color="white" width="25" />): null
       }
   </div>
   );
