@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/actions";
 import Head from "../Head/Head";
 
-import "./Contacto.module.css";
+import Style from "./Contacto.module.css";
 
 export function validate(user) {
   let error = {};
@@ -71,63 +71,62 @@ export function validate(user) {
     <div className="fadeinbck8">
       <Head />
       <div className="box">
-        <div className="contein">
-          <div className="title">
-            <form onSubmit={(e) => handleSubmit(e)}>
-              <h2>Ingrese sus Datos y a la nos contactaremos con ud.</h2>
-              <div className="form">
-                <label htmlFor="name">Nombre y Apellido: </label>
-                <input
-                  className="botForm"
-                  onChange={(e) => hadleInput(e)}
-                  value={user.name}
-                  name="name"
-                  type="text"
-                  placeholder="Agregue el nombre..."
-                ></input>
-              </div>
-
-              <div>
-              <label htmlFor="email">Email: </label>
-                <input
-                  name="email"
-                  type="text"
-                  onChange={(e) => hadleInput(e)}
-                  value={user.email}
-                  placeholder="Agregue un email..."
-                ></input>
-              
-              </div>
-              
-              <div>
-              <label htmlFor="subject">Asunto: </label>
-                <input
-                  name="subject"
-                  type="text"
-                  onChange={(e) => hadleInput(e)}
-                  value={user.subject}
-                  placeholder="Asunto"
-                ></input>
-              
-              </div>
-
-              <div>
-              <label htmlFor="content">Déjanos tu msj: </label>
-                <input
-                  name="content"
-                  type="text"
-                  onChange={(e) => hadleInput(e)}
-                  value={user.content}
-                  placeholder="Escriba aqui su msj"
-                ></input>
-              
-              </div>
-              <button type="submit" onClick={handleSubmit}>
-                Enviar
-              </button>
-            </form>
+        <div className={Style.titulocontacto}>Ingrese sus datos y nos contactaremos con usted</div>
+        <form  onSubmit={(e) => handleSubmit(e)}>
+        <div className={Style.formcontacto}>
+          <div className={Style.cadadiv1}>
+            <label className={Style.labell} htmlFor="name">Nombre y Apellido: </label>
+            <input
+              className={Style.inputt}
+              onChange={(e) => hadleInput(e)}
+              value={user.name}
+              name="name"
+              type="text"
+              placeholder="Agregue su nombre"
+            ></input>
           </div>
-        </div>
+
+          <div className={Style.cadadiv2}>
+            <label className={Style.labell} htmlFor="email">Email: </label>
+            <input
+              className={Style.inputt}
+              name="email"
+              type="text"
+              onChange={(e) => hadleInput(e)}
+              value={user.email}
+              placeholder="Agregue un email"
+            ></input>
+          </div>
+          
+          <div className={Style.cadadiv3}>
+            <label className={Style.labell} htmlFor="subject">Asunto: </label>
+            <input
+              className={Style.inputt}
+              name="subject"
+              type="text"
+              onChange={(e) => hadleInput(e)}
+              value={user.subject}
+              placeholder="Asunto"
+            ></input>
+          </div>
+
+          <div className={Style.cadadiv4}>
+            <label className={Style.labell} htmlFor="content">Déjanos tu mensaje: </label>
+            <textarea
+              className={Style.mensaje}
+              name="content"
+              type="text"
+              onChange={(e) => hadleInput(e)}
+              value={user.content}
+              placeholder="Escriba aquí su mensaje"
+            ></textarea>
+          </div>
+            <button className={Style.cadadiv5} type="submit" onClick={handleSubmit}>
+              Enviar
+            </button>
+            </div>
+          </form>
+        
       </div>
     </div>
   );
