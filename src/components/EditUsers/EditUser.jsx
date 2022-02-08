@@ -206,7 +206,7 @@ const EditUser = () =>{
                         />
                         <br/>
                         <TextField
-                            label='Provincia:'
+                            label='Provincia/Estado:'
                             name='province'
                             className={styles.textfield}
                             value={userToEdit.province}
