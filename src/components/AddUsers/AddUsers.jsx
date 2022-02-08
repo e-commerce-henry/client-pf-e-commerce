@@ -203,9 +203,7 @@ const AddUsers = () => {
         </div>
         
         <div className="btns">
-          <button className="butt" type="submit">Registrarse</button> 
-          <Link to="/profile-details"><button className="butt" type="submit">Iniciar sesión</button></Link>
-          
+          <button className="butt" type="submit">Registrarse</button>       
           
         </div>
       </form>
