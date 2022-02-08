@@ -16,6 +16,8 @@
   text-align: center;
   color: #00adb5;
   margin: 30px;
+  -webkit-animation: fadeinbck1 0.7s ease-in both;
+  animation: fadeinbck1 0.7s ease-in both;
 }
 
 .fadeinbck1 {
