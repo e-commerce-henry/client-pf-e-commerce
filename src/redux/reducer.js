@@ -31,6 +31,7 @@ import {
     ADD_PRODUCT_BANNER_A_CART,
     ADD_ACTUAL_ORDER_DETAIL,
     LOG_OUT,
+    // POST_CONTACT,
 } from './actions';
 
 const inicialState = {
@@ -259,6 +260,8 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 historyDetail: action.payload
             }
+     
+
         default: return state 
 }
 

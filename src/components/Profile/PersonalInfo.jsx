@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {detalleUsers} from '../../redux/actions';
 import Style from'./PersonalInfo.module.css';
 import EditUser from '../EditUsers/EditUser';
-import { Link } from "react-router-dom";
 import {useNavigate } from "react-router-dom";
 
 
@@ -55,7 +54,6 @@ export default function PersonalInfo(){
                                 <div>Provincia: <b>{userDetail.province}</b></div><br />
                                 <div>Piso: <b>{userDetail.floor}</b></div>
                             </div>
-                    
                     }
                     
                 </div>
