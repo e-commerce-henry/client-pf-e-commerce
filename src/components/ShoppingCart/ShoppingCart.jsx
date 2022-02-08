@@ -91,31 +91,6 @@ export default function ShoppingCart() {
     }
   }, [preferenceId]);
 
-
-
-
-
-  //sdk v1
-
-  // useEffect(()=>{
-  //   if(preferenceId){
-  //     const script = document.createElement('script');
-  //     const attr_data_preference = document.createAttribute('data-preference-id')
-  //     attr_data_preference.value = preferenceId
-  //     script.type = 'text/javascript';
-  //     script.src = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
-  //     script.setAttributeNode(attr_data_preference)
-
-  //     console.log(script)
-  //     document.getElementById(FORM_ID).appendChild(script)
-      
-  //     return ()=>{
-  //       document.getElementById(FORM_ID).removeChild(script)
-  //     }
-  //   }
-  // }, [preferenceId])
-
-
   function searchAndComplementInfo(id) {
     for (let i = 0; i < productos.length; i++) {
       if (productos[i].id === id) {
@@ -148,17 +123,6 @@ export default function ShoppingCart() {
   }
   let totalCant = shoppingCart[0] ? nCant() : null;
 
-  //reseteo el carro desde el back si la compra fue exitosa
-  // async function resetCartShopping() {
-  //   shoppingCart[0].cartItems.map((e) => {
-  //     let productId = e.productId;
-
-  //     dispatch(deleteCartItem({ userId, productId }));
-  //   });
-  //   await dispatch(getShoppingCart(userId))
-  //   await dispatch(resetShoppingCart())
-  // }
-
   async function creOrder() {
     await dispatch(detalleUsers(userId))
     let products = shoppingCart[0].cartItems;
@@ -166,8 +130,6 @@ export default function ShoppingCart() {
     let addressId = userInfo.clientAddresses[0].id;
     let total = calculateTotal();
     dispatch(createOrder(userId, { products, addressId, total }));
-    // alert(`Gracias por tu compra ${userInfo.name}, tu total es de ${total}`);
-    // resetCartShopping();
   }
 
   
@@ -175,7 +137,7 @@ export default function ShoppingCart() {
   return (
     <>
       <div className={Style.cont}>
-      {shoppingCart[0]
+      { shoppingCart.length && shoppingCart[0]
             ? shoppingCart[0].cartItems.length === 0 ? null :
         <div>
           <div className={Style.casi}>{`Ya casi lo tienes ${userInfo.name}!`}</div>
@@ -185,10 +147,12 @@ export default function ShoppingCart() {
             <div className={Style.div9}>Cantidad</div>
             <div className={Style.div10}>Subtotales</div>
           </div>
-        </div> : null
+        </div> :
+
+        <p>Hola invitado</p>
         }
         <div>
-          {shoppingCart[0]
+          {shoppingCart.length && shoppingCart[0]
             ? shoppingCart[0].cartItems.length === 0 ? <Vacío /> :
             shoppingCart[0].cartItems.map((e) => (
                 <CartItem
@@ -206,7 +170,7 @@ export default function ShoppingCart() {
   
 
 
-      {shoppingCart[0]
+      {shoppingCart.length && shoppingCart[0]
             ? shoppingCart[0].cartItems.length === 0 ? null :
             <div className={Style.box}>
               <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
@@ -223,11 +187,7 @@ export default function ShoppingCart() {
 
               </div>
             </div> : null }
-             {/* testing MP */}
           <form id={FORM_ID} ></form>
-          {/* <div>
-              <div id='mp' className="cho-container"></div>
-          </div> */}
 
     </>
   );

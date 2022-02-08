@@ -14,20 +14,12 @@ function Cart(){
     return(
         <>
             <Head />
-            {
-                auth? <div className={Style.titulofav}>Carrito</div> : null
-            }
-            <div className={Style.fadeinbck1} >
                 {
-
-
-                    auth?<ShoppingCart /> :  <InicioSeccion/>,
-
-                    auth?<ShoppingCart /> : <Warning /> 
-
+                    auth? <div className={Style.titulofav}>Carrito</div> : null
                 }
-                
-            </div>
+                <div className={Style.fadeinbck1} >
+                    <ShoppingCart />
+                </div>
             <Footer />
         </>
     )

@@ -21,6 +21,7 @@ function Card({ productId, name, price, img, brand}){
     const navigate = useNavigate();
 
     function addShoppingCart(productId){
+        if(auth){
             setCart(name)
             swal({
                 title: "Se ha agregado al carrito:",
@@ -28,7 +29,16 @@ function Card({ productId, name, price, img, brand}){
                 icon: "success",
                 button: "Ok"})
             dispatch(addProductShoppingCart({productId, price, userId, name, img}))
-    }
+        } else {
+            let carritoInvitado = localStorage.getItem('carrito')
+            carritoInvitado = JSON.parse(carritoInvitado)
+            carritoInvitado.push({productId, price, userId, name, img})
+            JSON.stringify(carritoInvitado)
+            
+            
+        }
+    } 
+    
 
 
     function addFavs(productId){
