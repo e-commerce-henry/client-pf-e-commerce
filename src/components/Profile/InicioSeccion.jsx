@@ -24,12 +24,12 @@ import swal from 'sweetalert'
 export function validate(input) {
     let errors = {};
     if (!input.email) {
-      errors.email = 'Error, campo obligatorio';
+      errors.email = 'Campo obligatorio';
     } else if (!/\S+@\S+\.\S+/.test(input.email)) {
       errors.email = 'Email inválido';
     }
     if (!input.pwd) {
-      errors.pwd = 'Error, campo obligatorio';
+      errors.pwd = 'Campo obligatorio';
     } 
     return errors;
   };
@@ -91,19 +91,13 @@ const InicioSeccion = () => {
         <Head />
 
         <div className="fadeinbck6">
-          
           <h1 className="tituloo">Iniciar sesión</h1>
             <form  onSubmit={handleSubmit}>
+
                 <div className="stylo">
-                
-
-                   
-
-                   <label>Correo Electrónico: </label>
-                   <br />
+                    <label>Correo Electrónico: </label>
+                    <br />
                     <input id='mail' className= {errors.email && 'danger'} type="email" name="email"  onChange={handleInputChange} value={input.email} />{errors.email && (<p className="danger">{errors.email}</p>)}
-
-               
                 </div>
 
                 <div className="stylo">
@@ -132,11 +126,11 @@ const InicioSeccion = () => {
                 </div>
             </form>
             <hr/>
-                    <div>
-                    <GoogleAuth/>
-                    </div>
-                    <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarse aquí</Link></p>
-                    
+            <div>
+              <GoogleAuth/>
+            </div>
+            <p className="o">o también puedes <Link to="/addUsers" type="submit">registrarte aquí</Link></p>
+            <br />
         </div> 
         <Footer/>
         </div>

@@ -58,12 +58,12 @@ function Head(){
 
                     }
                 {
-                    !auth ? (<Link to='/inicio-seccion' style={{ textDecoration: 'none' }}><Icon icon="ri:login-circle-fill" color="white" width="30" />
+                    !auth ? (<Link to='/inicio-seccion' style={{ textDecoration: 'none' }}><button className={Style.btnhead}><Icon icon="ri:login-circle-fill" color="currentColor" width="26" /></button>
                </Link>
                     ):null
                 }
                 {
-                    !auth ? (<Link to='/addUsers' style={{ textDecoration: 'none' }}><button>Regístrate</button></Link>):null
+                    !auth ? (<Link to='/addUsers' style={{ textDecoration: 'none' }}><button className={Style.reg}> Regístrate</button></Link>):null
               
                 }
                 <CerrarSeccion />
