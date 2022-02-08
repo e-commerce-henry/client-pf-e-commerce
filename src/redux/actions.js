@@ -111,11 +111,16 @@ export function orderByPrice(payload) {
 
 export const addUsers = (payload) => {
 	return async (dispatch) => {
-		let response = await axios.post(
-			`http://localhost:3001/auth/signup`,
-			payload
-		);
-		return response;
+		try {
+			let response = await axios.post(
+				`http://localhost:3001/auth/signup`,
+				payload
+			);
+			await axios.post("http://localhost:3001/email/welcome", payload);
+			return response;
+		} catch (err) {
+			console.log(err.message);
+		}
 	};
 };
 //Responder
