@@ -155,6 +155,18 @@ const reducer = (state = inicialState, action) => {
             ...state
             }
 
+
+		case ADD_INICIO_USER:
+			console.log(action.payload);
+			const resultAuth = action.payload.user
+				? action.payload.user
+				: action.payload;
+			if (resultAuth) {
+				sessionStorage.setItem("userAuth", resultAuth);
+				return { ...state, userAuth: true, idUser: resultAuth };
+			}
+			return { ...state, userAuth: false, idUser: [] };
+
         case EDIT_CART : 
         return {
             ...state
@@ -169,6 +181,7 @@ const reducer = (state = inicialState, action) => {
             ...state,
             // favs: state.favs.filter(e => e.id !== action.payload.id)
             }
+
 
         //crea mi review
         case CREATE_REVIEWS:
