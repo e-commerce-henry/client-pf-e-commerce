@@ -65,7 +65,7 @@ export default function CompleteInfoGoogle(){
 
     return(
         <>
-            <button value={user.id} onClick={onClick}>
+            <button className="bu" value={user.id} onClick={onClick}>
                 Completar informacion de entrega  
             </button>
             {
@@ -112,6 +112,14 @@ export default function CompleteInfoGoogle(){
                             value={userToEdit.address}
                             onChange={onChangeHandler}
                         />
+                         <br/>
+                        <TextField
+                            label='Piso:'
+                            name='floor'
+                            className={styles.textfield}
+                            value={userToEdit.floor}
+                            onChange={onChangeHandler}
+                        />
                         <br/>
                         <TextField
                             label='Ciudad:'
@@ -122,7 +130,7 @@ export default function CompleteInfoGoogle(){
                         />
                         <br/>
                         <TextField
-                            label='Provincia/estado:'
+                            label='Provincia/Estado:'
                             name='province'
                             className={styles.textfield}
                             value={userToEdit.province}
@@ -136,14 +144,7 @@ export default function CompleteInfoGoogle(){
                             value={userToEdit.postalCode}
                             onChange={onChangeHandler}
                         />
-                        <br/>
-                        <TextField
-                            label='Piso:'
-                            name='floor'
-                            className={styles.textfield}
-                            value={userToEdit.floor}
-                            onChange={onChangeHandler}
-                        />
+                       
                         <div align='rigth' >
                             <button type="submit" >Guardar</button>
                             <button onClick={()=>setShowModal(!showModal)} >Cancelar</button>

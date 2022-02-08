@@ -136,11 +136,6 @@ const AddUsers = () => {
         } 
         navigate("/profile-details");
     }
-
-
-
-
-
   return (
   <div className='formulario'>
     <Head />  
