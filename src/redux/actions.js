@@ -375,9 +375,8 @@ export function logout() {
 export const addContact = (body) => {
 	console.log(body);
 	return async (dispatch) => {
-		console.log("333333333333333333333333333333333333");
-		let resp = await axios.post(`http://localhost3001/contactForm`, { body });
-		console.log("nollega");
+		let resp = await axios.post(`http://localhost:3001/contactForm`, body);
+		await axios.post("http://localhost:3001/email/contact", body);
 		return resp;
 	};
 };
