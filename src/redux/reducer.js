@@ -149,9 +149,12 @@ const reducer = (state = inicialState, action) => {
 
 		case ADD_INICIO_USER:
 			console.log(action.payload);
-			if (action.payload.user) {
-				sessionStorage.setItem("userAuth", action.payload.user);
-				return { ...state, userAuth: true, idUser: action.payload.user };
+			const resultAuth = action.payload.user
+				? action.payload.user
+				: action.payload;
+			if (resultAuth) {
+				sessionStorage.setItem("userAuth", resultAuth);
+				return { ...state, userAuth: true, idUser: resultAuth };
 			}
 			return { ...state, userAuth: false, idUser: [] };
 
