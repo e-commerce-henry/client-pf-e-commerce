@@ -83,7 +83,7 @@ export default function CompleteInfoGoogle(){
     return(
         <>
             <button className={Style.boo} value={user.id} onClick={onClick}>
-                Completar informacion de entrega  
+                Completar información  
             </button>
             {
                 userToEdit ?

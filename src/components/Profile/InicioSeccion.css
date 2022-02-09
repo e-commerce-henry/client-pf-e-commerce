@@ -2,7 +2,7 @@
   width: 80%;
   height: 10%;
   margin-top: 40px;
-  margin-bottom: 90px;
+  margin-bottom: 100px;
   /* margin-right: 20%;
   margin-left: 20%; */
   margin-left: auto;
@@ -127,7 +127,7 @@
 
 @media only screen and (max-width: 500px) {
   .fadeinbck6 {
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
