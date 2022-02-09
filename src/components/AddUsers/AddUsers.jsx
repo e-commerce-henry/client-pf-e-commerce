@@ -6,6 +6,7 @@ import Head from "../Head/Head";
 import Footer from "../Footer/Footer";
 import '../Profile/Profile.module.css';
 import { Link, useNavigate} from "react-router-dom";
+import swal from 'sweetalert';
 
 
 
@@ -134,7 +135,13 @@ const AddUsers = () => {
           })
           setErrors(validate({...users, [e.target.name]: e.target.value}))
         } 
+        
         navigate("/inicio-seccion");
+        swal({
+          title: "Te has registrado exitosamente",
+          icon: "success",
+          button: "Ok"})
+        
     }
   return (
   <div className='formulario'>
