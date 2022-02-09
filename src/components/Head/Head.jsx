@@ -3,7 +3,7 @@ import Style from './Head.module.css';
 import {useSelector} from "react-redux";
 import { Link } from 'react-router-dom';
 import CerrarSeccion from '../Profile/CerrarSeccion/CerrarSeccion';
-
+import Logo from './logoTrazoN.png'
 import { Icon } from '@iconify/react';
 
 
@@ -18,7 +18,7 @@ function Head(){
     return(
         <>
             <div className={Style.container} >
-                <div className={Style.marca}> <b>ATR </b> COMPUTACIÓN</div>
+                <div className={Style.marca}> <img src={Logo} alt="not found" className={Style.logo}/></div>
                 <div className={Style.flexboxx}>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
