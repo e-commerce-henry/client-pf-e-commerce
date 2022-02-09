@@ -380,3 +380,32 @@ export const addContact = (body) => {
 		return resp;
 	};
 };
+
+export const resetPwdRequest = (input) => {
+	console.log(input);
+	return async (dispatch) => {
+		try {
+			const response = await axios.post(
+				`http://localhost:3001/auth/forgot-password`,
+				input
+			);
+			return response;
+		} catch (err) {
+			console.log(err);
+		}
+	};
+};
+
+export const resetPwdForm = (input, id, token) => {
+	return async (dispatch) => {
+		try {
+			const response = await axios.post(
+				`http://localhost:3001/auth/reset-password-confirm/${id}/${token}`,
+				input
+			);
+			return response;
+		} catch (err) {
+			console.log(err);
+		}
+	};
+};
