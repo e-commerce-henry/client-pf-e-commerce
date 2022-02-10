@@ -6,7 +6,6 @@ import { orderByName, orderByPrice, getProducts, filterProductsByCategory, getCa
 import Card from './Card';
 import Style from './Cards.module.css';
 import Pagination from "../Pagination/Pagination";
-import Footer from "../Footer/Footer";
 import NotFound from "./NotFound";
 
 function valProduct(e){

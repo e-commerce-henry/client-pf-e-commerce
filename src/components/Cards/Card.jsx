@@ -1,21 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Style from './Card.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { addProductShoppingCart, addProductWishlist, getInviteCart, editInviteCart } from '../../redux/actions';
+import { addProductShoppingCart, addProductWishlist,  editInviteCart } from '../../redux/actions';
 import {useNavigate} from 'react-router-dom'
 import swal from 'sweetalert'
 
-
-
-
 function Card({ productId, name, price, img, brand}){
     const dispatch = useDispatch()
-    const [error, setError] = useState()
     const userId = useSelector(state => state.idUser)
     const auth = useSelector(state => state.userAuth )
-    const carritoInvitado = useSelector(state => state.inviteCart )
     const [fav, setFav] = useState([]);
     const [cart, setCart] = useState([]);
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import Head from "../../../Head/Head";
 import Footer from "../../../Footer/Footer";
 import {useNavigate} from 'react-router-dom'

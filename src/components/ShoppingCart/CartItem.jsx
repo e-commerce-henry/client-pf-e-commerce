@@ -1,14 +1,10 @@
 import React  from 'react';
 import Style from "./CartItems.module.css";
-import { Link, useNavigate } from "react-router-dom";
 import { editShoppingCart , getShoppingCart, removeCart, getInviteCart } from '../../redux/actions';
-/* import  removeCart  from '../../redux/actions'; */
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import swal from 'sweetalert'
-// import { useState } from 'react';
 
 
 
@@ -18,7 +14,6 @@ export default function CartItem({id, price, quantity, productId, addInfo}){
     const userId = useSelector(state => state.idUser)
     const auth = useSelector(state => state.userAuth )
     let infoCarritoInvitado = useSelector((state) => state.inviteCart);
-    let cantidadInvitado = quantity
     
      
     useEffect(() => {

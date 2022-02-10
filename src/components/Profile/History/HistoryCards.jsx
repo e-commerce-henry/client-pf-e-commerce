@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import HistoryCard from "./HistoryCard";
 import Vacío2 from '../../Vacío/Vacío2'
 import Style from './HistoryCards.module.css'

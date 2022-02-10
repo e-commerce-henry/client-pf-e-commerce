@@ -15,8 +15,6 @@ import PoliticaDePrivacidad from "./components/PoliticaDePrivacidad/PoliticaDePr
 import Equipo from "./components/Equipo/Equipo";
 import AddUsers from "./components/AddUsers/AddUsers";
 import InicioSeccion from "./components/Profile/InicioSeccion";
-import OrderDetails from "./components/Orders/OrderDetails";
-import CompraExitosa from "./components/Orders/CompraExitosa";
 import CompraRealizada from "./components/CompraRealizada/CompraRealizada";
 import EditUser from "./components/EditUsers/EditUser";
 import Favoritos from "./components/Favs/Favoritos";

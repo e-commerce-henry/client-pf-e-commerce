@@ -1,11 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 import Head from "../Head/Head";
 import { useEffect } from "react";
-import Footer from "../Footer/Footer";
 import './CompraRealizada.css'
-import axios from "axios";
 
 export default function CompraRealizada() {
   const navigate = useNavigate();

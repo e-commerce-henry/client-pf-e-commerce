@@ -1,8 +1,6 @@
 import React from 'react';
 import Style from './CardFavs.module.css';
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux";
-import { useEffect } from 'react';
 import { addProductShoppingCart, deleteProductWishlist, getWishlist } from '../../redux/actions';
 import swal from 'sweetalert'
 

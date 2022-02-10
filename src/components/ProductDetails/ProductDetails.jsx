@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { productDetail, addProductWishlist, addProductShoppingCart,createReview} from '../../redux/actions'; 
-import { Link } from "react-router-dom";
 import Head from '../Head/Head';
 import Footer from '../Footer/Footer';
 import Style from './ProductDetails.module.css'
@@ -17,7 +16,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useState } from 'react';
 import s from '../Review/Review.module.css'
 import ReactStars from "react-rating-stars-component";
-import Reviews from '../Review/Reviews';
 const useStyles = makeStyles((theme)=>({
     modal:{
         position:'absolute',

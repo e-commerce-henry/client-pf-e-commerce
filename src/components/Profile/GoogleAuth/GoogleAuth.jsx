@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
 import swal from 'sweetalert'
 import axios from 'axios';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { detalleUsers, addProductShoppingCart, editCart } from '../../../redux/actions';
 
 export default function GoogleAuth(){
