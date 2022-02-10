@@ -55,3 +55,9 @@ p {
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 950px) {
+  p {
+    margin: 20px;
+  }
+}

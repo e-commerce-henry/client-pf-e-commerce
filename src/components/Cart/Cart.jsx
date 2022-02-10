@@ -14,9 +14,8 @@ function Cart(){
     return(
         <>
             <Head />
-                {
-                    auth? <div className={Style.titulofav}>Carrito</div> : null
-                }
+                <div className={Style.titulofav}>Carrito</div>
+
                 <div className={Style.fadeinbck1} >
                     <ShoppingCart />
                 </div>

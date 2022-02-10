@@ -149,19 +149,20 @@
   .aaa {
     grid-area: 1 / 1 / 2 / 2;
     align-self: flex-end;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50px;
   }
   .bbb {
     grid-area: 2 / 1 / 3 / 2;
     align-self: flex-start;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50px;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .detalle {
     font-size: 16px;
+  }
+  .crear {
+    margin-bottom: 100px;
   }
 }

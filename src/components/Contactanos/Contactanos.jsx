@@ -5,6 +5,7 @@ import { addContact } from "../../redux/actions";
 import Head from "../Head/Head";
 import swal from 'sweetalert'
 import Style from "./Contacto.module.css";
+import Footer from "../Footer/Footer"
 
 export function validate(user) {
   let error = {};
@@ -141,6 +142,7 @@ export function validate(user) {
           </form>
         
       </div>
+      <Footer />
     </div>
   );
 };
