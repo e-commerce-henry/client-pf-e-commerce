@@ -41,4 +41,31 @@
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
+  -webkit-animation: fadeinbck1 0.7s ease-in both;
+  animation: fadeinbck1 0.7s ease-in both;
+}
+
+@-webkit-keyframes fadeinbck1 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeinbck1 {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

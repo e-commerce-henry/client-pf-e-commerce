@@ -5,10 +5,13 @@ import Head from "../Head/Head";
 import { useEffect } from "react";
 import Footer from "../Footer/Footer";
 import './CompraRealizada.css'
+import axios from "axios";
 
 export default function CompraRealizada() {
   const navigate = useNavigate();
+  
   useEffect(()=>{
+    
     setTimeout(()=>{
       navigate('/');
     }, 5000);

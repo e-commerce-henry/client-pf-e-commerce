@@ -5,7 +5,8 @@ import "./AddUsers.css";
 import Head from "../Head/Head";
 import Footer from "../Footer/Footer";
 import '../Profile/Profile.module.css';
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import swal from 'sweetalert';
 
 
 
@@ -18,6 +19,7 @@ import Input from "@material-ui/core/Input";
 
 
 export function validate(users) {
+
     let errors = {};
     if (!users.name) {
       errors.name = 'El nombre requerido';
@@ -73,7 +75,8 @@ export function validate(users) {
   };
 
 const AddUsers = () => {
-
+  
+  const navigate = useNavigate();
   
 
    const dispatch = useDispatch();
@@ -132,12 +135,14 @@ const AddUsers = () => {
           })
           setErrors(validate({...users, [e.target.name]: e.target.value}))
         } 
+        
+        navigate("/inicio-seccion");
+        swal({
+          title: "Te has registrado exitosamente",
+          icon: "success",
+          button: "Ok"})
+        
     }
-
-
-
-
-
   return (
   <div className='formulario'>
     <Head />  
@@ -205,9 +210,7 @@ const AddUsers = () => {
         </div>
         
         <div className="btns">
-          <button className="butt" type="submit">Registrarse</button> 
-          <Link to="/profile-details"><button className="butt" type="submit">Iniciar Sesión</button></Link>
-          
+          <button className="butt" type="submit">Registrarse</button>       
           
         </div>
       </form>

@@ -1,8 +1,5 @@
 .container {
-  /* position: absolute;
-  bottom: 0; */
   box-shadow: 0px 0px 5px 1px #303841;
-
   padding-top: 4px;
   height: 8%;
   background-color: #303841;
@@ -26,9 +23,6 @@
 }
 
 .copy {
-  /* position: fixed;
-  bottom: 0; */
-  /* padding-top: 2px; */
   background-color: #303841;
   display: flex;
   justify-content: center;
@@ -51,13 +45,34 @@
   .container {
     font-size: 10px;
   }
+  .copy {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 658px) {
   .container {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
   }
-  .copy {
-    display: none;
+  .ddd1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .ddd2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .ddd3 {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .ddd4 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  #ic1 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  #ic2 {
+    grid-area: 2 / 3 / 3 / 4;
   }
 }

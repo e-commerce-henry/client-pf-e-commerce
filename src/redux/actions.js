@@ -27,12 +27,12 @@ export const RESET_CART = "RESET_CART";
 export const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 export const UPDATE_USER = "UPDATE_USER"
 export const EDIT_USER = "EDIT_USER";
-
-export const EDIT_CART= "EDIT_CART";
+export const EDIT_CART = "EDIT_CART";
 export const LOG_OUT = "LOG_OUT";
-export const ADD_PRODUCT_BANNER_A_CART= "ADD_PRODUCT_BANNER_A_CART"; 
+export const ADD_PRODUCT_BANNER_A_CART = "ADD_PRODUCT_BANNER_A_CART";
 export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
-
+export const GET_INVITE_CART = "GET_INVITE_CART";
+export const EDIT_INVITE_CART = "EDIT_INVITE_CART";
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -114,11 +114,16 @@ export function orderByPrice(payload) {
 
 export const addUsers = (payload) => {
 	return async (dispatch) => {
-		let response = await axios.post(
-			`http://proyecto-personal.online/auth/signup`,
-			payload
-		);
-		return response;
+		try {
+			let response = await axios.post(
+				`http://proyecto-personal.online/auth/signup`,
+				payload
+			);
+			await axios.post("http://proyecto-personal.online/email/welcome", payload);
+			return response;
+		} catch (err) {
+			console.log(err.message);
+		}
 	};
 };
 //Responder
@@ -131,13 +136,17 @@ export const addInicioUser = ({ email, pwd }) => {
 				{ withCredentials: true }
 			)
 			.then((res) => {
-				console.log(res);
-				res.data.user
-					? dispatch({ type: ADD_INICIO_USER, payload: res.data.user })
+				console.log(res.data);
+				return res.data.user
+					? dispatch({ type: ADD_INICIO_USER, payload: res.data })
 					: dispatch({ type: ADD_INICIO_USER, payload: false });
 			});
 	};
 };
+
+export function authUser(loggedInUser) {
+	return { type: "AUTH_USER", payload: loggedInUser };
+}
 //Acciones carrito
 
 export function addProductShoppingCart(body) {
@@ -179,11 +188,10 @@ export function addProductWishlist(body) {
 		});
 	};
 }
-export function editCart({ productId, userId, quantity }) {
+export function editCart(body) {
+	console.log(body);
 	return async function (dispatch) {
-		await axios.put(`http://proyecto-personal.online/cart`, {
-			data: { productId, userId, quantity },
-		});
+		await axios.put(`http://proyecto-personal.online/cart`, body);
 		dispatch({
 			type: EDIT_CART,
 		});
@@ -366,8 +374,74 @@ export function logout() {
 			type: LOG_OUT,
 		});
 	};
-
-
 }
 
+export const addContact = (body) => {
+	console.log(body);
+	return async (dispatch) => {
+		let resp = await axios.post(`http://localhost:3001/contactForm`, body);
+		await axios.post("http://localhost:3001/email/contact", body);
+		return resp;
+	};
+};
+
+
+export function getInviteCart(){
+	let carritoInvitado = localStorage.getItem('carrito')
+	carritoInvitado = JSON.parse(carritoInvitado)
+	return async function(dispatch){
+		dispatch({type: GET_INVITE_CART, payload: carritoInvitado})
+	}
+}
+
+export function editInviteCart(carrito){
+	let carroActual = localStorage.getItem('carrito')
+	if (carroActual && carroActual[0]) {
+		carroActual = JSON.parse(carroActual)
+		carroActual.push(carrito)
+		carrito = JSON.stringify(carroActual)
+		localStorage.setItem('carrito', carrito )
+	} else{
+		let nuevoCarro = [carrito]
+		carrito = JSON.stringify(nuevoCarro)
+		localStorage.setItem('carrito', carrito )
+	}
+	let carritoFinal = localStorage.getItem('carrito')
+	carritoFinal = JSON.parse(carritoFinal)
+	
+	return function(dispatch){
+		return dispatch({
+			type: EDIT_INVITE_CART, payload: carritoFinal
+		})
+	}
+}
+
+export const resetPwdRequest = (input) => {
+	console.log(input);
+	return async (dispatch) => {
+		try {
+			const response = await axios.post(
+				`http://localhost:3001/auth/forgot-password`,
+				input
+			);
+			return response;
+		} catch (err) {
+			console.log(err);
+		}
+	};
+};
+
+export const resetPwdForm = (input, id, token) => {
+	return async (dispatch) => {
+		try {
+			const response = await axios.post(
+				`http://localhost:3001/auth/reset-password-confirm/${id}/${token}`,
+				input
+			);
+			return response;
+		} catch (err) {
+			console.log(err);
+		}
+	};
+};
 

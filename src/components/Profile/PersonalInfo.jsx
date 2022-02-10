@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {detalleUsers} from '../../redux/actions';
 import Style from'./PersonalInfo.module.css';
 import EditUser from '../EditUsers/EditUser';
-import { Link } from "react-router-dom";
 import {useNavigate } from "react-router-dom";
 
 
@@ -26,18 +25,20 @@ export default function PersonalInfo(){
 
     return(
         <div className={Style.fadeinbck8}>
-                <div className={Style.saludo}>Nos dá gusto verte de nuevo {userDetail.name}
-                <h4 className={Style.preg}> Que quieres hacer hoy?</h4>
+            <div className={Style.saludo}>
+                Nos dá gusto verte de nuevo {userDetail.name}
             </div>
                 
                 <div className={Style.detalle}>
                 
-                <div  className={Style.aaa}><div>Nombre: <b>{userDetail.name}</b></div><br />
-                <div>Apellido: <b>{userDetail.surname}</b></div><br />
-                <div>Correo: <b>{userDetail.email}</b></div>
+                    <div className={Style.aaa}>
+                        <div>Nombre: <b>{userDetail.name}</b></div><br />
+                        <div>Apellido: <b>{userDetail.surname}</b></div><br />
+                        <div>Correo: <b>{userDetail.email}</b></div><br />
+                    </div>
                     {
                         userDetail.clientAddresses ? userDetail.clientAddresses.map((e) =>(
-                            <div key={e.id}>
+                            <div className={Style.bbb} key={e.id}>
                                 <div>Dirección: <b>{e.address}</b></div><br />
                                 <div>Código Postal: <b>{e.postalCode}</b></div><br />
                                 <div>Ciudad: <b>{e.city}</b></div><br />
@@ -47,25 +48,24 @@ export default function PersonalInfo(){
 
                         )): 
                             <div  className={Style.bbb} >
-                                <div >Dirección: <b>{userDetail.address}</b></div><br />
+                                <div>Dirección: <b>{userDetail.address}</b></div><br />
                                 <div>Código Postal: <b>{userDetail.postalCode}</b></div><br />
                                 <div>Ciudad: <b>{userDetail.city}</b></div><br />
                                 <div>Provincia: <b>{userDetail.province}</b></div><br />
                                 <div>Piso: <b>{userDetail.floor}</b></div>
                             </div>
-                    
                     }
-                    </div>
+                    
                 </div>
-          <div className={Style.crear}>
-          < EditUser />
-            <div>
-                 {
+            <div className={Style.crear}>
+                < EditUser />
+                <div>
+                {
                     userAuth?
                     <button className="bu" type='button' value='history' onClick={(e) =>HandleClick(e)}>Ver tu historial de Compras</button>: null
                 }
                  </div>
-              </div>
+            </div>
         
             
         </div>

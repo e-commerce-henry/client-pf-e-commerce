@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import Style from './ProductDetails.module.css'
 import {useNavigate} from 'react-router-dom'
 import swal from 'sweetalert'
+import SaleBanner from '../SaleBanner/SaleBanner'
 
 /*************************************** */
 import { Modal } from '@material-ui/core';
@@ -157,7 +158,7 @@ export default function ProductDetail(){
                     </div><br />                  
 
             </div> 
-            <br/>
+            {/* <br/> */}
 {/*             <div className={Style.container_escribir_comentario}>
                 <button
                     className={Style.boton_escribir_comentario}
@@ -170,6 +171,11 @@ export default function ProductDetail(){
             <br/>
             <Reviews idproduct={id}/>
             <br/> */}
+            <div className={Style.off}>
+            <hr className={Style.probando}/>
+                <div className={Style.ofertass}>OFERTAS QUE TE PUEDEN INTERESAR</div>
+                <SaleBanner />
+            </div>
            <Footer/>
 
 
