@@ -379,8 +379,8 @@ export function logout() {
 export const addContact = (body) => {
 	console.log(body);
 	return async (dispatch) => {
-		let resp = await axios.post(`http://localhost:3001/contactForm`, body);
-		await axios.post("http://localhost:3001/email/contact", body);
+		let resp = await axios.post(`http://proyecto-personal.online/contactForm`, body);
+		await axios.post("http://proyecto-personal.online/email/contact", body);
 		return resp;
 	};
 };
@@ -421,7 +421,7 @@ export const resetPwdRequest = (input) => {
 	return async (dispatch) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:3001/auth/forgot-password`,
+				`http://proyecto-personal.online/auth/forgot-password`,
 				input
 			);
 			return response;
@@ -435,7 +435,7 @@ export const resetPwdForm = (input, id, token) => {
 	return async (dispatch) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:3001/auth/reset-password-confirm/${id}/${token}`,
+				`http://proyecto-personal.online/auth/reset-password-confirm/${id}/${token}`,
 				input
 			);
 			return response;
