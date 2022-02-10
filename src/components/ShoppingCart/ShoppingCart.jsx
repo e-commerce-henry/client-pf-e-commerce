@@ -209,7 +209,7 @@ export default function ShoppingCart() {
       {shoppingCart.length && shoppingCart[0]
             ? shoppingCart[0].cartItems.length === 0 ? null :
             <div className={Style.box}>
-              <div className={Style.parrafo}>Estas por realizar la compra de estos {totalCant} productos por un total de:</div>
+              <div className={Style.parrafo}>Estás por realizar la compra de estos {totalCant} productos por un total de:</div>
               <div className={Style.parrafo1}>
                 $ {Number(Math.ceil(total)).toLocaleString()} <br />
 
@@ -223,8 +223,8 @@ export default function ShoppingCart() {
 
               </div>
             </div> : carritoInvitado()?
-            <div className={Style.box}>
-              <button className={Style.boo} onClick={()=> navigate('/inicio-seccion')}>Inicia sesion para comprar</button>
+            <div className={Style.box2}>
+              <button className={Style.bo2} onClick={()=> navigate('/inicio-seccion')}>Inicia sesión para comprar</button>
             </div> : <Vacío /> 
       }
           <form id={FORM_ID} ></form>

@@ -116,6 +116,31 @@
   cursor: pointer;
 }
 
+.bo2 {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  width: 150px;
+  height: 45px;
+  border-width: 1px;
+  color: rgba(240, 240, 240, 1);
+  border-radius: 6px;
+  /* box-shadow: inset 0px 1px 0px 0px rgba(34, 243, 255, 1); */
+  text-shadow: inset 0px 1px 0px #303841;
+  background: linear-gradient(#303841, rgba(0, 0, 0, 1));
+  text-align: center;
+}
+.bo2:hover {
+  cursor: pointer;
+}
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .crear {
   display: flex;
   justify-content: center;
