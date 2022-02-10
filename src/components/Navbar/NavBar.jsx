@@ -15,9 +15,10 @@ function handleInputChange(e){
 }
 function handleOnClick(e){
    e.preventDefault()
-       if(name){
-    dispatch(getProductName(name))
-}}
+    if(name){
+        dispatch(getProductName(name))
+    }   
+}
     return(
         <>
             <div className={Style.containernav} >

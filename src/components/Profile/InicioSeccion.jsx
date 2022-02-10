@@ -125,7 +125,7 @@ const InicioSeccion = () => {
                     <button className="bu" type="submit">Iniciar sesión</button>  
                 </div>
             </form>
-            <p className="o"><Link to="/forgot-pwd" type="submit">Me olvide la contraseña</Link></p>
+            <p className="o"><Link to="/forgot-pwd" type="submit">Olvide mi contraseña</Link></p>
             <hr/>
             <div>
               <GoogleAuth/>

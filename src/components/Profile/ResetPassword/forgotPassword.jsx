@@ -45,7 +45,7 @@ const ForgotPwd = () => {
       if(Object.keys(errors).length === 0){
         swal({
             title: `Solicitud enviada`,
-            text: "Deberas seguir las instrucciones indicadas en el email que te enviamos!" ,
+            text: "Deberás seguir las instrucciones indicadas en el email que te enviamos!" ,
             icon: "success"
         })
         dispatch(resetPwdRequest(input));
