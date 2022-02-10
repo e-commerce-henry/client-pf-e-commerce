@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import {addInicioUser} from "../../redux/actions";
+import {addInicioUser, addProductShoppingCart, editCart} from "../../redux/actions";
 import { useDispatch} from "react-redux";
 import './Profile.module.css';
 import {Link} from 'react-router-dom';
@@ -71,6 +71,7 @@ const InicioSeccion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate({...input, [e.target.name]: e.target.value}))
+    
     navigate(`/`);
     swal({
         title: `Hola de nuevo`,
