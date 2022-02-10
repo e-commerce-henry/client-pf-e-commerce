@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Style from './Card.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { addProductShoppingCart, addProductWishlist } from '../../redux/actions';
+import { addProductShoppingCart, addProductWishlist, getInviteCart, editInviteCart } from '../../redux/actions';
 import {useNavigate} from 'react-router-dom'
 import swal from 'sweetalert'
 
@@ -15,6 +15,7 @@ function Card({ productId, name, price, img, brand}){
     const [error, setError] = useState()
     const userId = useSelector(state => state.idUser)
     const auth = useSelector(state => state.userAuth )
+    const carritoInvitado = useSelector(state => state.inviteCart )
     const [fav, setFav] = useState([]);
     const [cart, setCart] = useState([]);
 
@@ -30,12 +31,14 @@ function Card({ productId, name, price, img, brand}){
                 button: "Ok"})
             dispatch(addProductShoppingCart({productId, price, userId, name, img}))
         } else {
-            let carritoInvitado = localStorage.getItem('carrito')
-            carritoInvitado = JSON.parse(carritoInvitado)
-            carritoInvitado.push({productId, price, userId, name, img})
-            JSON.stringify(carritoInvitado)
-            
-            
+
+            swal({
+                title: "Se ha agregado al carrito de invitado:",
+                text: `${name}`,
+                icon: "success",
+                button: "Ok"
+            })
+            editInviteCart({productId, price, name, img, quantity: 1})
         }
     } 
     
@@ -51,7 +54,7 @@ function Card({ productId, name, price, img, brand}){
                 button: "Ok"})
             dispatch(addProductWishlist({productId, price, userId}))
         } else {
-            navigate(`/profile-details`);
+            navigate(`/inicio-seccion`);
         }
         
     }

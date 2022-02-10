@@ -30,6 +30,8 @@ export const EDIT_CART = "EDIT_CART";
 export const LOG_OUT = "LOG_OUT";
 export const ADD_PRODUCT_BANNER_A_CART = "ADD_PRODUCT_BANNER_A_CART";
 export const ADD_ACTUAL_ORDER_DETAIL = "ADD_ACTUAL_ORDER_DETAIL";
+export const GET_INVITE_CART = "GET_INVITE_CART";
+export const EDIT_INVITE_CART = "EDIT_INVITE_CART";
 
 export function productDetail(id) {
 	return async function (dispatch) {
@@ -185,11 +187,10 @@ export function addProductWishlist(body) {
 		});
 	};
 }
-export function editCart({ productId, userId, quantity }) {
+export function editCart(body) {
+	console.log(body);
 	return async function (dispatch) {
-		await axios.put(`http://localhost:3001/cart`, {
-			data: { productId, userId, quantity },
-		});
+		await axios.put(`http://localhost:3001/cart`, body);
 		dispatch({
 			type: EDIT_CART,
 		});
@@ -380,3 +381,33 @@ export const addContact = (body) => {
 		return resp;
 	};
 };
+
+export function getInviteCart(){
+	let carritoInvitado = localStorage.getItem('carrito')
+	carritoInvitado = JSON.parse(carritoInvitado)
+	return async function(dispatch){
+		dispatch({type: GET_INVITE_CART, payload: carritoInvitado})
+	}
+}
+
+export function editInviteCart(carrito){
+	let carroActual = localStorage.getItem('carrito')
+	if (carroActual && carroActual[0]) {
+		carroActual = JSON.parse(carroActual)
+		carroActual.push(carrito)
+		carrito = JSON.stringify(carroActual)
+		localStorage.setItem('carrito', carrito )
+	} else{
+		let nuevoCarro = [carrito]
+		carrito = JSON.stringify(nuevoCarro)
+		localStorage.setItem('carrito', carrito )
+	}
+	let carritoFinal = localStorage.getItem('carrito')
+	carritoFinal = JSON.parse(carritoFinal)
+	
+	return function(dispatch){
+		return dispatch({
+			type: EDIT_INVITE_CART, payload: carritoFinal
+		})
+	}
+}

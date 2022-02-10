@@ -30,11 +30,14 @@ import {
 	ADD_PRODUCT_BANNER_A_CART,
 	ADD_ACTUAL_ORDER_DETAIL,
 	LOG_OUT,
+	GET_INVITE_CART,
+	EDIT_INVITE_CART,
 	// POST_CONTACT,
 } from "./actions";
 
 const inicialState = {
 	cart: {},
+	inviteCart: [],
 	products: [],
 	allProducts: [],
 	details: [],
@@ -282,6 +285,16 @@ const reducer = (state = inicialState, action) => {
 				...state,
 				historyDetail: action.payload,
 			};
+		case GET_INVITE_CART:
+			return{
+				...state,
+				inviteCart: action.payload
+			}
+		case EDIT_INVITE_CART:
+			return{
+				...state,
+				inviteCart: action.payload
+			}
 
 		default:
 			return state;

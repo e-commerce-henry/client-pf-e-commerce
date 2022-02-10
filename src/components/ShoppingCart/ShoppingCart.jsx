@@ -1,13 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom'
 import CartItem from "./CartItem";
 import {
   getShoppingCart,
   createOrder,
   deleteCartItem,
   resetShoppingCart,
-  detalleUsers
+  detalleUsers,
+  getInviteCart,
+  getProducts
 } from "../../redux/actions";
 import Style from "./ShoppingCart.module.css";
 import axios from "axios";
@@ -25,15 +28,18 @@ export default function ShoppingCart() {
   const productos = useSelector((state) => state.products);
   const userInfo = useSelector((state) => state.userDetail);
   const ofertas = useSelector((state) => state.saleBanner);
+  const infoCarritoInvitado = useSelector((state) => state.inviteCart);
   const dispatch = useDispatch();
   const orderId = useSelector((state)=> state.orderCreated)
   const [preferenceId, setPreferenceId] = useState(null);
-  
-  
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getShoppingCart(userId));
     dispatch(detalleUsers(userId))
+    dispatch(getInviteCart());
+    dispatch(getProducts())
   }, [dispatch]);
 
 
@@ -132,6 +138,27 @@ export default function ShoppingCart() {
     dispatch(createOrder(userId, { products, addressId, total }));
   }
 
+  function carritoInvitado(){
+
+    if(infoCarritoInvitado){
+      console.log(typeof infoCarritoInvitado);
+      return (
+        infoCarritoInvitado.map((e) => (
+          <CartItem
+            id={e.id}
+            key={e.id}
+            price={e.price}
+            quantity={e.quantity}
+            productId={e.productId}
+            addInfo={searchAndComplementInfo(e.productId)}
+          />
+        )))
+    } else {
+      return false
+      
+    }
+  }
+
   
 
   return (
@@ -147,9 +174,16 @@ export default function ShoppingCart() {
             <div className={Style.div9}>Cantidad</div>
             <div className={Style.div10}>Subtotales</div>
           </div>
-        </div> :
-
-        <p>Hola invitado</p>
+        </div> : carritoInvitado()?
+                <div>
+          <div className={Style.casi}>{`Ya casi lo tienes!`}</div>
+          <div className={Style.headcart}>
+            <div className={Style.div7}>Producto</div>
+            <div className={Style.div8}>Precio</div>
+            <div className={Style.div9}>Cantidad</div>
+            <div className={Style.div10}>Subtotales</div>
+          </div>
+        </div> :null
         }
         <div>
           {shoppingCart.length && shoppingCart[0]
@@ -164,7 +198,9 @@ export default function ShoppingCart() {
                   addInfo={searchAndComplementInfo(e.productId)}
                 />
               ))
-            : null}
+            : 
+              carritoInvitado()
+            }
         </div>
       </div>
   
@@ -186,7 +222,11 @@ export default function ShoppingCart() {
 
 
               </div>
-            </div> : null }
+            </div> : carritoInvitado()?
+            <div className={Style.box}>
+              <button className={Style.boo} onClick={()=> navigate('/inicio-seccion')}>Inicia sesion para comprar</button>
+            </div> : <Vacío /> 
+      }
           <form id={FORM_ID} ></form>
 
     </>
