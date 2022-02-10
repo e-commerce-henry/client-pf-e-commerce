@@ -2,7 +2,7 @@
   background-color: transparent;
   position: absolute;
   height: 100px;
-  top: 90px;
+  top: 115px;
   bottom: 0%;
   width: 100%;
   display: grid;
@@ -23,7 +23,7 @@
 }
 @media only screen and (max-width: 1100px) {
   .thebar {
-    top: 90px;
+    top: 115px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);

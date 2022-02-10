@@ -14,8 +14,8 @@ import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
-import {useNavigate} from 'react-router-dom'
-import swal from 'sweetalert'
+import {useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 
@@ -126,6 +126,7 @@ const InicioSeccion = () => {
                     <button className="bu" type="submit">Iniciar sesión</button>  
                 </div>
             </form>
+            <p className="o"><Link to="/forgot-pwd" type="submit">Olvide mi contraseña</Link></p>
             <hr/>
             <div>
               <GoogleAuth/>
