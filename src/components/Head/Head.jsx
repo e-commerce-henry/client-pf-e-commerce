@@ -18,7 +18,11 @@ function Head(){
     return(
         <>
             <div className={Style.container} >
-                <div className={Style.marca}> <img src={Logo} alt="not found" className={Style.logo}/></div>
+                <div className={Style.marca}>
+                    <Link to='/' style={{ textDecoration: 'none' }}>
+                        <img src={Logo} alt="not found" className={Style.logo}/>
+                    </Link>
+                </div>
                 <div className={Style.flexboxx}>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
@@ -28,6 +32,7 @@ function Head(){
                         </svg>
                     </button>
                 </Link>
+                
                 <Link to='/cart' style={{ textDecoration: 'none' }}>
                     <button className={Style.btnhead}>
                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-cart-fill" viewBox="0 0 16 16">
